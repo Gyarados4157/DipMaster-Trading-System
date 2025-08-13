@@ -1,0 +1,138 @@
+{
+  "_comment": "DipMaster Trading System Configuration",
+  "_version": "1.0.0",
+  "_description": "Complete configuration template for the DipMaster AI Trading System",
+  
+  "trading": {
+    "_comment": "Core trading configuration",
+    "symbols": [
+      "BTCUSDT",
+      "ETHUSDT", 
+      "BNBUSDT",
+      "SOLUSDT",
+      "ADAUSDT",
+      "XRPUSDT",
+      "DOGEUSDT",
+      "SUIUSDT",
+      "ICPUSDT",
+      "ALGOUSDT",
+      "IOTAUSDT"
+    ],
+    "paper_trading": true,
+    "max_positions": 3,
+    "max_position_size": 1000,
+    "daily_loss_limit": -500,
+    "trading_enabled": true,
+    "auto_start": false
+  },
+  
+  "api": {
+    "_comment": "Binance API configuration - use environment variables for production",
+    "api_key": "${BINANCE_API_KEY}",
+    "api_secret": "${BINANCE_API_SECRET}",
+    "testnet": false,
+    "timeout": 30,
+    "rate_limit_buffer": 0.1
+  },
+  
+  "strategy": {
+    "_comment": "DipMaster AI strategy parameters",
+    "rsi_entry_range": [30, 50],
+    "rsi_period": 14,
+    "dip_threshold": 0.002,
+    "volume_multiplier": 1.5,
+    "max_holding_minutes": 180,
+    "target_profit": 0.008,
+    "min_confidence": 0.6,
+    "boundary_slots": [15, 30, 45, 60],
+    "preferred_exit_slots": [1, 3],
+    "enable_15min_boundary_exits": true,
+    "enable_profit_targets": true,
+    "enable_time_stops": true
+  },
+  
+  "risk_management": {
+    "_comment": "Risk management and safety controls",
+    "max_daily_trades": 50,
+    "max_consecutive_losses": 5,
+    "position_size_type": "fixed",
+    "emergency_stop_loss": -0.05,
+    "max_drawdown": -0.20,
+    "cool_down_minutes": 15,
+    "enable_risk_limits": true
+  },
+  
+  "websocket": {
+    "_comment": "Real-time data WebSocket configuration",
+    "enabled": true,
+    "reconnect_attempts": 5,
+    "reconnect_delay": 5,
+    "ping_interval": 30,
+    "timeout": 10,
+    "buffer_size": 1000
+  },
+  
+  "dashboard": {
+    "_comment": "Monitoring dashboard configuration",
+    "enabled": true,
+    "port": 8080,
+    "host": "0.0.0.0",
+    "refresh_rate": 1,
+    "show_charts": true,
+    "show_positions": true,
+    "show_logs": true,
+    "theme": "dark"
+  },
+  
+  "logging": {
+    "_comment": "Logging configuration",
+    "level": "INFO",
+    "file_enabled": true,
+    "console_enabled": true,
+    "rotation": "daily",
+    "retention_days": 30,
+    "max_file_size": "50MB",
+    "format": "detailed"
+  },
+  
+  "notifications": {
+    "_comment": "Alert and notification settings",
+    "enabled": false,
+    "slack_webhook": "",
+    "email_enabled": false,
+    "email_smtp": "",
+    "position_alerts": true,
+    "error_alerts": true,
+    "daily_summary": true
+  },
+  
+  "performance": {
+    "_comment": "System performance and optimization",
+    "cache_enabled": true,
+    "cache_ttl": 300,
+    "parallel_processing": true,
+    "max_workers": 4,
+    "memory_limit": "2GB",
+    "gc_threshold": 0.8
+  },
+  
+  "database": {
+    "_comment": "Optional database configuration",
+    "enabled": false,
+    "type": "sqlite",
+    "path": "data/dipmaster.db",
+    "connection_pool_size": 5,
+    "backup_enabled": true,
+    "backup_interval": "daily"
+  },
+  
+  "development": {
+    "_comment": "Development and debugging options",
+    "debug_mode": false,
+    "test_mode": false,
+    "dry_run": false,
+    "profile_enabled": false,
+    "mock_api": false,
+    "save_debug_data": false
+  }
+}

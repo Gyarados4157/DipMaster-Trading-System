@@ -1,0 +1,1979 @@
+{
+  "validation_timestamp": "2025-08-12T13:33:47.499973",
+  "validation_summary": {
+    "data_period": "2025-07-24 05:06:05.884000+00:00 to 2025-08-11 23:15:01.694000+00:00",
+    "total_trades_analyzed": 206,
+    "total_positions_analyzed": 84,
+    "validation_scope": "Entry signals and exit timing validation"
+  },
+  "validation_results": {
+    "entry_signals": {
+      "ICP/USDT:USDT": {
+        "total_entries": 25,
+        "validated_entries": 25,
+        "signals_detected": 24,
+        "accuracy_rate": 0.96,
+        "avg_signal_strength": 0.9533333333333335,
+        "details": [
+          {
+            "actual_entry_time": "2025-07-24 05:49:14.983000",
+            "actual_entry_price": 5.44541268,
+            "signal_detected": "True",
+            "signal_strength": 0.8333333333333334,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 26.609442060085726,
+            "conditions": {
+              "rsi_in_range": "False",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-07-24 05:49:17.053000",
+            "actual_entry_price": 5.445,
+            "signal_detected": "True",
+            "signal_strength": 0.8333333333333334,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 26.609442060085726,
+            "conditions": {
+              "rsi_in_range": "False",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-07-25 00:35:34.957000",
+            "actual_entry_price": 5.41867987,
+            "signal_detected": "True",
+            "signal_strength": 1.0,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 35.869565217391624,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-07-25 00:35:39.220000",
+            "actual_entry_price": 5.41422274,
+            "signal_detected": "True",
+            "signal_strength": 1.0,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 35.869565217391624,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-07-25 03:33:08.445000",
+            "actual_entry_price": 5.33812607,
+            "signal_detected": "False",
+            "signal_strength": 0.5,
+            "recommendation": "WAIT",
+            "rsi_value": 29.936305732484286,
+            "conditions": {
+              "rsi_in_range": "False",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "False",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "False"
+            }
+          },
+          {
+            "actual_entry_time": "2025-07-25 15:39:42.447000",
+            "actual_entry_price": 5.367,
+            "signal_detected": "True",
+            "signal_strength": 0.8333333333333334,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 33.05785123966933,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "False",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-07-28 13:32:10.007000",
+            "actual_entry_price": 5.773172,
+            "signal_detected": "True",
+            "signal_strength": 0.8333333333333334,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 49.20634920634895,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "False",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-07-28 14:26:06.855000",
+            "actual_entry_price": 5.68376875,
+            "signal_detected": "True",
+            "signal_strength": 1.0,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 49.20634920634895,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-07-29 14:52:50.573000",
+            "actual_entry_price": 5.46005149,
+            "signal_detected": "True",
+            "signal_strength": 1.0,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 49.20634920634895,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-07-30 11:26:21.202000",
+            "actual_entry_price": 5.27121307,
+            "signal_detected": "True",
+            "signal_strength": 1.0,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 49.20634920634895,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-07-30 11:27:20.707000",
+            "actual_entry_price": 5.27072191,
+            "signal_detected": "True",
+            "signal_strength": 1.0,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 49.20634920634895,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-07-30 19:05:59.338000",
+            "actual_entry_price": 5.22006107,
+            "signal_detected": "True",
+            "signal_strength": 1.0,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 49.20634920634895,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-07-30 19:06:01.292000",
+            "actual_entry_price": 5.2210185,
+            "signal_detected": "True",
+            "signal_strength": 1.0,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 49.20634920634895,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-07-31 13:15:55.985000",
+            "actual_entry_price": 5.39850882,
+            "signal_detected": "True",
+            "signal_strength": 1.0,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 49.20634920634895,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-07-31 14:22:56.984000",
+            "actual_entry_price": 5.3127162,
+            "signal_detected": "True",
+            "signal_strength": 1.0,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 49.20634920634895,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-08-01 00:11:26.117000",
+            "actual_entry_price": 5.21,
+            "signal_detected": "True",
+            "signal_strength": 1.0,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 49.20634920634895,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-08-01 00:50:32.657000",
+            "actual_entry_price": 5.13122856,
+            "signal_detected": "True",
+            "signal_strength": 1.0,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 49.20634920634895,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-08-01 06:43:20.467000",
+            "actual_entry_price": 5.111,
+            "signal_detected": "True",
+            "signal_strength": 1.0,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 49.20634920634895,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-08-01 06:43:31.514000",
+            "actual_entry_price": 5.10965455,
+            "signal_detected": "True",
+            "signal_strength": 1.0,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 49.20634920634895,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-08-01 22:27:37.987000",
+            "actual_entry_price": 4.948,
+            "signal_detected": "True",
+            "signal_strength": 1.0,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 49.20634920634895,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-08-05 14:21:56.732000",
+            "actual_entry_price": 5.1194154,
+            "signal_detected": "True",
+            "signal_strength": 1.0,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 49.20634920634895,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-08-10 08:00:42.115000",
+            "actual_entry_price": 5.562,
+            "signal_detected": "True",
+            "signal_strength": 1.0,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 49.20634920634895,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-08-11 11:53:04.937000",
+            "actual_entry_price": 5.49293024,
+            "signal_detected": "True",
+            "signal_strength": 1.0,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 49.20634920634895,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-08-11 21:31:28.676000",
+            "actual_entry_price": 5.39441511,
+            "signal_detected": "True",
+            "signal_strength": 1.0,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 49.20634920634895,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-08-11 21:31:36.695000",
+            "actual_entry_price": 5.38907116,
+            "signal_detected": "True",
+            "signal_strength": 1.0,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 49.20634920634895,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          }
+        ]
+      },
+      "XRP/USDT:USDT": {
+        "total_entries": 21,
+        "validated_entries": 21,
+        "signals_detected": 4,
+        "accuracy_rate": 0.19047619047619047,
+        "avg_signal_strength": 0.6825396825396824,
+        "details": [
+          {
+            "actual_entry_time": "2025-07-24 05:06:05.884000",
+            "actual_entry_price": 3.11438915,
+            "signal_detected": "True",
+            "signal_strength": 0.8333333333333334,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 17.256637168141637,
+            "conditions": {
+              "rsi_in_range": "False",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-07-24 05:06:08.089000",
+            "actual_entry_price": 3.1108,
+            "signal_detected": "True",
+            "signal_strength": 0.8333333333333334,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 17.256637168141637,
+            "conditions": {
+              "rsi_in_range": "False",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-07-24 05:51:21.416000",
+            "actual_entry_price": 3.0646,
+            "signal_detected": "True",
+            "signal_strength": 1.0,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 30.629669156883736,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-07-24 23:34:19.352000",
+            "actual_entry_price": 3.13868961,
+            "signal_detected": "False",
+            "signal_strength": 0.6666666666666666,
+            "recommendation": "WAIT",
+            "rsi_value": 25.54455445544592,
+            "conditions": {
+              "rsi_in_range": "False",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "False",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-07-25 03:06:18.010000",
+            "actual_entry_price": 3.06409781,
+            "signal_detected": "True",
+            "signal_strength": 0.8333333333333334,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 30.383275261323888,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "False",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-07-28 13:22:06.761000",
+            "actual_entry_price": 3.1912,
+            "signal_detected": "False",
+            "signal_strength": 0.5,
+            "recommendation": "WAIT",
+            "rsi_value": 45.64164648910427,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "False",
+              "near_support": "True",
+              "recent_decline": "False",
+              "volume_adequate": "False"
+            }
+          },
+          {
+            "actual_entry_time": "2025-07-29 16:34:05.092000",
+            "actual_entry_price": 3.05995553,
+            "signal_detected": "False",
+            "signal_strength": 0.6666666666666666,
+            "recommendation": "WAIT",
+            "rsi_value": 45.64164648910427,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "False",
+              "volume_adequate": "False"
+            }
+          },
+          {
+            "actual_entry_time": "2025-07-30 11:49:47.091000",
+            "actual_entry_price": 3.048,
+            "signal_detected": "False",
+            "signal_strength": 0.6666666666666666,
+            "recommendation": "WAIT",
+            "rsi_value": 45.64164648910427,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "False",
+              "volume_adequate": "False"
+            }
+          },
+          {
+            "actual_entry_time": "2025-07-30 19:00:08.505000",
+            "actual_entry_price": 3.04732561,
+            "signal_detected": "False",
+            "signal_strength": 0.6666666666666666,
+            "recommendation": "WAIT",
+            "rsi_value": 45.64164648910427,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "False",
+              "volume_adequate": "False"
+            }
+          },
+          {
+            "actual_entry_time": "2025-07-31 15:11:08.996000",
+            "actual_entry_price": 3.07597921,
+            "signal_detected": "False",
+            "signal_strength": 0.6666666666666666,
+            "recommendation": "WAIT",
+            "rsi_value": 45.64164648910427,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "False",
+              "volume_adequate": "False"
+            }
+          },
+          {
+            "actual_entry_time": "2025-07-31 22:09:22.360000",
+            "actual_entry_price": 3.0255,
+            "signal_detected": "False",
+            "signal_strength": 0.6666666666666666,
+            "recommendation": "WAIT",
+            "rsi_value": 45.64164648910427,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "False",
+              "volume_adequate": "False"
+            }
+          },
+          {
+            "actual_entry_time": "2025-08-01 08:04:10.755000",
+            "actual_entry_price": 2.9312,
+            "signal_detected": "False",
+            "signal_strength": 0.6666666666666666,
+            "recommendation": "WAIT",
+            "rsi_value": 45.64164648910427,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "False",
+              "volume_adequate": "False"
+            }
+          },
+          {
+            "actual_entry_time": "2025-08-01 22:28:07.946000",
+            "actual_entry_price": 2.92755162,
+            "signal_detected": "False",
+            "signal_strength": 0.6666666666666666,
+            "recommendation": "WAIT",
+            "rsi_value": 45.64164648910427,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "False",
+              "volume_adequate": "False"
+            }
+          },
+          {
+            "actual_entry_time": "2025-08-02 14:20:26.612000",
+            "actual_entry_price": 2.91031868,
+            "signal_detected": "False",
+            "signal_strength": 0.6666666666666666,
+            "recommendation": "WAIT",
+            "rsi_value": 45.64164648910427,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "False",
+              "volume_adequate": "False"
+            }
+          },
+          {
+            "actual_entry_time": "2025-08-02 15:31:15.189000",
+            "actual_entry_price": 2.8648,
+            "signal_detected": "False",
+            "signal_strength": 0.6666666666666666,
+            "recommendation": "WAIT",
+            "rsi_value": 45.64164648910427,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "False",
+              "volume_adequate": "False"
+            }
+          },
+          {
+            "actual_entry_time": "2025-08-02 16:32:47.112000",
+            "actual_entry_price": 2.81958393,
+            "signal_detected": "False",
+            "signal_strength": 0.6666666666666666,
+            "recommendation": "WAIT",
+            "rsi_value": 45.64164648910427,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "False",
+              "volume_adequate": "False"
+            }
+          },
+          {
+            "actual_entry_time": "2025-08-03 00:38:04.808000",
+            "actual_entry_price": 2.7289,
+            "signal_detected": "False",
+            "signal_strength": 0.6666666666666666,
+            "recommendation": "WAIT",
+            "rsi_value": 45.64164648910427,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "False",
+              "volume_adequate": "False"
+            }
+          },
+          {
+            "actual_entry_time": "2025-08-05 14:31:36.698000",
+            "actual_entry_price": 2.97140614,
+            "signal_detected": "False",
+            "signal_strength": 0.6666666666666666,
+            "recommendation": "WAIT",
+            "rsi_value": 45.64164648910427,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "False",
+              "volume_adequate": "False"
+            }
+          },
+          {
+            "actual_entry_time": "2025-08-08 15:07:44.288000",
+            "actual_entry_price": 3.24100531,
+            "signal_detected": "False",
+            "signal_strength": 0.5,
+            "recommendation": "WAIT",
+            "rsi_value": 45.64164648910427,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "False",
+              "near_support": "True",
+              "recent_decline": "False",
+              "volume_adequate": "False"
+            }
+          },
+          {
+            "actual_entry_time": "2025-08-10 08:04:11.898000",
+            "actual_entry_price": 3.15965089,
+            "signal_detected": "False",
+            "signal_strength": 0.6666666666666666,
+            "recommendation": "WAIT",
+            "rsi_value": 45.64164648910427,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "False",
+              "volume_adequate": "False"
+            }
+          },
+          {
+            "actual_entry_time": "2025-08-11 12:32:04.190000",
+            "actual_entry_price": 3.2006,
+            "signal_detected": "False",
+            "signal_strength": 0.5,
+            "recommendation": "WAIT",
+            "rsi_value": 45.64164648910427,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "False",
+              "near_support": "True",
+              "recent_decline": "False",
+              "volume_adequate": "False"
+            }
+          }
+        ]
+      },
+      "DOGE/USDT:USDT": {
+        "total_entries": 21,
+        "validated_entries": 21,
+        "signals_detected": 19,
+        "accuracy_rate": 0.9047619047619048,
+        "avg_signal_strength": 0.9523809523809523,
+        "details": [
+          {
+            "actual_entry_time": "2025-07-24 05:27:30.043000",
+            "actual_entry_price": 0.23350037,
+            "signal_detected": "True",
+            "signal_strength": 0.8333333333333334,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 19.405450041288148,
+            "conditions": {
+              "rsi_in_range": "False",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-07-25 00:07:29.735000",
+            "actual_entry_price": 0.23015,
+            "signal_detected": "True",
+            "signal_strength": 0.8333333333333334,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 25.264169068203657,
+            "conditions": {
+              "rsi_in_range": "False",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-07-25 01:24:19.598000",
+            "actual_entry_price": 0.22657162,
+            "signal_detected": "False",
+            "signal_strength": 0.6666666666666666,
+            "recommendation": "WAIT",
+            "rsi_value": 45.55160142348755,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "False",
+              "near_support": "True",
+              "recent_decline": "False",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-07-25 01:24:21.690000",
+            "actual_entry_price": 0.22645382,
+            "signal_detected": "False",
+            "signal_strength": 0.6666666666666666,
+            "recommendation": "WAIT",
+            "rsi_value": 45.55160142348755,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "False",
+              "near_support": "True",
+              "recent_decline": "False",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-07-25 15:41:09.612000",
+            "actual_entry_price": 0.22112067,
+            "signal_detected": "True",
+            "signal_strength": 1.0,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 35.11904761904766,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-07-28 14:25:51.681000",
+            "actual_entry_price": 0.23294077,
+            "signal_detected": "True",
+            "signal_strength": 1.0,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 36.28899835796379,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-07-29 15:32:35.384000",
+            "actual_entry_price": 0.2210104,
+            "signal_detected": "True",
+            "signal_strength": 1.0,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 36.28899835796379,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-07-30 19:04:24.433000",
+            "actual_entry_price": 0.21346696,
+            "signal_detected": "True",
+            "signal_strength": 1.0,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 36.28899835796379,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-07-30 19:06:09.132000",
+            "actual_entry_price": 0.21016874,
+            "signal_detected": "True",
+            "signal_strength": 1.0,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 36.28899835796379,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-07-31 14:22:42.729000",
+            "actual_entry_price": 0.21556849,
+            "signal_detected": "True",
+            "signal_strength": 1.0,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 36.28899835796379,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-07-31 22:06:43.035000",
+            "actual_entry_price": 0.21089568,
+            "signal_detected": "True",
+            "signal_strength": 1.0,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 36.28899835796379,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-08-01 08:06:06.471000",
+            "actual_entry_price": 0.20199088,
+            "signal_detected": "True",
+            "signal_strength": 1.0,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 36.28899835796379,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-08-01 22:27:35.854000",
+            "actual_entry_price": 0.19926491,
+            "signal_detected": "True",
+            "signal_strength": 1.0,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 36.28899835796379,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-08-01 22:31:12.421000",
+            "actual_entry_price": 0.19658752,
+            "signal_detected": "True",
+            "signal_strength": 1.0,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 36.28899835796379,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-08-02 06:42:52.161000",
+            "actual_entry_price": 0.19510246,
+            "signal_detected": "True",
+            "signal_strength": 1.0,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 36.28899835796379,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-08-05 14:42:35.588000",
+            "actual_entry_price": 0.19844158,
+            "signal_detected": "True",
+            "signal_strength": 1.0,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 36.28899835796379,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-08-10 07:38:10.501000",
+            "actual_entry_price": 0.23324581,
+            "signal_detected": "True",
+            "signal_strength": 1.0,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 36.28899835796379,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-08-10 08:07:59.017000",
+            "actual_entry_price": 0.229732,
+            "signal_detected": "True",
+            "signal_strength": 1.0,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 36.28899835796379,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-08-11 11:28:02.047000",
+            "actual_entry_price": 0.229563,
+            "signal_detected": "True",
+            "signal_strength": 1.0,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 36.28899835796379,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-08-11 13:04:50.708000",
+            "actual_entry_price": 0.22592747,
+            "signal_detected": "True",
+            "signal_strength": 1.0,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 36.28899835796379,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          },
+          {
+            "actual_entry_time": "2025-08-11 22:21:00.218000",
+            "actual_entry_price": 0.22199183,
+            "signal_detected": "True",
+            "signal_strength": 1.0,
+            "recommendation": "STRONG_BUY",
+            "rsi_value": 36.28899835796379,
+            "conditions": {
+              "rsi_in_range": "True",
+              "below_ma20": "True",
+              "dip_buy_opportunity": "True",
+              "near_support": "True",
+              "recent_decline": "True",
+              "volume_adequate": "True"
+            }
+          }
+        ]
+      }
+    },
+    "exit_timing": {
+      "XRP/USDT:USDT": {
+        "total_positions": 17,
+        "validated_exits": 17,
+        "exits_detected": 15,
+        "timing_accuracy": 0.8823529411764706,
+        "boundary_exit_rate": 1.0,
+        "details": [
+          {
+            "position_start": "2025-07-24 05:06:05.884000",
+            "position_end": "2025-07-24 06:30:02.518000",
+            "holding_minutes": 83.9439,
+            "actual_pnl": 11.00286771500032,
+            "exit_signal_detected": true,
+            "signal_type": "ACCEPTABLE",
+            "time_slot": 2,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": false,
+              "is_profitable": "False",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "SELL"
+          },
+          {
+            "position_start": "2025-07-24 23:34:19.352000",
+            "position_end": "2025-07-25 01:45:04.446000",
+            "holding_minutes": 130.75156666666666,
+            "actual_pnl": -9.01588254599983,
+            "exit_signal_detected": true,
+            "signal_type": "FORCE",
+            "time_slot": 3,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": true,
+              "is_profitable": "False",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "SELL"
+          },
+          {
+            "position_start": "2025-07-25 03:06:18.010000",
+            "position_end": "2025-07-25 04:45:02.807000",
+            "holding_minutes": 98.74661666666665,
+            "actual_pnl": 21.075228792000416,
+            "exit_signal_detected": "True",
+            "signal_type": "IDEAL",
+            "time_slot": 3,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": true,
+              "is_profitable": "True",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "SELL"
+          },
+          {
+            "position_start": "2025-07-28 13:22:06.761000",
+            "position_end": "2025-07-28 15:30:00.975000",
+            "holding_minutes": 127.90356666666666,
+            "actual_pnl": -13.568389999999908,
+            "exit_signal_detected": true,
+            "signal_type": "FORCE",
+            "time_slot": 2,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": false,
+              "is_profitable": "False",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "SELL"
+          },
+          {
+            "position_start": "2025-07-29 16:34:05.092000",
+            "position_end": "2025-07-29 17:00:03.738000",
+            "holding_minutes": 25.977433333333334,
+            "actual_pnl": 37.128131990000384,
+            "exit_signal_detected": "True",
+            "signal_type": "ACCEPTABLE",
+            "time_slot": 0,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": false,
+              "is_profitable": "True",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "SELL"
+          },
+          {
+            "position_start": "2025-07-30 11:49:47.091000",
+            "position_end": "2025-07-30 12:30:03.052000",
+            "holding_minutes": 40.266016666666665,
+            "actual_pnl": 20.92275000000018,
+            "exit_signal_detected": "False",
+            "signal_type": "WAIT",
+            "time_slot": 2,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": false,
+              "is_profitable": "True",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "HOLD"
+          },
+          {
+            "position_start": "2025-07-30 19:00:08.505000",
+            "position_end": "2025-07-30 20:00:02.373000",
+            "holding_minutes": 59.8978,
+            "actual_pnl": 40.26553699499982,
+            "exit_signal_detected": "True",
+            "signal_type": "ACCEPTABLE",
+            "time_slot": 0,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": false,
+              "is_profitable": "True",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "SELL"
+          },
+          {
+            "position_start": "2025-07-31 15:11:08.996000",
+            "position_end": "2025-07-31 15:45:02.436000",
+            "holding_minutes": 33.89066666666667,
+            "actual_pnl": 16.35820227000022,
+            "exit_signal_detected": "True",
+            "signal_type": "IDEAL",
+            "time_slot": 3,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": true,
+              "is_profitable": "True",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "SELL"
+          },
+          {
+            "position_start": "2025-07-31 22:09:22.360000",
+            "position_end": "2025-07-31 23:15:04.519000",
+            "holding_minutes": 65.70265,
+            "actual_pnl": 10.496549999999843,
+            "exit_signal_detected": "True",
+            "signal_type": "IDEAL",
+            "time_slot": 1,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": true,
+              "is_profitable": "True",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "SELL"
+          },
+          {
+            "position_start": "2025-08-01 08:04:10.755000",
+            "position_end": "2025-08-01 09:30:01.752000",
+            "holding_minutes": 85.84995,
+            "actual_pnl": 2.8148999999998523,
+            "exit_signal_detected": true,
+            "signal_type": "ACCEPTABLE",
+            "time_slot": 2,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": false,
+              "is_profitable": "True",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "SELL"
+          },
+          {
+            "position_start": "2025-08-01 22:28:07.946000",
+            "position_end": "2025-08-01 23:30:03.429000",
+            "holding_minutes": 61.92471666666667,
+            "actual_pnl": 24.30060619599999,
+            "exit_signal_detected": true,
+            "signal_type": "ACCEPTABLE",
+            "time_slot": 2,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": false,
+              "is_profitable": "True",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "SELL"
+          },
+          {
+            "position_start": "2025-08-02 14:20:26.612000",
+            "position_end": "2025-08-02 17:15:03.249000",
+            "holding_minutes": 174.6106166666667,
+            "actual_pnl": -18.933924844999638,
+            "exit_signal_detected": true,
+            "signal_type": "FORCE",
+            "time_slot": 1,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": true,
+              "is_profitable": "False",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "SELL"
+          },
+          {
+            "position_start": "2025-08-03 00:38:04.808000",
+            "position_end": "2025-08-03 00:45:05.162000",
+            "holding_minutes": 7.0059,
+            "actual_pnl": 16.083210000000008,
+            "exit_signal_detected": false,
+            "signal_type": "WAIT",
+            "time_slot": 3,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": false,
+              "is_preferred_slot": true,
+              "is_profitable": "True",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "HOLD"
+          },
+          {
+            "position_start": "2025-08-05 14:31:36.698000",
+            "position_end": "2025-08-05 16:30:02.330000",
+            "holding_minutes": 118.4272,
+            "actual_pnl": 4.669405674000018,
+            "exit_signal_detected": true,
+            "signal_type": "ACCEPTABLE",
+            "time_slot": 2,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": false,
+              "is_profitable": "True",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "SELL"
+          },
+          {
+            "position_start": "2025-08-08 15:07:44.288000",
+            "position_end": "2025-08-08 17:00:03.232000",
+            "holding_minutes": 112.31573333333334,
+            "actual_pnl": 1.6568914020001557,
+            "exit_signal_detected": true,
+            "signal_type": "ACCEPTABLE",
+            "time_slot": 0,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": false,
+              "is_profitable": "True",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "SELL"
+          },
+          {
+            "position_start": "2025-08-10 08:04:11.898000",
+            "position_end": "2025-08-10 09:00:04.025000",
+            "holding_minutes": 55.86878333333333,
+            "actual_pnl": 19.185847559999957,
+            "exit_signal_detected": "True",
+            "signal_type": "ACCEPTABLE",
+            "time_slot": 0,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": false,
+              "is_profitable": "True",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "SELL"
+          },
+          {
+            "position_start": "2025-08-11 12:32:04.190000",
+            "position_end": "2025-08-11 13:45:03.235000",
+            "holding_minutes": 72.98408333333333,
+            "actual_pnl": 27.210119999999733,
+            "exit_signal_detected": "True",
+            "signal_type": "IDEAL",
+            "time_slot": 3,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": true,
+              "is_profitable": "True",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "SELL"
+          }
+        ]
+      },
+      "ICP/USDT:USDT": {
+        "total_positions": 16,
+        "validated_exits": 16,
+        "exits_detected": 13,
+        "timing_accuracy": 0.8125,
+        "boundary_exit_rate": 1.0,
+        "details": [
+          {
+            "position_start": "2025-07-24 05:49:14.983000",
+            "position_end": "2025-07-24 06:30:04.505000",
+            "holding_minutes": 40.82536666666667,
+            "actual_pnl": 7.287050160000035,
+            "exit_signal_detected": "False",
+            "signal_type": "WAIT",
+            "time_slot": 2,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": false,
+              "is_profitable": "True",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "HOLD"
+          },
+          {
+            "position_start": "2025-07-25 00:35:34.957000",
+            "position_end": "2025-07-25 01:45:04.446000",
+            "holding_minutes": 69.49148333333332,
+            "actual_pnl": 18.472067940000215,
+            "exit_signal_detected": "True",
+            "signal_type": "IDEAL",
+            "time_slot": 3,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": true,
+              "is_profitable": "True",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "SELL"
+          },
+          {
+            "position_start": "2025-07-25 03:33:08.445000",
+            "position_end": "2025-07-25 04:45:04.815000",
+            "holding_minutes": 71.9395,
+            "actual_pnl": 24.797873169999548,
+            "exit_signal_detected": "True",
+            "signal_type": "IDEAL",
+            "time_slot": 3,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": true,
+              "is_profitable": "True",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "SELL"
+          },
+          {
+            "position_start": "2025-07-25 15:39:42.447000",
+            "position_end": "2025-07-25 16:15:04.421000",
+            "holding_minutes": 35.366233333333334,
+            "actual_pnl": 28.89200000000028,
+            "exit_signal_detected": "True",
+            "signal_type": "IDEAL",
+            "time_slot": 1,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": true,
+              "is_profitable": "True",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "SELL"
+          },
+          {
+            "position_start": "2025-07-28 13:32:10.007000",
+            "position_end": "2025-07-28 15:30:05.462000",
+            "holding_minutes": 117.92425,
+            "actual_pnl": -13.19272600000022,
+            "exit_signal_detected": true,
+            "signal_type": "ACCEPTABLE",
+            "time_slot": 2,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": false,
+              "is_profitable": "False",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "SELL"
+          },
+          {
+            "position_start": "2025-07-29 14:52:50.573000",
+            "position_end": "2025-07-29 17:00:07.534000",
+            "holding_minutes": 127.28268333333334,
+            "actual_pnl": -5.519582419999551,
+            "exit_signal_detected": true,
+            "signal_type": "FORCE",
+            "time_slot": 0,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": false,
+              "is_profitable": "False",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "SELL"
+          },
+          {
+            "position_start": "2025-07-30 11:26:21.202000",
+            "position_end": "2025-07-30 12:30:05.755000",
+            "holding_minutes": 63.74255,
+            "actual_pnl": 14.380619269999897,
+            "exit_signal_detected": true,
+            "signal_type": "ACCEPTABLE",
+            "time_slot": 2,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": false,
+              "is_profitable": "True",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "SELL"
+          },
+          {
+            "position_start": "2025-07-30 19:05:59.338000",
+            "position_end": "2025-07-30 19:45:06.078000",
+            "holding_minutes": 39.11233333333333,
+            "actual_pnl": 66.79043253999998,
+            "exit_signal_detected": "True",
+            "signal_type": "IDEAL",
+            "time_slot": 3,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": true,
+              "is_profitable": "True",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "SELL"
+          },
+          {
+            "position_start": "2025-07-31 13:15:55.985000",
+            "position_end": "2025-07-31 15:00:02.738000",
+            "holding_minutes": 104.11255,
+            "actual_pnl": -8.687422679999145,
+            "exit_signal_detected": true,
+            "signal_type": "ACCEPTABLE",
+            "time_slot": 0,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": false,
+              "is_profitable": "False",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "SELL"
+          },
+          {
+            "position_start": "2025-08-01 00:11:26.117000",
+            "position_end": "2025-08-01 01:00:05.272000",
+            "holding_minutes": 48.65258333333334,
+            "actual_pnl": 48.12046271999952,
+            "exit_signal_detected": "False",
+            "signal_type": "WAIT",
+            "time_slot": 0,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": false,
+              "is_profitable": "True",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "HOLD"
+          },
+          {
+            "position_start": "2025-08-01 06:43:20.467000",
+            "position_end": "2025-08-01 07:00:07.054000",
+            "holding_minutes": 16.77645,
+            "actual_pnl": 22.574125349999576,
+            "exit_signal_detected": "False",
+            "signal_type": "WAIT",
+            "time_slot": 0,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": false,
+              "is_profitable": "True",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "HOLD"
+          },
+          {
+            "position_start": "2025-08-01 22:27:37.987000",
+            "position_end": "2025-08-01 23:15:06.532000",
+            "holding_minutes": 47.47575,
+            "actual_pnl": 28.841999999999643,
+            "exit_signal_detected": "True",
+            "signal_type": "IDEAL",
+            "time_slot": 1,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": true,
+              "is_profitable": "True",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "SELL"
+          },
+          {
+            "position_start": "2025-08-05 14:21:56.732000",
+            "position_end": "2025-08-05 16:30:04.711000",
+            "holding_minutes": 128.13298333333333,
+            "actual_pnl": -5.736773000000085,
+            "exit_signal_detected": true,
+            "signal_type": "FORCE",
+            "time_slot": 2,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": false,
+              "is_profitable": "False",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "SELL"
+          },
+          {
+            "position_start": "2025-08-10 08:00:42.115000",
+            "position_end": "2025-08-10 08:45:06.576000",
+            "holding_minutes": 44.40768333333333,
+            "actual_pnl": 9.450000000000045,
+            "exit_signal_detected": "True",
+            "signal_type": "IDEAL",
+            "time_slot": 3,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": true,
+              "is_profitable": "True",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "SELL"
+          },
+          {
+            "position_start": "2025-08-11 11:53:04.937000",
+            "position_end": "2025-08-11 13:45:05.166000",
+            "holding_minutes": 112.00381666666667,
+            "actual_pnl": 27.393551359999947,
+            "exit_signal_detected": "True",
+            "signal_type": "IDEAL",
+            "time_slot": 3,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": true,
+              "is_profitable": "True",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "SELL"
+          },
+          {
+            "position_start": "2025-08-11 21:31:28.676000",
+            "position_end": "2025-08-11 23:15:01.694000",
+            "holding_minutes": 103.55030000000001,
+            "actual_pnl": -10.443393529999412,
+            "exit_signal_detected": true,
+            "signal_type": "IDEAL",
+            "time_slot": 1,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": true,
+              "is_profitable": "False",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "SELL"
+          }
+        ]
+      },
+      "DOGE/USDT:USDT": {
+        "total_positions": 15,
+        "validated_exits": 15,
+        "exits_detected": 12,
+        "timing_accuracy": 0.8,
+        "boundary_exit_rate": 1.0,
+        "details": [
+          {
+            "position_start": "2025-07-24 05:27:30.043000",
+            "position_end": "2025-07-24 05:45:02.533000",
+            "holding_minutes": 17.5415,
+            "actual_pnl": 26.36231434000001,
+            "exit_signal_detected": "True",
+            "signal_type": "IDEAL",
+            "time_slot": 3,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": true,
+              "is_profitable": "True",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "SELL"
+          },
+          {
+            "position_start": "2025-07-25 00:07:29.735000",
+            "position_end": "2025-07-25 01:30:04.685000",
+            "holding_minutes": 82.5825,
+            "actual_pnl": -9.479021140000441,
+            "exit_signal_detected": true,
+            "signal_type": "ACCEPTABLE",
+            "time_slot": 2,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": false,
+              "is_profitable": "True",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "SELL"
+          },
+          {
+            "position_start": "2025-07-25 15:41:09.612000",
+            "position_end": "2025-07-25 16:00:07.582000",
+            "holding_minutes": 18.966166666666666,
+            "actual_pnl": 35.75729694000029,
+            "exit_signal_detected": "True",
+            "signal_type": "ACCEPTABLE",
+            "time_slot": 0,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": false,
+              "is_profitable": "True",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "SELL"
+          },
+          {
+            "position_start": "2025-07-28 14:25:51.681000",
+            "position_end": "2025-07-28 15:15:01.461000",
+            "holding_minutes": 49.163000000000004,
+            "actual_pnl": 5.791869430000133,
+            "exit_signal_detected": "True",
+            "signal_type": "IDEAL",
+            "time_slot": 1,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": true,
+              "is_profitable": "True",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "SELL"
+          },
+          {
+            "position_start": "2025-07-29 15:32:35.384000",
+            "position_end": "2025-07-29 16:00:07.261000",
+            "holding_minutes": 27.53128333333333,
+            "actual_pnl": 17.440588800000114,
+            "exit_signal_detected": "False",
+            "signal_type": "WAIT",
+            "time_slot": 0,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": false,
+              "is_profitable": "True",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "HOLD"
+          },
+          {
+            "position_start": "2025-07-30 19:04:24.433000",
+            "position_end": "2025-07-30 19:45:02.601000",
+            "holding_minutes": 40.63613333333333,
+            "actual_pnl": 98.18823200000043,
+            "exit_signal_detected": "True",
+            "signal_type": "IDEAL",
+            "time_slot": 3,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": true,
+              "is_profitable": "True",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "SELL"
+          },
+          {
+            "position_start": "2025-07-31 14:22:42.729000",
+            "position_end": "2025-07-31 15:15:03.326000",
+            "holding_minutes": 52.34328333333334,
+            "actual_pnl": 0.9457605300003706,
+            "exit_signal_detected": "True",
+            "signal_type": "IDEAL",
+            "time_slot": 1,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": true,
+              "is_profitable": "True",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "SELL"
+          },
+          {
+            "position_start": "2025-07-31 22:06:43.035000",
+            "position_end": "2025-07-31 23:15:02.145000",
+            "holding_minutes": 68.3185,
+            "actual_pnl": 9.307525440000063,
+            "exit_signal_detected": "True",
+            "signal_type": "IDEAL",
+            "time_slot": 1,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": true,
+              "is_profitable": "True",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "SELL"
+          },
+          {
+            "position_start": "2025-08-01 08:06:06.471000",
+            "position_end": "2025-08-01 08:45:03.940000",
+            "holding_minutes": 38.957816666666666,
+            "actual_pnl": 30.230453279999892,
+            "exit_signal_detected": "True",
+            "signal_type": "IDEAL",
+            "time_slot": 3,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": true,
+              "is_profitable": "True",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "SELL"
+          },
+          {
+            "position_start": "2025-08-01 22:27:35.854000",
+            "position_end": "2025-08-01 23:15:04.551000",
+            "holding_minutes": 47.47828333333334,
+            "actual_pnl": 49.79289627000071,
+            "exit_signal_detected": "True",
+            "signal_type": "IDEAL",
+            "time_slot": 1,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": true,
+              "is_profitable": "True",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "SELL"
+          },
+          {
+            "position_start": "2025-08-02 06:42:52.161000",
+            "position_end": "2025-08-02 07:30:03.185000",
+            "holding_minutes": 47.18373333333333,
+            "actual_pnl": 37.533990339999946,
+            "exit_signal_detected": "True",
+            "signal_type": "ACCEPTABLE",
+            "time_slot": 2,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": false,
+              "is_profitable": "True",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "SELL"
+          },
+          {
+            "position_start": "2025-08-05 14:42:35.588000",
+            "position_end": "2025-08-05 15:15:03.970000",
+            "holding_minutes": 32.47303333333333,
+            "actual_pnl": 6.862488100000064,
+            "exit_signal_detected": "True",
+            "signal_type": "IDEAL",
+            "time_slot": 1,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": true,
+              "is_profitable": "True",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "SELL"
+          },
+          {
+            "position_start": "2025-08-10 07:38:10.501000",
+            "position_end": "2025-08-10 08:30:04.588000",
+            "holding_minutes": 51.90145,
+            "actual_pnl": 14.43390135000027,
+            "exit_signal_detected": "False",
+            "signal_type": "WAIT",
+            "time_slot": 2,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": false,
+              "is_profitable": "True",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "HOLD"
+          },
+          {
+            "position_start": "2025-08-11 11:28:02.047000",
+            "position_end": "2025-08-11 13:45:03.235000",
+            "holding_minutes": 137.0198,
+            "actual_pnl": 64.5505947900001,
+            "exit_signal_detected": true,
+            "signal_type": "FORCE",
+            "time_slot": 3,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": true,
+              "is_profitable": "True",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "SELL"
+          },
+          {
+            "position_start": "2025-08-11 22:21:00.218000",
+            "position_end": "2025-08-11 23:00:01.688000",
+            "holding_minutes": 39.024499999999996,
+            "actual_pnl": 19.110118269999475,
+            "exit_signal_detected": "False",
+            "signal_type": "WAIT",
+            "time_slot": 0,
+            "conditions": {
+              "is_15m_boundary": true,
+              "min_time_met": true,
+              "is_preferred_slot": false,
+              "is_profitable": "True",
+              "rsi_in_range": "False"
+            },
+            "recommendation": "HOLD"
+          }
+        ]
+      }
+    }
+  },
+  "performance_comparison": {
+    "actual_performance": {
+      "total_positions": 84,
+      "win_rate": 86.90476190476191,
+      "total_pnl": 2401.4539774149043,
+      "avg_pnl_per_trade": 28.588737826367908,
+      "avg_duration": 72.6546982142857
+    },
+    "strategy_validation": {
+      "entry_detection_rate": 0.7014925373134329,
+      "avg_entry_accuracy": 0.6850793650793651,
+      "exit_detection_rate": 0.8333333333333334,
+      "avg_timing_accuracy": 0.8316176470588236
+    },
+    "accuracy_metrics": {}
+  },
+  "strategy_confidence": {
+    "entry_signal_confidence": 0.6850793650793651,
+    "exit_timing_confidence": 0.8316176470588236,
+    "overall_confidence": 0.7583485060690943,
+    "confidence_level": "MEDIUM"
+  }
+}

@@ -1,0 +1,347 @@
+{
+  "symbol": "ICPUSDT",
+  "analysis_date": "2025-08-13T20:13:27.432103",
+  "sample_analysis": {
+    "original_config": {
+      "train_win_rate": 51.58020750199521,
+      "test_win_rate": 48.814635056934854,
+      "performance_diff": 2.765572445060357
+    },
+    "optimized_config": {
+      "train_win_rate": 50.47250859106529,
+      "test_win_rate": 49.87126673532441,
+      "performance_diff": 0.6012418557408807
+    }
+  },
+  "sensitivity_analysis": {
+    "rsi_sensitivity": [
+      {
+        "rsi_range": [
+          35,
+          55
+        ],
+        "win_rate": 49.669298058459574,
+        "total_return": -4.873569183394848,
+        "total_trades": 4687
+      },
+      {
+        "rsi_range": [
+          38,
+          58
+        ],
+        "win_rate": 48.56672932330827,
+        "total_return": -3.402752986507403,
+        "total_trades": 4256
+      },
+      {
+        "rsi_range": [
+          40,
+          60
+        ],
+        "win_rate": 49.151657530670846,
+        "total_return": -3.69925633451292,
+        "total_trades": 3831
+      },
+      {
+        "rsi_range": [
+          42,
+          62
+        ],
+        "win_rate": 48.7097709481009,
+        "total_return": -6.01360446407205,
+        "total_trades": 3449
+      },
+      {
+        "rsi_range": [
+          45,
+          65
+        ],
+        "win_rate": 48.063698878031126,
+        "total_return": -4.984372365507298,
+        "total_trades": 2763
+      }
+    ],
+    "ma_sensitivity": [
+      {
+        "ma_period": 25,
+        "win_rate": 48.26216484607746,
+        "total_return": -6.871897149887118,
+        "total_trades": 4028
+      },
+      {
+        "ma_period": 28,
+        "win_rate": 48.88324873096447,
+        "total_return": -6.450865341034405,
+        "total_trades": 3940
+      },
+      {
+        "ma_period": 30,
+        "win_rate": 49.53846153846154,
+        "total_return": -3.9776814862223184,
+        "total_trades": 3900
+      },
+      {
+        "ma_period": 32,
+        "win_rate": 49.08568443051202,
+        "total_return": -5.857784896854173,
+        "total_trades": 3828
+      },
+      {
+        "ma_period": 35,
+        "win_rate": 48.57670005271481,
+        "total_return": -2.9537754554841555,
+        "total_trades": 3794
+      }
+    ],
+    "profit_sensitivity": [
+      {
+        "profit_target": 0.008,
+        "win_rate": 48.85456885456885,
+        "total_return": -5.619854000562227,
+        "total_trades": 3885
+      },
+      {
+        "profit_target": 0.01,
+        "win_rate": 49.66683751922091,
+        "total_return": -4.96160104496721,
+        "total_trades": 3902
+      },
+      {
+        "profit_target": 0.012,
+        "win_rate": 49.11596463858554,
+        "total_return": -5.192856824709251,
+        "total_trades": 3846
+      },
+      {
+        "profit_target": 0.014,
+        "win_rate": 48.94979508196721,
+        "total_return": -4.99826251293156,
+        "total_trades": 3904
+      },
+      {
+        "profit_target": 0.016,
+        "win_rate": 49.52282692803715,
+        "total_return": -5.236252445317204,
+        "total_trades": 3877
+      }
+    ]
+  },
+  "forward_validation": {
+    "validation_results": [
+      {
+        "train_period": "2023-08 to 2024-01",
+        "test_period": "2024-02",
+        "train_win_rate": 50.19329896907217,
+        "test_win_rate": 52.85996055226825,
+        "train_return": 6.904446961704289,
+        "test_return": -0.24099572660103147,
+        "performance_degradation": -2.666661583196081,
+        "train_trades": 3104,
+        "test_trades": 507
+      },
+      {
+        "train_period": "2023-09 to 2024-02",
+        "test_period": "2024-03",
+        "train_win_rate": 50.78407720144753,
+        "test_win_rate": 53.61010830324909,
+        "train_return": 9.467063631235996,
+        "test_return": 5.599863063190077,
+        "performance_degradation": -2.8260311018015614,
+        "train_trades": 3316,
+        "test_trades": 554
+      },
+      {
+        "train_period": "2023-10 to 2024-03",
+        "test_period": "2024-04",
+        "train_win_rate": 51.292067307692314,
+        "test_win_rate": 48.446069469835464,
+        "train_return": 11.126647234347892,
+        "test_return": -1.893517071181177,
+        "performance_degradation": 2.8459978378568493,
+        "train_trades": 3328,
+        "test_trades": 547
+      },
+      {
+        "train_period": "2023-11 to 2024-04",
+        "test_period": "2024-05",
+        "train_win_rate": 51.027811366384526,
+        "test_win_rate": 49.25124792013311,
+        "train_return": 8.99936915298762,
+        "test_return": -1.2862002350076363,
+        "performance_degradation": 1.7765634462514157,
+        "train_trades": 3308,
+        "test_trades": 601
+      },
+      {
+        "train_period": "2023-12 to 2024-05",
+        "test_period": "2024-06",
+        "train_win_rate": 51.249632461040875,
+        "test_win_rate": 44.061962134251296,
+        "train_return": 8.21068105265831,
+        "test_return": -2.3306437233949144,
+        "performance_degradation": 7.187670326789579,
+        "train_trades": 3401,
+        "test_trades": 581
+      },
+      {
+        "train_period": "2024-01 to 2024-06",
+        "test_period": "2024-07",
+        "train_win_rate": 50.388936905790835,
+        "test_win_rate": 49.57410562180579,
+        "train_return": 2.16704145522066,
+        "test_return": -0.48351692779164296,
+        "performance_degradation": 0.8148312839850433,
+        "train_trades": 3471,
+        "test_trades": 587
+      },
+      {
+        "train_period": "2024-02 to 2024-07",
+        "test_period": "2024-08",
+        "train_win_rate": 49.74904044877473,
+        "test_win_rate": 50.355871886120994,
+        "train_return": -0.2231352092870293,
+        "test_return": -0.3941259295735836,
+        "performance_degradation": -0.6068314373462655,
+        "train_trades": 3387,
+        "test_trades": 562
+      },
+      {
+        "train_period": "2024-03 to 2024-08",
+        "test_period": "2024-09",
+        "train_win_rate": 50.08710801393729,
+        "test_win_rate": 51.20147874306839,
+        "train_return": 4.514503399130572,
+        "test_return": 1.1689543854074327,
+        "performance_degradation": -1.1143707291311031,
+        "train_trades": 3444,
+        "test_trades": 541
+      },
+      {
+        "train_period": "2024-04 to 2024-09",
+        "test_period": "2024-10",
+        "train_win_rate": 49.59349593495935,
+        "test_win_rate": 52.10526315789473,
+        "train_return": -3.2541913430665224,
+        "test_return": 0.24388070413931925,
+        "performance_degradation": -2.511767222935383,
+        "train_trades": 3444,
+        "test_trades": 570
+      },
+      {
+        "train_period": "2024-05 to 2024-10",
+        "test_period": "2024-11",
+        "train_win_rate": 49.970794392523366,
+        "test_win_rate": 48.89336016096579,
+        "train_return": -3.4811683916327634,
+        "test_return": -0.03294454169417804,
+        "performance_degradation": 1.0774342315575751,
+        "train_trades": 3424,
+        "test_trades": 497
+      },
+      {
+        "train_period": "2024-06 to 2024-11",
+        "test_period": "2024-12",
+        "train_win_rate": 49.955130122644334,
+        "test_win_rate": 51.252408477842,
+        "train_return": -0.3190143697740859,
+        "test_return": -1.408718732147663,
+        "performance_degradation": -1.297278355197669,
+        "train_trades": 3343,
+        "test_trades": 519
+      },
+      {
+        "train_period": "2024-07 to 2024-12",
+        "test_period": "2025-01",
+        "train_win_rate": 50.45899632802937,
+        "test_win_rate": 48.59154929577465,
+        "train_return": -3.250376149427502,
+        "test_return": -1.6421185432142555,
+        "performance_degradation": 1.8674470322547236,
+        "train_trades": 3268,
+        "test_trades": 568
+      },
+      {
+        "train_period": "2024-08 to 2025-01",
+        "test_period": "2025-02",
+        "train_win_rate": 50.64695009242144,
+        "test_win_rate": 50.10141987829615,
+        "train_return": -4.021038921954442,
+        "test_return": -0.9838559946238821,
+        "performance_degradation": 0.5455302141252929,
+        "train_trades": 3246,
+        "test_trades": 493
+      },
+      {
+        "train_period": "2024-09 to 2025-02",
+        "test_period": "2025-03",
+        "train_win_rate": 50.331544047994946,
+        "test_win_rate": 48.877374784110536,
+        "train_return": -6.1658161034175825,
+        "test_return": 0.029491144504736437,
+        "performance_degradation": 1.4541692638844097,
+        "train_trades": 3167,
+        "test_trades": 579
+      },
+      {
+        "train_period": "2024-10 to 2025-03",
+        "test_period": "2025-04",
+        "train_win_rate": 49.195544554455445,
+        "test_win_rate": 47.950819672131146,
+        "train_return": -7.8561884509359885,
+        "test_return": -0.2812475789690689,
+        "performance_degradation": 1.2447248823242987,
+        "train_trades": 3232,
+        "test_trades": 488
+      },
+      {
+        "train_period": "2024-11 to 2025-04",
+        "test_period": "2025-05",
+        "train_win_rate": 48.704,
+        "test_win_rate": 49.908256880733944,
+        "train_return": -7.005771995241612,
+        "test_return": 0.2712896255789019,
+        "performance_degradation": -1.2042568807339435,
+        "train_trades": 3125,
+        "test_trades": 545
+      },
+      {
+        "train_period": "2024-12 to 2025-05",
+        "test_period": "2025-06",
+        "train_win_rate": 48.57945675928817,
+        "test_win_rate": 49.81132075471698,
+        "train_return": -6.962746587464153,
+        "test_return": 0.625686705211283,
+        "performance_degradation": -1.2318639954288102,
+        "train_trades": 3203,
+        "test_trades": 530
+      },
+      {
+        "train_period": "2025-01 to 2025-06",
+        "test_period": "2025-07",
+        "train_win_rate": 48.30165160486133,
+        "test_win_rate": 49.904761904761905,
+        "train_return": -6.988544347219686,
+        "test_return": -0.3176954036114512,
+        "performance_degradation": -1.6031102999005782,
+        "train_trades": 3209,
+        "test_trades": 525
+      }
+    ],
+    "avg_performance_degradation": 0.20845538407543293,
+    "max_performance_degradation": 7.187670326789579,
+    "degradation_std": 2.376356210385072
+  },
+  "statistical_test": {
+    "t_statistic": -1.0028106453545695,
+    "p_value": 0.3159784945151504,
+    "significant": "False"
+  },
+  "overfitting_assessment": {
+    "risk_factors": [
+      "参数改进缺乏统计显著性"
+    ],
+    "overfitting_score": 20,
+    "risk_level": "LOW",
+    "recommendation": "策略参数优化合理，过拟合风险较低。可以谨慎使用优化后的参数，但建议持续监控实际表现。"
+  }
+}

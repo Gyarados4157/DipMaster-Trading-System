@@ -1,0 +1,255 @@
+{
+  "total_files": 27,
+  "total_size_mb": 1.4325380325317383,
+  "files": [
+    {
+      "filename": "ALGOUSDT_15m.csv",
+      "size_mb": 0.05404090881347656,
+      "rows": 1000,
+      "start_time": "2025-07-24 04:00:00",
+      "end_time": "2025-08-03 13:45:00",
+      "symbol": "ALGOUSDT",
+      "timeframe": "15m"
+    },
+    {
+      "filename": "XRPUSDT_1m.csv",
+      "size_mb": 0.05374336242675781,
+      "rows": 1000,
+      "start_time": "2025-07-24 03:07:00",
+      "end_time": "2025-07-24 19:46:00",
+      "symbol": "XRPUSDT",
+      "timeframe": "1m"
+    },
+    {
+      "filename": "ADAUSDT_15m.csv",
+      "size_mb": 0.036080360412597656,
+      "rows": 661,
+      "start_time": "2025-07-24 04:45:00",
+      "end_time": "2025-07-31 01:45:00",
+      "symbol": "ADAUSDT",
+      "timeframe": "15m"
+    },
+    {
+      "filename": "DOGEUSDT_5m.csv",
+      "size_mb": 0.05875396728515625,
+      "rows": 1000,
+      "start_time": "2025-07-24 03:30:00",
+      "end_time": "2025-07-27 14:45:00",
+      "symbol": "DOGEUSDT",
+      "timeframe": "5m"
+    },
+    {
+      "filename": "DOGEUSDT_15m.csv",
+      "size_mb": 0.0591888427734375,
+      "rows": 1000,
+      "start_time": "2025-07-24 03:30:00",
+      "end_time": "2025-08-03 13:15:00",
+      "symbol": "DOGEUSDT",
+      "timeframe": "15m"
+    },
+    {
+      "filename": "BNBUSDT_15m.csv",
+      "size_mb": 0.053466796875,
+      "rows": 1000,
+      "start_time": "2025-07-24 04:00:00",
+      "end_time": "2025-08-03 13:45:00",
+      "symbol": "BNBUSDT",
+      "timeframe": "15m"
+    },
+    {
+      "filename": "BNBUSDT_1m.csv",
+      "size_mb": 0.052597999572753906,
+      "rows": 1000,
+      "start_time": "2025-07-24 03:58:00",
+      "end_time": "2025-07-24 20:37:00",
+      "symbol": "BNBUSDT",
+      "timeframe": "1m"
+    },
+    {
+      "filename": "SUIUSDT_15m.csv",
+      "size_mb": 0.054017066955566406,
+      "rows": 1000,
+      "start_time": "2025-07-24 04:00:00",
+      "end_time": "2025-08-03 13:45:00",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m"
+    },
+    {
+      "filename": "IOTAUSDT_1m.csv",
+      "size_mb": 0.05256366729736328,
+      "rows": 1000,
+      "start_time": "2025-07-24 03:50:00",
+      "end_time": "2025-07-24 20:29:00",
+      "symbol": "IOTAUSDT",
+      "timeframe": "1m"
+    },
+    {
+      "filename": "SOLUSDT_5m.csv",
+      "size_mb": 0.05427265167236328,
+      "rows": 1000,
+      "start_time": "2025-07-24 03:55:00",
+      "end_time": "2025-07-27 15:10:00",
+      "symbol": "SOLUSDT",
+      "timeframe": "5m"
+    },
+    {
+      "filename": "ICPUSDT_15m.csv",
+      "size_mb": 0.049750328063964844,
+      "rows": 1000,
+      "start_time": "2025-07-24 04:00:00",
+      "end_time": "2025-08-03 13:45:00",
+      "symbol": "ICPUSDT",
+      "timeframe": "15m"
+    },
+    {
+      "filename": "SUIUSDT_5m.csv",
+      "size_mb": 0.05369091033935547,
+      "rows": 1000,
+      "start_time": "2025-07-24 04:00:00",
+      "end_time": "2025-07-27 15:15:00",
+      "symbol": "SUIUSDT",
+      "timeframe": "5m"
+    },
+    {
+      "filename": "ICPUSDT_1m.csv",
+      "size_mb": 0.048758506774902344,
+      "rows": 1000,
+      "start_time": "2025-07-24 03:50:00",
+      "end_time": "2025-07-24 20:29:00",
+      "symbol": "ICPUSDT",
+      "timeframe": "1m"
+    },
+    {
+      "filename": "ADAUSDT_1m.csv",
+      "size_mb": 0.0535888671875,
+      "rows": 1000,
+      "start_time": "2025-07-24 04:43:00",
+      "end_time": "2025-07-24 21:22:00",
+      "symbol": "ADAUSDT",
+      "timeframe": "1m"
+    },
+    {
+      "filename": "ALGOUSDT_5m.csv",
+      "size_mb": 0.05356884002685547,
+      "rows": 1000,
+      "start_time": "2025-07-24 04:00:00",
+      "end_time": "2025-07-27 15:15:00",
+      "symbol": "ALGOUSDT",
+      "timeframe": "5m"
+    },
+    {
+      "filename": "XRPUSDT_5m.csv",
+      "size_mb": 0.05401420593261719,
+      "rows": 1000,
+      "start_time": "2025-07-24 03:10:00",
+      "end_time": "2025-07-27 14:25:00",
+      "symbol": "XRPUSDT",
+      "timeframe": "5m"
+    },
+    {
+      "filename": "IOTAUSDT_15m.csv",
+      "size_mb": 0.053748130798339844,
+      "rows": 1000,
+      "start_time": "2025-07-24 04:00:00",
+      "end_time": "2025-08-03 13:45:00",
+      "symbol": "IOTAUSDT",
+      "timeframe": "15m"
+    },
+    {
+      "filename": "BNBUSDT_5m.csv",
+      "size_mb": 0.05289649963378906,
+      "rows": 1000,
+      "start_time": "2025-07-24 04:00:00",
+      "end_time": "2025-07-27 15:15:00",
+      "symbol": "BNBUSDT",
+      "timeframe": "5m"
+    },
+    {
+      "filename": "DOGEUSDT_1m.csv",
+      "size_mb": 0.05825519561767578,
+      "rows": 1000,
+      "start_time": "2025-07-24 03:28:00",
+      "end_time": "2025-07-24 20:07:00",
+      "symbol": "DOGEUSDT",
+      "timeframe": "1m"
+    },
+    {
+      "filename": "ICPUSDT_5m.csv",
+      "size_mb": 0.0491790771484375,
+      "rows": 1000,
+      "start_time": "2025-07-24 03:50:00",
+      "end_time": "2025-07-27 15:05:00",
+      "symbol": "ICPUSDT",
+      "timeframe": "5m"
+    },
+    {
+      "filename": "SUIUSDT_1m.csv",
+      "size_mb": 0.05292320251464844,
+      "rows": 1000,
+      "start_time": "2025-07-24 03:57:00",
+      "end_time": "2025-07-24 20:36:00",
+      "symbol": "SUIUSDT",
+      "timeframe": "1m"
+    },
+    {
+      "filename": "SOLUSDT_1m.csv",
+      "size_mb": 0.053849220275878906,
+      "rows": 1000,
+      "start_time": "2025-07-24 03:55:00",
+      "end_time": "2025-07-24 20:34:00",
+      "symbol": "SOLUSDT",
+      "timeframe": "1m"
+    },
+    {
+      "filename": "IOTAUSDT_5m.csv",
+      "size_mb": 0.05323028564453125,
+      "rows": 1000,
+      "start_time": "2025-07-24 03:50:00",
+      "end_time": "2025-07-27 15:05:00",
+      "symbol": "IOTAUSDT",
+      "timeframe": "5m"
+    },
+    {
+      "filename": "XRPUSDT_15m.csv",
+      "size_mb": 0.05452537536621094,
+      "rows": 1000,
+      "start_time": "2025-07-24 03:15:00",
+      "end_time": "2025-08-03 13:00:00",
+      "symbol": "XRPUSDT",
+      "timeframe": "15m"
+    },
+    {
+      "filename": "SOLUSDT_15m.csv",
+      "size_mb": 0.054726600646972656,
+      "rows": 1000,
+      "start_time": "2025-07-24 04:00:00",
+      "end_time": "2025-08-03 13:45:00",
+      "symbol": "SOLUSDT",
+      "timeframe": "15m"
+    },
+    {
+      "filename": "ALGOUSDT_1m.csv",
+      "size_mb": 0.05299663543701172,
+      "rows": 1000,
+      "start_time": "2025-07-24 03:58:00",
+      "end_time": "2025-07-24 20:37:00",
+      "symbol": "ALGOUSDT",
+      "timeframe": "1m"
+    },
+    {
+      "filename": "ADAUSDT_5m.csv",
+      "size_mb": 0.05411052703857422,
+      "rows": 1000,
+      "start_time": "2025-07-24 04:45:00",
+      "end_time": "2025-07-27 16:00:00",
+      "symbol": "ADAUSDT",
+      "timeframe": "5m"
+    }
+  ],
+  "unique_symbols": 9,
+  "unique_timeframes": [
+    "5m",
+    "1m",
+    "15m"
+  ]
+}

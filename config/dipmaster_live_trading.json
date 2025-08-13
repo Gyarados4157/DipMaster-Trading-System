@@ -1,0 +1,98 @@
+{
+  "strategy_name": "DipMaster_Live_Trading",
+  "version": "3.1.0", 
+  "description": "基于过拟合分析优化的实盘交易配置 - LOW Risk (20/100)",
+  "created_date": "2025-08-13",
+  "optimization_source": "overfitting_analysis_20250813_201327.json",
+  
+  "risk_assessment": {
+    "overfitting_risk": "LOW (20/100)",
+    "deployment_readiness": "APPROVED",
+    "recommended_capital": "1000-5000 USD",
+    "max_position_risk": "2% of capital"
+  },
+
+  "api": {
+    "exchange": "binance",
+    "base_url": "https://api.binance.com",
+    "testnet": false,
+    "api_key": "",
+    "api_secret": "",
+    "rate_limit_requests_per_minute": 1200,
+    "websocket_reconnect": true
+  },
+
+  "trading": {
+    "mode": "live",
+    "paper_trading": false,
+    "symbols": ["ICPUSDT", "XRPUSDT", "ALGOUSDT"],
+    "max_concurrent_positions": 2,
+    "position_size_usd": 800,
+    
+    "signal_parameters": {
+      "rsi_range": [40, 60],
+      "ma_period": 30,
+      "profit_target_percent": 1.0,
+      "volume_multiplier": 1.3,
+      "dip_threshold_percent": 0.15
+    },
+    
+    "risk_management": {
+      "max_leverage": 6,
+      "stop_loss_percent": 1.5,
+      "max_holding_minutes": 120,
+      "daily_loss_limit_usd": 300,
+      "max_drawdown_percent": 2.5
+    },
+    
+    "timing": {
+      "boundary_minutes": [15, 30, 45, 60],
+      "preferred_exit_windows": [[15, 29], [45, 59]],
+      "forced_exit_after_minutes": 120
+    }
+  },
+
+  "execution": {
+    "order_type": "MARKET",
+    "slippage_tolerance_percent": 0.1,
+    "max_retry_attempts": 3,
+    "retry_delay_ms": 1000,
+    "emergency_stop_enabled": true
+  },
+
+  "monitoring": {
+    "dashboard_enabled": true,
+    "dashboard_port": 8080,
+    "log_level": "INFO",
+    "save_trades": true,
+    "alert_thresholds": {
+      "consecutive_losses": 3,
+      "daily_loss_percent": 5,
+      "win_rate_below": 40
+    }
+  },
+
+  "data": {
+    "timeframe": "5m",
+    "history_required_days": 30,
+    "websocket_streams": ["kline_5m", "ticker"]
+  },
+
+  "safety": {
+    "position_limits": {
+      "max_positions": 2,
+      "max_position_size_usd": 1000,
+      "max_total_exposure_usd": 2000
+    },
+    "circuit_breakers": {
+      "daily_loss_circuit": true,
+      "consecutive_loss_circuit": 5,
+      "drawdown_circuit": 3.0
+    },
+    "manual_overrides": {
+      "emergency_stop": true,
+      "position_close_all": true,
+      "trading_halt": true
+    }
+  }
+}

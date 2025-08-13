@@ -1,0 +1,18 @@
+{
+  "id": "BTCUSDT_20250812_155046_1",
+  "symbol": "BTCUSDT",
+  "side": "buy",
+  "entry_price": 45000.0,
+  "entry_time": "2025-08-12T15:50:46.910841",
+  "quantity": 0.001,
+  "status": "closed",
+  "exit_price": 45500.0,
+  "exit_time": "2025-08-12T15:50:46.910875",
+  "pnl": 0.5,
+  "pnl_percent": 1.1111111111111112,
+  "holding_minutes": 5.666666666666667e-07,
+  "entry_reason": "TEST_ENTRY",
+  "exit_reason": "TEST_EXIT",
+  "entry_indicators": null,
+  "exit_indicators": null
+}

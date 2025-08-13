@@ -1,0 +1,10 @@
+{
+  "symbol": "ICPUSDT",
+  "timeframe": "5m",
+  "start_date": "2023-08-13T13:55:00",
+  "end_date": "2025-08-12T13:50:00",
+  "total_candles": 210240,
+  "days_covered": 729,
+  "file_size_mb": 10.601778984069824,
+  "fetched_at": "2025-08-12T21:53:10.206649"
+}

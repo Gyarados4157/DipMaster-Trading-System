@@ -1,0 +1,167 @@
+# DipMaster Trading System .gitignore
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Environment variables
+.env
+.env.local
+.env.production
+.env.test
+
+# Configuration files with sensitive data
+config/config.json
+config/*.key
+config/*.secret
+*.api_key
+*.api_secret
+
+# Trading logs and sensitive data
+logs/*.log
+logs/trading_*.log
+logs/positions_*.csv
+logs/trades_*.csv
+
+# Local data files (keep structure, ignore content)
+data/live/
+data/cache/
+data/temp/
+data/backup/
+data/engine_state.json
+
+# Results with sensitive information
+results/live_trading/
+results/positions/
+results/trades/
+
+# Temporary files
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# System files
+.coverage
+.pytest_cache/
+.tox/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# IDE files
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Trading specific ignores
+*.wallet
+*.keystore
+positions_*.json
+trades_*.json
+balances_*.json
+api_credentials.json
+
+# Large data files
+*.feather
+*.parquet
+*.h5
+*.hdf5
+
+# Unit test / coverage reports
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+.hypothesis/
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Exceptions - keep example configs
+!config/*.example
+!config/*.example.json

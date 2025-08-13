@@ -1,0 +1,485 @@
+{
+  "strategy_name": "DipMaster_V3_Optimized",
+  "version": "3.0.0",
+  "description": "完整优化版DipMaster AI策略 - 6层增强系统",
+  "created_date": "2025-08-12",
+  "optimization_phases_completed": [
+    "Phase 1: Enhanced Signal Detection with 6-Layer Filtering",
+    "Phase 2: Asymmetric Risk Management System", 
+    "Phase 3: Volatility Adaptive Position Sizing",
+    "Phase 4: Dynamic Symbol Scoring System",
+    "Phase 5: Enhanced Time-Based Filters",
+    "Phase 6: Comprehensive Integration & Backtesting"
+  ],
+
+  "performance_targets": {
+    "win_rate": "78-82%",
+    "max_drawdown": "2-3%", 
+    "profit_factor": "1.5-2.0",
+    "sharpe_ratio": ">1.5",
+    "avg_holding_minutes": "60-90",
+    "dip_buying_rate": "95%+",
+    "monthly_return": "8-15%"
+  },
+
+  "enhanced_signal_detection": {
+    "enabled": true,
+    "system_type": "6_layer_filtering",
+    "description": "极大提升信号质量，目标胜率78-82%",
+    
+    "layer_1_rsi_filter": {
+      "enabled": true,
+      "rsi_range": [35, 42],
+      "optimal_rsi": 38,
+      "weight": 0.2
+    },
+    
+    "layer_2_trend_filter": {
+      "enabled": true,
+      "max_consecutive_red_candles": 4,
+      "trend_ema_period": 10,
+      "trend_threshold": -0.02,
+      "weight": 0.18
+    },
+    
+    "layer_3_momentum_filter": {
+      "enabled": true,
+      "momentum_periods": [3, 5, 10],
+      "decay_threshold": 0.5,
+      "require_momentum_improvement": true,
+      "weight": 0.16
+    },
+    
+    "layer_4_volume_filter": {
+      "enabled": true,
+      "volume_ma_period": 20,
+      "min_volume_multiplier": 1.5,
+      "surge_threshold": 2.0,
+      "weight": 0.16
+    },
+    
+    "layer_5_bollinger_filter": {
+      "enabled": true,
+      "bb_period": 20,
+      "bb_std_dev": 2.0,
+      "lower_zone_threshold": 0.2,
+      "weight": 0.15
+    },
+    
+    "layer_6_timeframe_filter": {
+      "enabled": true,
+      "higher_timeframe_multiplier": 3,
+      "require_alignment": true,
+      "weight": 0.15
+    },
+    
+    "minimum_confidence": 0.6,
+    "market_regime_detection": {
+      "enabled": true,
+      "block_high_volatility": true,
+      "block_strong_downtrend": true,
+      "volatility_threshold": 0.15
+    }
+  },
+
+  "asymmetric_risk_management": {
+    "enabled": true,
+    "philosophy": "让亏损快走，让利润奔跑",
+    "description": "大幅提升盈亏比至1.5-2.0",
+    
+    "stop_loss_system": {
+      "emergency_stop_percent": 0.5,
+      "normal_stop_percent": 1.0,
+      "trailing_stop_distance": 0.3,
+      "activate_trailing_after_profit": 1.0
+    },
+    
+    "profit_taking_system": {
+      "enabled": true,
+      "partial_exits": [
+        {"profit_percent": 0.8, "exit_ratio": 0.25},
+        {"profit_percent": 1.5, "exit_ratio": 0.35},
+        {"profit_percent": 2.5, "exit_ratio": 0.4}
+      ]
+    },
+    
+    "time_management": {
+      "min_holding_minutes": 15,
+      "profit_extension_minutes": 90,
+      "loss_cut_minutes": 30,
+      "max_holding_minutes": 180
+    },
+    
+    "boundary_exit_system": {
+      "enabled": true,
+      "boundaries": [15, 30, 45, 60],
+      "profit_threshold_for_boundary": 0.002,
+      "neutral_zone": [-0.002, 0.002]
+    }
+  },
+
+  "volatility_adaptive_sizing": {
+    "enabled": true,
+    "description": "根据市场波动调整仓位，提升风险调整收益",
+    
+    "base_parameters": {
+      "base_capital": 10000,
+      "base_position_size": 1000,
+      "default_leverage": 10
+    },
+    
+    "volatility_regimes": {
+      "very_low": {"threshold": 0.02, "multiplier": 1.5, "leverage_adj": 1.2},
+      "low": {"threshold": 0.04, "multiplier": 1.2, "leverage_adj": 1.1},
+      "normal": {"threshold": 0.08, "multiplier": 1.0, "leverage_adj": 1.0},
+      "high": {"threshold": 0.15, "multiplier": 0.7, "leverage_adj": 0.8},
+      "very_high": {"threshold": 0.15, "multiplier": 0.4, "leverage_adj": 0.5}
+    },
+    
+    "kelly_criterion": {
+      "enabled": true,
+      "lookback_trades": 50,
+      "max_kelly_fraction": 0.25,
+      "min_kelly_fraction": 0.05
+    },
+    
+    "risk_limits": {
+      "max_portfolio_risk": 0.02,
+      "max_single_trade_risk": 0.005,
+      "drawdown_adjustment_threshold": 0.05,
+      "max_position_concentration": 0.3
+    }
+  },
+
+  "dynamic_symbol_scoring": {
+    "enabled": true,
+    "description": "实时评估和排序最优交易标的",
+    
+    "scoring_weights": {
+      "performance": 0.35,
+      "liquidity": 0.20,
+      "volatility_fit": 0.15,
+      "correlation": 0.10,
+      "market_structure": 0.10,
+      "momentum": 0.10
+    },
+    
+    "performance_criteria": {
+      "min_trade_count": 20,
+      "lookback_days": 90,
+      "target_win_rate": 75,
+      "target_profit_factor": 1.5
+    },
+    
+    "liquidity_requirements": {
+      "min_daily_volume_usd": 10000000,
+      "max_spread_bps": 20,
+      "preferred_spread_bps": 5
+    },
+    
+    "volatility_preferences": {
+      "optimal_atr_range": [0.03, 0.08],
+      "max_acceptable_atr": 0.15,
+      "stability_weight": 0.3
+    },
+    
+    "correlation_management": {
+      "max_correlation": 0.7,
+      "penalty_factor": 2.0,
+      "correlation_window": 30
+    },
+    
+    "symbol_selection": {
+      "max_active_symbols": 5,
+      "min_score_threshold": 60,
+      "rebalance_frequency": "daily",
+      "preferred_symbols": ["ICPUSDT", "XRPUSDT", "ALGOUSDT", "IOTAUSDT"]
+    }
+  },
+
+  "enhanced_time_filtering": {
+    "enabled": true,
+    "description": "基于时间模式优化交易时机",
+    
+    "trading_sessions": {
+      "asian": {"hours": [0, 8], "score_weight": 0.9},
+      "european": {"hours": [7, 15], "score_weight": 1.0},
+      "american": {"hours": [14, 22], "score_weight": 1.1},
+      "overlap_ae": {"hours": [7, 8], "score_weight": 1.2},
+      "overlap_ea": {"hours": [14, 15], "score_weight": 1.3},
+      "off_peak": {"hours": [22, 24], "score_weight": 0.7}
+    },
+    
+    "day_of_week_preferences": {
+      "monday": 0.9,
+      "tuesday": 1.1,
+      "wednesday": 1.2,
+      "thursday": 1.1,
+      "friday": 0.8,
+      "saturday": 0.6,
+      "sunday": 0.7
+    },
+    
+    "time_scoring_thresholds": {
+      "excellent": 75,
+      "good": 60,
+      "acceptable": 45,
+      "avoid": 30
+    },
+    
+    "holiday_management": {
+      "enabled": true,
+      "avoid_major_holidays": true,
+      "pre_holiday_penalty": 20,
+      "post_holiday_penalty": 10
+    },
+    
+    "analysis_parameters": {
+      "min_trades_for_analysis": 10,
+      "lookback_days": 90,
+      "confidence_threshold": 0.6
+    }
+  },
+
+  "market_selection": {
+    "description": "基于动态评分的智能标的选择",
+    "selection_mode": "dynamic_scoring",
+    "primary_symbols": [
+      "ICPUSDT", "XRPUSDT", "ALGOUSDT", "IOTAUSDT"
+    ],
+    "backup_symbols": [
+      "BTCUSDT", "ETHUSDT", "SOLUSDT", "ADAUSDT", "DOGEUSDT"
+    ],
+    "max_concurrent_positions": 3,
+    "symbol_rotation_enabled": true,
+    "rebalance_frequency": "weekly"
+  },
+
+  "execution_parameters": {
+    "order_type": "MARKET",
+    "slippage_tolerance": 0.002,
+    "max_retry_attempts": 3,
+    "retry_delay_ms": 500,
+    "partial_fill_handling": "accept",
+    "emergency_exit_enabled": true
+  },
+
+  "risk_management": {
+    "global_settings": {
+      "max_daily_loss_usd": 500,
+      "max_drawdown_percent": 3.0,
+      "position_size_limit_percent": 30,
+      "leverage_limit": 20,
+      "correlation_limit": 0.7
+    },
+    
+    "dynamic_adjustments": {
+      "drawdown_scaling": true,
+      "volatility_scaling": true,
+      "performance_scaling": true,
+      "time_decay_protection": true
+    },
+    
+    "circuit_breakers": {
+      "daily_loss_limit": true,
+      "drawdown_limit": true,
+      "consecutive_loss_limit": 5,
+      "volatility_spike_protection": true
+    }
+  },
+
+  "performance_monitoring": {
+    "real_time_metrics": {
+      "win_rate_tracking": true,
+      "drawdown_monitoring": true,
+      "profit_factor_tracking": true,
+      "sharpe_ratio_estimation": true
+    },
+    
+    "component_performance": {
+      "signal_quality_tracking": true,
+      "risk_manager_effectiveness": true,
+      "sizing_performance": true,
+      "symbol_scorer_accuracy": true,
+      "time_filter_success": true
+    },
+    
+    "adaptive_learning": {
+      "weight_adjustment": true,
+      "parameter_optimization": true,
+      "regime_detection": true,
+      "performance_feedback": true
+    }
+  },
+
+  "backtesting": {
+    "default_parameters": {
+      "initial_capital": 10000,
+      "commission_rate": 0.0004,
+      "slippage_bps": 2.0,
+      "start_date": "2023-08-12",
+      "end_date": "2025-08-12"
+    },
+    
+    "validation_tests": {
+      "walk_forward_analysis": true,
+      "out_of_sample_testing": true,
+      "stress_testing": true,
+      "regime_robustness": true
+    }
+  },
+
+  "technical_indicators": {
+    "primary_indicators": {
+      "rsi": {"period": 14, "entry_range": [35, 42]},
+      "ema": {"periods": [10, 20], "use_for_trend": true},
+      "atr": {"period": 14, "use_for_sizing": true},
+      "bollinger_bands": {"period": 20, "std_dev": 2.0},
+      "volume_ma": {"period": 20, "min_multiplier": 1.5}
+    },
+    
+    "advanced_indicators": {
+      "momentum_oscillators": {"periods": [3, 5, 10]},
+      "volatility_measures": {"rolling_std": 20},
+      "correlation_matrix": {"window": 30},
+      "regime_detection": {"volatility_threshold": 0.15}
+    }
+  },
+
+  "data_requirements": {
+    "timeframes": {
+      "primary": "5m",
+      "secondary": "15m", 
+      "analysis": "1h"
+    },
+    "minimum_history": "90_days",
+    "data_quality_checks": true,
+    "missing_data_handling": "interpolation"
+  },
+
+  "api_settings": {
+    "exchange": "binance",
+    "testnet": false,
+    "rate_limit": 1200,
+    "websocket_streams": [
+      "kline_5m",
+      "ticker",
+      "depth5",
+      "bookTicker"
+    ],
+    "reconnection_strategy": "exponential_backoff"
+  },
+
+  "logging_and_monitoring": {
+    "log_level": "INFO",
+    "detailed_trade_logging": true,
+    "component_logging": {
+      "signal_detector": true,
+      "risk_manager": true,
+      "position_sizer": true,
+      "symbol_scorer": true,
+      "time_filter": true
+    },
+    "performance_alerts": {
+      "drawdown_alert_threshold": 0.02,
+      "win_rate_alert_threshold": 0.65,
+      "daily_loss_alert": 400
+    },
+    "save_results": true,
+    "dashboard_enabled": true
+  },
+
+  "version_comparison": {
+    "v1_original": {
+      "win_rate": "82.14%",
+      "max_drawdown": "6.06%", 
+      "profit_factor": "0.58",
+      "features": "基础RSI+时间边界"
+    },
+    "v2_improved": {
+      "win_rate": "75-80%",
+      "max_drawdown": "4-5%",
+      "profit_factor": "1.0-1.3", 
+      "features": "增强信号+基础风险管理"
+    },
+    "v3_optimized": {
+      "win_rate_target": "78-82%",
+      "max_drawdown_target": "2-3%",
+      "profit_factor_target": "1.5-2.0",
+      "features": "6层过滤+非对称风险+自适应仓位+动态评分+时间优化"
+    }
+  },
+
+  "deployment_modes": {
+    "paper_trading": {
+      "enabled": true,
+      "initial_capital": 10000,
+      "realistic_execution": true,
+      "performance_tracking": true
+    },
+    
+    "live_trading": {
+      "enabled": false,
+      "safety_checks": true,
+      "position_limits": true,
+      "emergency_stops": true,
+      "human_oversight": true
+    },
+    
+    "research_mode": {
+      "enabled": true,
+      "detailed_logging": true,
+      "component_analysis": true,
+      "parameter_sensitivity": true
+    }
+  },
+
+  "optimization_roadmap": {
+    "completed_phases": [
+      "✅ Phase 1: Enhanced Signal Detection (6-Layer System)",
+      "✅ Phase 2: Asymmetric Risk Management", 
+      "✅ Phase 3: Volatility Adaptive Position Sizing",
+      "✅ Phase 4: Dynamic Symbol Scoring",
+      "✅ Phase 5: Enhanced Time-Based Filters",
+      "✅ Phase 6: Comprehensive Integration & Testing"
+    ],
+    "future_enhancements": [
+      "🔄 Machine Learning Signal Enhancement",
+      "🔄 Cross-Asset Correlation Analysis", 
+      "🔄 News Sentiment Integration",
+      "🔄 Market Microstructure Optimization",
+      "🔄 Real-time Strategy Adaptation"
+    ]
+  },
+
+  "usage_instructions": {
+    "quick_start": [
+      "1. 确保所有依赖已安装",
+      "2. 配置API密钥",
+      "3. 选择运行模式 (paper/live)",
+      "4. 运行: python main.py --config config/dipmaster_v3_optimized.json",
+      "5. 监控dashboard和日志输出"
+    ],
+    
+    "customization": {
+      "signal_sensitivity": "调整enhanced_signal_detection.minimum_confidence",
+      "risk_tolerance": "调整risk_management.max_drawdown_percent",
+      "position_sizing": "调整volatility_adaptive_sizing.base_position_size",
+      "symbol_selection": "修改market_selection.primary_symbols",
+      "time_preferences": "调整enhanced_time_filtering权重"
+    },
+    
+    "monitoring": {
+      "key_metrics": ["win_rate", "drawdown", "profit_factor", "sharpe_ratio"],
+      "alert_conditions": ["daily_loss > 400", "drawdown > 2%", "win_rate < 65%"],
+      "dashboard_url": "http://localhost:8080/dashboard"
+    }
+  },
+
+  "disclaimer": {
+    "risk_warning": "交易有风险，投资需谨慎。过往表现不代表未来收益。",
+    "testing_requirement": "强烈建议在纸面交易模式下充分测试后再进行实盘交易。",
+    "monitoring_importance": "请持续监控策略表现，及时调整参数以适应市场变化。",
+    "capital_management": "请勿投入超过可承受损失的资金。"
+  }
+}
