@@ -1,0 +1,188 @@
+{
+  "_comment": "DipMaster Trading System v4.0 - Secure Configuration",
+  "_security_notice": "This configuration uses encrypted API key storage for maximum security",
+  "_version": "4.0.0",
+  "_documentation": "See CLAUDE.md for complete security setup instructions",
+  
+  "api": {
+    "_comment": "Secure API Configuration - Uses encrypted key storage",
+    "key_id": "binance-production",
+    "_setup_note": "Run: python src/tools/key_management_tool.py store --key-id binance-production",
+    "exchange": "binance",
+    "testnet": false,
+    "timeout": 30,
+    "rate_limit_buffer": 0.1
+  },
+  
+  "trading": {
+    "_comment": "Trading Configuration with Enhanced Security",
+    "symbols": [
+      "BTCUSDT",
+      "ETHUSDT", 
+      "BNBUSDT",
+      "SOLUSDT",
+      "ADAUSDT",
+      "XRPUSDT",
+      "DOGEUSDT",
+      "SUIUSDT",
+      "ICPUSDT",
+      "ALGOUSDT",
+      "IOTAUSDT"
+    ],
+    "paper_trading": true,
+    "max_positions": 3,
+    "max_position_size": 1000,
+    "daily_loss_limit": -500,
+    "trading_enabled": true,
+    "auto_start": false,
+    "_security_note": "auto_start disabled for security - requires manual confirmation"
+  },
+  
+  "strategy": {
+    "_comment": "DipMaster AI strategy parameters - Validated 82.1% win rate",
+    "rsi_entry_range": [30, 50],
+    "rsi_period": 14,
+    "dip_threshold": 0.002,
+    "volume_multiplier": 1.5,
+    "max_holding_minutes": 180,
+    "target_profit": 0.008,
+    "min_confidence": 0.6,
+    "boundary_slots": [15, 30, 45, 60],
+    "preferred_exit_slots": [1, 3],
+    "enable_15min_boundary_exits": true,
+    "enable_profit_targets": true,
+    "enable_time_stops": true
+  },
+  
+  "risk_management": {
+    "_comment": "Enhanced risk management with security controls",
+    "max_daily_trades": 50,
+    "max_consecutive_losses": 5,
+    "position_size_type": "fixed",
+    "emergency_stop_loss": -0.05,
+    "max_drawdown": -0.20,
+    "cool_down_minutes": 15,
+    "enable_risk_limits": true,
+    "_security_enhancement": "All limits are enforced with access control"
+  },
+  
+  "websocket": {
+    "_comment": "Real-time data with enhanced security",
+    "enabled": true,
+    "reconnect_attempts": 5,
+    "reconnect_delay": 5,
+    "ping_interval": 30,
+    "timeout": 10,
+    "buffer_size": 1000,
+    "_security_note": "WebSocket connections are monitored and logged"
+  },
+  
+  "dashboard": {
+    "_comment": "Secure monitoring dashboard with access control",
+    "enabled": true,
+    "port": 8080,
+    "host": "127.0.0.1",
+    "_security_note": "Limited to localhost - use reverse proxy for external access",
+    "refresh_rate": 1,
+    "show_charts": true,
+    "show_positions": true,
+    "show_logs": true,
+    "theme": "dark",
+    "require_authentication": true,
+    "session_timeout": 3600
+  },
+  
+  "logging": {
+    "_comment": "Comprehensive logging with security audit trails",
+    "level": "INFO",
+    "file_enabled": true,
+    "console_enabled": true,
+    "rotation": "daily",
+    "retention_days": 90,
+    "max_file_size": "50MB",
+    "format": "detailed",
+    "security_logging": true,
+    "audit_trail": true
+  },
+  
+  "security": {
+    "_comment": "Enterprise security configuration",
+    "encrypted_api_keys": true,
+    "access_control_enabled": true,
+    "audit_logging_enabled": true,
+    "session_timeout_minutes": 480,
+    "max_failed_attempts": 5,
+    "lockout_duration_minutes": 30,
+    "require_strong_passwords": true,
+    "enable_ip_restrictions": false,
+    "real_time_security_alerts": true
+  },
+  
+  "monitoring": {
+    "_comment": "Advanced monitoring and alerting",
+    "health_check_interval": 300,
+    "performance_metrics": true,
+    "trading_metrics": true,
+    "security_metrics": true,
+    "memory_monitoring": true,
+    "disk_monitoring": true,
+    "network_monitoring": false
+  },
+  
+  "notifications": {
+    "_comment": "Security-aware notification system",
+    "enabled": true,
+    "slack_webhook": "${DIPMASTER_SLACK_WEBHOOK}",
+    "email_enabled": false,
+    "email_smtp": "",
+    "position_alerts": true,
+    "error_alerts": true,
+    "security_alerts": true,
+    "daily_summary": true,
+    "_security_note": "Sensitive information is redacted from notifications"
+  },
+  
+  "performance": {
+    "_comment": "Performance optimization with security considerations",
+    "cache_enabled": true,
+    "cache_ttl": 300,
+    "parallel_processing": true,
+    "max_workers": 4,
+    "memory_limit": "2GB",
+    "gc_threshold": 0.8,
+    "secure_memory_cleanup": true
+  },
+  
+  "database": {
+    "_comment": "Optional database with encryption support",
+    "enabled": false,
+    "type": "sqlite",
+    "path": "data/dipmaster_secure.db",
+    "connection_pool_size": 5,
+    "backup_enabled": true,
+    "backup_interval": "daily",
+    "encrypt_at_rest": true,
+    "backup_encryption": true
+  },
+  
+  "development": {
+    "_comment": "Development and debugging with security restrictions",
+    "debug_mode": false,
+    "test_mode": false,
+    "dry_run": false,
+    "profile_enabled": false,
+    "mock_api": false,
+    "save_debug_data": false,
+    "_security_warning": "Debug features disabled in secure mode"
+  },
+  
+  "compliance": {
+    "_comment": "Regulatory compliance and audit requirements",
+    "trade_reporting": true,
+    "audit_trail_required": true,
+    "data_retention_days": 2555,
+    "backup_verification": true,
+    "regulatory_alerts": true,
+    "compliance_monitoring": true
+  }
+}

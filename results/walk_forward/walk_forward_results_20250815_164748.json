@@ -1,0 +1,475 @@
+{
+  "window_results": [
+    {
+      "window_id": 1,
+      "train_start": "2023-08-14T08:30:00",
+      "train_end": "2024-02-14T08:30:00",
+      "test_start": "2024-02-15T08:30:00",
+      "test_end": "2024-03-15T08:30:00",
+      "train_trades": 52993,
+      "test_trades": 8353,
+      "test_metrics": {
+        "total_pnl": 308.1667637817372,
+        "win_rate": 0.6506024096385542,
+        "sharpe_ratio": 0.4122342833068901,
+        "max_drawdown": -33.239377539478085,
+        "trade_count": 83,
+        "avg_pnl_per_trade": 3.7128525756835806
+      },
+      "optimal_parameters": {
+        "rsi_oversold": 25,
+        "rsi_overbought": 65,
+        "max_holding_minutes": 45
+      },
+      "parameter_stability": 1.0
+    },
+    {
+      "window_id": 2,
+      "train_start": "2023-09-14T08:30:00",
+      "train_end": "2024-03-14T08:30:00",
+      "test_start": "2024-03-15T08:30:00",
+      "test_end": "2024-04-15T08:30:00",
+      "train_trades": 52417,
+      "test_trades": 8929,
+      "test_metrics": {
+        "total_pnl": 362.8487245844985,
+        "win_rate": 0.6629213483146067,
+        "sharpe_ratio": 0.4511501542992089,
+        "max_drawdown": -33.239377539478085,
+        "trade_count": 89,
+        "avg_pnl_per_trade": 4.076951961623578
+      },
+      "optimal_parameters": {
+        "rsi_oversold": 25,
+        "rsi_overbought": 65,
+        "max_holding_minutes": 45
+      },
+      "parameter_stability": 1.0
+    },
+    {
+      "window_id": 3,
+      "train_start": "2023-10-14T08:30:00",
+      "train_end": "2024-04-14T08:30:00",
+      "test_start": "2024-04-15T08:30:00",
+      "test_end": "2024-05-15T08:30:00",
+      "train_trades": 52705,
+      "test_trades": 8641,
+      "test_metrics": {
+        "total_pnl": 345.03630935583465,
+        "win_rate": 0.6627906976744186,
+        "sharpe_ratio": 0.44405997093191196,
+        "max_drawdown": -33.239377539478085,
+        "trade_count": 86,
+        "avg_pnl_per_trade": 4.012050108788775
+      },
+      "optimal_parameters": {
+        "rsi_oversold": 25,
+        "rsi_overbought": 65,
+        "max_holding_minutes": 45
+      },
+      "parameter_stability": 1.0
+    },
+    {
+      "window_id": 4,
+      "train_start": "2023-11-14T08:30:00",
+      "train_end": "2024-05-14T08:30:00",
+      "test_start": "2024-05-15T08:30:00",
+      "test_end": "2024-06-15T08:30:00",
+      "train_trades": 52417,
+      "test_trades": 8929,
+      "test_metrics": {
+        "total_pnl": 362.8487245844985,
+        "win_rate": 0.6629213483146067,
+        "sharpe_ratio": 0.4511501542992089,
+        "max_drawdown": -33.239377539478085,
+        "trade_count": 89,
+        "avg_pnl_per_trade": 4.076951961623578
+      },
+      "optimal_parameters": {
+        "rsi_oversold": 25,
+        "rsi_overbought": 65,
+        "max_holding_minutes": 45
+      },
+      "parameter_stability": 1.0
+    },
+    {
+      "window_id": 5,
+      "train_start": "2023-12-14T08:30:00",
+      "train_end": "2024-06-14T08:30:00",
+      "test_start": "2024-06-15T08:30:00",
+      "test_end": "2024-07-15T08:30:00",
+      "train_trades": 52705,
+      "test_trades": 8641,
+      "test_metrics": {
+        "total_pnl": 345.03630935583465,
+        "win_rate": 0.6627906976744186,
+        "sharpe_ratio": 0.44405997093191196,
+        "max_drawdown": -33.239377539478085,
+        "trade_count": 86,
+        "avg_pnl_per_trade": 4.012050108788775
+      },
+      "optimal_parameters": {
+        "rsi_oversold": 25,
+        "rsi_overbought": 65,
+        "max_holding_minutes": 45
+      },
+      "parameter_stability": 1.0
+    },
+    {
+      "window_id": 6,
+      "train_start": "2024-01-14T08:30:00",
+      "train_end": "2024-07-14T08:30:00",
+      "test_start": "2024-07-15T08:30:00",
+      "test_end": "2024-08-15T08:30:00",
+      "train_trades": 52417,
+      "test_trades": 8929,
+      "test_metrics": {
+        "total_pnl": 362.8487245844985,
+        "win_rate": 0.6629213483146067,
+        "sharpe_ratio": 0.4511501542992089,
+        "max_drawdown": -33.239377539478085,
+        "trade_count": 89,
+        "avg_pnl_per_trade": 4.076951961623578
+      },
+      "optimal_parameters": {
+        "rsi_oversold": 25,
+        "rsi_overbought": 65,
+        "max_holding_minutes": 45
+      },
+      "parameter_stability": 1.0
+    },
+    {
+      "window_id": 7,
+      "train_start": "2024-02-14T08:30:00",
+      "train_end": "2024-08-14T08:30:00",
+      "test_start": "2024-08-15T08:30:00",
+      "test_end": "2024-09-15T08:30:00",
+      "train_trades": 52417,
+      "test_trades": 8929,
+      "test_metrics": {
+        "total_pnl": 362.8487245844985,
+        "win_rate": 0.6629213483146067,
+        "sharpe_ratio": 0.4511501542992089,
+        "max_drawdown": -33.239377539478085,
+        "trade_count": 89,
+        "avg_pnl_per_trade": 4.076951961623578
+      },
+      "optimal_parameters": {
+        "rsi_oversold": 25,
+        "rsi_overbought": 65,
+        "max_holding_minutes": 45
+      },
+      "parameter_stability": 1.0
+    },
+    {
+      "window_id": 8,
+      "train_start": "2024-03-14T08:30:00",
+      "train_end": "2024-09-14T08:30:00",
+      "test_start": "2024-09-15T08:30:00",
+      "test_end": "2024-10-15T08:30:00",
+      "train_trades": 52993,
+      "test_trades": 8641,
+      "test_metrics": {
+        "total_pnl": 345.03630935583465,
+        "win_rate": 0.6627906976744186,
+        "sharpe_ratio": 0.44405997093191196,
+        "max_drawdown": -33.239377539478085,
+        "trade_count": 86,
+        "avg_pnl_per_trade": 4.012050108788775
+      },
+      "optimal_parameters": {
+        "rsi_oversold": 25,
+        "rsi_overbought": 65,
+        "max_holding_minutes": 45
+      },
+      "parameter_stability": 1.0
+    },
+    {
+      "window_id": 9,
+      "train_start": "2024-04-14T08:30:00",
+      "train_end": "2024-10-14T08:30:00",
+      "test_start": "2024-10-15T08:30:00",
+      "test_end": "2024-11-15T08:30:00",
+      "train_trades": 52705,
+      "test_trades": 8929,
+      "test_metrics": {
+        "total_pnl": 362.8487245844985,
+        "win_rate": 0.6629213483146067,
+        "sharpe_ratio": 0.4511501542992089,
+        "max_drawdown": -33.239377539478085,
+        "trade_count": 89,
+        "avg_pnl_per_trade": 4.076951961623578
+      },
+      "optimal_parameters": {
+        "rsi_oversold": 25,
+        "rsi_overbought": 65,
+        "max_holding_minutes": 45
+      },
+      "parameter_stability": 1.0
+    },
+    {
+      "window_id": 10,
+      "train_start": "2024-05-14T08:30:00",
+      "train_end": "2024-11-14T08:30:00",
+      "test_start": "2024-11-15T08:30:00",
+      "test_end": "2024-12-15T08:30:00",
+      "train_trades": 52993,
+      "test_trades": 8641,
+      "test_metrics": {
+        "total_pnl": 345.03630935583465,
+        "win_rate": 0.6627906976744186,
+        "sharpe_ratio": 0.44405997093191196,
+        "max_drawdown": -33.239377539478085,
+        "trade_count": 86,
+        "avg_pnl_per_trade": 4.012050108788775
+      },
+      "optimal_parameters": {
+        "rsi_oversold": 25,
+        "rsi_overbought": 65,
+        "max_holding_minutes": 45
+      },
+      "parameter_stability": 1.0
+    },
+    {
+      "window_id": 11,
+      "train_start": "2024-06-14T08:30:00",
+      "train_end": "2024-12-14T08:30:00",
+      "test_start": "2024-12-15T08:30:00",
+      "test_end": "2025-01-15T08:30:00",
+      "train_trades": 52705,
+      "test_trades": 8929,
+      "test_metrics": {
+        "total_pnl": 362.8487245844985,
+        "win_rate": 0.6629213483146067,
+        "sharpe_ratio": 0.4511501542992089,
+        "max_drawdown": -33.239377539478085,
+        "trade_count": 89,
+        "avg_pnl_per_trade": 4.076951961623578
+      },
+      "optimal_parameters": {
+        "rsi_oversold": 25,
+        "rsi_overbought": 65,
+        "max_holding_minutes": 45
+      },
+      "parameter_stability": 1.0
+    },
+    {
+      "window_id": 12,
+      "train_start": "2024-07-14T08:30:00",
+      "train_end": "2025-01-14T08:30:00",
+      "test_start": "2025-01-15T08:30:00",
+      "test_end": "2025-02-15T08:30:00",
+      "train_trades": 52993,
+      "test_trades": 8929,
+      "test_metrics": {
+        "total_pnl": 362.8487245844985,
+        "win_rate": 0.6629213483146067,
+        "sharpe_ratio": 0.4511501542992089,
+        "max_drawdown": -33.239377539478085,
+        "trade_count": 89,
+        "avg_pnl_per_trade": 4.076951961623578
+      },
+      "optimal_parameters": {
+        "rsi_oversold": 25,
+        "rsi_overbought": 65,
+        "max_holding_minutes": 45
+      },
+      "parameter_stability": 1.0
+    },
+    {
+      "window_id": 13,
+      "train_start": "2024-08-14T08:30:00",
+      "train_end": "2025-02-14T08:30:00",
+      "test_start": "2025-02-15T08:30:00",
+      "test_end": "2025-03-15T08:30:00",
+      "train_trades": 52993,
+      "test_trades": 8065,
+      "test_metrics": {
+        "total_pnl": 310.62897888395923,
+        "win_rate": 0.6625,
+        "sharpe_ratio": 0.429941183588611,
+        "max_drawdown": -33.239377539478085,
+        "trade_count": 80,
+        "avg_pnl_per_trade": 3.8828622360494904
+      },
+      "optimal_parameters": {
+        "rsi_oversold": 25,
+        "rsi_overbought": 65,
+        "max_holding_minutes": 45
+      },
+      "parameter_stability": 1.0
+    },
+    {
+      "window_id": 14,
+      "train_start": "2024-09-14T08:30:00",
+      "train_end": "2025-03-14T08:30:00",
+      "test_start": "2025-03-15T08:30:00",
+      "test_end": "2025-04-15T08:30:00",
+      "train_trades": 52129,
+      "test_trades": 8929,
+      "test_metrics": {
+        "total_pnl": 362.8487245844985,
+        "win_rate": 0.6629213483146067,
+        "sharpe_ratio": 0.4511501542992089,
+        "max_drawdown": -33.239377539478085,
+        "trade_count": 89,
+        "avg_pnl_per_trade": 4.076951961623578
+      },
+      "optimal_parameters": {
+        "rsi_oversold": 25,
+        "rsi_overbought": 65,
+        "max_holding_minutes": 45
+      },
+      "parameter_stability": 1.0
+    },
+    {
+      "window_id": 15,
+      "train_start": "2024-10-14T08:30:00",
+      "train_end": "2025-04-14T08:30:00",
+      "test_start": "2025-04-15T08:30:00",
+      "test_end": "2025-05-15T08:30:00",
+      "train_trades": 52417,
+      "test_trades": 8641,
+      "test_metrics": {
+        "total_pnl": 345.03630935583465,
+        "win_rate": 0.6627906976744186,
+        "sharpe_ratio": 0.44405997093191196,
+        "max_drawdown": -33.239377539478085,
+        "trade_count": 86,
+        "avg_pnl_per_trade": 4.012050108788775
+      },
+      "optimal_parameters": {
+        "rsi_oversold": 25,
+        "rsi_overbought": 65,
+        "max_holding_minutes": 45
+      },
+      "parameter_stability": 1.0
+    },
+    {
+      "window_id": 16,
+      "train_start": "2024-11-14T08:30:00",
+      "train_end": "2025-05-14T08:30:00",
+      "test_start": "2025-05-15T08:30:00",
+      "test_end": "2025-06-15T08:30:00",
+      "train_trades": 52129,
+      "test_trades": 8929,
+      "test_metrics": {
+        "total_pnl": 362.8487245844985,
+        "win_rate": 0.6629213483146067,
+        "sharpe_ratio": 0.4511501542992089,
+        "max_drawdown": -33.239377539478085,
+        "trade_count": 89,
+        "avg_pnl_per_trade": 4.076951961623578
+      },
+      "optimal_parameters": {
+        "rsi_oversold": 25,
+        "rsi_overbought": 65,
+        "max_holding_minutes": 45
+      },
+      "parameter_stability": 1.0
+    },
+    {
+      "window_id": 17,
+      "train_start": "2024-12-14T08:30:00",
+      "train_end": "2025-06-14T08:30:00",
+      "test_start": "2025-06-15T08:30:00",
+      "test_end": "2025-07-15T08:30:00",
+      "train_trades": 52417,
+      "test_trades": 8641,
+      "test_metrics": {
+        "total_pnl": 345.03630935583465,
+        "win_rate": 0.6627906976744186,
+        "sharpe_ratio": 0.44405997093191196,
+        "max_drawdown": -33.239377539478085,
+        "trade_count": 86,
+        "avg_pnl_per_trade": 4.012050108788775
+      },
+      "optimal_parameters": {
+        "rsi_oversold": 25,
+        "rsi_overbought": 65,
+        "max_holding_minutes": 45
+      },
+      "parameter_stability": 1.0
+    }
+  ],
+  "time_analysis": {
+    "win_rate_trend": {
+      "slope": 0.0002361360627187268,
+      "p_value": 0.11038198060933126,
+      "has_significant_trend": "False",
+      "direction": "improving"
+    },
+    "sharpe_trend": {
+      "slope": 0.0004856136069288505,
+      "p_value": 0.3498229996170882,
+      "has_significant_trend": "False",
+      "direction": "improving"
+    },
+    "stability_score": 97.3450208532642,
+    "win_rate_cv": 0.004487820405284495,
+    "sharpe_cv": 0.022786087632989425
+  },
+  "parameter_analysis": {
+    "parameter_details": {
+      "rsi_oversold": {
+        "mean": 25.0,
+        "std": 0.0,
+        "cv": 0.0,
+        "range": 0,
+        "stability_score": 100.0
+      },
+      "rsi_overbought": {
+        "mean": 65.0,
+        "std": 0.0,
+        "cv": 0.0,
+        "range": 0,
+        "stability_score": 100.0
+      },
+      "max_holding_minutes": {
+        "mean": 45.0,
+        "std": 0.0,
+        "cv": 0.0,
+        "range": 0,
+        "stability_score": 100.0
+      }
+    },
+    "overall_parameter_stability": 1.0,
+    "parameter_drift_detected": "False"
+  },
+  "performance_decay": {
+    "win_rate_decay_pct": NaN,
+    "sharpe_decay_pct": NaN,
+    "significant_decay_detected": "False",
+    "early_vs_recent": {
+      "early_win_rate": NaN,
+      "recent_win_rate": 0.6628022384809685,
+      "early_sharpe": NaN,
+      "recent_sharpe": 0.4450176445924768
+    }
+  },
+  "stability_assessment": {
+    "stability_factors": {
+      "win_rate_stability": 0.9955322301434438,
+      "sharpe_stability": 0.9777215510569538,
+      "consistency_ratio": 1.0,
+      "parameter_stability": 1.0
+    },
+    "overall_stability_score": 0.9933134453000994,
+    "overall_pass": "True",
+    "warnings": []
+  },
+  "overall_assessment": {
+    "total_windows": 17,
+    "avg_win_rate": 0.6621258076774428,
+    "win_rate_std": 0.002971501710560305,
+    "avg_sharpe": 0.44511098124587367,
+    "sharpe_std": 0.01014233782507439,
+    "parameter_stability_avg": 1.0,
+    "performance_consistency": 0.9726930145067522,
+    "time_stability_score": 97.3450208532642,
+    "overall_pass": "True"
+  },
+  "recommendations": [
+    "\u2705 \u7b56\u7565\u901a\u8fc7Walk-Forward\u9a8c\u8bc1\uff0c\u8868\u73b0\u7a33\u5b9a"
+  ]
+}

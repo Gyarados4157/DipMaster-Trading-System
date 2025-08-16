@@ -1,0 +1,48 @@
+{
+  "timestamp": "2025-08-15T17:39:06.481802",
+  "baseline_system": {
+    "metrics": {
+      "total_trades": 4,
+      "win_rate": 50.0,
+      "avg_pnl": 0.005756985731413542,
+      "profit_factor": 1.0053102671109222,
+      "sharpe_ratio": 0.002545976957507075,
+      "max_drawdown": -1.397357360301657,
+      "avg_confidence": 0.49522918017948436,
+      "grade_distribution": {
+        "B": 2,
+        "C": 2
+      }
+    },
+    "overall_score": 48.63957497730862,
+    "risk_level": "HIGH",
+    "signal_count": 4
+  },
+  "ultra_system": {
+    "metrics": {
+      "total_trades": 7,
+      "win_rate": 57.14285714285714,
+      "avg_pnl": 1.0765253756587065,
+      "profit_factor": 2.0578619775170703,
+      "sharpe_ratio": 0.4342133925569632,
+      "max_drawdown": 1.1258330757639614,
+      "avg_confidence": 0.7217352784104544,
+      "grade_distribution": {
+        "B": 6,
+        "A": 1
+      }
+    },
+    "overall_score": 70.90162063524382,
+    "risk_level": "HIGH",
+    "signal_count": 7
+  },
+  "improvements": {
+    "score_improvement": 22.262045657935197,
+    "win_rate_improvement": 7.142857142857139,
+    "sharpe_improvement": 0.4316674155994561,
+    "targets_achieved": "0",
+    "optimization_success_rate": 0.0
+  },
+  "recommendation": "\ud83d\udee0\ufe0f REDESIGN REQUIRED: Fundamental strategy improvements needed",
+  "deployment_risk": "HIGH"
+}

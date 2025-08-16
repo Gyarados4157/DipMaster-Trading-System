@@ -1,0 +1,134 @@
+{
+  "timestamp": "20250815_164748",
+  "asset_results": [
+    {
+      "symbol": "ICPUSDT",
+      "total_trades": 1781,
+      "win_rate": 0.5687815833801235,
+      "total_pnl": 2177.684207254644,
+      "sharpe_ratio": 0.09057415926906921,
+      "max_drawdown": -252.74212703897342,
+      "avg_trade_duration": 59.96350364963504,
+      "consistency_score": 0.3962914270711829,
+      "performance_rank": 1
+    },
+    {
+      "symbol": "SUIUSDT",
+      "total_trades": 1911,
+      "win_rate": 0.5693354264782836,
+      "total_pnl": 2072.552136986188,
+      "sharpe_ratio": 0.07232344943401844,
+      "max_drawdown": -352.9537935223706,
+      "avg_trade_duration": 59.89010989010989,
+      "consistency_score": 0.6212237809067976,
+      "performance_rank": 2
+    },
+    {
+      "symbol": "SOLUSDT",
+      "total_trades": 1852,
+      "win_rate": 0.58207343412527,
+      "total_pnl": 2062.0398345706144,
+      "sharpe_ratio": 0.09410670408380803,
+      "max_drawdown": -316.36658138821986,
+      "avg_trade_duration": 59.97300215982721,
+      "consistency_score": 0.26944230261194485,
+      "performance_rank": 3
+    },
+    {
+      "symbol": "XRPUSDT",
+      "total_trades": 1871,
+      "win_rate": 0.5820416889363976,
+      "total_pnl": 1713.618696036634,
+      "sharpe_ratio": 0.07586219566685633,
+      "max_drawdown": -204.5460852135178,
+      "avg_trade_duration": 59.90646712987707,
+      "consistency_score": 0.3631299975365542,
+      "performance_rank": 4
+    },
+    {
+      "symbol": "ALGOUSDT",
+      "total_trades": 1873,
+      "win_rate": 0.5403096636412174,
+      "total_pnl": 1613.1887706473708,
+      "sharpe_ratio": 0.05900871887859952,
+      "max_drawdown": -347.66512508266055,
+      "avg_trade_duration": 59.91724506139882,
+      "consistency_score": 0.30509300076754814,
+      "performance_rank": 5
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "total_trades": 1928,
+      "win_rate": 0.5798755186721992,
+      "total_pnl": 1586.131492496102,
+      "sharpe_ratio": 0.05838917436818653,
+      "max_drawdown": -252.26157355418246,
+      "avg_trade_duration": 59.91441908713693,
+      "consistency_score": 0.42125481932754133,
+      "performance_rank": 6
+    },
+    {
+      "symbol": "IOTAUSDT",
+      "total_trades": 1916,
+      "win_rate": 0.5568893528183716,
+      "total_pnl": 1176.9084711200157,
+      "sharpe_ratio": 0.04126104590646047,
+      "max_drawdown": -339.8266135726958,
+      "avg_trade_duration": 59.9321503131524,
+      "consistency_score": 0.3383326137583922,
+      "performance_rank": 7
+    },
+    {
+      "symbol": "BNBUSDT",
+      "total_trades": 1864,
+      "win_rate": 0.5600858369098712,
+      "total_pnl": 964.6999850669157,
+      "sharpe_ratio": 0.05963969826495356,
+      "max_drawdown": -199.66560144063317,
+      "avg_trade_duration": 59.90075107296137,
+      "consistency_score": 0.5706804502187789,
+      "performance_rank": 8
+    },
+    {
+      "symbol": "ADAUSDT",
+      "total_trades": 1877,
+      "win_rate": 0.5572722429408631,
+      "total_pnl": 795.7389794533133,
+      "sharpe_ratio": 0.034355631704118546,
+      "max_drawdown": -490.68090649109587,
+      "avg_trade_duration": 59.95471497069792,
+      "consistency_score": 0.30410936051368187,
+      "performance_rank": 9
+    }
+  ],
+  "consistency_metrics": {
+    "consistency_stats": {
+      "win_rate": {
+        "mean": 0.5662960831002886,
+        "std": 0.013251594112247071,
+        "cv": 0.023400469308738396,
+        "range": 0.041763770484052665,
+        "min": 0.5403096636412174,
+        "max": 0.58207343412527
+      },
+      "total_pnl": {
+        "mean": 1573.6180637368664,
+        "std": 472.22465726697044,
+        "cv": 0.3000884828085793,
+        "range": 1381.945227801331,
+        "min": 795.7389794533133,
+        "max": 2177.684207254644
+      },
+      "sharpe_ratio": {
+        "mean": 0.06505786417511898,
+        "std": 0.01910140909957622,
+        "cv": 0.29360645852375594,
+        "range": 0.059751072379689484,
+        "min": 0.034355631704118546,
+        "max": 0.09410670408380803
+      }
+    },
+    "friedman_test": {
+      "statistic": 18.0,
+      "p_value": 0.00012340980408667962,
+      "is_consistent": 
