@@ -1,0 +1,2740 @@
+{
+  "version": "2025-08-16T20:55:30.342848",
+  "metadata": {
+    "bundle_id": "dipmaster_enhanced_v4_20250816_205530",
+    "strategy_name": "DipMaster_Enhanced_V4_Extended",
+    "description": "扩展版高性能量化交易数据基础设施 - 支持25个币种和增强分析",
+    "symbols": [
+      "BTCUSDT",
+      "ETHUSDT",
+      "SOLUSDT",
+      "ADAUSDT",
+      "XRPUSDT",
+      "AVAXUSDT",
+      "DOTUSDT",
+      "ATOMUSDT",
+      "NEARUSDT",
+      "APTUSDT",
+      "UNIUSDT",
+      "AAVEUSDT",
+      "LINKUSDT",
+      "MKRUSDT",
+      "COMPUSDT",
+      "ARBUSDT",
+      "OPUSDT",
+      "MATICUSDT",
+      "FILUSDT",
+      "LTCUSDT",
+      "BNBUSDT",
+      "TRXUSDT",
+      "XLMUSDT",
+      "VETUSDT",
+      "QNTUSDT"
+    ],
+    "symbol_count": 25,
+    "exchanges": [
+      "binance"
+    ],
+    "date_range": {
+      "start": "2025-05-17",
+      "end": "2025-08-16"
+    },
+    "data_quality_score": 0.995,
+    "timeframes": [
+      "5m",
+      "15m",
+      "1h"
+    ],
+    "analysis_features": [
+      "correlation_analysis",
+      "volatility_clustering",
+      "liquidity_assessment",
+      "symbol_ranking"
+    ]
+  },
+  "symbol_pool": {
+    "BTCUSDT": {
+      "category": "主流币",
+      "priority": 1,
+      "ranking": {
+        "total_score": 0.5621,
+        "rank": 1,
+        "category": "主流币",
+        "priority": 1,
+        "score_components": {
+          "liquidity_score": 0.1388,
+          "volatility_score": 0.0704,
+          "priority_score": 0.2,
+          "stability_score": 0.1496,
+          "return_score": 0.0033
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0282,
+        "sharpe_ratio": 0.0661,
+        "liquidity_tier": "中等流动性"
+      }
+    },
+    "ETHUSDT": {
+      "category": "主流币",
+      "priority": 1,
+      "ranking": {
+        "total_score": 0.5453,
+        "rank": 2,
+        "category": "主流币",
+        "priority": 1,
+        "score_components": {
+          "liquidity_score": 0.139,
+          "volatility_score": 0.0518,
+          "priority_score": 0.2,
+          "stability_score": 0.15,
+          "return_score": 0.0046
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0207,
+        "sharpe_ratio": 0.0919,
+        "liquidity_tier": "中等流动性"
+      }
+    },
+    "SOLUSDT": {
+      "category": "主流币",
+      "priority": 2,
+      "ranking": {
+        "total_score": 0.5143,
+        "rank": 4,
+        "category": "主流币",
+        "priority": 2,
+        "score_components": {
+          "liquidity_score": 0.1388,
+          "volatility_score": 0.0714,
+          "priority_score": 0.15,
+          "stability_score": 0.1495,
+          "return_score": 0.0045
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0286,
+        "sharpe_ratio": 0.0901,
+        "liquidity_tier": "中等流动性"
+      }
+    },
+    "ADAUSDT": {
+      "category": "主流币",
+      "priority": 2,
+      "ranking": {
+        "total_score": 0.5093,
+        "rank": 9,
+        "category": "主流币",
+        "priority": 2,
+        "score_components": {
+          "liquidity_score": 0.1391,
+          "volatility_score": 0.0709,
+          "priority_score": 0.15,
+          "stability_score": 0.1493,
+          "return_score": 0.0
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0284,
+        "sharpe_ratio": -0.008,
+        "liquidity_tier": "中等流动性"
+      }
+    },
+    "XRPUSDT": {
+      "category": "主流币",
+      "priority": 2,
+      "ranking": {
+        "total_score": 0.5026,
+        "rank": 10,
+        "category": "主流币",
+        "priority": 2,
+        "score_components": {
+          "liquidity_score": 0.1387,
+          "volatility_score": 0.0642,
+          "priority_score": 0.15,
+          "stability_score": 0.1497,
+          "return_score": 0.0
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0257,
+        "sharpe_ratio": -0.0148,
+        "liquidity_tier": "中等流动性"
+      }
+    },
+    "AVAXUSDT": {
+      "category": "Layer1",
+      "priority": 2,
+      "ranking": {
+        "total_score": 0.5099,
+        "rank": 7,
+        "category": "Layer1",
+        "priority": 2,
+        "score_components": {
+          "liquidity_score": 0.1389,
+          "volatility_score": 0.07,
+          "priority_score": 0.15,
+          "stability_score": 0.1495,
+          "return_score": 0.0015
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.028,
+        "sharpe_ratio": 0.0304,
+        "liquidity_tier": "中等流动性"
+      }
+    },
+    "DOTUSDT": {
+      "category": "Layer1",
+      "priority": 2,
+      "ranking": {
+        "total_score": 0.5141,
+        "rank": 5,
+        "category": "Layer1",
+        "priority": 2,
+        "score_components": {
+          "liquidity_score": 0.1388,
+          "volatility_score": 0.0658,
+          "priority_score": 0.15,
+          "stability_score": 0.1496,
+          "return_score": 0.01
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0263,
+        "sharpe_ratio": 0.1994,
+        "liquidity_tier": "中等流动性"
+      }
+    },
+    "ATOMUSDT": {
+      "category": "Layer1",
+      "priority": 3,
+      "ranking": {
+        "total_score": 0.4449,
+        "rank": 18,
+        "category": "Layer1",
+        "priority": 3,
+        "score_components": {
+          "liquidity_score": 0.1389,
+          "volatility_score": 0.0561,
+          "priority_score": 0.1,
+          "stability_score": 0.1499,
+          "return_score": 0.0
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0224,
+        "sharpe_ratio": -0.0576,
+        "liquidity_tier": "中等流动性"
+      }
+    },
+    "NEARUSDT": {
+      "category": "Layer1",
+      "priority": 3,
+      "ranking": {
+        "total_score": 0.4495,
+        "rank": 15,
+        "category": "Layer1",
+        "priority": 3,
+        "score_components": {
+          "liquidity_score": 0.139,
+          "volatility_score": 0.0606,
+          "priority_score": 0.1,
+          "stability_score": 0.1499,
+          "return_score": 0.0
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0242,
+        "sharpe_ratio": -0.1169,
+        "liquidity_tier": "中等流动性"
+      }
+    },
+    "APTUSDT": {
+      "category": "Layer1",
+      "priority": 3,
+      "ranking": {
+        "total_score": 0.4562,
+        "rank": 14,
+        "category": "Layer1",
+        "priority": 3,
+        "score_components": {
+          "liquidity_score": 0.139,
+          "volatility_score": 0.0624,
+          "priority_score": 0.1,
+          "stability_score": 0.1494,
+          "return_score": 0.0054
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0249,
+        "sharpe_ratio": 0.1086,
+        "liquidity_tier": "中等流动性"
+      }
+    },
+    "UNIUSDT": {
+      "category": "DeFi",
+      "priority": 3,
+      "ranking": {
+        "total_score": 0.4387,
+        "rank": 20,
+        "category": "DeFi",
+        "priority": 3,
+        "score_components": {
+          "liquidity_score": 0.1387,
+          "volatility_score": 0.0501,
+          "priority_score": 0.1,
+          "stability_score": 0.1499,
+          "return_score": 0.0
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0201,
+        "sharpe_ratio": -0.1059,
+        "liquidity_tier": "中等流动性"
+      }
+    },
+    "AAVEUSDT": {
+      "category": "DeFi",
+      "priority": 3,
+      "ranking": {
+        "total_score": 0.4469,
+        "rank": 16,
+        "category": "DeFi",
+        "priority": 3,
+        "score_components": {
+          "liquidity_score": 0.139,
+          "volatility_score": 0.0522,
+          "priority_score": 0.1,
+          "stability_score": 0.1497,
+          "return_score": 0.0059
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0209,
+        "sharpe_ratio": 0.1189,
+        "liquidity_tier": "中等流动性"
+      }
+    },
+    "LINKUSDT": {
+      "category": "DeFi",
+      "priority": 2,
+      "ranking": {
+        "total_score": 0.5026,
+        "rank": 11,
+        "category": "DeFi",
+        "priority": 2,
+        "score_components": {
+          "liquidity_score": 0.1388,
+          "volatility_score": 0.0634,
+          "priority_score": 0.15,
+          "stability_score": 0.1497,
+          "return_score": 0.0007
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0254,
+        "sharpe_ratio": 0.0143,
+        "liquidity_tier": "中等流动性"
+      }
+    },
+    "MKRUSDT": {
+      "category": "DeFi",
+      "priority": 4,
+      "ranking": {
+        "total_score": 0.4082,
+        "rank": 23,
+        "category": "DeFi",
+        "priority": 4,
+        "score_components": {
+          "liquidity_score": 0.1388,
+          "volatility_score": 0.0696,
+          "priority_score": 0.05,
+          "stability_score": 0.1497,
+          "return_score": 0.0002
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0278,
+        "sharpe_ratio": 0.0032,
+        "liquidity_tier": "中等流动性"
+      }
+    },
+    "COMPUSDT": {
+      "category": "DeFi",
+      "priority": 4,
+      "ranking": {
+        "total_score": 0.41,
+        "rank": 22,
+        "category": "DeFi",
+        "priority": 4,
+        "score_components": {
+          "liquidity_score": 0.1387,
+          "volatility_score": 0.0716,
+          "priority_score": 0.05,
+          "stability_score": 0.1498,
+          "return_score": 0.0
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0286,
+        "sharpe_ratio": -0.1125,
+        "liquidity_tier": "中等流动性"
+      }
+    },
+    "ARBUSDT": {
+      "category": "新兴热点",
+      "priority": 3,
+      "ranking": {
+        "total_score": 0.4414,
+        "rank": 19,
+        "category": "新兴热点",
+        "priority": 3,
+        "score_components": {
+          "liquidity_score": 0.1387,
+          "volatility_score": 0.0532,
+          "priority_score": 0.1,
+          "stability_score": 0.1496,
+          "return_score": 0.0
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0213,
+        "sharpe_ratio": -0.0675,
+        "liquidity_tier": "中等流动性"
+      }
+    },
+    "OPUSDT": {
+      "category": "新兴热点",
+      "priority": 3,
+      "ranking": {
+        "total_score": 0.4386,
+        "rank": 21,
+        "category": "新兴热点",
+        "priority": 3,
+        "score_components": {
+          "liquidity_score": 0.1387,
+          "volatility_score": 0.0505,
+          "priority_score": 0.1,
+          "stability_score": 0.1495,
+          "return_score": 0.0
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0202,
+        "sharpe_ratio": -0.0823,
+        "liquidity_tier": "中等流动性"
+      }
+    },
+    "MATICUSDT": {
+      "category": "新兴热点",
+      "priority": 2,
+      "ranking": {
+        "total_score": 0.5125,
+        "rank": 6,
+        "category": "新兴热点",
+        "priority": 2,
+        "score_components": {
+          "liquidity_score": 0.1389,
+          "volatility_score": 0.0739,
+          "priority_score": 0.15,
+          "stability_score": 0.1496,
+          "return_score": 0.0
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0296,
+        "sharpe_ratio": -0.0889,
+        "liquidity_tier": "中等流动性"
+      }
+    },
+    "FILUSDT": {
+      "category": "新兴热点",
+      "priority": 3,
+      "ranking": {
+        "total_score": 0.4565,
+        "rank": 13,
+        "category": "新兴热点",
+        "priority": 3,
+        "score_components": {
+          "liquidity_score": 0.1388,
+          "volatility_score": 0.064,
+          "priority_score": 0.1,
+          "stability_score": 0.1491,
+          "return_score": 0.0046
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0256,
+        "sharpe_ratio": 0.092,
+        "liquidity_tier": "中等流动性"
+      }
+    },
+    "LTCUSDT": {
+      "category": "新兴热点",
+      "priority": 2,
+      "ranking": {
+        "total_score": 0.5096,
+        "rank": 8,
+        "category": "新兴热点",
+        "priority": 2,
+        "score_components": {
+          "liquidity_score": 0.139,
+          "volatility_score": 0.0616,
+          "priority_score": 0.15,
+          "stability_score": 0.1499,
+          "return_score": 0.0091
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0246,
+        "sharpe_ratio": 0.1826,
+        "liquidity_tier": "中等流动性"
+      }
+    },
+    "BNBUSDT": {
+      "category": "稳定表现",
+      "priority": 1,
+      "ranking": {
+        "total_score": 0.5424,
+        "rank": 3,
+        "category": "稳定表现",
+        "priority": 1,
+        "score_components": {
+          "liquidity_score": 0.1388,
+          "volatility_score": 0.0536,
+          "priority_score": 0.2,
+          "stability_score": 0.1496,
+          "return_score": 0.0005
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0214,
+        "sharpe_ratio": 0.0093,
+        "liquidity_tier": "中等流动性"
+      }
+    },
+    "TRXUSDT": {
+      "category": "稳定表现",
+      "priority": 3,
+      "ranking": {
+        "total_score": 0.4621,
+        "rank": 12,
+        "category": "稳定表现",
+        "priority": 3,
+        "score_components": {
+          "liquidity_score": 0.1388,
+          "volatility_score": 0.073,
+          "priority_score": 0.1,
+          "stability_score": 0.1492,
+          "return_score": 0.0011
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0292,
+        "sharpe_ratio": 0.0222,
+        "liquidity_tier": "中等流动性"
+      }
+    },
+    "XLMUSDT": {
+      "category": "稳定表现",
+      "priority": 3,
+      "ranking": {
+        "total_score": 0.4466,
+        "rank": 17,
+        "category": "稳定表现",
+        "priority": 3,
+        "score_components": {
+          "liquidity_score": 0.1389,
+          "volatility_score": 0.0581,
+          "priority_score": 0.1,
+          "stability_score": 0.1496,
+          "return_score": 0.0
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0232,
+        "sharpe_ratio": -0.0013,
+        "liquidity_tier": "中等流动性"
+      }
+    },
+    "VETUSDT": {
+      "category": "稳定表现",
+      "priority": 4,
+      "ranking": {
+        "total_score": 0.4072,
+        "rank": 24,
+        "category": "稳定表现",
+        "priority": 4,
+        "score_components": {
+          "liquidity_score": 0.1389,
+          "volatility_score": 0.0687,
+          "priority_score": 0.05,
+          "stability_score": 0.1497,
+          "return_score": 0.0
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0275,
+        "sharpe_ratio": -0.2103,
+        "liquidity_tier": "中等流动性"
+      }
+    },
+    "QNTUSDT": {
+      "category": "稳定表现",
+      "priority": 4,
+      "ranking": {
+        "total_score": 0.3972,
+        "rank": 25,
+        "category": "稳定表现",
+        "priority": 4,
+        "score_components": {
+          "liquidity_score": 0.1389,
+          "volatility_score": 0.0584,
+          "priority_score": 0.05,
+          "stability_score": 0.1499,
+          "return_score": 0.0
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0234,
+        "sharpe_ratio": -0.0516,
+        "liquidity_tier": "中等流动性"
+      }
+    }
+  },
+  "data_sources": {
+    "historical": {
+      "5m": {
+        "BTCUSDT": {
+          "file_path": "data/enhanced_market_data/BTCUSDT_5m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 25920,
+          "quality_score": 0.995
+        },
+        "ETHUSDT": {
+          "file_path": "data/enhanced_market_data/ETHUSDT_5m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 25920,
+          "quality_score": 0.995
+        },
+        "SOLUSDT": {
+          "file_path": "data/enhanced_market_data/SOLUSDT_5m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 25920,
+          "quality_score": 0.995
+        },
+        "ADAUSDT": {
+          "file_path": "data/enhanced_market_data/ADAUSDT_5m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 25920,
+          "quality_score": 0.995
+        },
+        "XRPUSDT": {
+          "file_path": "data/enhanced_market_data/XRPUSDT_5m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 25920,
+          "quality_score": 0.995
+        },
+        "AVAXUSDT": {
+          "file_path": "data/enhanced_market_data/AVAXUSDT_5m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 25920,
+          "quality_score": 0.995
+        },
+        "DOTUSDT": {
+          "file_path": "data/enhanced_market_data/DOTUSDT_5m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 25920,
+          "quality_score": 0.995
+        },
+        "ATOMUSDT": {
+          "file_path": "data/enhanced_market_data/ATOMUSDT_5m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 25920,
+          "quality_score": 0.995
+        },
+        "NEARUSDT": {
+          "file_path": "data/enhanced_market_data/NEARUSDT_5m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 25920,
+          "quality_score": 0.995
+        },
+        "APTUSDT": {
+          "file_path": "data/enhanced_market_data/APTUSDT_5m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 25920,
+          "quality_score": 0.995
+        },
+        "UNIUSDT": {
+          "file_path": "data/enhanced_market_data/UNIUSDT_5m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 25920,
+          "quality_score": 0.995
+        },
+        "AAVEUSDT": {
+          "file_path": "data/enhanced_market_data/AAVEUSDT_5m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 25920,
+          "quality_score": 0.995
+        },
+        "LINKUSDT": {
+          "file_path": "data/enhanced_market_data/LINKUSDT_5m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 25920,
+          "quality_score": 0.995
+        },
+        "MKRUSDT": {
+          "file_path": "data/enhanced_market_data/MKRUSDT_5m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 25920,
+          "quality_score": 0.995
+        },
+        "COMPUSDT": {
+          "file_path": "data/enhanced_market_data/COMPUSDT_5m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 25920,
+          "quality_score": 0.995
+        },
+        "ARBUSDT": {
+          "file_path": "data/enhanced_market_data/ARBUSDT_5m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 25920,
+          "quality_score": 0.995
+        },
+        "OPUSDT": {
+          "file_path": "data/enhanced_market_data/OPUSDT_5m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 25920,
+          "quality_score": 0.995
+        },
+        "MATICUSDT": {
+          "file_path": "data/enhanced_market_data/MATICUSDT_5m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 25920,
+          "quality_score": 0.995
+        },
+        "FILUSDT": {
+          "file_path": "data/enhanced_market_data/FILUSDT_5m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 25920,
+          "quality_score": 0.995
+        },
+        "LTCUSDT": {
+          "file_path": "data/enhanced_market_data/LTCUSDT_5m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 25920,
+          "quality_score": 0.995
+        },
+        "BNBUSDT": {
+          "file_path": "data/enhanced_market_data/BNBUSDT_5m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 25920,
+          "quality_score": 0.995
+        },
+        "TRXUSDT": {
+          "file_path": "data/enhanced_market_data/TRXUSDT_5m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 25920,
+          "quality_score": 0.995
+        },
+        "XLMUSDT": {
+          "file_path": "data/enhanced_market_data/XLMUSDT_5m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 25920,
+          "quality_score": 0.995
+        },
+        "VETUSDT": {
+          "file_path": "data/enhanced_market_data/VETUSDT_5m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 25920,
+          "quality_score": 0.995
+        },
+        "QNTUSDT": {
+          "file_path": "data/enhanced_market_data/QNTUSDT_5m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 25920,
+          "quality_score": 0.995
+        }
+      },
+      "15m": {
+        "BTCUSDT": {
+          "file_path": "data/enhanced_market_data/BTCUSDT_15m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 8640,
+          "quality_score": 0.995
+        },
+        "ETHUSDT": {
+          "file_path": "data/enhanced_market_data/ETHUSDT_15m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 8640,
+          "quality_score": 0.995
+        },
+        "SOLUSDT": {
+          "file_path": "data/enhanced_market_data/SOLUSDT_15m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 8640,
+          "quality_score": 0.995
+        },
+        "ADAUSDT": {
+          "file_path": "data/enhanced_market_data/ADAUSDT_15m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 8640,
+          "quality_score": 0.995
+        },
+        "XRPUSDT": {
+          "file_path": "data/enhanced_market_data/XRPUSDT_15m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 8640,
+          "quality_score": 0.995
+        },
+        "AVAXUSDT": {
+          "file_path": "data/enhanced_market_data/AVAXUSDT_15m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 8640,
+          "quality_score": 0.995
+        },
+        "DOTUSDT": {
+          "file_path": "data/enhanced_market_data/DOTUSDT_15m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 8640,
+          "quality_score": 0.995
+        },
+        "ATOMUSDT": {
+          "file_path": "data/enhanced_market_data/ATOMUSDT_15m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 8640,
+          "quality_score": 0.995
+        },
+        "NEARUSDT": {
+          "file_path": "data/enhanced_market_data/NEARUSDT_15m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 8640,
+          "quality_score": 0.995
+        },
+        "APTUSDT": {
+          "file_path": "data/enhanced_market_data/APTUSDT_15m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 8640,
+          "quality_score": 0.995
+        },
+        "UNIUSDT": {
+          "file_path": "data/enhanced_market_data/UNIUSDT_15m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 8640,
+          "quality_score": 0.995
+        },
+        "AAVEUSDT": {
+          "file_path": "data/enhanced_market_data/AAVEUSDT_15m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 8640,
+          "quality_score": 0.995
+        },
+        "LINKUSDT": {
+          "file_path": "data/enhanced_market_data/LINKUSDT_15m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 8640,
+          "quality_score": 0.995
+        },
+        "MKRUSDT": {
+          "file_path": "data/enhanced_market_data/MKRUSDT_15m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 8640,
+          "quality_score": 0.995
+        },
+        "COMPUSDT": {
+          "file_path": "data/enhanced_market_data/COMPUSDT_15m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 8640,
+          "quality_score": 0.995
+        },
+        "ARBUSDT": {
+          "file_path": "data/enhanced_market_data/ARBUSDT_15m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 8640,
+          "quality_score": 0.995
+        },
+        "OPUSDT": {
+          "file_path": "data/enhanced_market_data/OPUSDT_15m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 8640,
+          "quality_score": 0.995
+        },
+        "MATICUSDT": {
+          "file_path": "data/enhanced_market_data/MATICUSDT_15m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 8640,
+          "quality_score": 0.995
+        },
+        "FILUSDT": {
+          "file_path": "data/enhanced_market_data/FILUSDT_15m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 8640,
+          "quality_score": 0.995
+        },
+        "LTCUSDT": {
+          "file_path": "data/enhanced_market_data/LTCUSDT_15m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 8640,
+          "quality_score": 0.995
+        },
+        "BNBUSDT": {
+          "file_path": "data/enhanced_market_data/BNBUSDT_15m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 8640,
+          "quality_score": 0.995
+        },
+        "TRXUSDT": {
+          "file_path": "data/enhanced_market_data/TRXUSDT_15m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 8640,
+          "quality_score": 0.995
+        },
+        "XLMUSDT": {
+          "file_path": "data/enhanced_market_data/XLMUSDT_15m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 8640,
+          "quality_score": 0.995
+        },
+        "VETUSDT": {
+          "file_path": "data/enhanced_market_data/VETUSDT_15m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 8640,
+          "quality_score": 0.995
+        },
+        "QNTUSDT": {
+          "file_path": "data/enhanced_market_data/QNTUSDT_15m_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 8640,
+          "quality_score": 0.995
+        }
+      },
+      "1h": {
+        "BTCUSDT": {
+          "file_path": "data/enhanced_market_data/BTCUSDT_1h_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 2160,
+          "quality_score": 0.995
+        },
+        "ETHUSDT": {
+          "file_path": "data/enhanced_market_data/ETHUSDT_1h_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 2160,
+          "quality_score": 0.995
+        },
+        "SOLUSDT": {
+          "file_path": "data/enhanced_market_data/SOLUSDT_1h_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 2160,
+          "quality_score": 0.995
+        },
+        "ADAUSDT": {
+          "file_path": "data/enhanced_market_data/ADAUSDT_1h_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 2160,
+          "quality_score": 0.995
+        },
+        "XRPUSDT": {
+          "file_path": "data/enhanced_market_data/XRPUSDT_1h_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 2160,
+          "quality_score": 0.995
+        },
+        "AVAXUSDT": {
+          "file_path": "data/enhanced_market_data/AVAXUSDT_1h_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 2160,
+          "quality_score": 0.995
+        },
+        "DOTUSDT": {
+          "file_path": "data/enhanced_market_data/DOTUSDT_1h_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 2160,
+          "quality_score": 0.995
+        },
+        "ATOMUSDT": {
+          "file_path": "data/enhanced_market_data/ATOMUSDT_1h_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 2160,
+          "quality_score": 0.995
+        },
+        "NEARUSDT": {
+          "file_path": "data/enhanced_market_data/NEARUSDT_1h_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 2160,
+          "quality_score": 0.995
+        },
+        "APTUSDT": {
+          "file_path": "data/enhanced_market_data/APTUSDT_1h_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 2160,
+          "quality_score": 0.995
+        },
+        "UNIUSDT": {
+          "file_path": "data/enhanced_market_data/UNIUSDT_1h_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 2160,
+          "quality_score": 0.995
+        },
+        "AAVEUSDT": {
+          "file_path": "data/enhanced_market_data/AAVEUSDT_1h_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 2160,
+          "quality_score": 0.995
+        },
+        "LINKUSDT": {
+          "file_path": "data/enhanced_market_data/LINKUSDT_1h_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 2160,
+          "quality_score": 0.995
+        },
+        "MKRUSDT": {
+          "file_path": "data/enhanced_market_data/MKRUSDT_1h_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 2160,
+          "quality_score": 0.995
+        },
+        "COMPUSDT": {
+          "file_path": "data/enhanced_market_data/COMPUSDT_1h_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 2160,
+          "quality_score": 0.995
+        },
+        "ARBUSDT": {
+          "file_path": "data/enhanced_market_data/ARBUSDT_1h_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 2160,
+          "quality_score": 0.995
+        },
+        "OPUSDT": {
+          "file_path": "data/enhanced_market_data/OPUSDT_1h_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 2160,
+          "quality_score": 0.995
+        },
+        "MATICUSDT": {
+          "file_path": "data/enhanced_market_data/MATICUSDT_1h_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 2160,
+          "quality_score": 0.995
+        },
+        "FILUSDT": {
+          "file_path": "data/enhanced_market_data/FILUSDT_1h_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 2160,
+          "quality_score": 0.995
+        },
+        "LTCUSDT": {
+          "file_path": "data/enhanced_market_data/LTCUSDT_1h_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 2160,
+          "quality_score": 0.995
+        },
+        "BNBUSDT": {
+          "file_path": "data/enhanced_market_data/BNBUSDT_1h_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 2160,
+          "quality_score": 0.995
+        },
+        "TRXUSDT": {
+          "file_path": "data/enhanced_market_data/TRXUSDT_1h_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 2160,
+          "quality_score": 0.995
+        },
+        "XLMUSDT": {
+          "file_path": "data/enhanced_market_data/XLMUSDT_1h_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 2160,
+          "quality_score": 0.995
+        },
+        "VETUSDT": {
+          "file_path": "data/enhanced_market_data/VETUSDT_1h_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 2160,
+          "quality_score": 0.995
+        },
+        "QNTUSDT": {
+          "file_path": "data/enhanced_market_data/QNTUSDT_1h_90days.parquet",
+          "format": "parquet",
+          "compression": "snappy",
+          "records_count": 2160,
+          "quality_score": 0.995
+        }
+      }
+    }
+  },
+  "analysis_results": {
+    "correlation_matrix": {
+      "BTCUSDT": {
+        "BTCUSDT": NaN,
+        "ETHUSDT": NaN,
+        "SOLUSDT": NaN,
+        "ADAUSDT": NaN,
+        "XRPUSDT": NaN,
+        "AVAXUSDT": NaN,
+        "DOTUSDT": NaN,
+        "ATOMUSDT": NaN,
+        "NEARUSDT": NaN,
+        "APTUSDT": NaN,
+        "UNIUSDT": NaN,
+        "AAVEUSDT": NaN,
+        "LINKUSDT": NaN,
+        "MKRUSDT": NaN,
+        "COMPUSDT": NaN,
+        "ARBUSDT": NaN,
+        "OPUSDT": NaN,
+        "MATICUSDT": NaN,
+        "FILUSDT": NaN,
+        "LTCUSDT": NaN,
+        "BNBUSDT": NaN,
+        "TRXUSDT": NaN,
+        "XLMUSDT": NaN,
+        "VETUSDT": NaN,
+        "QNTUSDT": NaN
+      },
+      "ETHUSDT": {
+        "BTCUSDT": NaN,
+        "ETHUSDT": NaN,
+        "SOLUSDT": NaN,
+        "ADAUSDT": NaN,
+        "XRPUSDT": NaN,
+        "AVAXUSDT": NaN,
+        "DOTUSDT": NaN,
+        "ATOMUSDT": NaN,
+        "NEARUSDT": NaN,
+        "APTUSDT": NaN,
+        "UNIUSDT": NaN,
+        "AAVEUSDT": NaN,
+        "LINKUSDT": NaN,
+        "MKRUSDT": NaN,
+        "COMPUSDT": NaN,
+        "ARBUSDT": NaN,
+        "OPUSDT": NaN,
+        "MATICUSDT": NaN,
+        "FILUSDT": NaN,
+        "LTCUSDT": NaN,
+        "BNBUSDT": NaN,
+        "TRXUSDT": NaN,
+        "XLMUSDT": NaN,
+        "VETUSDT": NaN,
+        "QNTUSDT": NaN
+      },
+      "SOLUSDT": {
+        "BTCUSDT": NaN,
+        "ETHUSDT": NaN,
+        "SOLUSDT": NaN,
+        "ADAUSDT": NaN,
+        "XRPUSDT": NaN,
+        "AVAXUSDT": NaN,
+        "DOTUSDT": NaN,
+        "ATOMUSDT": NaN,
+        "NEARUSDT": NaN,
+        "APTUSDT": NaN,
+        "UNIUSDT": NaN,
+        "AAVEUSDT": NaN,
+        "LINKUSDT": NaN,
+        "MKRUSDT": NaN,
+        "COMPUSDT": NaN,
+        "ARBUSDT": NaN,
+        "OPUSDT": NaN,
+        "MATICUSDT": NaN,
+        "FILUSDT": NaN,
+        "LTCUSDT": NaN,
+        "BNBUSDT": NaN,
+        "TRXUSDT": NaN,
+        "XLMUSDT": NaN,
+        "VETUSDT": NaN,
+        "QNTUSDT": NaN
+      },
+      "ADAUSDT": {
+        "BTCUSDT": NaN,
+        "ETHUSDT": NaN,
+        "SOLUSDT": NaN,
+        "ADAUSDT": NaN,
+        "XRPUSDT": NaN,
+        "AVAXUSDT": NaN,
+        "DOTUSDT": NaN,
+        "ATOMUSDT": NaN,
+        "NEARUSDT": NaN,
+        "APTUSDT": NaN,
+        "UNIUSDT": NaN,
+        "AAVEUSDT": NaN,
+        "LINKUSDT": NaN,
+        "MKRUSDT": NaN,
+        "COMPUSDT": NaN,
+        "ARBUSDT": NaN,
+        "OPUSDT": NaN,
+        "MATICUSDT": NaN,
+        "FILUSDT": NaN,
+        "LTCUSDT": NaN,
+        "BNBUSDT": NaN,
+        "TRXUSDT": NaN,
+        "XLMUSDT": NaN,
+        "VETUSDT": NaN,
+        "QNTUSDT": NaN
+      },
+      "XRPUSDT": {
+        "BTCUSDT": NaN,
+        "ETHUSDT": NaN,
+        "SOLUSDT": NaN,
+        "ADAUSDT": NaN,
+        "XRPUSDT": NaN,
+        "AVAXUSDT": NaN,
+        "DOTUSDT": NaN,
+        "ATOMUSDT": NaN,
+        "NEARUSDT": NaN,
+        "APTUSDT": NaN,
+        "UNIUSDT": NaN,
+        "AAVEUSDT": NaN,
+        "LINKUSDT": NaN,
+        "MKRUSDT": NaN,
+        "COMPUSDT": NaN,
+        "ARBUSDT": NaN,
+        "OPUSDT": NaN,
+        "MATICUSDT": NaN,
+        "FILUSDT": NaN,
+        "LTCUSDT": NaN,
+        "BNBUSDT": NaN,
+        "TRXUSDT": NaN,
+        "XLMUSDT": NaN,
+        "VETUSDT": NaN,
+        "QNTUSDT": NaN
+      },
+      "AVAXUSDT": {
+        "BTCUSDT": NaN,
+        "ETHUSDT": NaN,
+        "SOLUSDT": NaN,
+        "ADAUSDT": NaN,
+        "XRPUSDT": NaN,
+        "AVAXUSDT": NaN,
+        "DOTUSDT": NaN,
+        "ATOMUSDT": NaN,
+        "NEARUSDT": NaN,
+        "APTUSDT": NaN,
+        "UNIUSDT": NaN,
+        "AAVEUSDT": NaN,
+        "LINKUSDT": NaN,
+        "MKRUSDT": NaN,
+        "COMPUSDT": NaN,
+        "ARBUSDT": NaN,
+        "OPUSDT": NaN,
+        "MATICUSDT": NaN,
+        "FILUSDT": NaN,
+        "LTCUSDT": NaN,
+        "BNBUSDT": NaN,
+        "TRXUSDT": NaN,
+        "XLMUSDT": NaN,
+        "VETUSDT": NaN,
+        "QNTUSDT": NaN
+      },
+      "DOTUSDT": {
+        "BTCUSDT": NaN,
+        "ETHUSDT": NaN,
+        "SOLUSDT": NaN,
+        "ADAUSDT": NaN,
+        "XRPUSDT": NaN,
+        "AVAXUSDT": NaN,
+        "DOTUSDT": NaN,
+        "ATOMUSDT": NaN,
+        "NEARUSDT": NaN,
+        "APTUSDT": NaN,
+        "UNIUSDT": NaN,
+        "AAVEUSDT": NaN,
+        "LINKUSDT": NaN,
+        "MKRUSDT": NaN,
+        "COMPUSDT": NaN,
+        "ARBUSDT": NaN,
+        "OPUSDT": NaN,
+        "MATICUSDT": NaN,
+        "FILUSDT": NaN,
+        "LTCUSDT": NaN,
+        "BNBUSDT": NaN,
+        "TRXUSDT": NaN,
+        "XLMUSDT": NaN,
+        "VETUSDT": NaN,
+        "QNTUSDT": NaN
+      },
+      "ATOMUSDT": {
+        "BTCUSDT": NaN,
+        "ETHUSDT": NaN,
+        "SOLUSDT": NaN,
+        "ADAUSDT": NaN,
+        "XRPUSDT": NaN,
+        "AVAXUSDT": NaN,
+        "DOTUSDT": NaN,
+        "ATOMUSDT": NaN,
+        "NEARUSDT": NaN,
+        "APTUSDT": NaN,
+        "UNIUSDT": NaN,
+        "AAVEUSDT": NaN,
+        "LINKUSDT": NaN,
+        "MKRUSDT": NaN,
+        "COMPUSDT": NaN,
+        "ARBUSDT": NaN,
+        "OPUSDT": NaN,
+        "MATICUSDT": NaN,
+        "FILUSDT": NaN,
+        "LTCUSDT": NaN,
+        "BNBUSDT": NaN,
+        "TRXUSDT": NaN,
+        "XLMUSDT": NaN,
+        "VETUSDT": NaN,
+        "QNTUSDT": NaN
+      },
+      "NEARUSDT": {
+        "BTCUSDT": NaN,
+        "ETHUSDT": NaN,
+        "SOLUSDT": NaN,
+        "ADAUSDT": NaN,
+        "XRPUSDT": NaN,
+        "AVAXUSDT": NaN,
+        "DOTUSDT": NaN,
+        "ATOMUSDT": NaN,
+        "NEARUSDT": NaN,
+        "APTUSDT": NaN,
+        "UNIUSDT": NaN,
+        "AAVEUSDT": NaN,
+        "LINKUSDT": NaN,
+        "MKRUSDT": NaN,
+        "COMPUSDT": NaN,
+        "ARBUSDT": NaN,
+        "OPUSDT": NaN,
+        "MATICUSDT": NaN,
+        "FILUSDT": NaN,
+        "LTCUSDT": NaN,
+        "BNBUSDT": NaN,
+        "TRXUSDT": NaN,
+        "XLMUSDT": NaN,
+        "VETUSDT": NaN,
+        "QNTUSDT": NaN
+      },
+      "APTUSDT": {
+        "BTCUSDT": NaN,
+        "ETHUSDT": NaN,
+        "SOLUSDT": NaN,
+        "ADAUSDT": NaN,
+        "XRPUSDT": NaN,
+        "AVAXUSDT": NaN,
+        "DOTUSDT": NaN,
+        "ATOMUSDT": NaN,
+        "NEARUSDT": NaN,
+        "APTUSDT": NaN,
+        "UNIUSDT": NaN,
+        "AAVEUSDT": NaN,
+        "LINKUSDT": NaN,
+        "MKRUSDT": NaN,
+        "COMPUSDT": NaN,
+        "ARBUSDT": NaN,
+        "OPUSDT": NaN,
+        "MATICUSDT": NaN,
+        "FILUSDT": NaN,
+        "LTCUSDT": NaN,
+        "BNBUSDT": NaN,
+        "TRXUSDT": NaN,
+        "XLMUSDT": NaN,
+        "VETUSDT": NaN,
+        "QNTUSDT": NaN
+      },
+      "UNIUSDT": {
+        "BTCUSDT": NaN,
+        "ETHUSDT": NaN,
+        "SOLUSDT": NaN,
+        "ADAUSDT": NaN,
+        "XRPUSDT": NaN,
+        "AVAXUSDT": NaN,
+        "DOTUSDT": NaN,
+        "ATOMUSDT": NaN,
+        "NEARUSDT": NaN,
+        "APTUSDT": NaN,
+        "UNIUSDT": NaN,
+        "AAVEUSDT": NaN,
+        "LINKUSDT": NaN,
+        "MKRUSDT": NaN,
+        "COMPUSDT": NaN,
+        "ARBUSDT": NaN,
+        "OPUSDT": NaN,
+        "MATICUSDT": NaN,
+        "FILUSDT": NaN,
+        "LTCUSDT": NaN,
+        "BNBUSDT": NaN,
+        "TRXUSDT": NaN,
+        "XLMUSDT": NaN,
+        "VETUSDT": NaN,
+        "QNTUSDT": NaN
+      },
+      "AAVEUSDT": {
+        "BTCUSDT": NaN,
+        "ETHUSDT": NaN,
+        "SOLUSDT": NaN,
+        "ADAUSDT": NaN,
+        "XRPUSDT": NaN,
+        "AVAXUSDT": NaN,
+        "DOTUSDT": NaN,
+        "ATOMUSDT": NaN,
+        "NEARUSDT": NaN,
+        "APTUSDT": NaN,
+        "UNIUSDT": NaN,
+        "AAVEUSDT": NaN,
+        "LINKUSDT": NaN,
+        "MKRUSDT": NaN,
+        "COMPUSDT": NaN,
+        "ARBUSDT": NaN,
+        "OPUSDT": NaN,
+        "MATICUSDT": NaN,
+        "FILUSDT": NaN,
+        "LTCUSDT": NaN,
+        "BNBUSDT": NaN,
+        "TRXUSDT": NaN,
+        "XLMUSDT": NaN,
+        "VETUSDT": NaN,
+        "QNTUSDT": NaN
+      },
+      "LINKUSDT": {
+        "BTCUSDT": NaN,
+        "ETHUSDT": NaN,
+        "SOLUSDT": NaN,
+        "ADAUSDT": NaN,
+        "XRPUSDT": NaN,
+        "AVAXUSDT": NaN,
+        "DOTUSDT": NaN,
+        "ATOMUSDT": NaN,
+        "NEARUSDT": NaN,
+        "APTUSDT": NaN,
+        "UNIUSDT": NaN,
+        "AAVEUSDT": NaN,
+        "LINKUSDT": NaN,
+        "MKRUSDT": NaN,
+        "COMPUSDT": NaN,
+        "ARBUSDT": NaN,
+        "OPUSDT": NaN,
+        "MATICUSDT": NaN,
+        "FILUSDT": NaN,
+        "LTCUSDT": NaN,
+        "BNBUSDT": NaN,
+        "TRXUSDT": NaN,
+        "XLMUSDT": NaN,
+        "VETUSDT": NaN,
+        "QNTUSDT": NaN
+      },
+      "MKRUSDT": {
+        "BTCUSDT": NaN,
+        "ETHUSDT": NaN,
+        "SOLUSDT": NaN,
+        "ADAUSDT": NaN,
+        "XRPUSDT": NaN,
+        "AVAXUSDT": NaN,
+        "DOTUSDT": NaN,
+        "ATOMUSDT": NaN,
+        "NEARUSDT": NaN,
+        "APTUSDT": NaN,
+        "UNIUSDT": NaN,
+        "AAVEUSDT": NaN,
+        "LINKUSDT": NaN,
+        "MKRUSDT": NaN,
+        "COMPUSDT": NaN,
+        "ARBUSDT": NaN,
+        "OPUSDT": NaN,
+        "MATICUSDT": NaN,
+        "FILUSDT": NaN,
+        "LTCUSDT": NaN,
+        "BNBUSDT": NaN,
+        "TRXUSDT": NaN,
+        "XLMUSDT": NaN,
+        "VETUSDT": NaN,
+        "QNTUSDT": NaN
+      },
+      "COMPUSDT": {
+        "BTCUSDT": NaN,
+        "ETHUSDT": NaN,
+        "SOLUSDT": NaN,
+        "ADAUSDT": NaN,
+        "XRPUSDT": NaN,
+        "AVAXUSDT": NaN,
+        "DOTUSDT": NaN,
+        "ATOMUSDT": NaN,
+        "NEARUSDT": NaN,
+        "APTUSDT": NaN,
+        "UNIUSDT": NaN,
+        "AAVEUSDT": NaN,
+        "LINKUSDT": NaN,
+        "MKRUSDT": NaN,
+        "COMPUSDT": NaN,
+        "ARBUSDT": NaN,
+        "OPUSDT": NaN,
+        "MATICUSDT": NaN,
+        "FILUSDT": NaN,
+        "LTCUSDT": NaN,
+        "BNBUSDT": NaN,
+        "TRXUSDT": NaN,
+        "XLMUSDT": NaN,
+        "VETUSDT": NaN,
+        "QNTUSDT": NaN
+      },
+      "ARBUSDT": {
+        "BTCUSDT": NaN,
+        "ETHUSDT": NaN,
+        "SOLUSDT": NaN,
+        "ADAUSDT": NaN,
+        "XRPUSDT": NaN,
+        "AVAXUSDT": NaN,
+        "DOTUSDT": NaN,
+        "ATOMUSDT": NaN,
+        "NEARUSDT": NaN,
+        "APTUSDT": NaN,
+        "UNIUSDT": NaN,
+        "AAVEUSDT": NaN,
+        "LINKUSDT": NaN,
+        "MKRUSDT": NaN,
+        "COMPUSDT": NaN,
+        "ARBUSDT": NaN,
+        "OPUSDT": NaN,
+        "MATICUSDT": NaN,
+        "FILUSDT": NaN,
+        "LTCUSDT": NaN,
+        "BNBUSDT": NaN,
+        "TRXUSDT": NaN,
+        "XLMUSDT": NaN,
+        "VETUSDT": NaN,
+        "QNTUSDT": NaN
+      },
+      "OPUSDT": {
+        "BTCUSDT": NaN,
+        "ETHUSDT": NaN,
+        "SOLUSDT": NaN,
+        "ADAUSDT": NaN,
+        "XRPUSDT": NaN,
+        "AVAXUSDT": NaN,
+        "DOTUSDT": NaN,
+        "ATOMUSDT": NaN,
+        "NEARUSDT": NaN,
+        "APTUSDT": NaN,
+        "UNIUSDT": NaN,
+        "AAVEUSDT": NaN,
+        "LINKUSDT": NaN,
+        "MKRUSDT": NaN,
+        "COMPUSDT": NaN,
+        "ARBUSDT": NaN,
+        "OPUSDT": NaN,
+        "MATICUSDT": NaN,
+        "FILUSDT": NaN,
+        "LTCUSDT": NaN,
+        "BNBUSDT": NaN,
+        "TRXUSDT": NaN,
+        "XLMUSDT": NaN,
+        "VETUSDT": NaN,
+        "QNTUSDT": NaN
+      },
+      "MATICUSDT": {
+        "BTCUSDT": NaN,
+        "ETHUSDT": NaN,
+        "SOLUSDT": NaN,
+        "ADAUSDT": NaN,
+        "XRPUSDT": NaN,
+        "AVAXUSDT": NaN,
+        "DOTUSDT": NaN,
+        "ATOMUSDT": NaN,
+        "NEARUSDT": NaN,
+        "APTUSDT": NaN,
+        "UNIUSDT": NaN,
+        "AAVEUSDT": NaN,
+        "LINKUSDT": NaN,
+        "MKRUSDT": NaN,
+        "COMPUSDT": NaN,
+        "ARBUSDT": NaN,
+        "OPUSDT": NaN,
+        "MATICUSDT": NaN,
+        "FILUSDT": NaN,
+        "LTCUSDT": NaN,
+        "BNBUSDT": NaN,
+        "TRXUSDT": NaN,
+        "XLMUSDT": NaN,
+        "VETUSDT": NaN,
+        "QNTUSDT": NaN
+      },
+      "FILUSDT": {
+        "BTCUSDT": NaN,
+        "ETHUSDT": NaN,
+        "SOLUSDT": NaN,
+        "ADAUSDT": NaN,
+        "XRPUSDT": NaN,
+        "AVAXUSDT": NaN,
+        "DOTUSDT": NaN,
+        "ATOMUSDT": NaN,
+        "NEARUSDT": NaN,
+        "APTUSDT": NaN,
+        "UNIUSDT": NaN,
+        "AAVEUSDT": NaN,
+        "LINKUSDT": NaN,
+        "MKRUSDT": NaN,
+        "COMPUSDT": NaN,
+        "ARBUSDT": NaN,
+        "OPUSDT": NaN,
+        "MATICUSDT": NaN,
+        "FILUSDT": NaN,
+        "LTCUSDT": NaN,
+        "BNBUSDT": NaN,
+        "TRXUSDT": NaN,
+        "XLMUSDT": NaN,
+        "VETUSDT": NaN,
+        "QNTUSDT": NaN
+      },
+      "LTCUSDT": {
+        "BTCUSDT": NaN,
+        "ETHUSDT": NaN,
+        "SOLUSDT": NaN,
+        "ADAUSDT": NaN,
+        "XRPUSDT": NaN,
+        "AVAXUSDT": NaN,
+        "DOTUSDT": NaN,
+        "ATOMUSDT": NaN,
+        "NEARUSDT": NaN,
+        "APTUSDT": NaN,
+        "UNIUSDT": NaN,
+        "AAVEUSDT": NaN,
+        "LINKUSDT": NaN,
+        "MKRUSDT": NaN,
+        "COMPUSDT": NaN,
+        "ARBUSDT": NaN,
+        "OPUSDT": NaN,
+        "MATICUSDT": NaN,
+        "FILUSDT": NaN,
+        "LTCUSDT": NaN,
+        "BNBUSDT": NaN,
+        "TRXUSDT": NaN,
+        "XLMUSDT": NaN,
+        "VETUSDT": NaN,
+        "QNTUSDT": NaN
+      },
+      "BNBUSDT": {
+        "BTCUSDT": NaN,
+        "ETHUSDT": NaN,
+        "SOLUSDT": NaN,
+        "ADAUSDT": NaN,
+        "XRPUSDT": NaN,
+        "AVAXUSDT": NaN,
+        "DOTUSDT": NaN,
+        "ATOMUSDT": NaN,
+        "NEARUSDT": NaN,
+        "APTUSDT": NaN,
+        "UNIUSDT": NaN,
+        "AAVEUSDT": NaN,
+        "LINKUSDT": NaN,
+        "MKRUSDT": NaN,
+        "COMPUSDT": NaN,
+        "ARBUSDT": NaN,
+        "OPUSDT": NaN,
+        "MATICUSDT": NaN,
+        "FILUSDT": NaN,
+        "LTCUSDT": NaN,
+        "BNBUSDT": NaN,
+        "TRXUSDT": NaN,
+        "XLMUSDT": NaN,
+        "VETUSDT": NaN,
+        "QNTUSDT": NaN
+      },
+      "TRXUSDT": {
+        "BTCUSDT": NaN,
+        "ETHUSDT": NaN,
+        "SOLUSDT": NaN,
+        "ADAUSDT": NaN,
+        "XRPUSDT": NaN,
+        "AVAXUSDT": NaN,
+        "DOTUSDT": NaN,
+        "ATOMUSDT": NaN,
+        "NEARUSDT": NaN,
+        "APTUSDT": NaN,
+        "UNIUSDT": NaN,
+        "AAVEUSDT": NaN,
+        "LINKUSDT": NaN,
+        "MKRUSDT": NaN,
+        "COMPUSDT": NaN,
+        "ARBUSDT": NaN,
+        "OPUSDT": NaN,
+        "MATICUSDT": NaN,
+        "FILUSDT": NaN,
+        "LTCUSDT": NaN,
+        "BNBUSDT": NaN,
+        "TRXUSDT": NaN,
+        "XLMUSDT": NaN,
+        "VETUSDT": NaN,
+        "QNTUSDT": NaN
+      },
+      "XLMUSDT": {
+        "BTCUSDT": NaN,
+        "ETHUSDT": NaN,
+        "SOLUSDT": NaN,
+        "ADAUSDT": NaN,
+        "XRPUSDT": NaN,
+        "AVAXUSDT": NaN,
+        "DOTUSDT": NaN,
+        "ATOMUSDT": NaN,
+        "NEARUSDT": NaN,
+        "APTUSDT": NaN,
+        "UNIUSDT": NaN,
+        "AAVEUSDT": NaN,
+        "LINKUSDT": NaN,
+        "MKRUSDT": NaN,
+        "COMPUSDT": NaN,
+        "ARBUSDT": NaN,
+        "OPUSDT": NaN,
+        "MATICUSDT": NaN,
+        "FILUSDT": NaN,
+        "LTCUSDT": NaN,
+        "BNBUSDT": NaN,
+        "TRXUSDT": NaN,
+        "XLMUSDT": NaN,
+        "VETUSDT": NaN,
+        "QNTUSDT": NaN
+      },
+      "VETUSDT": {
+        "BTCUSDT": NaN,
+        "ETHUSDT": NaN,
+        "SOLUSDT": NaN,
+        "ADAUSDT": NaN,
+        "XRPUSDT": NaN,
+        "AVAXUSDT": NaN,
+        "DOTUSDT": NaN,
+        "ATOMUSDT": NaN,
+        "NEARUSDT": NaN,
+        "APTUSDT": NaN,
+        "UNIUSDT": NaN,
+        "AAVEUSDT": NaN,
+        "LINKUSDT": NaN,
+        "MKRUSDT": NaN,
+        "COMPUSDT": NaN,
+        "ARBUSDT": NaN,
+        "OPUSDT": NaN,
+        "MATICUSDT": NaN,
+        "FILUSDT": NaN,
+        "LTCUSDT": NaN,
+        "BNBUSDT": NaN,
+        "TRXUSDT": NaN,
+        "XLMUSDT": NaN,
+        "VETUSDT": NaN,
+        "QNTUSDT": NaN
+      },
+      "QNTUSDT": {
+        "BTCUSDT": NaN,
+        "ETHUSDT": NaN,
+        "SOLUSDT": NaN,
+        "ADAUSDT": NaN,
+        "XRPUSDT": NaN,
+        "AVAXUSDT": NaN,
+        "DOTUSDT": NaN,
+        "ATOMUSDT": NaN,
+        "NEARUSDT": NaN,
+        "APTUSDT": NaN,
+        "UNIUSDT": NaN,
+        "AAVEUSDT": NaN,
+        "LINKUSDT": NaN,
+        "MKRUSDT": NaN,
+        "COMPUSDT": NaN,
+        "ARBUSDT": NaN,
+        "OPUSDT": NaN,
+        "MATICUSDT": NaN,
+        "FILUSDT": NaN,
+        "LTCUSDT": NaN,
+        "BNBUSDT": NaN,
+        "TRXUSDT": NaN,
+        "XLMUSDT": NaN,
+        "VETUSDT": NaN,
+        "QNTUSDT": NaN
+      }
+    },
+    "volatility_clustering": {
+      "BTCUSDT": {
+        "daily_vol": 0.028160133753976815,
+        "weekly_vol": 0.0745047107993384,
+        "monthly_vol": 0.15423940479415735,
+        "vol_of_vol": 7.234950460756971e-05,
+        "mean_return": 6.462264122956679e-06,
+        "skewness": -0.013394388347352069,
+        "kurtosis": -0.07306554471279192,
+        "sharpe_ratio": 0.06609102370292157
+      },
+      "ETHUSDT": {
+        "daily_vol": 0.0207020946721647,
+        "weekly_vol": 0.054772594120663036,
+        "monthly_vol": 0.11339004239552124,
+        "vol_of_vol": 4.861792926290373e-05,
+        "mean_return": 6.605523701806555e-06,
+        "skewness": -0.0010795189669747503,
+        "kurtosis": 0.004109861577039631,
+        "sharpe_ratio": 0.09189363956866521
+      },
+      "SOLUSDT": {
+        "daily_vol": 0.028560393669006826,
+        "weekly_vol": 0.07556369899429566,
+        "monthly_vol": 0.15643171863742775,
+        "vol_of_vol": 6.589938136610658e-05,
+        "mean_return": 8.93422077714867e-06,
+        "skewness": 0.015439990365531718,
+        "kurtosis": 0.017137097063638862,
+        "sharpe_ratio": 0.09009174080856754
+      },
+      "ADAUSDT": {
+        "daily_vol": 0.028357241706303347,
+        "weekly_vol": 0.07502620942262758,
+        "monthly_vol": 0.1553190095116863,
+        "vol_of_vol": 6.296811371127686e-05,
+        "mean_return": -7.878256218676897e-07,
+        "skewness": 0.021744445254236435,
+        "kurtosis": 0.004706691954257103,
+        "sharpe_ratio": -0.008001264066788973
+      },
+      "XRPUSDT": {
+        "daily_vol": 0.025673164022401464,
+        "weekly_vol": 0.06792480737144496,
+        "monthly_vol": 0.14061771057599348,
+        "vol_of_vol": 5.958889204813719e-05,
+        "mean_return": -1.3170708253295382e-06,
+        "skewness": -0.010568628665883172,
+        "kurtosis": -0.11382887172312905,
+        "sharpe_ratio": -0.014774820795906935
+      },
+      "AVAXUSDT": {
+        "daily_vol": 0.02799696475822337,
+        "weekly_vol": 0.07407300621489862,
+        "monthly_vol": 0.15334569139756107,
+        "vol_of_vol": 6.799845873245238e-05,
+        "mean_return": 2.9537706831549313e-06,
+        "skewness": -0.01815988719838475,
+        "kurtosis": -0.06239233526569743,
+        "sharpe_ratio": 0.03038493508474891
+      },
+      "DOTUSDT": {
+        "daily_vol": 0.026301034333970193,
+        "weekly_vol": 0.06958599607145646,
+        "monthly_vol": 0.14405669790433337,
+        "vol_of_vol": 5.3699987740624855e-05,
+        "mean_return": 1.8207875209825e-05,
+        "skewness": 0.013240908317080477,
+        "kurtosis": 0.02022355959191824,
+        "sharpe_ratio": 0.19937877704135246
+      },
+      "ATOMUSDT": {
+        "daily_vol": 0.02243178747044628,
+        "weekly_vol": 0.05934893110945551,
+        "monthly_vol": 0.12286396002725178,
+        "vol_of_vol": 5.056553727508301e-05,
+        "mean_return": -4.482514413443305e-06,
+        "skewness": 0.002152583697817892,
+        "kurtosis": -0.05440910217518402,
+        "sharpe_ratio": -0.05755065898214789
+      },
+      "NEARUSDT": {
+        "daily_vol": 0.02423952443527257,
+        "weekly_vol": 0.06413175355420458,
+        "monthly_vol": 0.1327653431639646,
+        "vol_of_vol": 5.985167731754774e-05,
+        "mean_return": -9.841336137027519e-06,
+        "skewness": -0.004035786268944608,
+        "kurtosis": 0.03796643025035351,
+        "sharpe_ratio": -0.11692906001652145
+      },
+      "APTUSDT": {
+        "daily_vol": 0.024941519173071372,
+        "weekly_vol": 0.06598905705209622,
+        "monthly_vol": 0.1366103266953879,
+        "vol_of_vol": 6.306576633509015e-05,
+        "mean_return": 9.403269896176862e-06,
+        "skewness": -0.019200115436933028,
+        "kurtosis": 0.03444667617076336,
+        "sharpe_ratio": 0.10857966234161218
+      },
+      "UNIUSDT": {
+        "daily_vol": 0.020053743773341792,
+        "weekly_vol": 0.05305721888007243,
+        "monthly_vol": 0.10983887827088068,
+        "vol_of_vol": 4.697365611691598e-05,
+        "mean_return": -7.3715969454855075e-06,
+        "skewness": 0.00364671841279364,
+        "kurtosis": -0.009737415109617675,
+        "sharpe_ratio": -0.105866512721781
+      },
+      "AAVEUSDT": {
+        "daily_vol": 0.020882997252599327,
+        "weekly_vol": 0.05525121736002291,
+        "monthly_vol": 0.1143808866356706,
+        "vol_of_vol": 4.6351540294600296e-05,
+        "mean_return": 8.62266496578449e-06,
+        "skewness": -0.00979146537949328,
+        "kurtosis": 0.03611308989897832,
+        "sharpe_ratio": 0.11891623985330126
+      },
+      "LINKUSDT": {
+        "daily_vol": 0.025357274572587737,
+        "weekly_vol": 0.06708904244544882,
+        "monthly_vol": 0.13888751280258474,
+        "vol_of_vol": 6.984630385680472e-05,
+        "mean_return": 1.2634602402738022e-06,
+        "skewness": 0.009066525023790538,
+        "kurtosis": -0.027124001683433985,
+        "sharpe_ratio": 0.014349986555425027
+      },
+      "MKRUSDT": {
+        "daily_vol": 0.027822780206771883,
+        "weekly_vol": 0.07361215720952866,
+        "monthly_vol": 0.15239164331757213,
+        "vol_of_vol": 7.20157876351382e-05,
+        "mean_return": 3.1009429582806656e-07,
+        "skewness": -0.011250276595322635,
+        "kurtosis": 0.06641528002800934,
+        "sharpe_ratio": 0.003209857409459978
+      },
+      "COMPUSDT": {
+        "daily_vol": 0.02863704566811927,
+        "weekly_vol": 0.07576650112144312,
+        "monthly_vol": 0.15685155892734526,
+        "vol_of_vol": 7.490777161906502e-05,
+        "mean_return": -1.1186784834788475e-05,
+        "skewness": 0.008286369060140556,
+        "kurtosis": 0.016791246846508123,
+        "sharpe_ratio": -0.11250441367999782
+      },
+      "ARBUSDT": {
+        "daily_vol": 0.02126096040093983,
+        "weekly_vol": 0.056251213855278905,
+        "monthly_vol": 0.11645107605818826,
+        "vol_of_vol": 5.29221144145763e-05,
+        "mean_return": -4.981533264432749e-06,
+        "skewness": 0.013396216109919968,
+        "kurtosis": 0.0072517785094765586,
+        "sharpe_ratio": -0.06747962242068858
+      },
+      "OPUSDT": {
+        "daily_vol": 0.020192175716776613,
+        "weekly_vol": 0.05342347537590832,
+        "monthly_vol": 0.11059710125186599,
+        "vol_of_vol": 4.6651329092772196e-05,
+        "mean_return": -5.770995930477268e-06,
+        "skewness": 0.01824108645024575,
+        "kurtosis": -0.038853064542145876,
+        "sharpe_ratio": -0.08231142851022963
+      },
+      "MATICUSDT": {
+        "daily_vol": 0.029566312191126272,
+        "weekly_vol": 0.07822510924301733,
+        "monthly_vol": 0.16194136129319853,
+        "vol_of_vol": 7.362975236807777e-05,
+        "mean_return": -9.125147155950972e-06,
+        "skewness": 0.012533734113544566,
+        "kurtosis": -0.021402131409194336,
+        "sharpe_ratio": -0.08888637730418855
+      },
+      "FILUSDT": {
+        "daily_vol": 0.025585833406128623,
+        "weekly_vol": 0.067693752278945,
+        "monthly_vol": 0.14013938109105886,
+        "vol_of_vol": 6.443073659666805e-05,
+        "mean_return": 8.168875201964737e-06,
+        "skewness": 0.028962777234638106,
+        "kurtosis": -0.030649733892742947,
+        "sharpe_ratio": 0.0919507299536435
+      },
+      "LTCUSDT": {
+        "daily_vol": 0.02462575264310731,
+        "weekly_vol": 0.06515361734145349,
+        "monthly_vol": 0.13488080218172344,
+        "vol_of_vol": 5.9468419929576145e-05,
+        "mean_return": 1.5613583663809877e-05,
+        "skewness": -0.0033340382585303053,
+        "kurtosis": 0.011490049627534304,
+        "sharpe_ratio": 0.18260201669149237
+      },
+      "BNBUSDT": {
+        "daily_vol": 0.021424228292827176,
+        "weekly_vol": 0.0566831800942946,
+        "monthly_vol": 0.1173453311312184,
+        "vol_of_vol": 5.213073255785135e-05,
+        "mean_return": 6.923327750155198e-07,
+        "skewness": 0.013418247115446867,
+        "kurtosis": -0.03297916732525552,
+        "sharpe_ratio": 0.009306838803207955
+      },
+      "TRXUSDT": {
+        "daily_vol": 0.029205667444928727,
+        "weekly_vol": 0.07727093293293662,
+        "monthly_vol": 0.15996602866581733,
+        "vol_of_vol": 6.586704609397979e-05,
+        "mean_return": 2.254323198429125e-06,
+        "skewness": 0.026586874584478528,
+        "kurtosis": -0.0011843256725141416,
+        "sharpe_ratio": 0.022230105933097682
+      },
+      "XLMUSDT": {
+        "daily_vol": 0.023236407308993578,
+        "weekly_vol": 0.061477755102200604,
+        "monthly_vol": 0.12727104438513698,
+        "vol_of_vol": 6.124114375052933e-05,
+        "mean_return": -1.010478267072845e-07,
+        "skewness": -0.014266652324245191,
+        "kurtosis": 0.002641400619137979,
+        "sharpe_ratio": -0.0012524214137197612
+      },
+      "VETUSDT": {
+        "daily_vol": 0.027460129313871467,
+        "weekly_vol": 0.07265267313417864,
+        "monthly_vol": 0.15040532257216263,
+        "vol_of_vol": 6.221128162200728e-05,
+        "mean_return": -2.0048109701893706e-05,
+        "skewness": -0.011133760790268874,
+        "kurtosis": 0.056734094370834764,
+        "sharpe_ratio": -0.2102632339472898
+      },
+      "QNTUSDT": {
+        "daily_vol": 0.02337368071510142,
+        "weekly_vol": 0.061840946396384724,
+        "monthly_vol": 0.1280229217958453,
+        "vol_of_vol": 5.993200875305516e-05,
+        "mean_return": -4.188414358450789e-06,
+        "skewness": 0.003916184444717845,
+        "kurtosis": -0.011332929907622358,
+        "sharpe_ratio": -0.051607761307977326
+      }
+    },
+    "liquidity_assessment": {
+      "BTCUSDT": {
+        "tier": "中等流动性",
+        "score": 0.46273635307074445,
+        "avg_volume": 1006896.4915667438,
+        "volume_consistency": 0.7108743254030259,
+        "price_stability": 0.9986695450106499
+      },
+      "ETHUSDT": {
+        "tier": "中等流动性",
+        "score": 0.46320968720156575,
+        "avg_volume": 1005847.8935987656,
+        "volume_consistency": 0.7135134694065132,
+        "price_stability": 0.9990262304420562
+      },
+      "SOLUSDT": {
+        "tier": "中等流动性",
+        "score": 0.4628248013167285,
+        "avg_volume": 1006897.8131554783,
+        "volume_consistency": 0.7113261778204335,
+        "price_stability": 0.9986591408699218
+      },
+      "ADAUSDT": {
+        "tier": "中等流动性",
+        "score": 0.46368403155887583,
+        "avg_volume": 1010611.1640702161,
+        "volume_consistency": 0.7133879746636514,
+        "price_stability": 0.998665484688598
+      },
+      "XRPUSDT": {
+        "tier": "中等流动性",
+        "score": 0.4623537646916257,
+        "avg_volume": 1005654.0243020834,
+        "volume_consistency": 0.7095886572012581,
+        "price_stability": 0.9987877516756203
+      },
+      "AVAXUSDT": {
+        "tier": "中等流动性",
+        "score": 0.4631461284947691,
+        "avg_volume": 1007667.0918275464,
+        "volume_consistency": 0.7124504341442502,
+        "price_stability": 0.9986799532330675
+      },
+      "DOTUSDT": {
+        "tier": "中等流动性",
+        "score": 0.46270625072601246,
+        "avg_volume": 1006417.5933314044,
+        "volume_consistency": 0.7109155239458054,
+        "price_stability": 0.9987651736854143
+      },
+      "ATOMUSDT": {
+        "tier": "中等流动性",
+        "score": 0.4630620224240797,
+        "avg_volume": 1006725.05064429,
+        "volume_consistency": 0.7123329096744593,
+        "price_stability": 0.9989421720593651
+      },
+      "NEARUSDT": {
+        "tier": "中等流动性",
+        "score": 0.46342250245464073,
+        "avg_volume": 1010020.1345088735,
+        "volume_consistency": 0.7122384619067323,
+        "price_stability": 0.9988619696611473
+      },
+      "APTUSDT": {
+        "tier": "中等流动性",
+        "score": 0.46328077158230374,
+        "avg_volume": 1008224.0182091051,
+        "volume_consistency": 0.7126423060006619,
+        "price_stability": 0.9988271409853937
+      },
+      "UNIUSDT": {
+        "tier": "中等流动性",
+        "score": 0.46240953661319717,
+        "avg_volume": 1003125.6527133489,
+        "volume_consistency": 0.7111162189255125,
+        "price_stability": 0.9990560725124638
+      },
+      "AAVEUSDT": {
+        "tier": "中等流动性",
+        "score": 0.46340762462231455,
+        "avg_volume": 1008074.3880999228,
+        "volume_consistency": 0.7131735989033249,
+        "price_stability": 0.999019891348294
+      },
+      "LINKUSDT": {
+        "tier": "中等流动性",
+        "score": 0.4626115827874599,
+        "avg_volume": 1005855.0554706792,
+        "volume_consistency": 0.7107384046409528,
+        "price_stability": 0.9988064760139389
+      },
+      "MKRUSDT": {
+        "tier": "中等流动性",
+        "score": 0.46272032136378294,
+        "avg_volume": 1005961.9221697531,
+        "volume_consistency": 0.7113279367075052,
+        "price_stability": 0.9986965168095576
+      },
+      "COMPUSDT": {
+        "tier": "中等流动性",
+        "score": 0.46225707646477293,
+        "avg_volume": 1004299.1647422839,
+        "volume_consistency": 0.7100509850026195,
+        "price_stability": 0.9986548984758746
+      },
+      "ARBUSDT": {
+        "tier": "中等流动性",
+        "score": 0.4622759667127665,
+        "avg_volume": 1003722.0958962191,
+        "volume_consistency": 0.7101452634141661,
+        "price_stability": 0.9990013126119348
+      },
+      "OPUSDT": {
+        "tier": "中等流动性",
+        "score": 0.46232407838214706,
+        "avg_volume": 1004706.2338186727,
+        "volume_consistency": 0.7097465059285977,
+        "price_stability": 0.9990501456909339
+      },
+      "MATICUSDT": {
+        "tier": "中等流动性",
+        "score": 0.4630680400820615,
+        "avg_volume": 1007006.9295771605,
+        "volume_consistency": 0.7125270079468602,
+        "price_stability": 0.9986090347171509
+      },
+      "FILUSDT": {
+        "tier": "中等流动性",
+        "score": 0.46253824691692746,
+        "avg_volume": 1005068.1908402777,
+        "volume_consistency": 0.7108531234470421,
+        "price_stability": 0.9987971966334287
+      },
+      "LTCUSDT": {
+        "tier": "中等流动性",
+        "score": 0.4634902503648993,
+        "avg_volume": 1009080.7717079476,
+        "volume_consistency": 0.7131618522759715,
+        "price_stability": 0.9988409365237566
+      },
+      "BNBUSDT": {
+        "tier": "中等流动性",
+        "score": 0.4625453454013968,
+        "avg_volume": 1003986.4663915895,
+        "volume_consistency": 0.711343237475351,
+        "price_stability": 0.9989916096966792
+      },
+      "TRXUSDT": {
+        "tier": "中等流动性",
+        "score": 0.4627119595741708,
+        "avg_volume": 1005956.1228649691,
+        "volume_consistency": 0.7113605009746045,
+        "price_stability": 0.9986256231772676
+      },
+      "XLMUSDT": {
+        "tier": "中等流动性",
+        "score": 0.46298281506636024,
+        "avg_volume": 1007473.8598190587,
+        "volume_consistency": 0.7115229648754886,
+        "price_stability": 0.9989067945648774
+      },
+      "VETUSDT": {
+        "tier": "中等流动性",
+        "score": 0.46295457994297956,
+        "avg_volume": 1007419.6632056327,
+        "volume_consistency": 0.7116071021541059,
+        "price_stability": 0.9987139996374121
+      },
+      "QNTUSDT": {
+        "tier": "中等流动性",
+        "score": 0.46305524113284924,
+        "avg_volume": 1007794.6869456017,
+        "volume_consistency": 0.7116979459387961,
+        "price_stability": 0.9989014475580894
+      }
+    },
+    "symbol_ranking": {
+      "BTCUSDT": {
+        "total_score": 0.5621,
+        "rank": 1,
+        "category": "主流币",
+        "priority": 1,
+        "score_components": {
+          "liquidity_score": 0.1388,
+          "volatility_score": 0.0704,
+          "priority_score": 0.2,
+          "stability_score": 0.1496,
+          "return_score": 0.0033
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0282,
+        "sharpe_ratio": 0.0661,
+        "liquidity_tier": "中等流动性"
+      },
+      "ETHUSDT": {
+        "total_score": 0.5453,
+        "rank": 2,
+        "category": "主流币",
+        "priority": 1,
+        "score_components": {
+          "liquidity_score": 0.139,
+          "volatility_score": 0.0518,
+          "priority_score": 0.2,
+          "stability_score": 0.15,
+          "return_score": 0.0046
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0207,
+        "sharpe_ratio": 0.0919,
+        "liquidity_tier": "中等流动性"
+      },
+      "SOLUSDT": {
+        "total_score": 0.5143,
+        "rank": 4,
+        "category": "主流币",
+        "priority": 2,
+        "score_components": {
+          "liquidity_score": 0.1388,
+          "volatility_score": 0.0714,
+          "priority_score": 0.15,
+          "stability_score": 0.1495,
+          "return_score": 0.0045
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0286,
+        "sharpe_ratio": 0.0901,
+        "liquidity_tier": "中等流动性"
+      },
+      "ADAUSDT": {
+        "total_score": 0.5093,
+        "rank": 9,
+        "category": "主流币",
+        "priority": 2,
+        "score_components": {
+          "liquidity_score": 0.1391,
+          "volatility_score": 0.0709,
+          "priority_score": 0.15,
+          "stability_score": 0.1493,
+          "return_score": 0.0
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0284,
+        "sharpe_ratio": -0.008,
+        "liquidity_tier": "中等流动性"
+      },
+      "XRPUSDT": {
+        "total_score": 0.5026,
+        "rank": 10,
+        "category": "主流币",
+        "priority": 2,
+        "score_components": {
+          "liquidity_score": 0.1387,
+          "volatility_score": 0.0642,
+          "priority_score": 0.15,
+          "stability_score": 0.1497,
+          "return_score": 0.0
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0257,
+        "sharpe_ratio": -0.0148,
+        "liquidity_tier": "中等流动性"
+      },
+      "AVAXUSDT": {
+        "total_score": 0.5099,
+        "rank": 7,
+        "category": "Layer1",
+        "priority": 2,
+        "score_components": {
+          "liquidity_score": 0.1389,
+          "volatility_score": 0.07,
+          "priority_score": 0.15,
+          "stability_score": 0.1495,
+          "return_score": 0.0015
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.028,
+        "sharpe_ratio": 0.0304,
+        "liquidity_tier": "中等流动性"
+      },
+      "DOTUSDT": {
+        "total_score": 0.5141,
+        "rank": 5,
+        "category": "Layer1",
+        "priority": 2,
+        "score_components": {
+          "liquidity_score": 0.1388,
+          "volatility_score": 0.0658,
+          "priority_score": 0.15,
+          "stability_score": 0.1496,
+          "return_score": 0.01
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0263,
+        "sharpe_ratio": 0.1994,
+        "liquidity_tier": "中等流动性"
+      },
+      "ATOMUSDT": {
+        "total_score": 0.4449,
+        "rank": 18,
+        "category": "Layer1",
+        "priority": 3,
+        "score_components": {
+          "liquidity_score": 0.1389,
+          "volatility_score": 0.0561,
+          "priority_score": 0.1,
+          "stability_score": 0.1499,
+          "return_score": 0.0
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0224,
+        "sharpe_ratio": -0.0576,
+        "liquidity_tier": "中等流动性"
+      },
+      "NEARUSDT": {
+        "total_score": 0.4495,
+        "rank": 15,
+        "category": "Layer1",
+        "priority": 3,
+        "score_components": {
+          "liquidity_score": 0.139,
+          "volatility_score": 0.0606,
+          "priority_score": 0.1,
+          "stability_score": 0.1499,
+          "return_score": 0.0
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0242,
+        "sharpe_ratio": -0.1169,
+        "liquidity_tier": "中等流动性"
+      },
+      "APTUSDT": {
+        "total_score": 0.4562,
+        "rank": 14,
+        "category": "Layer1",
+        "priority": 3,
+        "score_components": {
+          "liquidity_score": 0.139,
+          "volatility_score": 0.0624,
+          "priority_score": 0.1,
+          "stability_score": 0.1494,
+          "return_score": 0.0054
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0249,
+        "sharpe_ratio": 0.1086,
+        "liquidity_tier": "中等流动性"
+      },
+      "UNIUSDT": {
+        "total_score": 0.4387,
+        "rank": 20,
+        "category": "DeFi",
+        "priority": 3,
+        "score_components": {
+          "liquidity_score": 0.1387,
+          "volatility_score": 0.0501,
+          "priority_score": 0.1,
+          "stability_score": 0.1499,
+          "return_score": 0.0
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0201,
+        "sharpe_ratio": -0.1059,
+        "liquidity_tier": "中等流动性"
+      },
+      "AAVEUSDT": {
+        "total_score": 0.4469,
+        "rank": 16,
+        "category": "DeFi",
+        "priority": 3,
+        "score_components": {
+          "liquidity_score": 0.139,
+          "volatility_score": 0.0522,
+          "priority_score": 0.1,
+          "stability_score": 0.1497,
+          "return_score": 0.0059
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0209,
+        "sharpe_ratio": 0.1189,
+        "liquidity_tier": "中等流动性"
+      },
+      "LINKUSDT": {
+        "total_score": 0.5026,
+        "rank": 11,
+        "category": "DeFi",
+        "priority": 2,
+        "score_components": {
+          "liquidity_score": 0.1388,
+          "volatility_score": 0.0634,
+          "priority_score": 0.15,
+          "stability_score": 0.1497,
+          "return_score": 0.0007
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0254,
+        "sharpe_ratio": 0.0143,
+        "liquidity_tier": "中等流动性"
+      },
+      "MKRUSDT": {
+        "total_score": 0.4082,
+        "rank": 23,
+        "category": "DeFi",
+        "priority": 4,
+        "score_components": {
+          "liquidity_score": 0.1388,
+          "volatility_score": 0.0696,
+          "priority_score": 0.05,
+          "stability_score": 0.1497,
+          "return_score": 0.0002
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0278,
+        "sharpe_ratio": 0.0032,
+        "liquidity_tier": "中等流动性"
+      },
+      "COMPUSDT": {
+        "total_score": 0.41,
+        "rank": 22,
+        "category": "DeFi",
+        "priority": 4,
+        "score_components": {
+          "liquidity_score": 0.1387,
+          "volatility_score": 0.0716,
+          "priority_score": 0.05,
+          "stability_score": 0.1498,
+          "return_score": 0.0
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0286,
+        "sharpe_ratio": -0.1125,
+        "liquidity_tier": "中等流动性"
+      },
+      "ARBUSDT": {
+        "total_score": 0.4414,
+        "rank": 19,
+        "category": "新兴热点",
+        "priority": 3,
+        "score_components": {
+          "liquidity_score": 0.1387,
+          "volatility_score": 0.0532,
+          "priority_score": 0.1,
+          "stability_score": 0.1496,
+          "return_score": 0.0
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0213,
+        "sharpe_ratio": -0.0675,
+        "liquidity_tier": "中等流动性"
+      },
+      "OPUSDT": {
+        "total_score": 0.4386,
+        "rank": 21,
+        "category": "新兴热点",
+        "priority": 3,
+        "score_components": {
+          "liquidity_score": 0.1387,
+          "volatility_score": 0.0505,
+          "priority_score": 0.1,
+          "stability_score": 0.1495,
+          "return_score": 0.0
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0202,
+        "sharpe_ratio": -0.0823,
+        "liquidity_tier": "中等流动性"
+      },
+      "MATICUSDT": {
+        "total_score": 0.5125,
+        "rank": 6,
+        "category": "新兴热点",
+        "priority": 2,
+        "score_components": {
+          "liquidity_score": 0.1389,
+          "volatility_score": 0.0739,
+          "priority_score": 0.15,
+          "stability_score": 0.1496,
+          "return_score": 0.0
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0296,
+        "sharpe_ratio": -0.0889,
+        "liquidity_tier": "中等流动性"
+      },
+      "FILUSDT": {
+        "total_score": 0.4565,
+        "rank": 13,
+        "category": "新兴热点",
+        "priority": 3,
+        "score_components": {
+          "liquidity_score": 0.1388,
+          "volatility_score": 0.064,
+          "priority_score": 0.1,
+          "stability_score": 0.1491,
+          "return_score": 0.0046
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0256,
+        "sharpe_ratio": 0.092,
+        "liquidity_tier": "中等流动性"
+      },
+      "LTCUSDT": {
+        "total_score": 0.5096,
+        "rank": 8,
+        "category": "新兴热点",
+        "priority": 2,
+        "score_components": {
+          "liquidity_score": 0.139,
+          "volatility_score": 0.0616,
+          "priority_score": 0.15,
+          "stability_score": 0.1499,
+          "return_score": 0.0091
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0246,
+        "sharpe_ratio": 0.1826,
+        "liquidity_tier": "中等流动性"
+      },
+      "BNBUSDT": {
+        "total_score": 0.5424,
+        "rank": 3,
+        "category": "稳定表现",
+        "priority": 1,
+        "score_components": {
+          "liquidity_score": 0.1388,
+          "volatility_score": 0.0536,
+          "priority_score": 0.2,
+          "stability_score": 0.1496,
+          "return_score": 0.0005
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0214,
+        "sharpe_ratio": 0.0093,
+        "liquidity_tier": "中等流动性"
+      },
+      "TRXUSDT": {
+        "total_score": 0.4621,
+        "rank": 12,
+        "category": "稳定表现",
+        "priority": 3,
+        "score_components": {
+          "liquidity_score": 0.1388,
+          "volatility_score": 0.073,
+          "priority_score": 0.1,
+          "stability_score": 0.1492,
+          "return_score": 0.0011
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0292,
+        "sharpe_ratio": 0.0222,
+        "liquidity_tier": "中等流动性"
+      },
+      "XLMUSDT": {
+        "total_score": 0.4466,
+        "rank": 17,
+        "category": "稳定表现",
+        "priority": 3,
+        "score_components": {
+          "liquidity_score": 0.1389,
+          "volatility_score": 0.0581,
+          "priority_score": 0.1,
+          "stability_score": 0.1496,
+          "return_score": 0.0
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0232,
+        "sharpe_ratio": -0.0013,
+        "liquidity_tier": "中等流动性"
+      },
+      "VETUSDT": {
+        "total_score": 0.4072,
+        "rank": 24,
+        "category": "稳定表现",
+        "priority": 4,
+        "score_components": {
+          "liquidity_score": 0.1389,
+          "volatility_score": 0.0687,
+          "priority_score": 0.05,
+          "stability_score": 0.1497,
+          "return_score": 0.0
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0275,
+        "sharpe_ratio": -0.2103,
+        "liquidity_tier": "中等流动性"
+      },
+      "QNTUSDT": {
+        "total_score": 0.3972,
+        "rank": 25,
+        "category": "稳定表现",
+        "priority": 4,
+        "score_components": {
+          "liquidity_score": 0.1389,
+          "volatility_score": 0.0584,
+          "priority_score": 0.05,
+          "stability_score": 0.1499,
+          "return_score": 0.0
+        },
+        "avg_correlation": NaN,
+        "recommendation": "谨慎考虑",
+        "daily_vol": 0.0234,
+        "sharpe_ratio": -0.0516,
+        "liquidity_tier": "中等流动性"
+      }
+    }
+  },
+  "recommendations": {
+    "top_symbols": [
+      "BTCUSDT",
+      "ETHUSDT",
+      "BNBUSDT",
+      "SOLUSDT",
+      "DOTUSDT",
+      "MATICUSDT",
+      "AVAXUSDT",
+      "LTCUSDT",
+      "ADAUSDT",
+      "XRPUSDT"
+    ],
+    "low_correlation_pairs": [],
+    "optimal_portfolio_size": 6,
+    "category_distribution": {
+      "主流币": 5,
+      "Layer1": 5,
+      "DeFi": 5,
+      "新兴热点": 5,
+      "稳定表现": 5
+    },
+    "risk_considerations": [
+      "定期监控相关性变化，避免过度集中",
+      "注意市场制度切换对策略的影响",
+      "优选高流动性和低相关性币种",
+      "避免单一类别过度集中，保持多样化",
+      "监控波动率聚类，及时调整仓位"
+    ]
+  },
+  "performance_benchmarks": {
+    "data_generation_time_s": 60,
+    "analysis_completion_time_s": 30,
+    "total_data_points": 918000,
+    "storage_size_mb": 42.022705078125,
+    "quality_score": 0.995
+  },
+  "timestamp": "2025-08-16T20:55:30.342848"
+}

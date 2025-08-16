@@ -1,0 +1,130 @@
+{
+  "report_type": "Symbol Performance Ranking",
+  "timestamp": "2025-08-16T20:55:30.351804",
+  "summary": {
+    "total_symbols": 25,
+    "strong_recommend": 0,
+    "recommend": 0,
+    "caution": 25,
+    "not_recommend": 0
+  },
+  "top_10_symbols": [
+    {
+      "rank": 1,
+      "symbol": "BTCUSDT",
+      "score": 0.5621,
+      "category": "主流币",
+      "recommendation": "谨慎考虑",
+      "daily_volatility": 0.0282,
+      "liquidity_tier": "中等流动性"
+    },
+    {
+      "rank": 2,
+      "symbol": "ETHUSDT",
+      "score": 0.5453,
+      "category": "主流币",
+      "recommendation": "谨慎考虑",
+      "daily_volatility": 0.0207,
+      "liquidity_tier": "中等流动性"
+    },
+    {
+      "rank": 3,
+      "symbol": "BNBUSDT",
+      "score": 0.5424,
+      "category": "稳定表现",
+      "recommendation": "谨慎考虑",
+      "daily_volatility": 0.0214,
+      "liquidity_tier": "中等流动性"
+    },
+    {
+      "rank": 4,
+      "symbol": "SOLUSDT",
+      "score": 0.5143,
+      "category": "主流币",
+      "recommendation": "谨慎考虑",
+      "daily_volatility": 0.0286,
+      "liquidity_tier": "中等流动性"
+    },
+    {
+      "rank": 5,
+      "symbol": "DOTUSDT",
+      "score": 0.5141,
+      "category": "Layer1",
+      "recommendation": "谨慎考虑",
+      "daily_volatility": 0.0263,
+      "liquidity_tier": "中等流动性"
+    },
+    {
+      "rank": 6,
+      "symbol": "MATICUSDT",
+      "score": 0.5125,
+      "category": "新兴热点",
+      "recommendation": "谨慎考虑",
+      "daily_volatility": 0.0296,
+      "liquidity_tier": "中等流动性"
+    },
+    {
+      "rank": 7,
+      "symbol": "AVAXUSDT",
+      "score": 0.5099,
+      "category": "Layer1",
+      "recommendation": "谨慎考虑",
+      "daily_volatility": 0.028,
+      "liquidity_tier": "中等流动性"
+    },
+    {
+      "rank": 8,
+      "symbol": "LTCUSDT",
+      "score": 0.5096,
+      "category": "新兴热点",
+      "recommendation": "谨慎考虑",
+      "daily_volatility": 0.0246,
+      "liquidity_tier": "中等流动性"
+    },
+    {
+      "rank": 9,
+      "symbol": "ADAUSDT",
+      "score": 0.5093,
+      "category": "主流币",
+      "recommendation": "谨慎考虑",
+      "daily_volatility": 0.0284,
+      "liquidity_tier": "中等流动性"
+    },
+    {
+      "rank": 10,
+      "symbol": "XRPUSDT",
+      "score": 0.5026,
+      "category": "主流币",
+      "recommendation": "谨慎考虑",
+      "daily_volatility": 0.0257,
+      "liquidity_tier": "中等流动性"
+    }
+  ],
+  "category_analysis": {
+    "主流币": {
+      "count": 5,
+      "avg_score": 0.5267,
+      "best_symbol": "BTCUSDT"
+    },
+    "Layer1": {
+      "count": 5,
+      "avg_score": 0.4749,
+      "best_symbol": "DOTUSDT"
+    },
+    "DeFi": {
+      "count": 5,
+      "avg_score": 0.4413,
+      "best_symbol": "LINKUSDT"
+    },
+    "新兴热点": {
+      "count": 5,
+      "avg_score": 0.4717,
+      "best_symbol": "MATICUSDT"
+    },
+    "稳定表现": {
+      "count": 5,
+      "avg_score": 0.4511,
+      "best_symbol": "BNBUSDT"
+    }
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "mcpServers": {
+    "sqlite": {
+      "command": "python",
+      "args": ["-m", "mcp_server_sqlite", "data/dipmaster.db"],
+      "description": "SQLite数据库服务 - 存储交易数据、配置和日志"
+    },
+    "memory": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-memory"],
+      "description": "内存服务 - 缓存热点数据和临时状态"
+    },
+    "filesystem": {
+      "command": "npx", 
+      "args": ["@modelcontextprotocol/server-filesystem", "data", "logs", "config", "results"],
+      "description": "文件系统服务 - 管理项目文件和目录"
+    },
+    "sequential-thinking": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-sequential-thinking"],
+      "description": "序列思考服务 - 用于策略分析和决策"
+    }
+  },
+  "description": "DipMaster Trading System MCP配置 - 量化交易系统的模型上下文协议服务",
+  "version": "1.0.0",
+  "project": {
+    "name": "DipMaster Trading System",
+    "type": "quantitative_trading",
+    "features": [
+      "实时加密货币交易",
+      "DipMaster AI策略",
+      "风险管理系统", 
+      "实时监控面板",
+      "历史数据分析"
+    ]
+  },
+  "services": {
+    "sqlite": {
+      "database_path": "data/dipmaster.db",
+      "tables": [
+        "trades",
+        "positions", 
+        "market_data",
+        "performance_metrics",
+        "strategy_logs"
+      ],
+      "purpose": "持久化存储交易数据和系统状态"
+    },
+    "memory": {
+      "cache_types": [
+        "market_data_cache",
+        "strategy_state",
+        "risk_metrics",
+        "performance_stats"
+      ],
+      "purpose": "高速访问热点数据和临时状态"
+    },
+    "filesystem": {
+      "monitored_paths": [
+        "data/",
+        "logs/", 
+        "config/",
+        "results/"
+      ],
+      "purpose": "文件系统操作和数据管理"
+    },
+    "sequential-thinking": {
+      "use_cases": [
+        "策略决策分析",
+        "风险评估推理",
+        "市场状况分析",
+        "交易信号验证"
+      ],
+      "purpose": "复杂决策和推理支持"
+    }
+  },
+  "configuration_notes": {
+    "setup": [
+      "1. 确保所有MCP服务已正确安装",
+      "2. 检查数据库路径是否存在",
+      "3. 验证文件系统权限",
+      "4. 测试服务连接"
+    ],
+    "usage": [
+      "在Claude Code中连接这些MCP服务",
+      "使用sqlite服务查询交易数据",
+      "使用memory服务缓存计算结果",
+      "使用filesystem服务管理文件",
+      "使用sequential-thinking进行策略分析"
+    ],
+    "troubleshooting": [
+      "检查Node.js和Python环境",
+      "确认MCP包已正确安装",
+      "验证数据库文件路径",
+      "检查网络和权限设置"
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "entry_time": "2024-05-01T00:00:00",
+    "exit_time": "2024-05-01T00:15:00",
+    "symbol": "BTCUSDT",
+    "entry_price": 44891.519147,
+    "exit_price": 44843.365183,
+    "signal_strength": 0.9999680931435421,
+    "net_profit_loss": -4.072673968602272,
+    "win": 

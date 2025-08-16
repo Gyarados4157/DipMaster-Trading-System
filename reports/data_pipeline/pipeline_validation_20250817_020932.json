@@ -1,0 +1,132 @@
+{
+  "validation_summary": {
+    "start_time": "2025-08-17T02:09:20.813640",
+    "end_time": "2025-08-17T02:09:32.525226",
+    "duration_seconds": 11.711586,
+    "total_tests": 5,
+    "passed": 2,
+    "warnings": 0,
+    "failed": 3,
+    "success_rate": 40.0
+  },
+  "validation_results": {
+    "data_pipeline_monitoring": {
+      "status": "FAILED",
+      "error": "No module named 'zstandard'",
+      "message": "Data pipeline monitoring test failed"
+    },
+    "pipeline_optimization": {
+      "status": "FAILED",
+      "error": "No module named 'zstandard'",
+      "message": "Pipeline optimization test failed"
+    },
+    "data_quality_validation": {
+      "status": "FAILED",
+      "error": "No data files could be processed",
+      "message": "Data quality validation test failed"
+    },
+    "performance_benchmarks": {
+      "status": "PASSED",
+      "avg_throughput_rps": 2002643.411341532,
+      "max_throughput_rps": 4567963.406665214,
+      "min_latency_ms": 4.216194152832031,
+      "throughput_benchmark": 1000,
+      "latency_benchmark": 100,
+      "meets_throughput_benchmark": "True",
+      "performance_results": [
+        {
+          "data_size": 1000,
+          "processing_time_ms": 8.191347122192383,
+          "throughput_rps": 122080.04191285619,
+          "memory_efficient": true
+        },
+        {
+          "data_size": 5000,
+          "processing_time_ms": 5.270242691040039,
+          "throughput_rps": 948722.9133680162,
+          "memory_efficient": true
+        },
+        {
+          "data_size": 10000,
+          "processing_time_ms": 4.216194152832031,
+          "throughput_rps": 2371807.2834200407,
+          "memory_efficient": true
+        },
+        {
+          "data_size": 25000,
+          "processing_time_ms": 5.472898483276367,
+          "throughput_rps": 4567963.406665214,
+          "memory_efficient": true
+        }
+      ],
+      "message": "Performance benchmarks - Avg throughput: 2002643.4 rps, Min latency: 4.2ms"
+    },
+    "scalability_limits": {
+      "status": "PASSED",
+      "best_throughput_rps": 1438079.9561132826,
+      "optimal_concurrency": 8,
+      "scalability_efficiency": 1.0,
+      "max_tested_concurrency": 8,
+      "scalability_results": [
+        {
+          "concurrency_level": 1,
+          "processing_time_ms": 4.714727401733398,
+          "effective_throughput_rps": 1060506.7003792666,
+          "scalability_factor": 1060506.7003792666,
+          "successful": true
+        },
+        {
+          "concurrency_level": 2,
+          "processing_time_ms": 8.428812026977539,
+          "effective_throughput_rps": 1186406.8113031427,
+          "scalability_factor": 593203.4056515713,
+          "successful": true
+        },
+        {
+          "concurrency_level": 4,
+          "processing_time_ms": 16.345977783203125,
+          "effective_throughput_rps": 1223542.5904317386,
+          "scalability_factor": 305885.64760793466,
+          "successful": true
+        },
+        {
+          "concurrency_level": 8,
+          "processing_time_ms": 27.814865112304688,
+          "effective_throughput_rps": 1438079.9561132826,
+          "scalability_factor": 179759.99451416032,
+          "successful": true
+        }
+      ],
+      "message": "Scalability tested - Best: 1438080.0 rps at 8x concurrency"
+    }
+  },
+  "data_pipeline_status": {
+    "overall_health": "NEEDS_ATTENTION",
+    "monitoring_system": "NEEDS_FIX",
+    "optimization_system": "NEEDS_FIX",
+    "quality_validation": "NEEDS_FIX"
+  },
+  "performance_metrics": {
+    "throughput": {
+      "avg_rps": 2002643.411341532,
+      "max_rps": 4567963.406665214,
+      "meets_benchmark": "True"
+    },
+    "latency": {
+      "min_ms": 4.216194152832031
+    },
+    "scalability": {
+      "best_throughput_rps": 1438079.9561132826,
+      "optimal_concurrency": 8,
+      "efficiency": 1.0
+    },
+    "quality": {
+      "avg_quality_score": 0,
+      "avg_completeness": 0,
+      "total_records": 0
+    }
+  },
+  "recommendations": [
+    "Critical: Fix failed components - data_pipeline_monitoring, pipeline_optimization, data_quality_validation"
+  ]
+}

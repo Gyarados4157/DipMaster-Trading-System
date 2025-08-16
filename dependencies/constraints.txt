@@ -1,0 +1,94 @@
+# ============================================================================
+# DipMaster Trading System - Version Constraints
+# Version: 4.0.0
+# Date: 2025-08-16
+# ============================================================================
+
+# Critical version constraints to avoid conflicts
+# These are EXACT versions that have been tested and verified to work together
+
+# ============================================================================
+# PYTHON VERSION REQUIREMENTS
+# ============================================================================
+# Requires Python >= 3.11, < 3.13
+
+# ============================================================================
+# CORE DATA STACK - EXACT VERSIONS
+# ============================================================================
+numpy==1.24.4
+pandas==2.0.3
+scipy==1.11.4
+pyarrow==12.0.1
+
+# ============================================================================
+# ASYNC STACK - EXACT VERSIONS
+# ============================================================================
+aiohttp==3.9.1
+websockets==11.0.3
+uvloop==0.18.0
+
+# ============================================================================
+# ML STACK - EXACT VERSIONS
+# ============================================================================
+scikit-learn==1.3.2
+lightgbm==4.1.0
+xgboost==1.7.6
+catboost==1.2.2
+optuna==3.4.0
+
+# ============================================================================
+# CRYPTO/TRADING STACK - EXACT VERSIONS
+# ============================================================================
+python-binance==1.0.19
+ccxt==4.1.75
+ta==0.10.2
+
+# ============================================================================
+# WEB STACK - EXACT VERSIONS
+# ============================================================================
+fastapi==0.104.1
+uvicorn==0.24.0
+pydantic==2.5.0
+
+# ============================================================================
+# KNOWN INCOMPATIBLE VERSIONS
+# ============================================================================
+# These versions have known conflicts and should be avoided:
+
+# pandas 2.1.x has issues with pyarrow < 12.0.0
+pandas!=2.1.0,!=2.1.1,!=2.1.2
+
+# numpy 1.25.x has compatibility issues with some ML libraries
+numpy!=1.25.0,!=1.25.1
+
+# websockets 12.x has breaking changes
+websockets!=12.0.0
+
+# fastapi 1.x has breaking changes
+fastapi<1.0.0
+
+# ============================================================================
+# DEPENDENCY CONFLICT RESOLUTIONS
+# ============================================================================
+
+# Resolve conflicts between different data processing libraries
+numba>=0.57.0,<0.59.0  # Required for certain pandas operations
+bottleneck>=1.3.7,<2.0.0  # Pandas acceleration
+
+# Resolve conflicts in the ML stack
+threadpoolctl>=3.2.0,<4.0.0  # Required by scikit-learn
+intel-openmp>=2023.2.0  # Performance optimization for Intel CPUs
+
+# Resolve async conflicts
+typing-extensions>=4.8.0,<5.0.0  # Required for modern async typing
+anyio>=3.7.0,<5.0.0  # Async compatibility layer
+
+# ============================================================================
+# SECURITY CONSTRAINTS
+# ============================================================================
+
+# Minimum versions for security fixes
+urllib3>=1.26.18,<3.0.0  # CVE fixes
+requests>=2.31.0,<3.0.0  # Security updates
+pillow>=10.0.1,<11.0.0  # Image processing security fixes
+setuptools>=65.5.1  # Security updates

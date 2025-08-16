@@ -1,0 +1,89 @@
+{
+  "project_name": "DipMaster Trading System",
+  "version": "3.0.0",
+  "type": "quantitative_trading",
+  "environment": "development",
+  
+  "tool_permissions": {
+    "description": "为量化交易系统配置工具权限 - 允许完全访问",
+    "mode": "unrestricted",
+    "auto_approve": true,
+    "require_confirmation": false,
+    
+    "allowed_tools": [
+      "bash",
+      "read",
+      "write", 
+      "edit",
+      "multiedit",
+      "glob",
+      "grep",
+      "ls",
+      "webfetch",
+      "websearch",
+      "todowrite",
+      "task",
+      "notebookedit"
+    ],
+    
+    "dangerous_operations": {
+      "file_deletion": "allowed",
+      "system_commands": "allowed", 
+      "network_access": "allowed",
+      "package_installation": "allowed",
+      "git_operations": "allowed",
+      "database_operations": "allowed"
+    },
+    
+    "trading_specific": {
+      "api_key_handling": "allowed",
+      "live_trading": "requires_explicit_confirmation",
+      "paper_trading": "unrestricted",
+      "data_modification": "allowed",
+      "config_changes": "allowed"
+    }
+  },
+  
+  "workflow_automation": {
+    "auto_install_dependencies": true,
+    "auto_fix_imports": true,
+    "auto_format_code": true,
+    "auto_run_tests": false,
+    "auto_commit": false
+  },
+  
+  "safety_overrides": {
+    "description": "量化交易系统安全覆盖设置",
+    "live_trading_protection": true,
+    "api_key_protection": true,
+    "database_backup": true,
+    "config_validation": true
+  },
+  
+  "context_instructions": [
+    "这是一个专业的量化交易系统",
+    "允许使用所有必要的工具进行开发和维护",
+    "优先使用异步编程和错误处理",
+    "保持代码的可读性和可维护性",
+    "遵循DipMaster策略的核心原则",
+    "在实盘交易前必须充分测试"
+  ],
+  
+  "mcp_services": {
+    "enabled": true,
+    "auto_connect": true,
+    "services": [
+      "sqlite",
+      "memory", 
+      "filesystem",
+      "sequential-thinking"
+    ]
+  },
+  
+  "development_preferences": {
+    "verbose_logging": true,
+    "detailed_error_messages": true,
+    "performance_monitoring": true,
+    "security_checks": true
+  }
+}

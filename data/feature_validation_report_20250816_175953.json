@@ -1,0 +1,620 @@
+{
+  "validation_summary": {
+    "feature_set_version": "4.0.0",
+    "validation_timestamp": "2025-08-16T17:59:53.761744",
+    "total_samples": 2312608,
+    "total_features": 51,
+    "data_date_range": {
+      "start": "2023-08-13 13:55:00",
+      "end": "2025-08-16 09:40:00"
+    }
+  },
+  "validation_results": {
+    "data_quality": {
+      "missing_values": {
+        "close_time": 0.27273104650680097
+      },
+      "infinite_values": {},
+      "duplicate_rows": "0",
+      "time_completeness": 1.0
+    },
+    "feature_distributions": {
+      "rsi": {
+        "mean": 50.24469655580159,
+        "std": 10.889970129266754,
+        "min": 24.25920151490909,
+        "max": 76.636111231893,
+        "skewness": 0.00519394732334873,
+        "kurtosis": -0.27057973978461103,
+        "zero_ratio": 0.0
+      },
+      "bb_upper": {
+        "mean": 6660.385120919948,
+        "std": 21422.17151709299,
+        "min": 0.07120442179807321,
+        "max": 105430.51814670094,
+        "skewness": 3.4285623842079147,
+        "kurtosis": 10.741057106180886,
+        "zero_ratio": 0.0
+      },
+      "bb_middle": {
+        "mean": 6632.698149975068,
+        "std": 21335.11737131953,
+        "min": 0.07077271000000021,
+        "max": 105083.98972999922,
+        "skewness": 3.429292254492167,
+        "kurtosis": 10.748807280114535,
+        "zero_ratio": 0.0
+      },
+      "bb_lower": {
+        "mean": 6605.225969798623,
+        "std": 21249.310264696243,
+        "min": 0.07008132611235561,
+        "max": 104776.49022345024,
+        "skewness": 3.4302839949924904,
+        "kurtosis": 10.758999490546337,
+        "zero_ratio": 0.0
+      },
+      "rsi_in_dip_zone": {
+        "mean": 0.3051662884500962,
+        "std": 0.4604779218728554,
+        "min": 0.0,
+        "max": 1.0,
+        "skewness": 0.8462246322454883,
+        "kurtosis": -1.2839049821341872,
+        "zero_ratio": 0.6948337115499038
+      },
+      "bb_position": {
+        "mean": 0.5035522130027559,
+        "std": 0.3253186833949707,
+        "min": -0.17561041002289,
+        "max": 1.173315338091096,
+        "skewness": -0.03369337320496359,
+        "kurtosis": -0.893497202581333,
+        "zero_ratio": 8.21583251463283e-06
+      },
+      "bb_squeeze": {
+        "mean": 0.014780517485190053,
+        "std": 0.011782607603011998,
+        "min": 0.002116242653347075,
+        "max": 0.06689100430724894,
+        "skewness": 2.0291874487010007,
+        "kurtosis": 4.952002991177505,
+        "zero_ratio": 0.0
+      },
+      "volume_ma": {
+        "mean": 624069.2674860808,
+        "std": 1728198.112596211,
+        "min": 30.6299016599989,
+        "max": 11804468.648000035,
+        "skewness": 4.596761579871209,
+        "kurtosis": 23.218123601052163,
+        "zero_ratio": 0.0
+      },
+      "volume_ratio": {
+        "mean": 1.0117433759395396,
+        "std": 0.772793976712231,
+        "min": 0.1395993640916364,
+        "max": 4.602709741050766,
+        "skewness": 2.219953343037925,
+        "kurtosis": 6.134831688405065,
+        "zero_ratio": 0.0
+      },
+      "volume_spike": {
+        "mean": 0.16800945080186525,
+        "std": 0.37387475936028836,
+        "min": 0.0,
+        "max": 1.0,
+        "skewness": 1.775946773620035,
+        "kurtosis": 1.1539879407276796,
+        "zero_ratio": 0.8319905491981348
+      },
+      "dipmaster_signal_strength": {
+        "mean": 0.3114671401292393,
+        "std": 0.31266403536991977,
+        "min": 0.0,
+        "max": 1.0,
+        "skewness": 0.7285391344506374,
+        "kurtosis": -0.7727716727943759,
+        "zero_ratio": 0.3273533603619809
+      },
+      "signal_strength_analysis": {
+        "mean_strength": 0.3114671401292393,
+        "high_signal_ratio": 0.17879683889357817,
+        "medium_signal_ratio": 0.1379356120881706,
+        "low_signal_ratio": 0.6832675490182513
+      }
+    },
+    "label_distributions": {
+      "15m_returns": {
+        "mean_return": 0.00012281584058311334,
+        "std_return": 0.009336156474181963,
+        "positive_return_ratio": 0.5000972927534627,
+        "profit_probability": 0.5000324309178209,
+        "extreme_gain_ratio": 0.03009718897452573,
+        "extreme_loss_ratio": 0.028093390665430543
+      },
+      "30m_returns": {
+        "mean_return": 0.00023622269646782757,
+        "std_return": 0.013202153458997733,
+        "positive_return_ratio": 0.5027583576637286,
+        "profit_probability": 0.5026156616253166,
+        "extreme_gain_ratio": 0.06074656837648231,
+        "extreme_loss_ratio": 0.0570658754099268
+      },
+      "60m_returns": {
+        "mean_return": 0.00047479204963763057,
+        "std_return": 0.018729536213956705,
+        "positive_return_ratio": 0.5041256451590586,
+        "profit_probability": 0.5038661978164911,
+        "extreme_gain_ratio": 0.10936959484702985,
+        "extreme_loss_ratio": 0.10273941800772116
+      },
+      "target_0.6%_hit_rate": 0.7526467953064246,
+      "target_1.2%_hit_rate": 0.577230555286499,
+      "stop_loss_hit_rate": 0.8192010924462771
+    },
+    "lookahead_bias_check": {
+      "suspicious_correlations": [],
+      "bias_detected": false
+    },
+    "correlation_analysis": {
+      "high_correlation_pairs": [
+        {
+          "feature1": "open",
+          "feature2": "high",
+          "correlation": 0.9999993558297888
+        },
+        {
+          "feature1": "open",
+          "feature2": "low",
+          "correlation": 0.9999992485717936
+        },
+        {
+          "feature1": "open",
+          "feature2": "close",
+          "correlation": 0.9999989147017401
+        },
+        {
+          "feature1": "open",
+          "feature2": "bb_upper",
+          "correlation": 0.9998848987296445
+        },
+        {
+          "feature1": "open",
+          "feature2": "bb_middle",
+          "correlation": 0.999890753126941
+        },
+        {
+          "feature1": "open",
+          "feature2": "bb_lower",
+          "correlation": 0.9998847195215723
+        },
+        {
+          "feature1": "open",
+          "feature2": "ma_15",
+          "correlation": 0.999988821361417
+        },
+        {
+          "feature1": "open",
+          "feature2": "ma_60",
+          "correlation": 0.9999370832156703
+        },
+        {
+          "feature1": "high",
+          "feature2": "low",
+          "correlation": 0.9999987297779341
+        },
+        {
+          "feature1": "high",
+          "feature2": "close",
+          "correlation": 0.9999993922587311
+        },
+        {
+          "feature1": "high",
+          "feature2": "bb_upper",
+          "correlation": 0.9998862378356637
+        },
+        {
+          "feature1": "high",
+          "feature2": "bb_middle",
+          "correlation": 0.999890446285311
+        },
+        {
+          "feature1": "high",
+          "feature2": "bb_lower",
+          "correlation": 0.9998827128421277
+        },
+        {
+          "feature1": "high",
+          "feature2": "ma_15",
+          "correlation": 0.9999885705458166
+        },
+        {
+          "feature1": "high",
+          "feature2": "ma_60",
+          "correlation": 0.9999367171624217
+        },
+        {
+          "feature1": "low",
+          "feature2": "close",
+          "correlation": 0.9999993576256602
+        },
+        {
+          "feature1": "low",
+          "feature2": "bb_upper",
+          "correlation": 0.9998821594860628
+        },
+        {
+          "feature1": "low",
+          "feature2": "bb_middle",
+          "correlation": 0.9998897297714583
+        },
+        {
+          "feature1": "low",
+          "feature2": "bb_lower",
+          "correlation": 0.999885477065143
+        },
+        {
+          "feature1": "low",
+          "feature2": "ma_15",
+          "correlation": 0.9999884393421606
+        },
+        {
+          "feature1": "low",
+          "feature2": "ma_60",
+          "correlation": 0.9999362137379547
+        },
+        {
+          "feature1": "close",
+          "feature2": "bb_upper",
+          "correlation": 0.99988401921697
+        },
+        {
+          "feature1": "close",
+          "feature2": "bb_middle",
+          "correlation": 0.9998898462496216
+        },
+        {
+          "feature1": "close",
+          "feature2": "bb_lower",
+          "correlation": 0.9998837883462435
+        },
+        {
+          "feature1": "close",
+          "feature2": "ma_15",
+          "correlation": 0.9999884663450967
+        },
+        {
+          "feature1": "close",
+          "feature2": "ma_60",
+          "correlation": 0.9999362295925602
+        },
+        {
+          "feature1": "volume",
+          "feature2": "volume_ma",
+          "correlation": 0.8829648805415646
+        },
+        {
+          "feature1": "volume",
+          "feature2": "taker_buy_base_asset_volume",
+          "correlation": 0.9816626984925264
+        },
+        {
+          "feature1": "rsi",
+          "feature2": "bb_position",
+          "correlation": 0.8996829694516313
+        },
+        {
+          "feature1": "bb_upper",
+          "feature2": "bb_middle",
+          "correlation": 0.9999942584015891
+        },
+        {
+          "feature1": "bb_upper",
+          "feature2": "bb_lower",
+          "correlation": 0.9999764015404546
+        },
+        {
+          "feature1": "bb_upper",
+          "feature2": "ma_15",
+          "correlation": 0.9998962734171376
+        },
+        {
+          "feature1": "bb_upper",
+          "feature2": "ma_60",
+          "correlation": 0.9999493340970275
+        },
+        {
+          "feature1": "bb_middle",
+          "feature2": "bb_lower",
+          "correlation": 0.9999938337091968
+        },
+        {
+          "feature1": "bb_middle",
+          "feature2": "ma_15",
+          "correlation": 0.9999021286722483
+        },
+        {
+          "feature1": "bb_middle",
+          "feature2": "ma_60",
+          "correlation": 0.9999551821955601
+        },
+        {
+          "feature1": "bb_lower",
+          "feature2": "ma_15",
+          "correlation": 0.999896096841771
+        },
+        {
+          "feature1": "bb_lower",
+          "feature2": "ma_60",
+          "correlation": 0.9999491171723999
+        },
+        {
+          "feature1": "rsi_in_dip_zone",
+          "feature2": "dipmaster_signal_strength",
+          "correlation": 0.8427335038389694
+        },
+        {
+          "feature1": "bb_squeeze",
+          "feature2": "volatility_10",
+          "correlation": 0.812476878570553
+        },
+        {
+          "feature1": "bb_squeeze",
+          "feature2": "volatility_20",
+          "correlation": 0.8418766691733072
+        },
+        {
+          "feature1": "price_dip_1m",
+          "feature2": "order_flow_imbalance",
+          "correlation": -0.9769094053000468
+        },
+        {
+          "feature1": "volume_ma",
+          "feature2": "taker_buy_base_asset_volume",
+          "correlation": 0.8719719180558674
+        },
+        {
+          "feature1": "volume_ratio",
+          "feature2": "turnover_rate",
+          "correlation": 1.0000000000000009
+        },
+        {
+          "feature1": "volatility_10",
+          "feature2": "volatility_20",
+          "correlation": 0.9216375955237794
+        },
+        {
+          "feature1": "volatility_10",
+          "feature2": "volatility_50",
+          "correlation": 0.8224519030291028
+        },
+        {
+          "feature1": "volatility_20",
+          "feature2": "volatility_50",
+          "correlation": 0.9029113186826843
+        },
+        {
+          "feature1": "ma_15",
+          "feature2": "ma_60",
+          "correlation": 0.9999484370216953
+        },
+        {
+          "feature1": "trend_short",
+          "feature2": "trend_alignment",
+          "correlation": 0.8425380304548994
+        },
+        {
+          "feature1": "trend_long",
+          "feature2": "trend_alignment",
+          "correlation": 0.8425234305579004
+        },
+        {
+          "feature1": "quote_asset_volume",
+          "feature2": "number_of_trades",
+          "correlation": 0.8666318159934515
+        },
+        {
+          "feature1": "quote_asset_volume",
+          "feature2": "taker_buy_quote_asset_volume",
+          "correlation": 0.9752879569241049
+        },
+        {
+          "feature1": "number_of_trades",
+          "feature2": "taker_buy_quote_asset_volume",
+          "correlation": 0.8487825859499569
+        }
+      ],
+      "multicollinearity_detected": true,
+      "average_correlation": 0.09354912829621045
+    },
+    "temporal_stability": {
+      "rsi": {
+        "period_stats": {
+          "Q1": {
+            "mean": 50.34496542055603,
+            "std": 10.686587176918747
+          },
+          "Q2": {
+            "mean": 50.122636020331406,
+            "std": 10.889145099927823
+          },
+          "Q3": {
+            "mean": 50.26350972819751,
+            "std": 10.91612336740113
+          },
+          "Q4": {
+            "mean": 50.24767652993725,
+            "std": 11.063579257090572
+          }
+        },
+        "coefficient_of_variation": 0.0015833337632418433,
+        "stability_rating": "stable"
+      },
+      "bb_position": {
+        "period_stats": {
+          "Q1": {
+            "mean": 0.5074700322398563,
+            "std": 0.3236973103068427
+          },
+          "Q2": {
+            "mean": 0.5006546904627741,
+            "std": 0.32508003571255917
+          },
+          "Q3": {
+            "mean": 0.5030627199621442,
+            "std": 0.3256696610279834
+          },
+          "Q4": {
+            "mean": 0.5030214269204515,
+            "std": 0.32678368662055585
+          }
+        },
+        "coefficient_of_variation": 0.004891331637690104,
+        "stability_rating": "stable"
+      },
+      "volume_ratio": {
+        "period_stats": {
+          "Q1": {
+            "mean": 1.0051894123402938,
+            "std": 0.7940915293007703
+          },
+          "Q2": {
+            "mean": 1.0156079130758902,
+            "std": 0.7594862817470046
+          },
+          "Q3": {
+            "mean": 1.0163379725253705,
+            "std": 0.7534864409397186
+          },
+          "Q4": {
+            "mean": 1.0098381757881982,
+            "std": 0.783339146136894
+          }
+        },
+        "coefficient_of_variation": 0.004492275573137274,
+        "stability_rating": "stable"
+      },
+      "dipmaster_signal_strength": {
+        "period_stats": {
+          "Q1": {
+            "mean": 0.3046875054051343,
+            "std": 0.31136059753781153
+          },
+          "Q2": {
+            "mean": 0.31259167012591665,
+            "std": 0.3134863316787136
+          },
+          "Q3": {
+            "mean": 0.31203323018806567,
+            "std": 0.312333130876868
+          },
+          "Q4": {
+            "mean": 0.31655622724403054,
+            "std": 0.31335470223350254
+          }
+        },
+        "coefficient_of_variation": 0.013757692660900213,
+        "stability_rating": "stable"
+      }
+    }
+  },
+  "feature_importance": {
+    "feature_importance_ranking": [
+      [
+        "rsi",
+        0.009478853651313126
+      ],
+      [
+        "dipmaster_signal_strength",
+        0.007793369068569057
+      ],
+      [
+        "bb_position",
+        0.007402086029301936
+      ],
+      [
+        "momentum_20",
+        0.00692867228523268
+      ],
+      [
+        "momentum_10",
+        0.006623858932082011
+      ],
+      [
+        "momentum_5",
+        0.004541871613641589
+      ],
+      [
+        "hour",
+        0.0029884719063728604
+      ],
+      [
+        "trend_alignment",
+        0.0021494566246622465
+      ],
+      [
+        "order_flow_imbalance",
+        0.001733538650755089
+      ],
+      [
+        "price_dip_magnitude",
+        0.001719430426836148
+      ],
+      [
+        "number_of_trades",
+        0.0013486799066654666
+      ],
+      [
+        "volume_ma",
+        0.00133901499960711
+      ],
+      [
+        "taker_buy_base_asset_volume",
+        0.0012120310312304196
+      ],
+      [
+        "volume",
+        0.001097053173365815
+      ],
+      [
+        "quote_asset_volume",
+        0.0009820235040477565
+      ],
+      [
+        "volatility_50",
+        0.0009665110415362125
+      ],
+      [
+        "day_of_week",
+        0.0009542452882201846
+      ],
+      [
+        "taker_buy_quote_asset_volume",
+        0.0008842374965377605
+      ],
+      [
+        "bb_upper",
+        0.0008121547728637896
+      ],
+      [
+        "ma_60",
+        0.0007956491373671793
+      ]
+    ],
+    "top_features": [
+      "rsi",
+      "dipmaster_signal_strength",
+      "bb_position",
+      "momentum_20",
+      "momentum_10",
+      "momentum_5",
+      "hour",
+      "trend_alignment",
+      "order_flow_imbalance",
+      "price_dip_magnitude"
+    ]
+  },
+  "overall_quality_score": 79.6078431372549
+}

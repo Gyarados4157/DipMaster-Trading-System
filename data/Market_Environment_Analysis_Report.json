@@ -1,0 +1,75 @@
+{
+  "report_type": "Market Environment Analysis",
+  "timestamp": "2025-08-16T20:55:30.352585",
+  "correlation_analysis": {
+    "average_correlation": NaN,
+    "correlation_distribution": {
+      "high_correlation": 0,
+      "medium_correlation": 0,
+      "low_correlation": 0
+    }
+  },
+  "volatility_landscape": {
+    "high_volatility": [],
+    "medium_volatility": [
+      "BTCUSDT",
+      "ETHUSDT",
+      "SOLUSDT",
+      "ADAUSDT",
+      "XRPUSDT",
+      "AVAXUSDT",
+      "DOTUSDT",
+      "ATOMUSDT",
+      "NEARUSDT",
+      "APTUSDT",
+      "UNIUSDT",
+      "AAVEUSDT",
+      "LINKUSDT",
+      "MKRUSDT",
+      "COMPUSDT",
+      "ARBUSDT",
+      "OPUSDT",
+      "MATICUSDT",
+      "FILUSDT",
+      "LTCUSDT",
+      "BNBUSDT",
+      "TRXUSDT",
+      "XLMUSDT",
+      "VETUSDT",
+      "QNTUSDT"
+    ],
+    "low_volatility": [],
+    "average_volatility": 0.025
+  },
+  "liquidity_distribution": {
+    "high_liquidity": [],
+    "medium_liquidity": [
+      "BTCUSDT",
+      "ETHUSDT",
+      "SOLUSDT",
+      "ADAUSDT",
+      "XRPUSDT",
+      "AVAXUSDT",
+      "DOTUSDT",
+      "ATOMUSDT",
+      "NEARUSDT",
+      "APTUSDT",
+      "UNIUSDT",
+      "AAVEUSDT",
+      "LINKUSDT",
+      "MKRUSDT",
+      "COMPUSDT",
+      "ARBUSDT",
+      "OPUSDT",
+      "MATICUSDT",
+      "FILUSDT",
+      "LTCUSDT",
+      "BNBUSDT",
+      "TRXUSDT",
+      "XLMUSDT",
+      "VETUSDT",
+      "QNTUSDT"
+    ],
+    "low_liquidity": []
+  }
+}

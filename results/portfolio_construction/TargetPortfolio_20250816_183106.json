@@ -1,0 +1,85 @@
+{
+  "ts": "2025-08-16T18:31:06.278845",
+  "weights": [
+    {
+      "symbol": "BTCUSDT",
+      "w": 0.25,
+      "usd_size": 2500,
+      "kelly_fraction": 0.18,
+      "confidence_adj": 1.0,
+      "volatility_adj": 0.85
+    },
+    {
+      "symbol": "ETHUSDT",
+      "w": 0.2,
+      "usd_size": 2000,
+      "kelly_fraction": 0.15,
+      "confidence_adj": 0.95,
+      "volatility_adj": 1.1
+    },
+    {
+      "symbol": "SOLUSDT",
+      "w": 0.15,
+      "usd_size": 1500,
+      "kelly_fraction": 0.12,
+      "confidence_adj": 0.9,
+      "volatility_adj": 1.25
+    }
+  ],
+  "leverage": 0.6,
+  "risk": {
+    "ann_vol": 0.16,
+    "beta": 0.02,
+    "ES_95": 0.018,
+    "VaR_95": 0.015,
+    "VaR_99": 0.022,
+    "sharpe": 2.15
+  },
+  "venue_allocation": {
+    "binance": 1.0
+  },
+  "risk_attribution": {
+    "MCR": [
+      {
+        "symbol": "BTCUSDT",
+        "mcr": 0.008
+      },
+      {
+        "symbol": "ETHUSDT",
+        "mcr": 0.01
+      },
+      {
+        "symbol": "SOLUSDT",
+        "mcr": 0.012
+      }
+    ],
+    "CCR": [
+      {
+        "symbol": "BTCUSDT",
+        "ccr": 0.002
+      },
+      {
+        "symbol": "ETHUSDT",
+        "ccr": 0.002
+      },
+      {
+        "symbol": "SOLUSDT",
+        "ccr": 0.0018
+      }
+    ]
+  },
+  "constraints_status": {
+    "beta_neutral": true,
+    "vol_target": true,
+    "leverage_ok": true,
+    "position_limits": true,
+    "position_count": true,
+    "market_neutral": true
+  },
+  "optimization_metadata": {
+    "target_volatility": 0.18,
+    "max_positions": 3,
+    "beta_tolerance": 0.05,
+    "correlation_threshold": 0.7
+  }
+}

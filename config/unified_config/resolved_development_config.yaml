@@ -1,0 +1,704 @@
+_metadata:
+  environment: !!python/object/apply:__main__.ConfigEnvironment
+  - development
+  loaded_at: '2025-08-17T02:01:26.047273'
+  name: dipmaster_v4
+  source_files:
+  - global.yaml
+  - base_strategy.yaml
+  - dipmaster_v4.yaml
+  - development.yaml
+  validation_errors: []
+  version: 4.0.0
+api:
+  fastapi:
+    host: 127.0.0.1
+    port: 8001
+    reload: true
+    workers: 1
+  security:
+    cors_origins:
+    - http://localhost:3000
+    - http://localhost:3001
+    rate_limit_requests: 10000
+    rate_limit_window: 3600
+  versioning:
+    default_version: v1
+    supported_versions:
+    - v1
+backtesting:
+  data:
+    min_history_days: 365
+    required_timeframes:
+    - 5m
+    - 15m
+    - 1h
+  parallel:
+    enabled: false
+    max_workers: 1
+  parameters:
+    commission_rate: 0.001
+    initial_capital: 10000
+    market_impact: true
+    slippage_model: linear
+  periods:
+    crisis_periods:
+    - '2022-05-01'
+    - '2022-06-30'
+    default_period: '2024-06-01'
+    full_history: '2021-01-01'
+    max_history_days: 180
+    recent_validation: '2024-01-01'
+  validation:
+    max_drawdown: 0.03
+    min_sharpe_ratio: 2.0
+    min_trades: 50
+    min_win_rate: 0.85
+    out_of_sample_pct: 0.2
+    profit_factor: 2.0
+    required_trades: 100
+data:
+  quality:
+    max_gap_minutes: 10
+    min_data_completeness: 0.8
+    min_volume_threshold: 100
+  retention:
+    execution_logs: 3
+    model_predictions: 7
+    processed_features: 14
+    raw_market_data: 30
+  storage:
+    base_path: data/dev
+    features: data/dev/features
+    market_data: data/dev/market_data
+    models: data/dev/models
+    results: results/dev
+database:
+  echo: true
+  max_overflow: 0
+  pool_size: 1
+  url: sqlite:///data/dev/dipmaster_dev.db
+dev_tools:
+  debugging:
+    pdb_on_error: true
+    save_error_context: true
+    verbose_errors: true
+  hot_reload:
+    enabled: true
+    ignore_patterns:
+    - '*.pyc'
+    - '*.log'
+    - __pycache__
+    watch_dirs:
+    - src
+    - config
+  profiling:
+    cpu_profiling: true
+    enabled: true
+    memory_profiling: true
+    output_dir: logs/dev/profiling
+development:
+  debug: false
+  mock_data:
+    enabled: false
+    end_date: '2024-12-31'
+    start_date: '2024-01-01'
+    symbols:
+    - BTCUSDT
+    - ETHUSDT
+  testing: false
+  tools:
+    memory_tracking: false
+    performance_monitoring: false
+    profiling: false
+documentation:
+  auto_generate: true
+  include_private: true
+  output_dir: docs/dev
+environment:
+  debug: true
+  description: Development environment for testing and debugging
+  name: development
+  testing: true
+environment_overrides:
+  development:
+    logging:
+      level: DEBUG
+    monitoring:
+      alerts:
+        enabled: false
+  production:
+    logging:
+      level: INFO
+    monitoring:
+      alerts:
+        channels:
+        - email
+        - webhook
+        enabled: true
+    risk_management:
+      limits:
+        daily_loss_limit_usd: 500
+  testing:
+    backtesting:
+      parameters:
+        initial_capital: 10000
+    execution:
+      orders:
+        default_order_type: limit
+execution:
+  orders:
+    aggression_level: 0.7
+    default_order_type: market
+    iceberg_orders: true
+    max_order_retries: 3
+    max_retries: 3
+    max_show_quantity: 0.1
+    order_timeout_seconds: 30
+    order_type: limit
+    partial_fill_threshold: 0.9
+    slippage_tolerance: 0.001
+  routing:
+    backup_venues:
+    - okx
+    - coinbase
+    latency_threshold_ms: 50
+    primary_venue: binance
+  slippage:
+    adaptive_sizing: true
+    market_impact_model: true
+    max_acceptable_slippage: 0.0015
+    max_acceptable_slippage_pct: 0.005
+    slippage_model: linear
+  timing:
+    avoid_news_events: true
+    market_timing_model: true
+    max_execution_delay_ms: 1000
+    order_scheduling: true
+    order_timeout_seconds: 30
+    position_refresh_interval: 5
+    position_refresh_interval_seconds: 30
+features:
+  categories:
+    cross_asset:
+      enabled: false
+    microstructure:
+      enabled: false
+    price:
+      enabled: true
+      features:
+      - open
+      - high
+      - low
+      - close
+      - returns
+    technical:
+      enabled: false
+    volume:
+      enabled: true
+      features:
+      - volume
+      - volume_ma
+      - volume_ratio
+  computation:
+    cache_features: true
+    feature_selection: true
+    parallel_processing: false
+  cross_asset:
+    correlation_window: 60
+    correlations:
+      btc_correlation: true
+      eth_correlation: true
+      sector_correlation: true
+    regime_detection:
+      correlation_regime: true
+      trend_regime: true
+      volatility_regime: true
+    sector_analysis: true
+  engineering:
+    feature_groups:
+      cross_asset_signals: 12
+      market_microstructure: 6
+      momentum_features: 9
+      regime_indicators: 15
+      technical_indicators: 12
+      volatility_features: 6
+      volume_profile: 6
+    total_features: 24
+    update_frequency: 5m
+  microstructure:
+    liquidity_metrics: true
+    orderbook:
+      bid_ask_spread: true
+      depth_analysis: true
+      imbalance_ratio: true
+    price_impact:
+      kyle_lambda: true
+      permanent_impact: true
+      temporary_impact: true
+    price_impact_windows:
+    - 1
+    - 5
+    - 15
+    trade_flow:
+      buy_sell_ratio: true
+      large_trade_detection: true
+      trade_size_distribution: true
+    volume_periods:
+    - 5
+    - 15
+    - 30
+  technical:
+    bb_period: 20
+    bb_std: 2.0
+    bollinger_features:
+      periods:
+      - 20
+      - 40
+      position_metrics: true
+      std_devs:
+      - 1.5
+      - 2.0
+      - 2.5
+    ma_features:
+      periods:
+      - 7
+      - 14
+      - 21
+      - 50
+      - 200
+      price_ratios: true
+      types:
+      - sma
+      - ema
+      - wma
+    ma_periods:
+    - 7
+    - 14
+    - 21
+    - 50
+    - 200
+    macd_features:
+    - fast: 12
+      signal: 9
+      slow: 26
+    - fast: 8
+      signal: 5
+      slow: 21
+    rsi_features:
+    - name: rsi_14
+      period: 14
+    - name: rsi_21
+      period: 21
+    - name: rsi_30
+      period: 30
+    rsi_periods:
+    - 14
+    - 21
+    - 30
+frontend:
+  api_endpoints:
+    base_url: http://localhost:8001
+    websocket_url: ws://localhost:8001/ws
+  dev_server:
+    host: localhost
+    hot_reload: true
+    port: 3001
+jupyter:
+  enabled: true
+  notebook_dir: notebooks/dev
+  port: 8888
+  token: dipmaster-dev-token
+kafka:
+  bootstrap_servers:
+  - localhost:9092
+  enabled: false
+logging:
+  format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+  handlers:
+    console:
+      enabled: true
+      format: detailed
+      level: DEBUG
+    file:
+      enabled: true
+      level: DEBUG
+      path: logs/dev/dipmaster_dev_{date}.log
+      retention: 7
+      rotation: daily
+    structured:
+      enabled: false
+      format: json
+      path: logs/structured/dipmaster_{date}.jsonl
+  level: DEBUG
+  loggers:
+    kafka: WARNING
+    sqlalchemy: WARNING
+    urllib3: WARNING
+    websockets: INFO
+market_data:
+  backup_exchanges:
+  - okx
+  - coinbase
+  collection:
+    symbols:
+    - BTCUSDT
+    - ETHUSDT
+    timeframes:
+    - 5m
+    - 15m
+    - 1h
+  primary_exchange: binance
+  realtime:
+    buffer_size: 100
+    heartbeat_interval: 60
+    mock_mode: true
+    reconnect_attempts: 3
+    websocket_url: wss://testnet.binance.vision/ws
+ml:
+  checkpointing:
+    enabled: true
+    interval_epochs: 5
+    save_path: data/dev/model_checkpoints
+  training:
+    cross_validation_folds: 3
+    early_stopping: true
+    hyperparameter_trials: 10
+ml_pipeline:
+  catboost:
+    depth: 6
+    l2_leaf_reg: 3
+    learning_rate: 0.1
+    objective: Logloss
+  ensemble:
+    primary_model: lightgbm
+    secondary_model: xgboost
+    tertiary_model: catboost
+    weights:
+      catboost: 0.2
+      lightgbm: 0.5
+      xgboost: 0.3
+  lightgbm:
+    bagging_fraction: 0.8
+    bagging_freq: 5
+    boosting_type: gbdt
+    feature_fraction: 0.8
+    learning_rate: 0.1
+    min_child_samples: 20
+    num_leaves: 31
+    objective: binary
+  training:
+    optuna_timeout_hours: 6
+    optuna_trials: 200
+    test_ratio: 0.2
+    train_ratio: 0.6
+    validation_ratio: 0.2
+    validation_window_days: 30
+    walk_forward_periods: 12
+  xgboost:
+    colsample_bytree: 0.8
+    learning_rate: 0.1
+    max_depth: 6
+    min_child_weight: 1
+    objective: binary:logistic
+    subsample: 0.8
+models:
+  ensemble:
+    models:
+    - lightgbm
+    - xgboost
+    - catboost
+    voting_method: soft
+    weights:
+    - 0.4
+    - 0.35
+    - 0.25
+  evaluation:
+    max_drawdown: 0.15
+    metrics:
+    - accuracy
+    - precision
+    - recall
+    - f1
+    - auc
+    min_accuracy: 0.65
+    min_sharpe_ratio: 1.5
+  training:
+    cross_validation_folds: 5
+    hyperparameter_trials: 100
+    test_split: 0.2
+    validation_split: 0.2
+monitoring:
+  alerts:
+    channels:
+    - log
+    daily_loss_threshold: 0.02
+    enabled: false
+    max_drawdown_breach: 0.04
+    sharpe_below: 1.5
+    thresholds:
+      daily_loss_pct: 0.03
+      drawdown_pct: 0.05
+      error_rate_percent: 5
+      execution_delay_ms: 5000
+      high_latency_ms: 1000
+      memory_usage_percent: 90
+    win_rate_below: 0.75
+  attribution:
+    execution_quality: true
+    feature_importance: true
+    market_regime_impact: true
+    signal_performance: true
+  health_checks:
+    enabled: true
+    endpoints:
+    - api_health
+    - database_health
+    interval_seconds: 60
+  logging:
+    error_logging: true
+    performance_logging: true
+    signal_logging: true
+    trade_logging: true
+  metrics:
+    collection_interval: 30
+    enabled: true
+    retention_days: 7
+  performance:
+    daily_reports: true
+    real_time_pnl: true
+    weekly_reports: true
+  real_time:
+    drawdown_alerts: true
+    pnl_tracking: true
+    sharpe_monitoring: true
+    win_rate_tracking: true
+redis:
+  decode_responses: true
+  max_connections: 10
+  url: redis://localhost:6379/1
+risk:
+  limits:
+    max_correlation: 0.7
+    max_daily_loss_usd: 500
+    max_monthly_loss_usd: 5000
+    max_weekly_loss_usd: 2000
+  position_sizing:
+    default_size_usd: 1000
+    max_portfolio_exposure: 0.8
+    max_position_size_usd: 5000
+  stops:
+    default_stop_loss: 0.02
+    default_take_profit: 0.015
+    max_holding_time_hours: 24
+    trailing_stop: true
+risk_management:
+  asymmetric:
+    downside_protection: 0.9
+    risk_parity: true
+    upside_capture: 0.8
+  limits:
+    daily_loss_limit_usd: 1000
+    max_leverage: 1.0
+    monthly_loss_limit_usd: 20000
+    weekly_loss_limit_usd: 5000
+  portfolio:
+    diversification_score_min: 0.7
+    max_correlation: 0.6
+    max_positions: 3
+    max_sector_exposure: 0.4
+  position_sizing:
+    base_size_usd: 1000
+    max_position_multiplier: 3.0
+    max_position_size_usd: 10000
+    method: fixed
+    sharpe_scaling: true
+    volatility_scaling: true
+  stops:
+    initial_stop: 0.015
+    initial_stop_pct: 0.02
+    time_stop_hours: 3
+    trailing_distance: 0.005
+    trailing_stop: true
+    trailing_stop_enabled: false
+security:
+  api_keys:
+    require_encryption: false
+    validation: basic
+  jwt:
+    algorithm: HS256
+    expiration_hours: 24
+    secret_key: dev-secret-key-change-in-production
+signals:
+  entry:
+    bollinger:
+      lower_band_penetration: true
+      period: 20
+      std_dev: 2.0
+    dip_detection:
+      lookback_periods: 5
+      price_drop_threshold: 0.002
+      volume_confirmation: true
+      volume_multiplier: 1.5
+    fundamental:
+      enabled: false
+    moving_averages:
+      long_ma: 50
+      medium_ma: 21
+      price_above_ma: false
+      short_ma: 7
+    rsi:
+      divergence_detection: true
+      overbought_threshold: 70
+      oversold_threshold: 30
+      period: 14
+    sentiment:
+      enabled: false
+    technical_indicators:
+      bollinger_bands:
+        enabled: false
+        period: 20
+        std_dev: 2.0
+      moving_averages:
+        enabled: false
+        long_period: 20
+        short_period: 10
+      rsi:
+        enabled: false
+        period: 14
+    volume:
+      volume_profile_confirmation: true
+      volume_spike_threshold: 2.0
+      vwap_analysis: true
+  exit:
+    profit_targets:
+      extended_target: 0.012
+      primary_target: 0.008
+      quick_profit: 0.005
+    targets:
+      stop_loss: 0.02
+      take_profit: 0.02
+      trailing_stop: false
+    technical:
+      enabled: false
+      momentum_divergence: true
+      rsi_overbought: 75
+      upper_bollinger_touch: true
+      volume_exhaustion: true
+    time_based:
+      enabled: false
+      max_holding_minutes: 1440
+    timing:
+      boundary_minutes:
+      - 15
+      - 30
+      - 45
+      - 60
+      max_holding_minutes: 180
+      preferred_windows:
+      - end: 29
+        start: 15
+        weight: 0.335
+      - end: 59
+        start: 45
+        weight: 0.286
+strategy:
+  author: DipMaster Development Team
+  description: Enhanced DipMaster AI with 96-feature ML pipeline and asymmetric risk
+    management
+  development_overrides:
+    execution:
+      orders:
+        max_retries: 1
+        order_timeout_seconds: 10
+    monitoring:
+      performance:
+        update_interval_seconds: 5
+    risk_management:
+      limits:
+        max_daily_loss_usd: 50
+        max_monthly_loss_usd: 500
+        max_weekly_loss_usd: 200
+      position_sizing:
+        base_size_usd: 100
+        max_position_size_usd: 500
+  frequency: high_frequency
+  name: DipMaster Enhanced V4
+  risk_profile: medium
+  style: short_term_momentum
+  targets:
+    calmar_ratio: 5.0
+    max_drawdown: 0.03
+    profit_factor: 1.5
+    sharpe_ratio: 2.0
+    win_rate: 0.85
+  type: mean_reversion
+  version: 4.0.0
+symbols:
+  ADAUSDT:
+    enabled: true
+    position_size_multiplier: 0.8
+    specific_features:
+    - staking_activity
+    - development_activity
+    volatility_adjustment: 1.1
+  BTCUSDT:
+    enabled: true
+    position_size_multiplier: 1.2
+    specific_features:
+    - btc_dominance
+    - institutional_flow
+    volatility_adjustment: 0.9
+  ETHUSDT:
+    enabled: true
+    position_size_multiplier: 1.1
+    specific_features:
+    - eth_gas_fees
+    - defi_activity
+    volatility_adjustment: 1.0
+  SOLUSDT:
+    enabled: true
+    position_size_multiplier: 0.9
+    specific_features:
+    - validator_performance
+    - ecosystem_growth
+    volatility_adjustment: 1.2
+  XRPUSDT:
+    enabled: true
+    position_size_multiplier: 0.7
+    specific_features:
+    - regulatory_sentiment
+    - cross_border_payments
+    volatility_adjustment: 1.1
+  default:
+    commission_override: null
+    enabled: true
+    position_size_multiplier: 1.0
+    volatility_adjustment: 1.0
+system:
+  environment: development
+  limits:
+    max_concurrent_positions: 10
+    max_cpu_usage_percent: 80
+    max_daily_trades: 100
+    max_memory_usage_mb: 4096
+  name: DipMaster Trading System
+  timeouts:
+    api_request: 30
+    database_query: 60
+    model_inference: 5
+    websocket_connect: 10
+  timezone: UTC
+  version: 4.0.0
+testing:
+  integration_tests:
+    enabled: true
+    test_data_path: data/test
+  mocks:
+    database: false
+    exchange_api: true
+    kafka: true
+    redis: true
+  unit_tests:
+    coverage_threshold: 0.8
+    enabled: true

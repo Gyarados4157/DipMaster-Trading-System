@@ -1,0 +1,135 @@
+{
+  "kafka": {
+    "bootstrap_servers": ["localhost:9092"],
+    "consumer_group": "dipmaster_dashboard_v4",
+    "topics": {
+      "exec.reports.v1": "v1",
+      "risk.metrics.v1": "v1", 
+      "alerts.v1": "v1",
+      "strategy.performance.v1": "v1"
+    },
+    "batch_size": 1000,
+    "max_poll_interval_ms": 300000,
+    "enable_auto_commit": false,
+    "auto_offset_reset": "latest",
+    "security_protocol": "PLAINTEXT"
+  },
+  "database": {
+    "host": "localhost",
+    "port": 9000,
+    "database": "dipmaster",
+    "username": "default",
+    "password": "",
+    "secure": false,
+    "verify": true,
+    "pool_size": 10,
+    "max_overflow": 20,
+    "tables": {
+      "exec_reports": {
+        "partition_by": "toYYYYMM(timestamp)",
+        "order_by": ["timestamp", "symbol"],
+        "ttl": "timestamp + INTERVAL 1 YEAR",
+        "settings": {
+          "index_granularity": 8192
+        }
+      },
+      "risk_metrics": {
+        "partition_by": "toYYYYMM(timestamp)",
+        "order_by": ["timestamp", "account_id"],
+        "ttl": "timestamp + INTERVAL 6 MONTH"
+      },
+      "pnl_curve": {
+        "partition_by": "toYYYYMM(timestamp)",
+        "order_by": ["timestamp", "symbol"],
+        "ttl": "timestamp + INTERVAL 2 YEAR"
+      },
+      "alerts": {
+        "partition_by": "toYYYYMM(timestamp)",
+        "order_by": ["timestamp", "severity"],
+        "ttl": "timestamp + INTERVAL 3 MONTH"
+      }
+    }
+  },
+  "redis": {
+    "host": "localhost",
+    "port": 6379,
+    "db": 0,
+    "password": null,
+    "max_connections": 100,
+    "socket_timeout": 5,
+    "socket_connect_timeout": 5,
+    "cache_ttl": {
+      "pnl_data": 60,
+      "positions": 30,
+      "risk_metrics": 60,
+      "market_data": 10,
+      "alerts": 5,
+      "health_status": 30
+    }
+  },
+  "auth": {
+    "jwt_secret_key": "dipmaster-dashboard-secret-key-change-in-production",
+    "jwt_algorithm": "HS256",
+    "jwt_expiration_hours": 24,
+    "api_key_header": "X-API-Key",
+    "roles": {
+      "admin": ["read", "write", "admin"],
+      "trader": ["read", "write"],
+      "viewer": ["read"]
+    }
+  },
+  "websocket": {
+    "max_connections": 1000,
+    "heartbeat_interval": 30,
+    "message_queue_size": 1000,
+    "compression": true,
+    "channels": {
+      "alerts": {
+        "buffer_size": 100,
+        "rate_limit": "10/second"
+      },
+      "positions": {
+        "buffer_size": 50,
+        "rate_limit": "5/second"
+      },
+      "pnl": {
+        "buffer_size": 200,
+        "rate_limit": "20/second"
+      },
+      "risk": {
+        "buffer_size": 50,
+        "rate_limit": "5/second"
+      }
+    }
+  },
+  "monitoring": {
+    "enabled": true,
+    "metrics_port": 9090,
+    "health_check_interval": 30,
+    "thresholds": {
+      "api_response_time": {
+        "warning": 0.2,
+        "critical": 0.5
+      },
+      "database_query_time": {
+        "warning": 0.1,
+        "critical": 0.3
+      },
+      "kafka_lag": {
+        "warning": 1000,
+        "critical": 5000
+      },
+      "memory_usage": {
+        "warning": 0.8,
+        "critical": 0.9
+      },
+      "cpu_usage": {
+        "warning": 0.7,
+        "critical": 0.9
+      }
+    }
+  },
+  "debug": false,
+  "log_level": "INFO",
+  "max_request_size": 10485760
+}

@@ -1,63 +1,37 @@
-# DipMaster Trading System Dependencies
-# Production requirements for the DipMaster AI Trading System
-
 # ============================================================================
-# CORE TRADING DEPENDENCIES
-# ============================================================================
-
-# Data Processing & Analysis
-pandas>=2.0.0,<3.0.0          # DataFrame operations and data manipulation
-numpy>=1.24.0,<2.0.0          # Numerical computations and array operations
-
-# Cryptocurrency Exchange Integration
-python-binance>=1.0.19,<2.0.0 # Binance API client for trading operations
-websocket-client>=1.6.0,<2.0.0 # WebSocket client for real-time data streams
-aiohttp>=3.9.0,<4.0.0          # Async HTTP client for API calls
-
-# Technical Analysis
-ta>=0.10.2,<1.0.0              # Technical analysis indicators (RSI, MA, etc.)
-
-# ============================================================================
-# SYSTEM & INFRASTRUCTURE
+# DipMaster Trading System - Unified Dependencies
+# Version: 4.0.0
+# Date: 2025-08-16
+# 
+# This file now uses the unified dependency management system.
+# For environment-specific installations, use the dependencies/ directory:
+#   - Core system: pip install -r dependencies/requirements.txt
+#   - ML pipeline: pip install -r dependencies/requirements-ml.txt  
+#   - Development: pip install -r dependencies/requirements-dev.txt
+#   - Production:  pip install -r dependencies/requirements-prod.txt
 # ============================================================================
 
-# Configuration & Environment
-python-dotenv>=1.0.0,<2.0.0   # Environment variable management
-pydantic>=2.4.0,<3.0.0         # Data validation and settings management
+# Include unified core dependencies
+-r dependencies/requirements.txt
 
-# Logging & Monitoring  
-rich>=13.5.0,<14.0.0           # Rich console output and logging
-prometheus-client>=0.18.0,<1.0.0 # Metrics collection and monitoring
+# Include ML dependencies (most common use case)
+-r dependencies/requirements-ml.txt
 
-# ============================================================================
-# WEB INTERFACE & API
-# ============================================================================
-
-# Web Framework (for dashboard)
-fastapi>=0.104.0,<1.0.0        # Fast API framework for REST endpoints
-uvicorn>=0.24.0,<1.0.0         # ASGI server for FastAPI applications
+# Version constraints for conflict resolution
+-c dependencies/constraints.txt
 
 # ============================================================================
-# DATA VISUALIZATION (Optional)
+# LEGACY COMPATIBILITY NOTICE
 # ============================================================================
-
-# Charting & Analysis (optional, for analysis mode)
-matplotlib>=3.7.0,<4.0.0       # Plotting and chart generation
-seaborn>=0.12.0,<1.0.0         # Statistical data visualization
-
+# This file maintains compatibility with existing deployment scripts.
+# For new deployments, consider using the environment-specific files:
+#
+# Development setup:
+#   python dependencies/setup_env.py --env-type dev
+#
+# Production setup:  
+#   python dependencies/setup_env.py --env-type prod
+#
+# Testing setup:
+#   python dependencies/setup_env.py --env-type testing
 # ============================================================================
-# PERSISTENCE & CACHING (Optional)
-# ============================================================================
-
-# Database (optional, for advanced setups)
-sqlalchemy>=2.0.0,<3.0.0       # SQL toolkit and ORM
-
-# Caching (optional, for performance optimization)
-redis>=5.0.0,<6.0.0            # In-memory caching for hot data
-
-# ============================================================================
-# SCHEDULING & UTILITIES
-# ============================================================================
-
-# Task Scheduling
-schedule>=1.2.0,<2.0.0         # Simple job scheduling

@@ -1,0 +1,393 @@
+# ============================================================================
+# DipMaster Trading System - Production Environment Configuration
+# Version: 4.0.0
+# Date: 2025-08-16
+# ============================================================================
+
+environment:
+  name: "production"
+  description: "Production environment for live trading"
+  debug: false
+  testing: false
+
+# ============================================================================
+# PRODUCTION-SPECIFIC OVERRIDES
+# ============================================================================
+
+# Logging configuration for production
+logging:
+  level: "INFO"
+  handlers:
+    console:
+      enabled: false  # Disable console in production
+    file:
+      enabled: true
+      level: "INFO"
+      path: "logs/prod/dipmaster_prod_{date}.log"
+      rotation: "daily"
+      retention: 90  # Keep 90 days in production
+    structured:
+      enabled: true
+      format: "json"
+      path: "logs/prod/structured/dipmaster_prod_{date}.jsonl"
+      
+  # Structured logging for production monitoring
+  structured_fields:
+    - "timestamp"
+    - "level"
+    - "module"
+    - "message"
+    - "trade_id"
+    - "symbol"
+    - "pnl"
+    - "execution_time"
+
+# Data configuration for production
+data:
+  storage:
+    base_path: "data/prod"
+    market_data: "data/prod/market_data"
+    features: "data/prod/features"
+    models: "data/prod/models"
+    results: "results/prod"
+    
+  # Strict quality thresholds for production
+  quality:
+    min_data_completeness: 0.995  # 99.5%
+    max_gap_minutes: 2  # Very strict
+    min_volume_threshold: 10000  # Higher threshold
+    
+  # Production retention policies
+  retention:
+    raw_market_data: 730  # 2 years
+    processed_features: 365  # 1 year
+    model_predictions: 180  # 6 months
+    execution_logs: 90  # 3 months
+
+# Market data configuration for production
+market_data:
+  primary_exchange: "binance"
+  backup_exchanges: ["okx", "coinbase", "kraken"]
+  
+  collection:
+    timeframes: ["1m", "5m", "15m", "1h", "4h", "1d"]
+    symbols:
+      - "BTCUSDT"
+      - "ETHUSDT"
+      - "ADAUSDT"
+      - "SOLUSDT"
+      - "XRPUSDT"
+      - "BNBUSDT"
+      - "AVAXUSDT"
+      - "MATICUSDT"
+      - "DOTUSDT"
+      - "LINKUSDT"
+      
+  # High-performance real-time data
+  realtime:
+    mock_mode: false  # Real data only
+    websocket_url: "wss://stream.binance.com:9443/ws"
+    reconnect_attempts: 10
+    heartbeat_interval: 15  # seconds (frequent)
+    buffer_size: 10000  # Large buffer
+    
+    # Redundancy for production
+    backup_websockets:
+      - "wss://ws-api.okx.com:8443/ws/v5/public"
+      - "wss://ws-feed.exchange.coinbase.com"
+
+# API configuration for production
+api:
+  fastapi:
+    host: "0.0.0.0"
+    port: 8000
+    workers: 4  # Multiple workers for production
+    reload: false  # Never reload in production
+    
+  security:
+    cors_origins: ["https://dipmaster.trading"]  # Only production domain
+    rate_limit_requests: 1000  # Conservative rate limiting
+    rate_limit_window: 3600
+    
+    # Additional security headers
+    security_headers:
+      hsts: true
+      content_type_options: true
+      frame_options: "DENY"
+      xss_protection: true
+
+# Database configuration for production
+database:
+  # PostgreSQL for production
+  url: "${DATABASE_URL}"  # From environment variable
+  echo: false  # No SQL echoing in production
+  pool_size: 20
+  max_overflow: 30
+  pool_timeout: 30
+  pool_recycle: 3600
+  
+  # Connection monitoring
+  monitoring:
+    enabled: true
+    slow_query_threshold: 1.0  # seconds
+    
+  # Backup configuration
+  backup:
+    enabled: true
+    schedule: "0 2 * * *"  # Daily at 2 AM
+    retention_days: 30
+
+# Redis configuration for production
+redis:
+  # Redis cluster for production
+  url: "${REDIS_URL}"  # From environment variable
+  decode_responses: true
+  max_connections: 100
+  retry_on_timeout: true
+  socket_timeout: 5
+  
+  # Redis clustering
+  cluster_mode: true
+  max_connections_per_node: 50
+
+# Kafka configuration for production
+kafka:
+  enabled: true
+  bootstrap_servers: "${KAFKA_BOOTSTRAP_SERVERS}".split(",")
+  
+  # Producer settings
+  producer:
+    acks: "all"  # Wait for all replicas
+    retries: 5
+    batch_size: 16384
+    linger_ms: 5
+    compression_type: "snappy"
+    
+  # Consumer settings
+  consumer:
+    group_id: "dipmaster-trading-system"
+    auto_offset_reset: "latest"
+    enable_auto_commit: false
+    session_timeout_ms: 30000
+
+# Monitoring configuration for production
+monitoring:
+  # Comprehensive health checks
+  health_checks:
+    enabled: true
+    interval_seconds: 10  # Frequent health checks
+    endpoints:
+      - "api_health"
+      - "database_health"
+      - "redis_health"
+      - "kafka_health"
+      - "websocket_health"
+      - "model_health"
+      - "exchange_health"
+      
+  # Production alerting
+  alerts:
+    enabled: true
+    channels: ["email", "webhook", "slack", "pagerduty"]
+    
+    # Critical alert thresholds
+    thresholds:
+      high_latency_ms: 100  # Very low tolerance
+      error_rate_percent: 1  # 1% error rate
+      memory_usage_percent: 85
+      cpu_usage_percent: 80
+      disk_usage_percent: 85
+      
+    # Trading-specific alerts
+    trading_alerts:
+      max_drawdown_percent: 3  # 3% max drawdown
+      daily_loss_threshold: 500  # USD
+      execution_delay_ms: 50
+      order_failure_rate: 0.01  # 1%
+      
+  # Metrics collection
+  metrics:
+    enabled: true
+    collection_interval: 5  # seconds (frequent)
+    retention_days: 365  # 1 year retention
+    
+    # External monitoring services
+    external_services:
+      prometheus: true
+      datadog: true
+      newrelic: true
+
+# Strategy configuration for production
+strategy:
+  # Production-specific strategy settings
+  production_overrides:
+    # Conservative position sizing
+    risk_management:
+      position_sizing:
+        base_size_usd: 1000
+        max_position_size_usd: 5000
+        volatility_scaling: true
+        
+      limits:
+        max_daily_loss_usd: 500
+        max_weekly_loss_usd: 2000
+        max_monthly_loss_usd: 8000
+        
+    # High-performance execution
+    execution:
+      orders:
+        order_timeout_seconds: 30
+        max_retries: 3
+        slippage_tolerance: 0.001  # 0.1%
+        
+      # Smart order routing
+      routing:
+        enabled: true
+        latency_optimization: true
+        cost_optimization: true
+        
+    # Real-time monitoring
+    monitoring:
+      performance:
+        update_interval_seconds: 1  # Real-time
+        risk_monitoring: true
+        pnl_tracking: true
+
+# Machine learning configuration for production
+ml:
+  # Production model settings
+  models:
+    # Model ensemble for production
+    ensemble_size: 3
+    model_refresh_hours: 24  # Daily model refresh
+    
+    # Model validation
+    validation:
+      min_accuracy: 0.85
+      min_sharpe: 2.0
+      max_drawdown: 0.03
+      
+  # Training in production
+  training:
+    # Scheduled retraining
+    schedule: "0 3 * * *"  # Daily at 3 AM
+    incremental_learning: true
+    
+    # Production training parameters
+    hyperparameter_trials: 100
+    cross_validation_folds: 5
+    early_stopping: true
+    
+  # Model deployment
+  deployment:
+    canary_testing: true
+    rollback_threshold: 0.05  # 5% performance degradation
+    blue_green_deployment: true
+
+# Security configuration for production
+security:
+  # API key management
+  api_keys:
+    require_encryption: true
+    rotation_days: 90
+    validation: "strict"
+    
+  # JWT settings
+  jwt:
+    secret_key: "${JWT_SECRET_KEY}"  # From secure environment
+    algorithm: "RS256"  # Asymmetric encryption
+    expiration_hours: 1  # Short expiration
+    
+  # Encryption
+  encryption:
+    data_at_rest: true
+    data_in_transit: true
+    key_rotation_days: 90
+    
+  # Audit logging
+  audit:
+    enabled: true
+    log_all_trades: true
+    log_api_access: true
+    retention_years: 7  # Regulatory compliance
+
+# Backup and disaster recovery
+backup:
+  # Database backup
+  database:
+    enabled: true
+    frequency: "hourly"
+    retention_days: 90
+    offsite_backup: true
+    
+  # Configuration backup
+  config:
+    enabled: true
+    frequency: "daily"
+    retention_days: 365
+    
+  # Model backup
+  models:
+    enabled: true
+    frequency: "daily"
+    retention_versions: 10
+
+# Performance optimization for production
+performance:
+  # Caching strategy
+  caching:
+    redis_cache: true
+    application_cache: true
+    cache_ttl_seconds: 300  # 5 minutes
+    
+  # Connection pooling
+  connection_pools:
+    database_pool_size: 20
+    redis_pool_size: 50
+    http_pool_size: 100
+    
+  # Async processing
+  async_processing:
+    enabled: true
+    max_workers: 8
+    queue_size: 1000
+
+# Compliance and regulatory
+compliance:
+  # Trade reporting
+  trade_reporting:
+    enabled: true
+    real_time_reporting: true
+    regulatory_filing: true
+    
+  # Risk management compliance
+  risk_compliance:
+    position_limits: true
+    concentration_limits: true
+    var_limits: true
+    
+  # Data retention compliance
+  data_retention:
+    trade_data_years: 7
+    communication_years: 3
+    audit_trail_years: 7
+
+# Scaling configuration
+scaling:
+  # Horizontal scaling
+  horizontal:
+    enabled: true
+    min_instances: 2
+    max_instances: 10
+    target_cpu_utilization: 70
+    
+  # Load balancing
+  load_balancing:
+    algorithm: "round_robin"
+    health_check_interval: 10
+    
+  # Auto-scaling triggers
+  auto_scaling:
+    scale_up_threshold: 80  # CPU %
+    scale_down_threshold: 30  # CPU %
+    cooldown_minutes: 5

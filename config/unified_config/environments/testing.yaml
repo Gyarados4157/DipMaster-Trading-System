@@ -1,0 +1,380 @@
+# ============================================================================
+# DipMaster Trading System - Testing Environment Configuration
+# Version: 4.0.0
+# Date: 2025-08-16
+# ============================================================================
+
+environment:
+  name: "testing"
+  description: "Testing environment for CI/CD and integration testing"
+  debug: false
+  testing: true
+
+# ============================================================================
+# TESTING-SPECIFIC OVERRIDES
+# ============================================================================
+
+# Logging configuration for testing
+logging:
+  level: "INFO"
+  handlers:
+    console:
+      enabled: true
+      level: "INFO"
+      format: "simple"
+    file:
+      enabled: true
+      level: "DEBUG"
+      path: "logs/test/dipmaster_test_{date}.log"
+      rotation: "daily"
+      retention: 3  # Keep only 3 days in testing
+    structured:
+      enabled: true
+      format: "json"
+      path: "logs/test/structured/dipmaster_test_{date}.jsonl"
+
+# Data configuration for testing
+data:
+  storage:
+    base_path: "data/test"
+    market_data: "data/test/market_data"
+    features: "data/test/features"
+    models: "data/test/models"
+    results: "results/test"
+    
+  # Testing quality thresholds
+  quality:
+    min_data_completeness: 0.9  # 90%
+    max_gap_minutes: 5
+    min_volume_threshold: 500
+    
+  # Short retention for testing
+  retention:
+    raw_market_data: 7  # days
+    processed_features: 7  # days
+    model_predictions: 7  # days
+    execution_logs: 7  # days
+
+# Market data configuration for testing
+market_data:
+  # Testing uses limited dataset
+  collection:
+    timeframes: ["5m", "15m", "1h"]
+    symbols:
+      - "BTCUSDT"
+      - "ETHUSDT"
+      - "ADAUSDT"
+      
+  # Mock data for consistent testing
+  realtime:
+    mock_mode: true
+    mock_data_path: "data/test/mock_market_data.json"
+    replay_speed: 10  # 10x speed for faster testing
+    deterministic: true  # Reproducible results
+
+# API configuration for testing
+api:
+  fastapi:
+    host: "127.0.0.1"
+    port: 8002  # Different port for testing
+    workers: 1  # Single worker for testing
+    reload: false
+    
+  security:
+    cors_origins: ["http://localhost:3002"]  # Testing frontend
+    rate_limit_requests: 10000  # High limit for testing
+    rate_limit_window: 3600
+
+# Database configuration for testing
+database:
+  # In-memory SQLite for testing
+  url: "sqlite:///:memory:"
+  echo: false
+  pool_size: 1
+  max_overflow: 0
+  
+  # Test database setup
+  setup:
+    create_tables: true
+    seed_data: true
+    cleanup_after_tests: true
+
+# Redis configuration for testing
+redis:
+  # Mock Redis for testing
+  url: "redis://localhost:6379/2"  # Test DB
+  mock_mode: true  # Use mock Redis
+  flush_on_start: true  # Clean state for each test
+
+# Kafka configuration for testing
+kafka:
+  # Disable Kafka in testing by default
+  enabled: false
+  mock_mode: true
+  bootstrap_servers: ["localhost:9092"]
+
+# Monitoring configuration for testing
+monitoring:
+  # Simplified monitoring for testing
+  health_checks:
+    enabled: true
+    interval_seconds: 30
+    endpoints:
+      - "api_health"
+      - "database_health"
+      
+  alerts:
+    enabled: false  # No alerts in testing
+    
+  metrics:
+    enabled: true
+    collection_interval: 10  # seconds
+    retention_days: 1  # Minimal retention
+
+# Strategy configuration for testing
+strategy:
+  # Testing-specific strategy settings
+  testing_overrides:
+    # Minimal position sizes for testing
+    risk_management:
+      position_sizing:
+        base_size_usd: 10  # Very small for testing
+        max_position_size_usd: 100
+        
+      limits:
+        max_daily_loss_usd: 5
+        max_weekly_loss_usd: 20
+        max_monthly_loss_usd: 50
+        
+    # Fast execution for testing
+    execution:
+      orders:
+        order_timeout_seconds: 1  # Very short
+        max_retries: 1
+        
+    # Frequent monitoring updates
+    monitoring:
+      performance:
+        update_interval_seconds: 1
+
+# Machine learning configuration for testing
+ml:
+  # Fast training for testing
+  training:
+    hyperparameter_trials: 3  # Minimal trials
+    cross_validation_folds: 2  # Minimal folds
+    early_stopping: true
+    max_training_time_minutes: 5  # Time limit
+    
+  # Model validation for testing
+  validation:
+    min_accuracy: 0.6  # Lower threshold for testing
+    min_trades: 10  # Minimal trades required
+    
+  # Testing-specific models
+  models:
+    use_pretrained: true  # Skip training in testing
+    model_cache: "data/test/cached_models"
+
+# Feature engineering for testing
+features:
+  # Minimal feature set for testing
+  engineering:
+    total_features: 12  # Reduced for speed
+    feature_groups:
+      technical_indicators: 8
+      volume_profile: 4
+      
+  # Fast feature computation
+  computation:
+    parallel_processing: false
+    cache_features: true
+    use_cached_features: true  # Reuse cached features
+
+# Backtesting configuration for testing
+backtesting:
+  # Minimal backtesting for testing
+  periods:
+    default_period: "2024-08-01"  # Short period
+    max_history_days: 30
+    
+  parameters:
+    initial_capital: 1000  # $1k for testing
+    commission_rate: 0.001
+    
+  # Parallel processing disabled for deterministic results
+  parallel:
+    enabled: false
+    max_workers: 1
+
+# Testing framework configuration
+testing_framework:
+  # Unit testing
+  unit_tests:
+    enabled: true
+    test_discovery: "test_*.py"
+    test_directory: "tests/unit"
+    coverage_threshold: 0.8
+    
+    # Test data
+    fixtures:
+      market_data: "tests/fixtures/market_data.json"
+      strategy_config: "tests/fixtures/strategy_config.yaml"
+      
+  # Integration testing
+  integration_tests:
+    enabled: true
+    test_directory: "tests/integration"
+    test_timeout_minutes: 10
+    
+    # Test services
+    services:
+      start_services: true
+      cleanup_services: true
+      service_timeout_seconds: 30
+      
+  # Performance testing
+  performance_tests:
+    enabled: true
+    test_directory: "tests/performance"
+    
+    # Performance thresholds
+    thresholds:
+      max_response_time_ms: 1000
+      max_memory_usage_mb: 512
+      min_throughput_rps: 100
+
+# Mock services configuration
+mocks:
+  # Exchange API mocking
+  exchange_api:
+    enabled: true
+    mock_responses: "tests/mocks/exchange_responses.json"
+    simulate_latency: true
+    latency_ms: 50
+    
+    # Error simulation
+    error_simulation:
+      enabled: true
+      error_rate: 0.01  # 1% error rate
+      
+  # WebSocket mocking
+  websocket:
+    enabled: true
+    mock_data: "tests/mocks/websocket_data.json"
+    message_rate_per_second: 10
+    
+  # Database mocking
+  database:
+    enabled: false  # Use real in-memory SQLite
+    
+  # External services
+  external_services:
+    enabled: true
+    mock_responses: "tests/mocks/external_services.json"
+
+# Test data management
+test_data:
+  # Synthetic data generation
+  synthetic:
+    enabled: true
+    seed: 42  # For reproducible results
+    
+    # Market data synthesis
+    market_data:
+      symbols: ["BTCUSDT", "ETHUSDT"]
+      timeframes: ["5m", "15m"]
+      duration_days: 30
+      volatility: 0.02  # 2% daily volatility
+      
+    # Feature data synthesis
+    features:
+      feature_count: 12
+      sample_count: 1000
+      noise_level: 0.1
+      
+  # Test case generation
+  test_cases:
+    # Scenario-based testing
+    scenarios:
+      bull_market: "tests/scenarios/bull_market.yaml"
+      bear_market: "tests/scenarios/bear_market.yaml"
+      sideways_market: "tests/scenarios/sideways_market.yaml"
+      high_volatility: "tests/scenarios/high_volatility.yaml"
+      
+    # Edge cases
+    edge_cases:
+      enabled: true
+      cases:
+        - "zero_volume"
+        - "price_gaps"
+        - "extreme_volatility"
+        - "network_disconnection"
+
+# CI/CD specific configuration
+ci_cd:
+  # Continuous integration
+  continuous_integration:
+    enabled: true
+    test_parallel: true
+    max_parallel_jobs: 4
+    
+    # Test stages
+    stages:
+      - "unit_tests"
+      - "integration_tests"
+      - "performance_tests"
+      - "security_tests"
+      
+  # Deployment testing
+  deployment_testing:
+    enabled: true
+    smoke_tests: true
+    health_check_timeout: 60  # seconds
+    
+  # Artifact management
+  artifacts:
+    save_test_results: true
+    save_coverage_reports: true
+    save_performance_metrics: true
+    retention_days: 30
+
+# Security testing configuration
+security_testing:
+  # Vulnerability scanning
+  vulnerability_scan:
+    enabled: true
+    scan_dependencies: true
+    scan_code: true
+    
+  # Penetration testing
+  penetration_testing:
+    enabled: false  # Enable for security-focused testing
+    api_fuzzing: false
+    
+  # Compliance testing
+  compliance:
+    pii_detection: true
+    security_headers: true
+    authentication_testing: true
+
+# Load testing configuration
+load_testing:
+  # API load testing
+  api_load:
+    enabled: false  # Enable for performance testing
+    concurrent_users: 10
+    test_duration_minutes: 5
+    ramp_up_time_seconds: 30
+    
+  # Database load testing
+  database_load:
+    enabled: false
+    concurrent_connections: 5
+    query_load_multiplier: 10
+    
+  # WebSocket load testing
+  websocket_load:
+    enabled: false
+    concurrent_connections: 100
+    message_rate_per_second: 1000

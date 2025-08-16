@@ -1,0 +1,256 @@
+# ============================================================================
+# DipMaster Trading System - Base Strategy Configuration Template
+# Version: 4.0.0
+# Date: 2025-08-16
+# ============================================================================
+
+# This file serves as a template for all strategy configurations
+# Strategy-specific configs should inherit from this base
+
+strategy:
+  # Basic strategy metadata
+  name: "Base Strategy Template"
+  version: "1.0.0"
+  description: "Base template for all DipMaster strategies"
+  author: "DipMaster Development Team"
+  
+  # Strategy classification
+  type: "template"  # Options: trend_following, mean_reversion, momentum, arbitrage
+  style: "template"  # Options: scalping, day_trading, swing_trading, position_trading
+  frequency: "template"  # Options: high_frequency, medium_frequency, low_frequency
+  
+  # Base performance targets (to be overridden)
+  targets:
+    win_rate: 0.6  # 60% minimum
+    sharpe_ratio: 1.0  # Minimum Sharpe ratio
+    max_drawdown: 0.1  # 10% maximum drawdown
+    profit_factor: 1.5  # Minimum profit factor
+    
+  # Risk classification
+  risk_profile: "medium"  # Options: low, medium, high
+  
+# ============================================================================
+# BASE SIGNAL CONFIGURATION
+# ============================================================================
+signals:
+  # Entry signals template
+  entry:
+    # Technical indicators (override with specific parameters)
+    technical_indicators:
+      rsi:
+        enabled: false
+        period: 14
+        
+      moving_averages:
+        enabled: false
+        short_period: 10
+        long_period: 20
+        
+      bollinger_bands:
+        enabled: false
+        period: 20
+        std_dev: 2.0
+        
+    # Fundamental signals
+    fundamental:
+      enabled: false
+      
+    # Sentiment signals
+    sentiment:
+      enabled: false
+      
+  # Exit signals template
+  exit:
+    # Time-based exits
+    time_based:
+      enabled: false
+      max_holding_minutes: 1440  # 24 hours default
+      
+    # Profit/Loss targets
+    targets:
+      take_profit: 0.02  # 2% default
+      stop_loss: 0.02    # 2% default
+      trailing_stop: false
+      
+    # Technical exits
+    technical:
+      enabled: false
+
+# ============================================================================
+# BASE FEATURE CONFIGURATION
+# ============================================================================
+features:
+  # Feature engineering settings
+  engineering:
+    total_features: 0  # To be defined by specific strategy
+    update_frequency: "5m"  # Default feature update frequency
+    
+  # Base feature categories
+  categories:
+    # Price-based features
+    price:
+      enabled: true
+      features: ["open", "high", "low", "close", "returns"]
+      
+    # Volume features
+    volume:
+      enabled: true
+      features: ["volume", "volume_ma", "volume_ratio"]
+      
+    # Technical indicators
+    technical:
+      enabled: false  # Override in specific strategies
+      
+    # Market microstructure
+    microstructure:
+      enabled: false  # Override for advanced strategies
+      
+    # Cross-asset features
+    cross_asset:
+      enabled: false  # Override for multi-asset strategies
+
+# ============================================================================
+# BASE RISK MANAGEMENT
+# ============================================================================
+risk_management:
+  # Position sizing
+  position_sizing:
+    method: "fixed"  # Options: fixed, volatility_adjusted, kelly, optimal_f
+    base_size_usd: 1000
+    max_position_size_usd: 10000
+    
+  # Portfolio constraints
+  portfolio:
+    max_positions: 5
+    max_correlation: 0.8
+    max_sector_exposure: 0.5
+    
+  # Risk limits
+  limits:
+    daily_loss_limit_usd: 1000
+    weekly_loss_limit_usd: 5000
+    monthly_loss_limit_usd: 20000
+    max_leverage: 1.0  # No leverage by default
+    
+  # Stop loss configuration
+  stops:
+    initial_stop_pct: 0.02  # 2%
+    trailing_stop_enabled: false
+    time_stop_hours: 24
+
+# ============================================================================
+# BASE EXECUTION CONFIGURATION
+# ============================================================================
+execution:
+  # Order management
+  orders:
+    default_order_type: "market"
+    order_timeout_seconds: 30
+    max_retries: 3
+    
+  # Execution timing
+  timing:
+    max_execution_delay_ms: 1000
+    position_refresh_interval_seconds: 30
+    
+  # Slippage management
+  slippage:
+    max_acceptable_slippage_pct: 0.005  # 0.5%
+    slippage_model: "linear"
+
+# ============================================================================
+# BASE MONITORING CONFIGURATION
+# ============================================================================
+monitoring:
+  # Performance tracking
+  performance:
+    real_time_pnl: true
+    daily_reports: true
+    weekly_reports: true
+    
+  # Alert settings
+  alerts:
+    enabled: true
+    channels: ["log"]  # Override with email, webhook, etc.
+    
+    # Default alert thresholds
+    thresholds:
+      drawdown_pct: 0.05  # 5%
+      daily_loss_pct: 0.03  # 3%
+      execution_delay_ms: 5000
+      
+  # Logging
+  logging:
+    trade_logging: true
+    signal_logging: true
+    error_logging: true
+    performance_logging: true
+
+# ============================================================================
+# BASE BACKTESTING CONFIGURATION
+# ============================================================================
+backtesting:
+  # Test parameters
+  parameters:
+    initial_capital: 100000  # $100k
+    commission_rate: 0.001  # 0.1%
+    
+  # Data requirements
+  data:
+    min_history_days: 365  # 1 year minimum
+    required_timeframes: ["5m", "15m", "1h"]
+    
+  # Validation criteria
+  validation:
+    min_trades: 50  # Minimum for statistical significance
+    out_of_sample_pct: 0.2  # 20% out-of-sample testing
+
+# ============================================================================
+# BASE SYMBOL CONFIGURATION
+# ============================================================================
+symbols:
+  # Default symbol settings (apply to all unless overridden)
+  default:
+    enabled: true
+    position_size_multiplier: 1.0
+    volatility_adjustment: 1.0
+    commission_override: null
+    
+  # Symbol-specific overrides go here
+  # Example:
+  # BTCUSDT:
+  #   enabled: true
+  #   position_size_multiplier: 1.2
+
+# ============================================================================
+# ENVIRONMENT-SPECIFIC OVERRIDES
+# ============================================================================
+environment_overrides:
+  # Development environment
+  development:
+    logging:
+      level: "DEBUG"
+    monitoring:
+      alerts:
+        enabled: false
+        
+  # Testing environment
+  testing:
+    execution:
+      orders:
+        default_order_type: "limit"  # Use limit orders in testing
+    backtesting:
+      parameters:
+        initial_capital: 10000  # Smaller capital for testing
+        
+  # Production environment
+  production:
+    logging:
+      level: "INFO"
+    monitoring:
+      alerts:
+        enabled: true
+        channels: ["email", "webhook"]
+    risk_management:
+      limits:
+        daily_loss_limit_usd: 500  # Stricter limits in production

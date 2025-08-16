@@ -1,0 +1,360 @@
+# ============================================================================
+# DipMaster Enhanced V4 - Strategy Configuration
+# Version: 4.0.0
+# Date: 2025-08-16
+# Target: 85%+ Win Rate | 2.0+ Sharpe | <3% Max Drawdown
+# ============================================================================
+
+strategy:
+  name: "DipMaster Enhanced V4"
+  version: "4.0.0"
+  description: "Enhanced DipMaster AI with 96-feature ML pipeline and asymmetric risk management"
+  
+  # Strategy classification
+  type: "mean_reversion"
+  style: "short_term_momentum"
+  frequency: "high_frequency"  # 5-15 minute signals
+  
+  # Performance targets
+  targets:
+    win_rate: 0.85  # 85%
+    sharpe_ratio: 2.0
+    max_drawdown: 0.03  # 3%
+    calmar_ratio: 5.0
+
+# ============================================================================
+# SIGNAL GENERATION CONFIGURATION
+# ============================================================================
+signals:
+  # Entry signal configuration
+  entry:
+    # RSI-based signals
+    rsi:
+      period: 14
+      oversold_threshold: 30
+      overbought_threshold: 70
+      divergence_detection: true
+      
+    # Dip detection
+    dip_detection:
+      price_drop_threshold: 0.002  # 0.2% minimum drop
+      volume_confirmation: true
+      volume_multiplier: 1.5  # 150% of average volume
+      lookback_periods: 5
+      
+    # Moving average filters
+    moving_averages:
+      short_ma: 7
+      medium_ma: 21
+      long_ma: 50
+      price_above_ma: false  # Must be below MA for dip buying
+      
+    # Bollinger Bands
+    bollinger:
+      period: 20
+      std_dev: 2.0
+      lower_band_penetration: true  # Signal when price penetrates lower band
+      
+    # Volume analysis
+    volume:
+      volume_spike_threshold: 2.0  # 2x average volume
+      volume_profile_confirmation: true
+      vwap_analysis: true
+
+  # Exit signal configuration  
+  exit:
+    # Time-based exits (15-minute boundaries)
+    timing:
+      boundary_minutes: [15, 30, 45, 60]  # Exit at these minute marks
+      preferred_windows:
+        - {start: 15, end: 29, weight: 0.335}  # 33.5% preference
+        - {start: 45, end: 59, weight: 0.286}  # 28.6% preference
+      max_holding_minutes: 180  # 3 hours maximum
+      
+    # Profit targets
+    profit_targets:
+      primary_target: 0.008  # 0.8% profit target
+      quick_profit: 0.005   # 0.5% quick profit (first 15 min)
+      extended_target: 0.012  # 1.2% if holding longer
+      
+    # Technical exit signals
+    technical:
+      rsi_overbought: 75  # Exit when RSI > 75
+      upper_bollinger_touch: true
+      volume_exhaustion: true
+      momentum_divergence: true
+
+# ============================================================================
+# ENHANCED FEATURE SET CONFIGURATION
+# ============================================================================
+features:
+  # Feature engineering pipeline
+  engineering:
+    total_features: 96
+    feature_groups:
+      technical_indicators: 24
+      market_microstructure: 18
+      cross_asset_signals: 12
+      regime_indicators: 15
+      volume_profile: 12
+      momentum_features: 9
+      volatility_features: 6
+      
+  # Technical indicators
+  technical:
+    # RSI variants
+    rsi_features:
+      - {period: 14, name: "rsi_14"}
+      - {period: 21, name: "rsi_21"}
+      - {period: 30, name: "rsi_30"}
+      
+    # Moving averages
+    ma_features:
+      periods: [7, 14, 21, 50, 200]
+      types: ["sma", "ema", "wma"]
+      price_ratios: true
+      
+    # Bollinger Bands
+    bollinger_features:
+      periods: [20, 40]
+      std_devs: [1.5, 2.0, 2.5]
+      position_metrics: true
+      
+    # MACD variants
+    macd_features:
+      - {fast: 12, slow: 26, signal: 9}
+      - {fast: 8, slow: 21, signal: 5}
+      
+  # Market microstructure
+  microstructure:
+    # Order book analysis
+    orderbook:
+      bid_ask_spread: true
+      depth_analysis: true
+      imbalance_ratio: true
+      
+    # Trade flow analysis
+    trade_flow:
+      buy_sell_ratio: true
+      large_trade_detection: true
+      trade_size_distribution: true
+      
+    # Price impact
+    price_impact:
+      temporary_impact: true
+      permanent_impact: true
+      kyle_lambda: true
+      
+  # Cross-asset features
+  cross_asset:
+    # Correlation analysis
+    correlations:
+      btc_correlation: true
+      eth_correlation: true
+      sector_correlation: true
+      
+    # Market regime
+    regime_detection:
+      volatility_regime: true
+      trend_regime: true
+      correlation_regime: true
+
+# ============================================================================
+# MACHINE LEARNING PIPELINE
+# ============================================================================
+ml_pipeline:
+  # Model ensemble
+  ensemble:
+    primary_model: "lightgbm"
+    secondary_model: "xgboost"  
+    tertiary_model: "catboost"
+    
+    # Ensemble weights
+    weights:
+      lightgbm: 0.5
+      xgboost: 0.3
+      catboost: 0.2
+      
+  # Model parameters
+  lightgbm:
+    objective: "binary"
+    boosting_type: "gbdt"
+    num_leaves: 31
+    learning_rate: 0.1
+    feature_fraction: 0.8
+    bagging_fraction: 0.8
+    bagging_freq: 5
+    min_child_samples: 20
+    
+  xgboost:
+    objective: "binary:logistic"
+    max_depth: 6
+    learning_rate: 0.1
+    subsample: 0.8
+    colsample_bytree: 0.8
+    min_child_weight: 1
+    
+  catboost:
+    objective: "Logloss"
+    depth: 6
+    learning_rate: 0.1
+    l2_leaf_reg: 3
+    
+  # Training configuration
+  training:
+    # Data splitting
+    train_ratio: 0.6
+    validation_ratio: 0.2
+    test_ratio: 0.2
+    
+    # Time-based validation
+    walk_forward_periods: 12
+    validation_window_days: 30
+    
+    # Hyperparameter optimization
+    optuna_trials: 200
+    optuna_timeout_hours: 6
+
+# ============================================================================
+# RISK MANAGEMENT CONFIGURATION
+# ============================================================================
+risk_management:
+  # Asymmetric risk management
+  asymmetric:
+    upside_capture: 0.8  # Capture 80% of upside
+    downside_protection: 0.9  # Protect 90% of downside
+    risk_parity: true
+    
+  # Position sizing
+  position_sizing:
+    base_size_usd: 1000
+    volatility_scaling: true
+    sharpe_scaling: true
+    max_position_multiplier: 3.0
+    
+  # Dynamic stop losses
+  stops:
+    initial_stop: 0.015  # 1.5%
+    trailing_stop: true
+    trailing_distance: 0.005  # 0.5%
+    time_stop_hours: 3
+    
+  # Portfolio constraints
+  portfolio:
+    max_positions: 3
+    max_sector_exposure: 0.4  # 40%
+    max_correlation: 0.6
+    diversification_score_min: 0.7
+
+# ============================================================================
+# EXECUTION OPTIMIZATION
+# ============================================================================
+execution:
+  # Smart order routing
+  routing:
+    primary_venue: "binance"
+    backup_venues: ["okx", "coinbase"]
+    latency_threshold_ms: 50
+    
+  # Order optimization
+  orders:
+    order_type: "limit"  # Use limit orders for better execution
+    aggression_level: 0.7  # 70% aggressive
+    iceberg_orders: true
+    max_show_quantity: 0.1  # Show 10% of order
+    
+  # Slippage management
+  slippage:
+    max_acceptable_slippage: 0.0015  # 0.15%
+    market_impact_model: true
+    adaptive_sizing: true
+    
+  # Timing optimization
+  timing:
+    order_scheduling: true
+    market_timing_model: true
+    avoid_news_events: true
+    
+# ============================================================================
+# PERFORMANCE MONITORING
+# ============================================================================
+monitoring:
+  # Real-time metrics
+  real_time:
+    pnl_tracking: true
+    sharpe_monitoring: true
+    drawdown_alerts: true
+    win_rate_tracking: true
+    
+  # Alert thresholds
+  alerts:
+    max_drawdown_breach: 0.04  # 4%
+    win_rate_below: 0.75  # 75%
+    sharpe_below: 1.5
+    daily_loss_threshold: 0.02  # 2%
+    
+  # Performance attribution
+  attribution:
+    signal_performance: true
+    feature_importance: true
+    execution_quality: true
+    market_regime_impact: true
+
+# ============================================================================
+# BACKTESTING CONFIGURATION
+# ============================================================================
+backtesting:
+  # Test periods
+  periods:
+    full_history: "2021-01-01"  # 3+ years
+    recent_validation: "2024-01-01"  # Recent performance
+    crisis_periods: ["2022-05-01", "2022-06-30"]  # Luna crash
+    
+  # Test parameters
+  parameters:
+    initial_capital: 100000  # $100k
+    commission_rate: 0.001  # 0.1%
+    slippage_model: "linear"
+    market_impact: true
+    
+  # Validation metrics
+  validation:
+    required_trades: 100  # Minimum trades for statistical significance
+    min_sharpe_ratio: 2.0
+    max_drawdown: 0.03
+    min_win_rate: 0.85
+    profit_factor: 2.0
+
+# ============================================================================
+# SYMBOL-SPECIFIC CONFIGURATIONS
+# ============================================================================
+symbols:
+  BTCUSDT:
+    enabled: true
+    position_size_multiplier: 1.2
+    volatility_adjustment: 0.9
+    specific_features: ["btc_dominance", "institutional_flow"]
+    
+  ETHUSDT:
+    enabled: true  
+    position_size_multiplier: 1.1
+    volatility_adjustment: 1.0
+    specific_features: ["eth_gas_fees", "defi_activity"]
+    
+  ADAUSDT:
+    enabled: true
+    position_size_multiplier: 0.8
+    volatility_adjustment: 1.1
+    specific_features: ["staking_activity", "development_activity"]
+    
+  SOLUSDT:
+    enabled: true
+    position_size_multiplier: 0.9
+    volatility_adjustment: 1.2
+    specific_features: ["validator_performance", "ecosystem_growth"]
+    
+  XRPUSDT:
+    enabled: true
+    position_size_multiplier: 0.7
+    volatility_adjustment: 1.1
+    specific_features: ["regulatory_sentiment", "cross_border_payments"]

@@ -1,5 +1,158 @@
 # CLAUDE.md - DipMaster Trading System 维护文档
 
+## 🚀 Claude工作模式配置
+
+**YOLO模式已启用** - Claude可以无需审核使用所有工具进行开发和维护工作。
+
+### 🔧 工具权限设置
+- ✅ **完全访问**: bash, read, write, edit, glob, grep等所有基础工具
+- ✅ **系统操作**: 包安装、Git操作、网络访问
+- ✅ **数据库操作**: SQLite、数据修改、配置更改
+- ✅ **自动化工作流**: 依赖安装、代码格式化、错误修复
+- ⚠️ **实盘交易**: 仍需显式确认（安全考虑）
+
+### 🛡️ 安全保护
+- API密钥保护机制
+- 实盘交易确认要求  
+- 数据库自动备份
+- 配置验证检查
+
+## 🤖 Agent工作流调用指南
+
+### 📋 可用Agent列表
+Claude Code已配置以下专业Agent：
+- `strategy-orchestrator` - 策略编排和目标设定
+- `data-infrastructure-builder` - 数据基础设施建设
+- `feature-engineering-labeler` - 特征工程和标签生成
+- `model-backtest-validator` - 模型训练和回测验证
+- `portfolio-risk-optimizer` - 组合优化和风险控制
+- `execution-microstructure-oms` - 执行管理系统
+- `monitoring-log-collector` - 监控和日志收集
+- `dashboard-api-kafka-consumer` - 数据服务API
+- `frontend-dashboard-nextjs` - 前端仪表板
+
+### 🛠️ Workflow 逐步调用
+
+#### Step 0: 目标设定
+```bash
+# 调用策略编排Agent
+使用Task工具: strategy-orchestrator
+输入：策略目标（例："DipMaster日内逢跌买入，目标胜率>80%，最大回撤<5%"）
+输出：StrategySpec.json（决定交易品种/交易所/风险约束）
+```
+
+#### Step 1: 数据收集
+```bash
+# 调用数据基础设施Agent
+使用Task工具: data-infrastructure-builder
+输入：StrategySpec.json
+动作：拉取CEX历史和实时行情、数据校验、缺失补全
+输出：MarketDataBundle.json（包含数据路径）
+```
+
+#### Step 2: 特征与标签
+```bash
+# 调用特征工程Agent
+使用Task工具: feature-engineering-labeler
+输入：MarketDataBundle.json
+动作：生成技术指标特征、对齐未来收益标签、数据泄漏检测
+输出：FeatureSet.json + features.parquet（含target列）
+```
+
+#### Step 3: 模型训练与回测
+```bash
+# 调用模型回测Agent
+使用Task工具: model-backtest-validator
+输入：FeatureSet.json
+动作：训练模型、时序交叉验证、回测模拟（含交易成本）
+输出：AlphaSignal.json + BacktestReport.html
+```
+
+#### Step 4: 组合与风险控制
+```bash
+# 调用组合优化Agent
+使用Task工具: portfolio-risk-optimizer
+输入：AlphaSignal.json、StrategySpec.json
+动作：组合优化、风险指标计算（β、波动、ES）
+输出：TargetPortfolio.json（目标权重配置）
+```
+
+#### Step 5: 执行撮合
+```bash
+# 调用执行管理Agent
+使用Task工具: execution-microstructure-oms
+输入：TargetPortfolio.json
+动作：生成订单（TWAP/VWAP）、模拟或真实下单
+输出：ExecutionReport.json（含成交、滑点、成本）
+```
+
+#### Step 6: 监控与事件生产
+```bash
+# 调用监控收集Agent
+使用Task工具: monitoring-log-collector
+输入：ExecutionReport.json
+动作：检查信号-持仓一致性、实时风险指标、生成告警
+输出：Kafka事件流（exec.reports.v1, risk.metrics.v1, alerts.v1）
+```
+
+#### Step 7: 数据服务与接口
+```bash
+# 调用数据服务Agent
+使用Task工具: dashboard-api-kafka-consumer
+输入：Kafka流
+动作：消费Kafka→ClickHouse、提供REST API和WebSocket
+输出：HTTP/WS服务（/api/pnl, /api/positions, /ws/alerts）
+```
+
+#### Step 8: 实时可视化
+```bash
+# 调用前端仪表板Agent
+使用Task工具: frontend-dashboard-nextjs
+输入：API + WebSocket
+动作：实时PnL图表、风险监控、告警弹窗
+输出：实时策略监控面板
+```
+
+### 🔄 运行模式
+
+#### 🧪 离线研究模式
+```bash
+# 只运行数据→特征→模型回测链路
+Task: data-infrastructure-builder → feature-engineering-labeler → model-backtest-validator
+```
+
+#### 🎮 半实盘模式
+```bash
+# 加入组合优化和执行模拟
+Task: portfolio-risk-optimizer → execution-microstructure-oms → monitoring-log-collector
+```
+
+#### 🚀 全实盘模式
+```bash
+# 完整链路含实时监控
+Task: dashboard-api-kafka-consumer → frontend-dashboard-nextjs
+```
+
+### 💡 Agent调用示例
+
+#### DipMaster策略完整开发流程：
+```markdown
+1. strategy-orchestrator: "开发DipMaster V4策略，目标胜率85%，最大回撤3%"
+2. data-infrastructure-builder: "收集BTCUSDT/ETHUSDT等11个币种2年5分钟数据"
+3. feature-engineering-labeler: "生成RSI、布林带、成交量等技术指标特征"
+4. model-backtest-validator: "训练LGBM模型，进行purged交叉验证和成本回测"
+5. portfolio-risk-optimizer: "优化多币种组合权重，控制相关性风险"
+6. execution-microstructure-oms: "实现智能订单分割和最优执行"
+7. monitoring-log-collector: "监控实时表现，生成风险告警"
+8. dashboard-api-kafka-consumer: "构建数据API服务"
+9. frontend-dashboard-nextjs: "开发实时监控面板"
+```
+
+### 🔄 闭环反馈
+strategy-orchestrator根据监控结果做Gate判断：
+- ✅ 达标：继续下一阶段
+- ❌ 不达标：回到数据/模型环节优化
+
 ## 📋 项目概览
 
 **DipMaster Trading System** 是一个基于逆向工程的加密货币自动交易系统，专门实现DipMaster AI策略，具备82.1%胜率和完整的实时交易能力。

@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npm search:*)",
+      "Bash(pip install:*)",
+      "Bash(mkdir:*)",
+      "Bash(mcp-server-sqlite:*)",
+      "Bash(python:*)",
+      "Bash(npx @modelcontextprotocol/server-memory:*)",
+      "Bash(npx @modelcontextprotocol/server-filesystem:*)",
+      "Bash(where npm)",
+      "Bash(npm:*)",
+      "Bash(find:*)",
+      "Bash(git add:*)",
+      "Bash(rm:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "version": "4.0.0-Enhanced",
+  "strategy_name": "DipMaster_Enhanced_V4",
+  "created_timestamp": "20250816_223904",
+  "symbols": [
+    "BTCUSDT",
+    "ETHUSDT",
+    "SOLUSDT",
+    "ADAUSDT",
+    "XRPUSDT"
+  ],
+  "feature_engineering": {
+    "pipeline_type": "enhanced_multi_layer",
+    "total_features": 96,
+    "enhancement_components": [
+      "multi_timeframe_rsi_convergence",
+      "dynamic_rsi_thresholds",
+      "enhanced_dip_detection",
+      "market_microstructure",
+      "advanced_ml_features",
+      "multi_layer_signal_scoring",
+      "enhanced_risk_adjusted_labels"
+    ]
+  },
+  "quality_metrics": {
+    "basic_statistics": {
+      "total_samples": 129540,
+      "total_features": 96,
+      "symbols_count": 5,
+      "memory_usage_mb": 100.80792617797852
+    },
+    "feature_categories": {
+      "dipmaster_core": 32,
+      "microstructure": 5,
+      "ml_features": 1,
+      "advanced_signals": 2,
+      "labels": 15
+    },
+    "signal_quality": {
+      "mean_signal_strength": 0.1230238646067275,
+      "signal_distribution": {
+        "count": 129540.0,
+        "mean": 0.1230238646067275,
+        "std": 0.13375021824193076,
+        "min": 0.0,
+        "25%": 0.0,
+        "50%": 0.0,
+        "75%": 0.25,
+        "max": 0.7575450132915932
+      },
+      "high_signal_win_rate": 0.3382352941176471,
+      "high_signal_samples": 68
+    },
+    "cross_symbol_analysis": {
+      "symbol_performance": {
+        

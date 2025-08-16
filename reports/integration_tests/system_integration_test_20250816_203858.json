@@ -1,0 +1,100 @@
+{
+  "test_summary": {
+    "start_time": "2025-08-16T20:38:49.385144",
+    "end_time": "2025-08-16T20:38:58.304327",
+    "duration_seconds": 8.919183,
+    "total_tests": 10,
+    "passed": 8,
+    "warnings": 1,
+    "failed": 1,
+    "success_rate": 80.0
+  },
+  "test_results": {
+    "project_structure": {
+      "status": "PASSED",
+      "message": "All required files present"
+    },
+    "dependencies": {
+      "status": "FAILED",
+      "error": "[WinError 2] 系统找不到指定的文件。",
+      "message": "Dependency import failed"
+    },
+    "data_infrastructure": {
+      "status": "PASSED",
+      "symbols_count": 0,
+      "data_quality": 0,
+      "message": "Data available for 0 symbols with 0% quality"
+    },
+    "feature_engineering": {
+      "status": "PASSED",
+      "feature_count": 0,
+      "sample_count": 0,
+      "feature_file": "data\\dipmaster_v4_features_20250816_175605.parquet",
+      "message": "Features ready: 0 features, 0 samples"
+    },
+    "model_training": {
+      "status": "PASSED",
+      "auc_score": 0,
+      "accuracy": 0,
+      "signal_file": "results\\ml_pipeline\\AlphaSignal_DipMasterV4_20250816_181903.json",
+      "message": "Model trained: AUC=0.000, Accuracy=0.000"
+    },
+    "portfolio_optimization": {
+      "status": "PASSED",
+      "position_count": 0,
+      "expected_sharpe": 0,
+      "expected_volatility": 0,
+      "portfolio_file": "results\\portfolio_construction\\TargetPortfolio_20250816_183319.json",
+      "message": "Portfolio optimized: 0 positions, Sharpe=0.00"
+    },
+    "execution_system": {
+      "status": "PASSED",
+      "order_count": 5,
+      "total_volume": 0,
+      "avg_slippage": 0,
+      "fill_rate": 0,
+      "execution_file": "results\\execution_reports\\DipMaster_ExecutionReport_20250816_184247.json",
+      "message": "Execution tested: 5 orders, 0.0bps slippage"
+    },
+    "monitoring_system": {
+      "status": "PASSED",
+      "config_files": 1,
+      "log_files": 0,
+      "kafka_configured": false,
+      "reports_count": 0,
+      "message": "Monitoring configured: 0 log files, 0 reports"
+    },
+    "api_service": {
+      "status": "PASSED",
+      "api_files_present": 4,
+      "message": "API service files validated"
+    },
+    "frontend_application": {
+      "status": "WARNING",
+      "files_present": 5,
+      "dependencies": 29,
+      "missing_deps": [
+        "typescript",
+        "tailwindcss"
+      ],
+      "message": "Frontend validated: 29 dependencies"
+    }
+  },
+  "dipmaster_v4_status": {
+    "overall_readiness": "NEEDS_ATTENTION",
+    "components_status": {
+      "data_infrastructure": "PASSED",
+      "feature_engineering": "PASSED",
+      "model_training": "PASSED",
+      "portfolio_optimization": "PASSED",
+      "execution_system": "PASSED",
+      "monitoring_system": "PASSED",
+      "api_service": "PASSED",
+      "frontend_application": "WARNING"
+    }
+  },
+  "next_steps": [
+    " Fix failed components: dependencies",
+    " Address warnings in: frontend_application"
+  ]
+}

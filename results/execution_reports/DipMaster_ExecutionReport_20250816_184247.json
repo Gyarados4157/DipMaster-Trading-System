@@ -1,0 +1,302 @@
+{
+  "session_id": "SESSION_1755340967",
+  "timestamp": "2025-08-16T18:42:47.308165",
+  "execution_start": "2025-08-16T18:42:47.308165",
+  "execution_end": "2025-08-16T18:42:47.325008",
+  "total_execution_time_seconds": 0.016844,
+  "orders": [
+    {
+      "venue": "binance",
+      "symbol": "BTCUSDT",
+      "side": "BUY",
+      "qty": 0.020022425116130067,
+      "tif": "IOC",
+      "order_type": "limit",
+      "limit_price": 62517.40260944113,
+      "slice_id": "SESSION_1755340967_S01_01",
+      "parent_id": "SESSION_1755340967_P01",
+      "status": "filled",
+      "fill_qty": 0.020022425116130067,
+      "fill_price": 62517.40260944113
+    },
+    {
+      "venue": "binance",
+      "symbol": "BTCUSDT",
+      "side": "BUY",
+      "qty": 0.020022425116130067,
+      "tif": "IOC",
+      "order_type": "limit",
+      "limit_price": 62483.23119953895,
+      "slice_id": "SESSION_1755340967_S01_02",
+      "parent_id": "SESSION_1755340967_P01",
+      "status": "filled",
+      "fill_qty": 0.020022425116130067,
+      "fill_price": 62483.23119953895
+    },
+    {
+      "venue": "binance",
+      "symbol": "ETHUSDT",
+      "side": "BUY",
+      "qty": 0.32005120819331095,
+      "tif": "IOC",
+      "order_type": "limit",
+      "limit_price": 3126.9526065438686,
+      "slice_id": "SESSION_1755340967_S02_01",
+      "parent_id": "SESSION_1755340967_P02",
+      "status": "filled",
+      "fill_qty": 0.32005120819331095,
+      "fill_price": 3126.9526065438686
+    },
+    {
+      "venue": "binance",
+      "symbol": "ETHUSDT",
+      "side": "BUY",
+      "qty": 0.32005120819331095,
+      "tif": "IOC",
+      "order_type": "limit",
+      "limit_price": 3129.3106194172174,
+      "slice_id": "SESSION_1755340967_S02_02",
+      "parent_id": "SESSION_1755340967_P02",
+      "status": "filled",
+      "fill_qty": 0.32005120819331095,
+      "fill_price": 3129.3106194172174
+    },
+    {
+      "venue": "binance",
+      "symbol": "SOLUSDT",
+      "side": "BUY",
+      "qty": 10.330578512396695,
+      "tif": "IOC",
+      "order_type": "limit",
+      "limit_price": 145.50984984069916,
+      "slice_id": "SESSION_1755340967_S03_01",
+      "parent_id": "SESSION_1755340967_P03",
+      "status": "filled",
+      "fill_qty": 10.330578512396695,
+      "fill_price": 145.50984984069916
+    }
+  ],
+  "fills": [
+    {
+      "order_id": "SESSION_1755340967_S01_01",
+      "price": 62517.40260944113,
+      "qty": 0.020022425116130067,
+      "slippage_bps": 14.000097619915275,
+      "venue": "binance",
+      "timestamp": "2025-08-16T18:42:47.324924",
+      "fees": 1.2517500122024894,
+      "liquidity": "taker"
+    },
+    {
+      "order_id": "SESSION_1755340967_S01_02",
+      "price": 62483.23119953895,
+      "qty": 0.020022425116130067,
+      "slippage_bps": 8.526541652882651,
+      "venue": "binance",
+      "timestamp": "2025-08-16T18:42:47.324950",
+      "fees": 1.2510658177066105,
+      "liquidity": "taker"
+    },
+    {
+      "order_id": "SESSION_1755340967_S02_01",
+      "price": 3126.9526065438686,
+      "qty": 0.32005120819331095,
+      "slippage_bps": 7.849596875879562,
+      "venue": "binance",
+      "timestamp": "2025-08-16T18:42:47.324968",
+      "fees": 1.0007849596875882,
+      "liquidity": "taker"
+    },
+    {
+      "order_id": "SESSION_1755340967_S02_02",
+      "price": 3129.3106194172174,
+      "qty": 0.32005120819331095,
+      "slippage_bps": 15.396445566386197,
+      "venue": "binance",
+      "timestamp": "2025-08-16T18:42:47.324977",
+      "fees": 1.0015396445566387,
+      "liquidity": "taker"
+    },
+    {
+      "order_id": "SESSION_1755340967_S03_01",
+      "price": 145.50984984069916,
+      "qty": 10.330578512396695,
+      "slippage_bps": 21.339520709309387,
+      "venue": "binance",
+      "timestamp": "2025-08-16T18:42:47.324989",
+      "fees": 1.5032009281063963,
+      "liquidity": "taker"
+    }
+  ],
+  "costs": {
+    "fees_usd": 6.008341362259723,
+    "impact_bps": 13.422440484874613,
+    "spread_cost_usd": 3.0041706811298616,
+    "total_cost_usd": 9.012512043389584,
+    "timing_cost_bps": 0.5
+  },
+  "execution_quality": {
+    "arrival_slippage_bps": 13.422440484874613,
+    "vwap_slippage_bps": 10.737952387899691,
+    "fill_rate": 1.0,
+    "passive_ratio": 0.0,
+    "latency_ms": 16.836,
+    "participation_rate": 0.05
+  },
+  "violations": [],
+  "pnl": {
+    "realized": 0.0,
+    "unrealized": 0.0
+  },
+  "latency_ms": 16.836,
+  "target_portfolio": {
+    "ts": "2025-08-16T18:33:19.139972",
+    "weights": [
+      {
+        "symbol": "BTCUSDT",
+        "w": 0.25,
+        "usd_size": 2500,
+        "kelly_fraction": 0.18,
+        "confidence_adj": 1.0,
+        "volatility_adj": 0.85
+      },
+      {
+        "symbol": "ETHUSDT",
+        "w": 0.2,
+        "usd_size": 2000,
+        "kelly_fraction": 0.15,
+        "confidence_adj": 0.95,
+        "volatility_adj": 1.1
+      },
+      {
+        "symbol": "SOLUSDT",
+        "w": 0.15,
+        "usd_size": 1500,
+        "kelly_fraction": 0.12,
+        "confidence_adj": 0.9,
+        "volatility_adj": 1.25
+      }
+    ],
+    "leverage": 0.6,
+    "risk": {
+      "ann_vol": 0.16,
+      "beta": 0.02,
+      "ES_95": 0.018,
+      "VaR_95": 0.015,
+      "VaR_99": 0.022,
+      "sharpe": 2.15
+    },
+    "venue_allocation": {
+      "binance": 1.0
+    },
+    "risk_attribution": {
+      "MCR": [
+        {
+          "symbol": "BTCUSDT",
+          "mcr": 0.008
+        },
+        {
+          "symbol": "ETHUSDT",
+          "mcr": 0.01
+        },
+        {
+          "symbol": "SOLUSDT",
+          "mcr": 0.012
+        }
+      ],
+      "CCR": [
+        {
+          "symbol": "BTCUSDT",
+          "ccr": 0.002
+        },
+        {
+          "symbol": "ETHUSDT",
+          "ccr": 0.002
+        },
+        {
+          "symbol": "SOLUSDT",
+          "ccr": 0.0018
+        }
+      ]
+    },
+    "constraints_status": {
+      "beta_neutral": true,
+      "vol_target": true,
+      "leverage_ok": true,
+      "position_limits": true,
+      "position_count": true,
+      "market_neutral": true
+    },
+    "optimization_metadata": {
+      "target_volatility": 0.18,
+      "max_positions": 3,
+      "beta_tolerance": 0.05,
+      "correlation_threshold": 0.7
+    }
+  },
+  "execution_strategy": "auto",
+  "performance": {
+    "execution_alpha_bps": -13.422440484874613,
+    "cost_attribution": {
+      "market_impact": 8.053464290924767,
+      "timing": 2.6844880969749227,
+      "fees": 10.0
+    },
+    "quality_score": 100.0,
+    "vs_benchmark": {
+      "arrival_price": 13.422440484874613,
+      "vwap": 10.737952387899691,
+      "twap": 12.080196436387153
+    }
+  },
+  "analytics": {
+    "summary": {
+      "total_volume_usd": 6008.341362259723,
+      "total_orders": 5,
+      "avg_slippage_bps": 13.422440484874613,
+      "avg_latency_ms": 16.836,
+      "fill_rate": 1.0,
+      "execution_period_minutes": 0.00028081666666666667
+    },
+    "algorithm_comparison": {
+      "TWAP": {
+        "avg_slippage": 13.422440484874613,
+        "avg_latency": 16.836,
+        "fill_rate": 1.0,
+        "market_impact": 13.422440484874613,
+        "execution_count": 5
+      }
+    },
+    "recommendations": [
+      "Execution completed with 13.4bps average slippage",
+      "Fill rate of 100.0% achieved",
+      "Consider using more passive orders for large positions"
+    ]
+  },
+  "risk_assessment": {
+    "current_metrics": {
+      "exposure_usd": 6008.341362259723,
+      "exposure_utilization": 0.12016682724519445,
+      "slippage_bps": 13.422440484874613,
+      "rejection_rate": 0.0,
+      "latency_p95_ms": 16.836,
+      "market_impact_bps": 13.422440484874613
+    },
+    "emergency_stop": false,
+    "active_violations": 0,
+    "circuit_breakers": {
+      "high_slippage": {
+        "is_triggered": false
+      },
+      "high_rejection_rate": {
+        "is_triggered": false
+      },
+      "high_latency": {
+        "is_triggered": false
+      },
+      "market_stress": {
+        "is_triggered": false
+      }
+    }
+  }
+}

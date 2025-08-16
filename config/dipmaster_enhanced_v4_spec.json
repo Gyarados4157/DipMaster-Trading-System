@@ -1,0 +1,282 @@
+{
+  "strategy_name": "DipMaster_Enhanced_V4",
+  "version": "4.0.0",
+  "description": "下一代DipMaster策略 - 目标85%+胜率，盈亏比1.8+，夏普比>2.0",
+  "created_date": "2025-08-16",
+  "optimization_objective": "平衡性能提升与策略稳定性",
+
+  "performance_targets": {
+    "win_rate": "85%+",
+    "max_drawdown": "<3%",
+    "profit_factor": "1.8+",
+    "sharpe_ratio": ">2.0",
+    "monthly_return": "12-20%",
+    "avg_holding_minutes": "45-120",
+    "validation_score": ">80/100"
+  },
+
+  "universe": [
+    "BTCUSDT", "ETHUSDT", "SOLUSDT", "ADAUSDT", "XRPUSDT",
+    "BNBUSDT", "DOGEUSDT", "SUIUSDT", "ICPUSDT", "ALGOUSDT", "IOTAUSDT"
+  ],
+
+  "horizon": "intraday",
+  "trading_timeframe": "5m",
+  "analysis_timeframes": ["5m", "15m", "1h"],
+
+  "constraints": {
+    "beta": "market_neutral",
+    "max_dd": 0.03,
+    "max_correlation": 0.7,
+    "max_concurrent_positions": 3,
+    "max_position_pct": 0.30,
+    "daily_loss_limit": 0.02
+  },
+
+  "venues": ["binance"],
+
+  "risk_limits": {
+    "gross_leverage": 20,
+    "max_position_pct": 0.30,
+    "max_daily_loss": 0.02,
+    "position_concentration_limit": 0.30,
+    "correlation_threshold": 0.7,
+    "volatility_limit": 0.20
+  },
+
+  "enhanced_signal_architecture": {
+    "philosophy": "Quality over Quantity - 高信噪比信号系统",
+    "layers": [
+      {
+        "name": "Primary_Dip_Detection",
+        "description": "核心逢跌买入信号",
+        "components": {
+          "rsi_filter": {
+            "range": [25, 45],
+            "optimal_zone": [30, 40],
+            "weight": 0.25
+          },
+          "price_dip_confirmation": {
+            "min_dip_pct": 0.003,
+            "max_dip_pct": 0.015,
+            "vs_timeframe": "15m",
+            "weight": 0.20
+          },
+          "volume_confirmation": {
+            "min_volume_spike": 1.8,
+            "volume_ma_period": 20,
+            "weight": 0.15
+          }
+        }
+      },
+      {
+        "name": "Market_Regime_Filter",
+        "description": "市场环境适应性过滤",
+        "components": {
+          "volatility_regime": {
+            "optimal_range": [0.02, 0.12],
+            "regime_detection_period": 48,
+            "weight": 0.15
+          },
+          "trend_strength": {
+            "ema_periods": [10, 20, 50],
+            "trend_alignment_threshold": 0.7,
+            "weight": 0.10
+          },
+          "market_structure": {
+            "support_resistance_strength": 0.8,
+            "liquidity_threshold": 1000000,
+            "weight": 0.15
+          }
+        }
+      }
+    ],
+    "minimum_confidence": 0.75,
+    "signal_cooldown_minutes": 30
+  },
+
+  "asymmetric_exit_system": {
+    "philosophy": "让利润奔跑，快速止损 - 目标盈亏比1.8+",
+    "profit_taking_ladders": [
+      {"target_pct": 0.6, "exit_ratio": 0.20, "time_limit": 30},
+      {"target_pct": 1.2, "exit_ratio": 0.30, "time_limit": 60},
+      {"target_pct": 2.0, "exit_ratio": 0.35, "time_limit": 120},
+      {"target_pct": 3.5, "exit_ratio": 0.15, "time_limit": 180}
+    ],
+    "dynamic_stop_loss": {
+      "initial_stop": 0.004,
+      "trailing_activation": 0.008,
+      "trailing_distance": 0.003,
+      "time_based_tightening": true
+    },
+    "time_management": {
+      "min_holding_minutes": 15,
+      "max_holding_minutes": 180,
+      "optimal_exit_windows": [25, 35, 55, 65, 85, 95],
+      "forced_exit_conditions": ["high_volatility", "regime_change"]
+    }
+  },
+
+  "intelligent_position_sizing": {
+    "base_framework": "Kelly Criterion + Volatility Adjustment",
+    "components": {
+      "kelly_sizing": {
+        "lookback_trades": 100,
+        "max_kelly_fraction": 0.25,
+        "confidence_adjustment": true
+      },
+      "volatility_scaling": {
+        "target_volatility": 0.08,
+        "scaling_factor": 0.15,
+        "regime_multipliers": {
+          "low_vol": 1.3,
+          "normal_vol": 1.0,
+          "high_vol": 0.6
+        }
+      },
+      "correlation_adjustment": {
+        "max_correlated_exposure": 0.4,
+        "correlation_penalty": 0.5
+      }
+    },
+    "size_limits": {
+      "min_position_usd": 100,
+      "max_position_usd": 3000,
+      "max_portfolio_heat": 0.15
+    }
+  },
+
+  "multi_asset_orchestration": {
+    "selection_methodology": "Dynamic Score-Based Rotation",
+    "scoring_criteria": {
+      "recent_performance": {
+        "win_rate_weight": 0.25,
+        "profit_factor_weight": 0.20,
+        "lookback_days": 30
+      },
+      "market_fit": {
+        "volatility_score": 0.15,
+        "liquidity_score": 0.15,
+        "correlation_penalty": 0.10
+      },
+      "technical_strength": {
+        "trend_alignment": 0.10,
+        "support_levels": 0.05
+      }
+    },
+    "rotation_rules": {
+      "min_score_threshold": 70,
+      "rebalance_frequency": "weekly",
+      "max_underperformer_tolerance": 7
+    }
+  },
+
+  "risk_management_framework": {
+    "multi_layer_protection": {
+      "position_level": {
+        "max_risk_per_trade": 0.005,
+        "max_holding_time": 180,
+        "volatility_based_stops": true
+      },
+      "portfolio_level": {
+        "max_correlation_exposure": 0.7,
+        "max_drawdown_threshold": 0.025,
+        "heat_based_scaling": true
+      },
+      "system_level": {
+        "daily_loss_circuit_breaker": 0.02,
+        "consecutive_loss_limit": 7,
+        "volatility_spike_protection": true
+      }
+    }
+  },
+
+  "validation_requirements": {
+    "statistical_validation": {
+      "min_sample_size": 200,
+      "significance_level": 0.05,
+      "monte_carlo_iterations": 1000
+    },
+    "robustness_testing": {
+      "walk_forward_periods": 12,
+      "out_of_sample_ratio": 0.3,
+      "stress_test_scenarios": 5
+    },
+    "performance_criteria": {
+      "min_sharpe_ratio": 1.8,
+      "max_drawdown": 0.03,
+      "min_win_rate": 0.82,
+      "min_profit_factor": 1.6
+    }
+  },
+
+  "technology_stack": {
+    "execution_engine": "asyncio_based",
+    "data_pipeline": "real_time_websocket",
+    "risk_engine": "event_driven",
+    "monitoring": "comprehensive_dashboard",
+    "backtesting": "vectorized_engine"
+  },
+
+  "deployment_strategy": {
+    "phases": [
+      "paper_trading_validation",
+      "limited_capital_pilot",
+      "gradual_scale_up",
+      "full_deployment"
+    ],
+    "success_criteria": {
+      "paper_validation": "30_days_consistent_performance",
+      "pilot_phase": "14_days_positive_pnl",
+      "scaling_criteria": "sharpe_ratio_>_1.5"
+    }
+  },
+
+  "monitoring_and_adaptation": {
+    "real_time_metrics": [
+      "win_rate_rolling_50",
+      "drawdown_current",
+      "sharpe_ratio_estimate",
+      "correlation_matrix",
+      "volatility_regime"
+    ],
+    "adaptation_triggers": {
+      "performance_degradation": "win_rate_<_75%_for_7_days",
+      "market_regime_change": "volatility_spike_>_200%",
+      "correlation_breakdown": "correlation_>_0.8"
+    }
+  },
+
+  "development_milestones": {
+    "phase_1_foundation": {
+      "duration": "2_weeks",
+      "deliverables": ["enhanced_signal_engine", "backtesting_framework"],
+      "acceptance_criteria": ["signal_quality_score_>_70", "backtest_validation_passed"]
+    },
+    "phase_2_exit_optimization": {
+      "duration": "2_weeks", 
+      "deliverables": ["asymmetric_exit_system", "profit_factor_optimization"],
+      "acceptance_criteria": ["profit_factor_>_1.6", "exit_timing_optimized"]
+    },
+    "phase_3_risk_management": {
+      "duration": "1_week",
+      "deliverables": ["multi_layer_risk_engine", "position_sizing_optimizer"],
+      "acceptance_criteria": ["max_dd_<_3%", "risk_adjusted_returns_optimized"]
+    },
+    "phase_4_multi_asset": {
+      "duration": "2_weeks",
+      "deliverables": ["asset_selection_engine", "correlation_manager"],
+      "acceptance_criteria": ["portfolio_diversification_effective", "asset_rotation_working"]
+    },
+    "phase_5_validation": {
+      "duration": "1_week",
+      "deliverables": ["comprehensive_validation_suite", "stress_testing"],
+      "acceptance_criteria": ["validation_score_>_80", "robustness_confirmed"]
+    },
+    "phase_6_deployment": {
+      "duration": "1_week",
+      "deliverables": ["production_deployment", "monitoring_dashboard"],
+      "acceptance_criteria": ["live_trading_stable", "monitoring_functional"]
+    }
+  }
+}

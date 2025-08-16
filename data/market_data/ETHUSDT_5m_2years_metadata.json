@@ -1,0 +1,15 @@
+{
+  "symbol": "ETHUSDT",
+  "timeframe": "5m",
+  "exchange": "binance",
+  "data_type": "kline",
+  "start_date": "2023-08-17T09:45:00",
+  "end_date": "2025-08-16T09:40:00",
+  "records_count": 210240,
+  "download_time": "2025-08-16T17:41:29.822575",
+  "file_size_bytes": 7484309,
+  "data_quality": {
+    "completeness": 1.0,
+    "has_gaps": false
+  }
+}

@@ -1,0 +1,276 @@
+# ============================================================================
+# DipMaster Trading System - Development Environment Configuration
+# Version: 4.0.0
+# Date: 2025-08-16
+# ============================================================================
+
+environment:
+  name: "development"
+  description: "Development environment for testing and debugging"
+  debug: true
+  testing: true
+
+# ============================================================================
+# DEVELOPMENT-SPECIFIC OVERRIDES
+# ============================================================================
+
+# Logging configuration for development
+logging:
+  level: "DEBUG"
+  handlers:
+    console:
+      enabled: true
+      level: "DEBUG"
+      format: "detailed"
+    file:
+      enabled: true
+      level: "DEBUG"
+      path: "logs/dev/dipmaster_dev_{date}.log"
+      rotation: "daily"
+      retention: 7  # Keep only 7 days in dev
+    structured:
+      enabled: false  # Disable structured logging in dev for readability
+
+# Data configuration for development
+data:
+  # Use smaller datasets for faster development
+  storage:
+    base_path: "data/dev"
+    market_data: "data/dev/market_data"
+    features: "data/dev/features"
+    models: "data/dev/models"
+    results: "results/dev"
+    
+  # Relaxed quality thresholds for development
+  quality:
+    min_data_completeness: 0.8  # 80% (lower than prod)
+    max_gap_minutes: 10
+    min_volume_threshold: 100  # Lower threshold for testing
+    
+  # Shorter retention for development
+  retention:
+    raw_market_data: 30  # days
+    processed_features: 14  # days
+    model_predictions: 7  # days
+    execution_logs: 3  # days
+
+# Market data configuration for development
+market_data:
+  # Development-specific settings
+  collection:
+    timeframes: ["5m", "15m", "1h"]  # Fewer timeframes for speed
+    symbols:
+      - "BTCUSDT"  # Limited symbols for development
+      - "ETHUSDT"
+      
+  # Mock/paper trading settings
+  realtime:
+    mock_mode: true  # Use mock data for development
+    websocket_url: "wss://testnet.binance.vision/ws"  # Testnet
+    reconnect_attempts: 3
+    heartbeat_interval: 60  # seconds (less frequent)
+    buffer_size: 100  # smaller buffer
+
+# API configuration for development
+api:
+  fastapi:
+    host: "127.0.0.1"  # Local only
+    port: 8001  # Different port for dev
+    workers: 1  # Single worker for debugging
+    reload: true  # Enable auto-reload
+    
+  security:
+    cors_origins: ["http://localhost:3000", "http://localhost:3001"]
+    rate_limit_requests: 10000  # Higher limit for development
+    rate_limit_window: 3600
+
+# Database configuration for development
+database:
+  # SQLite for development (no external deps)
+  url: "sqlite:///data/dev/dipmaster_dev.db"
+  echo: true  # Echo SQL queries for debugging
+  pool_size: 1
+  max_overflow: 0
+
+# Redis configuration for development
+redis:
+  # Use Redis in development if available, otherwise disable
+  url: "redis://localhost:6379/1"  # Different DB for dev
+  decode_responses: true
+  max_connections: 10
+
+# Kafka configuration for development
+kafka:
+  # Disable Kafka in development by default
+  enabled: false
+  bootstrap_servers: ["localhost:9092"]
+  
+# Monitoring configuration for development
+monitoring:
+  # Simplified monitoring for development
+  health_checks:
+    enabled: true
+    interval_seconds: 60  # Less frequent
+    endpoints:
+      - "api_health"
+      - "database_health"
+      
+  alerts:
+    enabled: false  # Disable alerts in development
+    
+  metrics:
+    enabled: true
+    collection_interval: 30  # seconds (less frequent)
+    retention_days: 7  # Shorter retention
+
+# Strategy configuration overrides for development
+strategy:
+  # Development-specific strategy settings
+  development_overrides:
+    # Smaller position sizes for safety
+    risk_management:
+      position_sizing:
+        base_size_usd: 100  # Much smaller for development
+        max_position_size_usd: 500
+        
+      limits:
+        max_daily_loss_usd: 50
+        max_weekly_loss_usd: 200
+        max_monthly_loss_usd: 500
+        
+    # Faster execution for testing
+    execution:
+      orders:
+        order_timeout_seconds: 10  # Shorter timeout
+        max_retries: 1  # Fewer retries
+        
+    # More frequent monitoring
+    monitoring:
+      performance:
+        update_interval_seconds: 5
+
+# Machine learning configuration for development
+ml:
+  # Faster training for development
+  training:
+    hyperparameter_trials: 10  # Much fewer trials
+    cross_validation_folds: 3  # Fewer folds
+    early_stopping: true
+    
+  # Model checkpointing
+  checkpointing:
+    enabled: true
+    interval_epochs: 5
+    save_path: "data/dev/model_checkpoints"
+
+# Feature engineering for development
+features:
+  # Simplified feature set for faster development
+  engineering:
+    total_features: 24  # Reduced feature set
+    feature_groups:
+      technical_indicators: 12
+      market_microstructure: 6
+      volume_profile: 6
+      
+  # Faster feature computation
+  computation:
+    parallel_processing: false  # Disable for easier debugging
+    cache_features: true
+    feature_selection: true  # Enable automatic feature selection
+
+# Backtesting configuration for development
+backtesting:
+  # Faster backtesting for development
+  periods:
+    default_period: "2024-06-01"  # Shorter period
+    max_history_days: 180  # 6 months max
+    
+  parameters:
+    initial_capital: 10000  # $10k for development
+    commission_rate: 0.001
+    
+  # Parallel processing for development
+  parallel:
+    enabled: false  # Disable for easier debugging
+    max_workers: 1
+
+# Development tools configuration
+dev_tools:
+  # Profiling
+  profiling:
+    enabled: true
+    memory_profiling: true
+    cpu_profiling: true
+    output_dir: "logs/dev/profiling"
+    
+  # Debug tools
+  debugging:
+    pdb_on_error: true
+    verbose_errors: true
+    save_error_context: true
+    
+  # Hot reloading
+  hot_reload:
+    enabled: true
+    watch_dirs: ["src", "config"]
+    ignore_patterns: ["*.pyc", "*.log", "__pycache__"]
+
+# Testing configuration
+testing:
+  # Unit testing
+  unit_tests:
+    enabled: true
+    coverage_threshold: 0.8  # 80% coverage
+    
+  # Integration testing
+  integration_tests:
+    enabled: true
+    test_data_path: "data/test"
+    
+  # Mock services
+  mocks:
+    exchange_api: true
+    database: false  # Use real SQLite
+    redis: true  # Mock Redis
+    kafka: true  # Mock Kafka
+
+# Security settings for development
+security:
+  # Relaxed security for development
+  api_keys:
+    require_encryption: false  # Allow plain text in dev
+    validation: "basic"  # Basic validation only
+    
+  # JWT settings
+  jwt:
+    secret_key: "dev-secret-key-change-in-production"
+    algorithm: "HS256"
+    expiration_hours: 24
+
+# Frontend development settings
+frontend:
+  # Development server settings
+  dev_server:
+    host: "localhost"
+    port: 3001  # Different port for dev frontend
+    hot_reload: true
+    
+  # API endpoints
+  api_endpoints:
+    base_url: "http://localhost:8001"
+    websocket_url: "ws://localhost:8001/ws"
+
+# Jupyter configuration for development
+jupyter:
+  enabled: true
+  notebook_dir: "notebooks/dev"
+  port: 8888
+  token: "dipmaster-dev-token"
+  
+# Documentation settings
+documentation:
+  # Auto-generation in development
+  auto_generate: true
+  output_dir: "docs/dev"
+  include_private: true  # Include private APIs in dev docs

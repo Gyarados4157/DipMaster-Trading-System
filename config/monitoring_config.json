@@ -1,0 +1,311 @@
+{
+  "monitoring": {
+    "enabled": true,
+    "update_interval_seconds": 30,
+    "retention_hours": 168,
+    "health_check_interval": 60,
+    "alert_cooldown_seconds": 300
+  },
+  
+  "kafka": {
+    "enabled": true,
+    "servers": ["localhost:9092"],
+    "client_id": "dipmaster-producer",
+    "topics": {
+      "execution_reports": "exec.reports.v1",
+      "risk_metrics": "risk.metrics.v1",
+      "alerts": "alerts.v1",
+      "strategy_performance": "strategy.performance.v1",
+      "system_health": "system.health.v1"
+    },
+    "producer_config": {
+      "acks": "all",
+      "retries": 3,
+      "batch_size": 16384,
+      "linger_ms": 10,
+      "compression_type": "gzip"
+    },
+    "consumer_config": {
+      "group_id": "dipmaster-monitoring",
+      "auto_offset_reset": "latest",
+      "enable_auto_commit": true
+    },
+    "circuit_breaker": {
+      "threshold": 5,
+      "timeout": 60
+    }
+  },
+  
+  "consistency_monitoring": {
+    "enabled": true,
+    "detection_window_hours": 24,
+    "baseline_window_hours": 168,
+    "thresholds": {
+      "signal_position_consistency": 0.95,
+      "position_execution_consistency": 0.98,
+      "timing_consistency": 0.90,
+      "price_consistency": 0.95
+    },
+    "alerts": {
+      "consistency_degraded": 0.85,
+      "consistency_critical": 0.70
+    }
+  },
+  
+  "risk_monitoring": {
+    "enabled": true,
+    "risk_limits": {
+      "var_95_limit": 200000,
+      "var_99_limit": 300000,
+      "expected_shortfall_limit": 400000,
+      "max_position_size_usd": 100000,
+      "max_positions": 10,
+      "max_leverage": 3.0,
+      "max_drawdown": 0.20,
+      "max_daily_loss": 50000,
+      "max_symbol_concentration": 0.30,
+      "max_correlation": 0.80
+    },
+    "circuit_breakers": {
+      "var_95": 200000,
+      "var_99": 300000,
+      "drawdown": 0.20,
+      "daily_loss": 50000,
+      "leverage": 3.0
+    },
+    "alert_thresholds": {
+      "var_warning": 0.80,
+      "var_critical": 0.95,
+      "drawdown_warning": 0.15,
+      "drawdown_critical": 0.18
+    }
+  },
+  
+  "drift_detection": {
+    "enabled": true,
+    "detection_window_hours": 24,
+    "baseline_window_hours": 168,
+    "statistical_significance": 0.05,
+    "thresholds": {
+      "performance": {
+        "minimal": 0.02,
+        "moderate": 0.05,
+        "significant": 0.10,
+        "critical": 0.20
+      },
+      "feature": {
+        "minimal": 0.05,
+        "moderate": 0.10,
+        "significant": 0.20,
+        "critical": 0.30
+      },
+      "distribution": {
+        "minimal": 0.1,
+        "moderate": 0.2,
+        "significant": 0.3,
+        "critical": 0.4
+      }
+    },
+    "regime_detection": {
+      "volatility_threshold": 1.5,
+      "win_rate_stability": 0.1,
+      "sharpe_decline_threshold": 0.8
+    }
+  },
+  
+  "performance_monitoring": {
+    "enabled": true,
+    "benchmark_targets": {
+      "win_rate": 0.55,
+      "sharpe_ratio": 1.5,
+      "max_drawdown": 0.15,
+      "profit_factor": 1.5,
+      "return_volatility": 0.20
+    },
+    "alert_thresholds": {
+      "win_rate": {
+        "critical": 0.30,
+        "warning": 0.45,
+        "target": 0.55
+      },
+      "sharpe_ratio": {
+        "critical": 0.5,
+        "warning": 1.0,
+        "target": 1.5
+      },
+      "max_drawdown": {
+        "warning": 0.10,
+        "critical": 0.20,
+        "emergency": 0.30
+      },
+      "profit_factor": {
+        "critical": 0.8,
+        "warning": 1.0,
+        "target": 1.5
+      }
+    }
+  },
+  
+  "system_health": {
+    "enabled": true,
+    "check_intervals": {
+      "cpu_usage": 30,
+      "memory_usage": 30,
+      "disk_space": 60,
+      "network_connectivity": 60,
+      "api_health": 30
+    },
+    "resource_thresholds": {
+      "cpu_warning": 80,
+      "cpu_critical": 95,
+      "memory_warning": 80,
+      "memory_critical": 95,
+      "disk_warning": 85,
+      "disk_critical": 95
+    },
+    "connectivity_targets": [
+      "google.com",
+      "api.binance.com",
+      "cloudflare.com"
+    ],
+    "api_endpoints": {
+      "binance": "https://api.binance.com/api/v3/ping",
+      "system_health": "http://localhost:8080/health"
+    }
+  },
+  
+  "logging": {
+    "enabled": true,
+    "log_directory": "logs",
+    "console_output": false,
+    "max_bytes": 104857600,
+    "backup_count": 30,
+    "compression_days": 7,
+    "aggregation_retention_hours": 24,
+    "categories": [
+      "system",
+      "trading",
+      "risk",
+      "execution",
+      "data",
+      "api",
+      "security",
+      "performance",
+      "monitoring",
+      "compliance"
+    ],
+    "log_levels": {
+      "app": "INFO",
+      "error": "ERROR",
+      "audit": "INFO",
+      "performance": "INFO",
+      "trading": "INFO"
+    }
+  },
+  
+  "alerting": {
+    "enabled": true,
+    "channels": {
+      "slack": {
+        "enabled": false,
+        "webhook_url": "",
+        "min_level": "WARNING"
+      },
+      "email": {
+        "enabled": false,
+        "smtp_server": "",
+        "smtp_port": 587,
+        "username": "",
+        "password": "",
+        "recipients": [],
+        "min_level": "CRITICAL"
+      },
+      "webhook": {
+        "enabled": false,
+        "url": "",
+        "min_level": "WARNING"
+      }
+    },
+    "alert_rules": {
+      "trading_system_down": {
+        "metric": "health.overall_score",
+        "condition": "less_than",
+        "threshold": 50.0,
+        "level": "CRITICAL",
+        "duration_seconds": 60,
+        "cooldown_seconds": 300
+      },
+      "high_api_error_rate": {
+        "metric": "app.api_error_rate",
+        "condition": "greater_than",
+        "threshold": 15.0,
+        "level": "WARNING",
+        "duration_seconds": 180,
+        "cooldown_seconds": 600
+      },
+      "websocket_disconnected": {
+        "metric": "app.websocket_connections",
+        "condition": "equals",
+        "threshold": 0.0,
+        "level": "CRITICAL",
+        "duration_seconds": 30,
+        "cooldown_seconds": 180
+      },
+      "excessive_drawdown": {
+        "metric": "risk.current_drawdown",
+        "condition": "greater_than",
+        "threshold": 15.0,
+        "level": "EMERGENCY",
+        "duration_seconds": 60,
+        "cooldown_seconds": 0
+      }
+    }
+  },
+  
+  "dashboards": {
+    "enabled": true,
+    "refresh_interval_seconds": 5,
+    "port": 8080,
+    "host": "0.0.0.0",
+    "endpoints": {
+      "health": "/health",
+      "metrics": "/metrics",
+      "dashboard": "/dashboard",
+      "alerts": "/alerts",
+      "logs": "/logs"
+    }
+  },
+  
+  "integrations": {
+    "prometheus": {
+      "enabled": false,
+      "port": 9090,
+      "metrics_path": "/metrics"
+    },
+    "grafana": {
+      "enabled": false,
+      "dashboard_url": ""
+    },
+    "elasticsearch": {
+      "enabled": false,
+      "hosts": ["localhost:9200"],
+      "index_pattern": "dipmaster-logs-*"
+    }
+  },
+  
+  "development": {
+    "debug_mode": false,
+    "mock_kafka": true,
+    "mock_alerts": false,
+    "test_data_generation": false,
+    "verbose_logging": false
+  },
+  
+  "production": {
+    "strict_validation": true,
+    "encrypted_logs": false,
+    "audit_all_trades": true,
+    "compliance_reporting": true,
+    "backup_configs": true
+  }
+}
