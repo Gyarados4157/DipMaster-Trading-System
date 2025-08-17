@@ -1,0 +1,142 @@
+{
+  "dashboard": {
+    "overview": {
+      "total_pnl": 12847.65,
+      "unrealized_pnl": 2340.12,
+      "realized_pnl": 10507.53,
+      "win_rate": 82.1,
+      "total_trades": 156,
+      "active_positions": 3,
+      "daily_pnl": 456.78
+    },
+    "positions": [
+      {
+        "symbol": "BTCUSDT",
+        "side": "long",
+        "size": 0.1234,
+        "entry_price": 67250.00,
+        "current_price": 68120.00,
+        "unrealized_pnl": 107.35,
+        "pnl_percentage": 1.29,
+        "timestamp": "2025-08-17T07:30:00Z"
+      },
+      {
+        "symbol": "ETHUSDT", 
+        "side": "long",
+        "size": 2.4567,
+        "entry_price": 2640.00,
+        "current_price": 2685.50,
+        "unrealized_pnl": 111.84,
+        "pnl_percentage": 1.72,
+        "timestamp": "2025-08-17T07:15:00Z"
+      },
+      {
+        "symbol": "SOLUSDT",
+        "side": "long", 
+        "size": 15.2341,
+        "entry_price": 142.80,
+        "current_price": 145.60,
+        "unrealized_pnl": 42.65,
+        "pnl_percentage": 1.96,
+        "timestamp": "2025-08-17T06:45:00Z"
+      }
+    ],
+    "pnl_history": [
+      {"timestamp": "2025-08-17T06:00:00Z", "pnl": 12390.87, "realized": 10200.00, "unrealized": 2190.87},
+      {"timestamp": "2025-08-17T06:15:00Z", "pnl": 12456.23, "realized": 10245.50, "unrealized": 2210.73},
+      {"timestamp": "2025-08-17T06:30:00Z", "pnl": 12523.45, "realized": 10290.25, "unrealized": 2233.20},
+      {"timestamp": "2025-08-17T06:45:00Z", "pnl": 12601.78, "realized": 10335.75, "unrealized": 2266.03},
+      {"timestamp": "2025-08-17T07:00:00Z", "pnl": 12678.90, "realized": 10380.50, "unrealized": 2298.40},
+      {"timestamp": "2025-08-17T07:15:00Z", "pnl": 12734.12, "realized": 10425.25, "unrealized": 2308.87},
+      {"timestamp": "2025-08-17T07:30:00Z", "pnl": 12847.65, "realized": 10507.53, "unrealized": 2340.12}
+    ],
+    "alerts": [
+      {
+        "id": "alert_001",
+        "type": "risk_limit",
+        "severity": "warning",
+        "message": "BTCUSDT持仓接近风险限制 (85%)",
+        "timestamp": "2025-08-17T07:32:15Z",
+        "acknowledged": false
+      },
+      {
+        "id": "alert_002", 
+        "type": "signal_quality",
+        "severity": "info",
+        "message": "DipMaster策略信号质量良好",
+        "timestamp": "2025-08-17T07:28:45Z",
+        "acknowledged": true
+      },
+      {
+        "id": "alert_003",
+        "type": "execution_delay", 
+        "severity": "warning",
+        "message": "ETHUSDT订单执行延迟 +1.2秒",
+        "timestamp": "2025-08-17T07:16:20Z",
+        "acknowledged": false
+      }
+    ],
+    "recent_trades": [
+      {
+        "symbol": "SOLUSDT",
+        "side": "buy",
+        "quantity": 15.2341,
+        "price": 142.80,
+        "timestamp": "2025-08-17T06:45:00Z",
+        "pnl": "+42.65",
+        "status": "filled"
+      },
+      {
+        "symbol": "ETHUSDT",
+        "side": "buy", 
+        "quantity": 2.4567,
+        "price": 2640.00,
+        "timestamp": "2025-08-17T07:15:00Z",
+        "pnl": "+111.84",
+        "status": "filled"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "side": "buy",
+        "quantity": 0.1234,
+        "price": 67250.00, 
+        "timestamp": "2025-08-17T07:30:00Z",
+        "pnl": "+107.35",
+        "status": "filled"
+      }
+    ],
+    "risk_metrics": {
+      "var_95": 2450.30,
+      "var_99": 3890.75,
+      "expected_shortfall": 4560.25,
+      "max_drawdown": 0.0289,
+      "sharpe_ratio": 2.15,
+      "volatility": 0.085,
+      "beta": 0.02,
+      "correlation_btc": 0.65
+    },
+    "strategy_performance": {
+      "dipmaster_params": {
+        "rsi_min": 30,
+        "rsi_max": 50,
+        "volume_threshold": 1.5,
+        "boundary_minutes": [15, 30, 45, 60],
+        "target_profit": 0.008,
+        "max_holding_minutes": 180
+      },
+      "compliance_rate": 98.7,
+      "signal_quality": 85.4,
+      "execution_efficiency": 92.3,
+      "dip_buying_rate": 87.9,
+      "boundary_exit_rate": 100.0
+    },
+    "system_health": {
+      "api_latency": 45,
+      "websocket_status": "connected",
+      "data_quality": 99.2,
+      "memory_usage": 72.3,
+      "cpu_usage": 35.8,
+      "uptime": "7d 12h 34m"
+    }
+  }
+}

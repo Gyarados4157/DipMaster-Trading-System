@@ -1,0 +1,47 @@
+{
+  "symbol": "WIFUSDT",
+  "timeframe": "1d",
+  "records_count": 531,
+  "data_quality": {
+    "quality_score": 0.8956680339499008,
+    "records_count": 531,
+    "date_range": {
+      "start": "2024-03-05T00:00:00",
+      "end": "2025-08-17T00:00:00"
+    },
+    "download_time_seconds": 0.9750468730926514,
+    "retry_count": 0
+  },
+  "date_range": {
+    "start": "2024-03-05T00:00:00",
+    "end": "2025-08-17T00:00:00",
+    "span_days": 530
+  },
+  "file_info": {
+    "file_size_mb": 0.02364349365234375,
+    "compression": "zstd",
+    "format": "parquet"
+  },
+  "statistics": {
+    "price_range": {
+      "min": 0.304,
+      "max": 4.86,
+      "avg": 1.7878649717514126
+    },
+    "volume_stats": {
+      "total": 45083981286.630005,
+      "avg": 84903919.56050849,
+      "max": 499988367.96
+    }
+  },
+  "created_at": "2025-08-17T17:35:02.967504",
+  "collection_config": {
+    "lookback_days": 730,
+    "batch_size": 1000,
+    "rate_limit_delay": 0.05,
+    "retry_attempts": 5,
+    "timeout_seconds": 45,
+    "parallel_symbols": 5,
+    "max_workers": 10
+  }
+}

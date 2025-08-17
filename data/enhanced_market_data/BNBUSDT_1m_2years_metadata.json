@@ -1,0 +1,47 @@
+{
+  "symbol": "BNBUSDT",
+  "timeframe": "1m",
+  "records_count": 129601,
+  "data_quality": {
+    "quality_score": 0.9492095274445279,
+    "records_count": 129601,
+    "date_range": {
+      "start": "2025-05-19T09:29:00",
+      "end": "2025-08-17T09:29:00"
+    },
+    "download_time_seconds": 70.66728091239929,
+    "retry_count": 0
+  },
+  "date_range": {
+    "start": "2025-05-19T09:29:00",
+    "end": "2025-08-17T09:29:00",
+    "span_days": 90
+  },
+  "file_info": {
+    "file_size_mb": 2.95517635345459,
+    "compression": "zstd",
+    "format": "parquet"
+  },
+  "statistics": {
+    "price_range": {
+      "min": 601.25,
+      "max": 869.4,
+      "avg": 703.9992936011298
+    },
+    "volume_stats": {
+      "total": 19245792.281600002,
+      "avg": 148.50033781838104,
+      "max": 26276.267
+    }
+  },
+  "created_at": "2025-08-17T17:30:01.814801",
+  "collection_config": {
+    "lookback_days": 730,
+    "batch_size": 1000,
+    "rate_limit_delay": 0.05,
+    "retry_attempts": 5,
+    "timeout_seconds": 45,
+    "parallel_symbols": 5,
+    "max_workers": 10
+  }
+}

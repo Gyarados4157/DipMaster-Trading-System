@@ -1,0 +1,47 @@
+{
+  "symbol": "DOTUSDT",
+  "timeframe": "5m",
+  "records_count": 210240,
+  "data_quality": {
+    "quality_score": 0.9502424100038876,
+    "records_count": 210240,
+    "date_range": {
+      "start": "2023-08-18T09:35:00",
+      "end": "2025-08-17T09:30:00"
+    },
+    "download_time_seconds": 61.92760896682739,
+    "retry_count": 0
+  },
+  "date_range": {
+    "start": "2023-08-18T09:35:00",
+    "end": "2025-08-17T09:30:00",
+    "span_days": 729
+  },
+  "file_info": {
+    "file_size_mb": 4.581499099731445,
+    "compression": "zstd",
+    "format": "parquet"
+  },
+  "statistics": {
+    "price_range": {
+      "min": 3.007,
+      "max": 11.889,
+      "avg": 5.65759318873668
+    },
+    "volume_stats": {
+      "total": 4947172483.694,
+      "avg": 23531.07155486111,
+      "max": 2183311.51
+    }
+  },
+  "created_at": "2025-08-17T17:31:09.245909",
+  "collection_config": {
+    "lookback_days": 730,
+    "batch_size": 1000,
+    "rate_limit_delay": 0.05,
+    "retry_attempts": 5,
+    "timeout_seconds": 45,
+    "parallel_symbols": 5,
+    "max_workers": 10
+  }
+}

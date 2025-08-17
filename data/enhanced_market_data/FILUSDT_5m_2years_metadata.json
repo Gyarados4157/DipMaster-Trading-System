@@ -1,0 +1,47 @@
+{
+  "symbol": "FILUSDT",
+  "timeframe": "5m",
+  "records_count": 210240,
+  "data_quality": {
+    "quality_score": 0.9518699121853562,
+    "records_count": 210240,
+    "date_range": {
+      "start": "2023-08-18T09:35:00",
+      "end": "2025-08-17T09:30:00"
+    },
+    "download_time_seconds": 54.51034450531006,
+    "retry_count": 0
+  },
+  "date_range": {
+    "start": "2023-08-18T09:35:00",
+    "end": "2025-08-17T09:30:00",
+    "span_days": 729
+  },
+  "file_info": {
+    "file_size_mb": 4.6129255294799805,
+    "compression": "zstd",
+    "format": "parquet"
+  },
+  "statistics": {
+    "price_range": {
+      "min": 1.964,
+      "max": 11.85,
+      "avg": 4.461550775304415
+    },
+    "volume_stats": {
+      "total": 5926357685.929999,
+      "avg": 28188.53541633371,
+      "max": 7713541.89
+    }
+  },
+  "created_at": "2025-08-17T17:33:00.120626",
+  "collection_config": {
+    "lookback_days": 730,
+    "batch_size": 1000,
+    "rate_limit_delay": 0.05,
+    "retry_attempts": 5,
+    "timeout_seconds": 45,
+    "parallel_symbols": 5,
+    "max_workers": 10
+  }
+}

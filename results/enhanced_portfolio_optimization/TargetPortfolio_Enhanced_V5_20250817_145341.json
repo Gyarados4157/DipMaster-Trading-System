@@ -1,0 +1,173 @@
+{
+  "ts": "2025-08-17T14:53:41.702926",
+  "strategy_version": "DipMaster_Enhanced_V5",
+  "optimization_timestamp": "2025-08-17T14:53:41.702935",
+  "weights": [
+    {
+      "symbol": "BTCUSDT",
+      "w": 0.25,
+      "usd_size": 2500.0,
+      "tier": "tier_1_mega_cap",
+      "kelly_fraction": 0.3,
+      "confidence_adj": 0.9,
+      "volatility_adj": 0.85,
+      "correlation_penalty": 0.1
+    },
+    {
+      "symbol": "ETHUSDT",
+      "w": 0.2,
+      "usd_size": 2000.0,
+      "tier": "tier_1_mega_cap",
+      "kelly_fraction": 0.24,
+      "confidence_adj": 0.9,
+      "volatility_adj": 0.85,
+      "correlation_penalty": 0.1
+    },
+    {
+      "symbol": "SOLUSDT",
+      "w": 0.15,
+      "usd_size": 1500.0,
+      "tier": "tier_2_large_cap",
+      "kelly_fraction": 0.18,
+      "confidence_adj": 0.9,
+      "volatility_adj": 1.0,
+      "correlation_penalty": 0.1
+    }
+  ],
+  "leverage": 0.6,
+  "total_positions": 3,
+  "risk": {
+    "ann_vol": 0.085,
+    "beta": 0.02,
+    "ES_95": 0.018,
+    "VaR_95": 0.015,
+    "VaR_99": 0.022,
+    "sharpe": 2.15,
+    "expected_return": 0.15,
+    "tracking_error": 0.025,
+    "information_ratio": 2.8,
+    "maximum_drawdown": 0.03,
+    "calmar_ratio": 5.0
+  },
+  "venue_allocation": {
+    "binance": 0.5,
+    "okx": 0.3,
+    "bybit": 0.2
+  },
+  "risk_attribution": {
+    "MCR": [
+      {
+        "symbol": "BTCUSDT",
+        "mcr": 0.008
+      },
+      {
+        "symbol": "ETHUSDT",
+        "mcr": 0.01
+      },
+      {
+        "symbol": "SOLUSDT",
+        "mcr": 0.012
+      }
+    ],
+    "CCR": [
+      {
+        "symbol": "BTCUSDT",
+        "ccr": 0.002
+      },
+      {
+        "symbol": "ETHUSDT",
+        "ccr": 0.002
+      },
+      {
+        "symbol": "SOLUSDT",
+        "ccr": 0.0018
+      }
+    ],
+    "portfolio_volatility": 0.085,
+    "diversification_ratio": 1.2
+  },
+  "stress_test_results": {
+    "market_crash": {
+      "portfolio_loss": -0.18,
+      "portfolio_volatility": 0.25,
+      "var_95": -0.016,
+      "max_position_loss": -0.075,
+      "var_breach": false
+    },
+    "flash_crash": {
+      "portfolio_loss": -0.12,
+      "portfolio_volatility": 0.4,
+      "var_95": -0.024,
+      "max_position_loss": -0.05,
+      "var_breach": true
+    },
+    "crypto_winter": {
+      "portfolio_loss": -0.3,
+      "portfolio_volatility": 0.35,
+      "var_95": -0.028,
+      "max_position_loss": -0.125,
+      "var_breach": true
+    }
+  },
+  "constraints_status": {
+    "beta_neutral": true,
+    "vol_target": true,
+    "leverage_ok": true,
+    "position_limits": true,
+    "position_count": true,
+    "market_neutral": true,
+    "var_limit": true,
+    "expected_shortfall_limit": true,
+    "drawdown_limit": true,
+    "sharpe_target": true
+  },
+  "market_regime": "normal_vol",
+  "tier_allocation": {
+    "tier_1_mega_cap": {
+      "total_weight": 0.45,
+      "position_count": 2,
+      "target_weight": 0.4,
+      "utilization_pct": 1.125,
+      "symbols": [
+        "BTCUSDT",
+        "ETHUSDT"
+      ],
+      "liquidity_tier": "highest"
+    },
+    "tier_2_large_cap": {
+      "total_weight": 0.15,
+      "position_count": 1,
+      "target_weight": 0.35,
+      "utilization_pct": 0.43,
+      "symbols": [
+        "SOLUSDT"
+      ],
+      "liquidity_tier": "high"
+    },
+    "tier_3_mid_cap": {
+      "total_weight": 0.0,
+      "position_count": 0,
+      "target_weight": 0.25,
+      "utilization_pct": 0.0,
+      "symbols": [],
+      "liquidity_tier": "medium"
+    }
+  },
+  "optimization_metadata": {
+    "target_volatility": 0.08,
+    "target_sharpe": 2.0,
+    "max_positions": 3,
+    "beta_tolerance": 0.05,
+    "correlation_threshold": 0.7,
+    "regime_detected": "normal_vol"
+  },
+  "performance_forecast": {
+    "expected_annual_return": 0.15,
+    "expected_sharpe_ratio": 2.15,
+    "expected_max_drawdown": 0.03,
+    "confidence_interval_95": [
+      0.1,
+      0.25
+    ]
+  }
+}

@@ -1,0 +1,311 @@
+{
+  "regime_parameters": {
+    "RANGE_BOUND": {
+      "description": "Sideways/consolidation markets - optimal for original DipMaster strategy",
+      "optimal_for": "Original DipMaster logic with high confidence",
+      "base_params": {
+        "rsi_low": 30,
+        "rsi_high": 50,
+        "dip_threshold": 0.002,
+        "volume_threshold": 1.5,
+        "target_profit": 0.008,
+        "stop_loss": -0.015,
+        "max_holding_minutes": 180,
+        "confidence_multiplier": 1.0
+      },
+      "symbol_adjustments": {
+        "BTCUSDT": {
+          "rsi_low": 25,
+          "target_profit": 0.006,
+          "confidence_multiplier": 1.1
+        },
+        "ETHUSDT": {
+          "volume_threshold": 1.8,
+          "stop_loss": -0.012
+        },
+        "SOLUSDT": {
+          "volume_threshold": 1.8,
+          "stop_loss": -0.012
+        },
+        "altcoins": {
+          "volume_threshold": 2.0,
+          "stop_loss": -0.010,
+          "confidence_multiplier": 0.9
+        }
+      }
+    },
+    "STRONG_UPTREND": {
+      "description": "Bull market conditions - modified entry criteria for trend following",
+      "optimal_for": "Momentum trades with tighter stops and higher targets",
+      "base_params": {
+        "rsi_low": 20,
+        "rsi_high": 40,
+        "dip_threshold": 0.003,
+        "volume_threshold": 2.0,
+        "target_profit": 0.012,
+        "stop_loss": -0.008,
+        "max_holding_minutes": 90,
+        "confidence_multiplier": 0.8
+      },
+      "symbol_adjustments": {
+        "BTCUSDT": {
+          "rsi_low": 15,
+          "target_profit": 0.010,
+          "confidence_multiplier": 0.9
+        },
+        "ETHUSDT": {
+          "target_profit": 0.015,
+          "max_holding_minutes": 75
+        },
+        "SOLUSDT": {
+          "target_profit": 0.015,
+          "max_holding_minutes": 75
+        },
+        "altcoins": {
+          "volume_threshold": 2.5,
+          "stop_loss": -0.006,
+          "confidence_multiplier": 0.7
+        }
+      }
+    },
+    "STRONG_DOWNTREND": {
+      "description": "Bear market conditions - reduced trading with tight risk controls",
+      "optimal_for": "Cautious contrarian trades with quick exits",
+      "base_params": {
+        "rsi_low": 15,
+        "rsi_high": 35,
+        "dip_threshold": 0.005,
+        "volume_threshold": 2.5,
+        "target_profit": 0.006,
+        "stop_loss": -0.005,
+        "max_holding_minutes": 60,
+        "confidence_multiplier": 0.5
+      },
+      "symbol_adjustments": {
+        "BTCUSDT": {
+          "rsi_low": 10,
+          "target_profit": 0.004,
+          "confidence_multiplier": 0.6
+        },
+        "ETHUSDT": {
+          "stop_loss": -0.004,
+          "max_holding_minutes": 45
+        },
+        "SOLUSDT": {
+          "stop_loss": -0.004,
+          "max_holding_minutes": 45
+        },
+        "altcoins": {
+          "volume_threshold": 3.0,
+          "stop_loss": -0.003,
+          "confidence_multiplier": 0.3
+        }
+      }
+    },
+    "HIGH_VOLATILITY": {
+      "description": "Extreme volatility periods - enhanced risk controls with higher targets",
+      "optimal_for": "Quick scalping trades with wide stops but fast exits",
+      "base_params": {
+        "rsi_low": 25,
+        "rsi_high": 45,
+        "dip_threshold": 0.004,
+        "volume_threshold": 3.0,
+        "target_profit": 0.015,
+        "stop_loss": -0.010,
+        "max_holding_minutes": 45,
+        "confidence_multiplier": 0.6
+      },
+      "symbol_adjustments": {
+        "BTCUSDT": {
+          "target_profit": 0.012,
+          "stop_loss": -0.008,
+          "confidence_multiplier": 0.7
+        },
+        "ETHUSDT": {
+          "target_profit": 0.018,
+          "max_holding_minutes": 30
+        },
+        "SOLUSDT": {
+          "target_profit": 0.018,
+          "max_holding_minutes": 30
+        },
+        "altcoins": {
+          "volume_threshold": 4.0,
+          "stop_loss": -0.008,
+          "confidence_multiplier": 0.5
+        }
+      }
+    },
+    "LOW_VOLATILITY": {
+      "description": "Low volatility grinding - extended holding periods with smaller targets",
+      "optimal_for": "Patient accumulation with longer time horizons",
+      "base_params": {
+        "rsi_low": 35,
+        "rsi_high": 55,
+        "dip_threshold": 0.001,
+        "volume_threshold": 1.2,
+        "target_profit": 0.005,
+        "stop_loss": -0.020,
+        "max_holding_minutes": 240,
+        "confidence_multiplier": 1.2
+      },
+      "symbol_adjustments": {
+        "BTCUSDT": {
+          "rsi_low": 40,
+          "target_profit": 0.004,
+          "confidence_multiplier": 1.3
+        },
+        "ETHUSDT": {
+          "max_holding_minutes": 300,
+          "stop_loss": -0.025
+        },
+        "SOLUSDT": {
+          "max_holding_minutes": 300,
+          "stop_loss": -0.025
+        },
+        "altcoins": {
+          "volume_threshold": 1.0,
+          "stop_loss": -0.015,
+          "confidence_multiplier": 1.1
+        }
+      }
+    },
+    "TRANSITION": {
+      "description": "Market regime transition - wait for clarity with conservative parameters",
+      "optimal_for": "Defensive positioning during uncertain periods",
+      "base_params": {
+        "rsi_low": 25,
+        "rsi_high": 45,
+        "dip_threshold": 0.0025,
+        "volume_threshold": 1.8,
+        "target_profit": 0.006,
+        "stop_loss": -0.012,
+        "max_holding_minutes": 120,
+        "confidence_multiplier": 0.7
+      },
+      "symbol_adjustments": {
+        "BTCUSDT": {
+          "confidence_multiplier": 0.8
+        },
+        "ETHUSDT": {
+          "confidence_multiplier": 0.6
+        },
+        "SOLUSDT": {
+          "confidence_multiplier": 0.6
+        },
+        "altcoins": {
+          "confidence_multiplier": 0.5
+        }
+      }
+    }
+  },
+  "trading_rules": {
+    "regime_confidence_threshold": 0.7,
+    "min_regime_stability": 0.6,
+    "disable_trading_regimes": [
+      {
+        "regime": "STRONG_DOWNTREND",
+        "confidence_threshold": 0.8,
+        "reason": "Avoid trading in confirmed bear markets"
+      },
+      {
+        "regime": "HIGH_VOLATILITY", 
+        "confidence_threshold": 0.9,
+        "reason": "Pause trading during extreme volatility"
+      },
+      {
+        "regime": "TRANSITION",
+        "confidence_threshold": 0.5,
+        "reason": "Wait for regime clarity"
+      }
+    ],
+    "regime_transition_cooldown": 3,
+    "max_positions_per_regime": {
+      "RANGE_BOUND": 3,
+      "STRONG_UPTREND": 2,
+      "STRONG_DOWNTREND": 1,
+      "HIGH_VOLATILITY": 1,
+      "LOW_VOLATILITY": 4,
+      "TRANSITION": 0
+    }
+  },
+  "performance_targets": {
+    "baseline_metrics": {
+      "win_rate": 0.477,
+      "annual_return": 0.019,
+      "sharpe_ratio": 3.65,
+      "max_drawdown": 0.012
+    },
+    "improved_targets": {
+      "win_rate": 0.65,
+      "annual_return": 0.25,
+      "sharpe_ratio": 2.0,
+      "max_drawdown": 0.05
+    },
+    "regime_specific_targets": {
+      "RANGE_BOUND": {
+        "win_rate": 0.75,
+        "annual_return": 0.30,
+        "description": "Optimal regime for DipMaster"
+      },
+      "STRONG_UPTREND": {
+        "win_rate": 0.60,
+        "annual_return": 0.40,
+        "description": "Modified strategy for momentum"
+      },
+      "STRONG_DOWNTREND": {
+        "win_rate": 0.40,
+        "annual_return": 0.05,
+        "description": "Capital preservation mode"
+      },
+      "HIGH_VOLATILITY": {
+        "win_rate": 0.55,
+        "annual_return": 0.35,
+        "description": "High risk/reward scalping"
+      },
+      "LOW_VOLATILITY": {
+        "win_rate": 0.70,
+        "annual_return": 0.15,
+        "description": "Steady accumulation"
+      }
+    }
+  },
+  "validation_framework": {
+    "backtest_periods": {
+      "full_period": "2023-01-01 to 2025-08-17",
+      "regime_specific": {
+        "bull_market": "2023-01-01 to 2023-04-30",
+        "bear_market": "2023-05-01 to 2023-10-31", 
+        "recovery": "2023-11-01 to 2024-03-31",
+        "consolidation": "2024-04-01 to 2025-08-17"
+      }
+    },
+    "validation_metrics": [
+      "win_rate_by_regime",
+      "sharpe_ratio_by_regime", 
+      "max_drawdown_by_regime",
+      "regime_transition_performance",
+      "parameter_stability",
+      "overfitting_detection"
+    ],
+    "cross_validation": {
+      "method": "time_series_split",
+      "n_splits": 5,
+      "test_size": 0.2
+    }
+  },
+  "monitoring_alerts": {
+    "regime_change_notification": true,
+    "performance_degradation_threshold": 0.2,
+    "parameter_drift_detection": true,
+    "real_time_regime_monitoring": true
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "created_date": "2025-08-17",
+    "description": "Adaptive parameter configuration for DipMaster regime-aware strategy",
+    "target_improvement": "Increase BTCUSDT win rate from 47.7% to 65%+",
+    "validation_status": "pending",
+    "last_updated": "2025-08-17T00:00:00Z"
+  }
+}

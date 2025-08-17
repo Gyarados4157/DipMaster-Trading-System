@@ -169,6 +169,181 @@
     .mobile-table {
       @apply min-w-full table-auto;
     }
+    
+    .mobile-hide {
+      @apply hidden;
+    }
+    
+    .mobile-stack {
+      @apply flex-col space-y-2 space-x-0;
+    }
+    
+    .mobile-text-sm {
+      @apply text-sm;
+    }
+  }
+  
+  /* 平板端优化 */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .tablet-grid-2 {
+      @apply grid-cols-2;
+    }
+    
+    .tablet-hide {
+      @apply hidden;
+    }
+  }
+  
+  /* 桌面端优化 */
+  @media (min-width: 1024px) {
+    .desktop-grid-3 {
+      @apply grid-cols-3;
+    }
+    
+    .desktop-grid-4 {
+      @apply grid-cols-4;
+    }
+    
+    .desktop-show {
+      @apply block;
+    }
+  }
+  
+  /* 响应式容器 */
+  .responsive-container {
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .responsive-grid {
+    @apply grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+  }
+  
+  .responsive-chart {
+    @apply h-64 sm:h-80 lg:h-96;
+  }
+  
+  /* 触摸友好的交互 */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px] flex items-center justify-center;
+  }
+  
+  .touch-button {
+    @apply touch-target p-2 rounded-lg transition-colors hover:bg-muted active:scale-95;
+  }
+  
+  /* 加载状态 */
+  .skeleton-pulse {
+    @apply animate-pulse bg-gradient-to-r from-muted via-muted/50 to-muted bg-[length:200%_100%];
+    animation: shimmer 1.5s ease-in-out infinite;
+  }
+  
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  
+  /* 数据表格响应式 */
+  .responsive-table {
+    @apply w-full overflow-hidden;
+  }
+  
+  .responsive-table table {
+    @apply w-full table-auto;
+  }
+  
+  @media (max-width: 640px) {
+    .responsive-table table,
+    .responsive-table thead,
+    .responsive-table tbody,
+    .responsive-table th,
+    .responsive-table td,
+    .responsive-table tr {
+      @apply block;
+    }
+    
+    .responsive-table thead tr {
+      @apply absolute -top-full -left-full;
+    }
+    
+    .responsive-table tr {
+      @apply border border-border mb-2 rounded-lg p-3;
+    }
+    
+    .responsive-table td {
+      @apply border-none relative pl-12 py-2;
+    }
+    
+    .responsive-table td:before {
+      @apply absolute left-3 top-2 font-medium text-muted-foreground text-sm;
+      content: attr(data-label) ":";
+    }
+  }
+  
+  /* 状态徽章 */
+  .status-badge {
+    @apply inline-flex items-center px-2 py-1 rounded-full text-xs font-medium;
+  }
+  
+  .status-badge.success {
+    @apply bg-trading-profit/10 text-trading-profit border border-trading-profit/20;
+  }
+  
+  .status-badge.error {
+    @apply bg-trading-loss/10 text-trading-loss border border-trading-loss/20;
+  }
+  
+  .status-badge.warning {
+    @apply bg-trading-pending/10 text-trading-pending border border-trading-pending/20;
+  }
+  
+  .status-badge.neutral {
+    @apply bg-muted text-muted-foreground border border-border;
+  }
+  
+  /* 深色模式特定样式 */
+  .dark .glass-effect {
+    @apply bg-card/80 backdrop-blur-sm border border-border/50;
+  }
+  
+  .dark .shadow-glow {
+    @apply shadow-lg shadow-primary/10;
+  }
+  
+  /* 焦点可见性增强 */
+  .focus-visible {
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background;
+  }
+  
+  /* 动画性能优化 */
+  .will-change-transform {
+    will-change: transform;
+  }
+  
+  .will-change-opacity {
+    will-change: opacity;
+  }
+  
+  /* 无障碍支持 */
+  .sr-only {
+    @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
+    clip: rect(0, 0, 0, 0);
+  }
+  
+  /* 减少动画 */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-pulse,
+    .animate-spin,
+    .animate-ping,
+    .animate-bounce {
+      animation: none !important;
+    }
+    
+    .transition-all,
+    .transition-colors,
+    .transition-opacity,
+    .transition-transform {
+      transition: none !important;
+    }
   }
 }
 

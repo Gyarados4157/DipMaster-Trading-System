@@ -1,0 +1,10 @@
+{
+  "symbol": "SHIBUSDT",
+  "timeframe": "15m",
+  "days_back": 90,
+  "total_rows": 8640,
+  "start_date": "2025-05-19T09:30:00",
+  "end_date": "2025-08-17T09:15:00",
+  "download_date": "2025-08-17T17:25:14.751900",
+  "file_size_mb": 0.21491718292236328
+}

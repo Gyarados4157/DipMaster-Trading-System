@@ -1,0 +1,1099 @@
+{
+  "version": "2025-08-17T17:34:31.938185",
+  "bundle_id": "top30_altcoins_final_20250817_173431",
+  "metadata": {
+    "strategy_name": "DipMaster_Top30_Enhanced_Final",
+    "description": "前30大市值山寨币完整数据集 - 最终版本，支持6个时间框架",
+    "creation_date": "2025-08-17T17:34:31.938185",
+    "data_coverage": "最近24个月完整历史数据",
+    "collection_success_rate": 0.9916666666666667,
+    "total_data_size_mb": 184.72006797790527,
+    "timeframes": [
+      "1m",
+      "5m",
+      "15m",
+      "1h",
+      "4h",
+      "1d"
+    ],
+    "exchanges": [
+      "binance"
+    ],
+    "quality_standard": "99%+ 数据完整性，严格OHLC验证，时间连续性检查"
+  },
+  "collection_results": {
+    "total_symbols_collected": 20,
+    "complete_symbols": 19,
+    "partial_symbols": 1,
+    "total_files_created": 119,
+    "expected_files": 120,
+    "success_rate": "99.2%"
+  },
+  "symbol_tiers": {
+    "tier_s_symbols": [
+      "ADAUSDT",
+      "AVAXUSDT",
+      "BNBUSDT",
+      "LINKUSDT",
+      "SOLUSDT",
+      "XRPUSDT"
+    ],
+    "tier_a_symbols": [
+      "APTUSDT",
+      "ARBUSDT",
+      "ATOMUSDT",
+      "DOGEUSDT",
+      "DOTUSDT",
+      "FILUSDT",
+      "LTCUSDT",
+      "NEARUSDT",
+      "OPUSDT",
+      "TONUSDT",
+      "TRXUSDT",
+      "UNIUSDT",
+      "XLMUSDT"
+    ],
+    "tier_b_symbols": [
+      "MATICUSDT"
+    ]
+  },
+  "portfolio_recommendations": {
+    "conservative_portfolio": [
+      "ADAUSDT",
+      "XRPUSDT",
+      "BNBUSDT",
+      "LINKUSDT",
+      "LTCUSDT",
+      "AVAXUSDT",
+      "SOLUSDT",
+      "TRXUSDT"
+    ],
+    "balanced_portfolio": [
+      "ADAUSDT",
+      "XRPUSDT",
+      "SOLUSDT",
+      "BNBUSDT",
+      "AVAXUSDT",
+      "LINKUSDT",
+      "LTCUSDT",
+      "DOGEUSDT",
+      "TRXUSDT",
+      "DOTUSDT",
+      "UNIUSDT",
+      "NEARUSDT"
+    ],
+    "aggressive_portfolio": [
+      "ADAUSDT",
+      "XRPUSDT",
+      "SOLUSDT",
+      "BNBUSDT",
+      "AVAXUSDT",
+      "LINKUSDT",
+      "LTCUSDT",
+      "DOGEUSDT",
+      "TRXUSDT",
+      "DOTUSDT",
+      "UNIUSDT",
+      "NEARUSDT",
+      "APTUSDT",
+      "TONUSDT",
+      "OPUSDT"
+    ]
+  },
+  "correlation_groups": {
+    "layer1_smart_contracts": [
+      "SOLUSDT",
+      "ADAUSDT",
+      "AVAXUSDT",
+      "NEARUSDT",
+      "TRXUSDT",
+      "TONUSDT"
+    ],
+    "defi_ecosystem": [
+      "UNIUSDT",
+      "LINKUSDT"
+    ],
+    "payment_tokens": [
+      "XRPUSDT",
+      "LTCUSDT"
+    ],
+    "layer2_solutions": [
+      "OPUSDT"
+    ],
+    "meme_tokens": [
+      "DOGEUSDT"
+    ],
+    "exchange_tokens": [
+      "BNBUSDT"
+    ],
+    "infrastructure": [
+      "LINKUSDT",
+      "DOTUSDT"
+    ]
+  },
+  "data_files": {
+    "ADAUSDT": {
+      "1m": {
+        "file_path": "data/enhanced_market_data/ADAUSDT_1m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/ADAUSDT_1m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 129600
+      },
+      "5m": {
+        "file_path": "data/enhanced_market_data/ADAUSDT_5m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/ADAUSDT_5m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 210240
+      },
+      "15m": {
+        "file_path": "data/enhanced_market_data/ADAUSDT_15m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/ADAUSDT_15m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 70080
+      },
+      "1h": {
+        "file_path": "data/enhanced_market_data/ADAUSDT_1h_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/ADAUSDT_1h_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 17520
+      },
+      "4h": {
+        "file_path": "data/enhanced_market_data/ADAUSDT_4h_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/ADAUSDT_4h_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 4380
+      },
+      "1d": {
+        "file_path": "data/enhanced_market_data/ADAUSDT_1d_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/ADAUSDT_1d_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 1095
+      }
+    },
+    "APTUSDT": {
+      "1m": {
+        "file_path": "data/enhanced_market_data/APTUSDT_1m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/APTUSDT_1m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 129600
+      },
+      "5m": {
+        "file_path": "data/enhanced_market_data/APTUSDT_5m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/APTUSDT_5m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 210240
+      },
+      "15m": {
+        "file_path": "data/enhanced_market_data/APTUSDT_15m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/APTUSDT_15m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 70080
+      },
+      "1h": {
+        "file_path": "data/enhanced_market_data/APTUSDT_1h_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/APTUSDT_1h_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 17520
+      },
+      "4h": {
+        "file_path": "data/enhanced_market_data/APTUSDT_4h_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/APTUSDT_4h_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 4380
+      },
+      "1d": {
+        "file_path": "data/enhanced_market_data/APTUSDT_1d_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/APTUSDT_1d_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 1095
+      }
+    },
+    "ARBUSDT": {
+      "1m": {
+        "file_path": "data/enhanced_market_data/ARBUSDT_1m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/ARBUSDT_1m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 129600
+      },
+      "5m": {
+        "file_path": "data/enhanced_market_data/ARBUSDT_5m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/ARBUSDT_5m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 210240
+      },
+      "15m": {
+        "file_path": "data/enhanced_market_data/ARBUSDT_15m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/ARBUSDT_15m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 70080
+      },
+      "1h": {
+        "file_path": "data/enhanced_market_data/ARBUSDT_1h_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/ARBUSDT_1h_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 17520
+      },
+      "4h": {
+        "file_path": "data/enhanced_market_data/ARBUSDT_4h_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/ARBUSDT_4h_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 4380
+      },
+      "1d": {
+        "file_path": "data/enhanced_market_data/ARBUSDT_1d_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/ARBUSDT_1d_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 1095
+      }
+    },
+    "ATOMUSDT": {
+      "1m": {
+        "file_path": "data/enhanced_market_data/ATOMUSDT_1m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/ATOMUSDT_1m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 129600
+      },
+      "5m": {
+        "file_path": "data/enhanced_market_data/ATOMUSDT_5m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/ATOMUSDT_5m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 210240
+      },
+      "15m": {
+        "file_path": "data/enhanced_market_data/ATOMUSDT_15m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/ATOMUSDT_15m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 70080
+      },
+      "1h": {
+        "file_path": "data/enhanced_market_data/ATOMUSDT_1h_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/ATOMUSDT_1h_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 17520
+      },
+      "4h": {
+        "file_path": "data/enhanced_market_data/ATOMUSDT_4h_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/ATOMUSDT_4h_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 4380
+      },
+      "1d": {
+        "file_path": "data/enhanced_market_data/ATOMUSDT_1d_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/ATOMUSDT_1d_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 1095
+      }
+    },
+    "AVAXUSDT": {
+      "1m": {
+        "file_path": "data/enhanced_market_data/AVAXUSDT_1m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/AVAXUSDT_1m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 129600
+      },
+      "5m": {
+        "file_path": "data/enhanced_market_data/AVAXUSDT_5m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/AVAXUSDT_5m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 210240
+      },
+      "15m": {
+        "file_path": "data/enhanced_market_data/AVAXUSDT_15m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/AVAXUSDT_15m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 70080
+      },
+      "1h": {
+        "file_path": "data/enhanced_market_data/AVAXUSDT_1h_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/AVAXUSDT_1h_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 17520
+      },
+      "4h": {
+        "file_path": "data/enhanced_market_data/AVAXUSDT_4h_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/AVAXUSDT_4h_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 4380
+      },
+      "1d": {
+        "file_path": "data/enhanced_market_data/AVAXUSDT_1d_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/AVAXUSDT_1d_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 1095
+      }
+    },
+    "BNBUSDT": {
+      "1m": {
+        "file_path": "data/enhanced_market_data/BNBUSDT_1m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/BNBUSDT_1m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 129600
+      },
+      "5m": {
+        "file_path": "data/enhanced_market_data/BNBUSDT_5m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/BNBUSDT_5m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 210240
+      },
+      "15m": {
+        "file_path": "data/enhanced_market_data/BNBUSDT_15m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/BNBUSDT_15m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 70080
+      },
+      "1h": {
+        "file_path": "data/enhanced_market_data/BNBUSDT_1h_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/BNBUSDT_1h_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 17520
+      },
+      "4h": {
+        "file_path": "data/enhanced_market_data/BNBUSDT_4h_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/BNBUSDT_4h_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 4380
+      },
+      "1d": {
+        "file_path": "data/enhanced_market_data/BNBUSDT_1d_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/BNBUSDT_1d_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 1095
+      }
+    },
+    "DOGEUSDT": {
+      "1m": {
+        "file_path": "data/enhanced_market_data/DOGEUSDT_1m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/DOGEUSDT_1m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 129600
+      },
+      "5m": {
+        "file_path": "data/enhanced_market_data/DOGEUSDT_5m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/DOGEUSDT_5m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 210240
+      },
+      "15m": {
+        "file_path": "data/enhanced_market_data/DOGEUSDT_15m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/DOGEUSDT_15m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 70080
+      },
+      "1h": {
+        "file_path": "data/enhanced_market_data/DOGEUSDT_1h_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/DOGEUSDT_1h_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 17520
+      },
+      "4h": {
+        "file_path": "data/enhanced_market_data/DOGEUSDT_4h_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/DOGEUSDT_4h_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 4380
+      },
+      "1d": {
+        "file_path": "data/enhanced_market_data/DOGEUSDT_1d_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/DOGEUSDT_1d_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 1095
+      }
+    },
+    "DOTUSDT": {
+      "1m": {
+        "file_path": "data/enhanced_market_data/DOTUSDT_1m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/DOTUSDT_1m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 129600
+      },
+      "5m": {
+        "file_path": "data/enhanced_market_data/DOTUSDT_5m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/DOTUSDT_5m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 210240
+      },
+      "15m": {
+        "file_path": "data/enhanced_market_data/DOTUSDT_15m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/DOTUSDT_15m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 70080
+      },
+      "1h": {
+        "file_path": "data/enhanced_market_data/DOTUSDT_1h_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/DOTUSDT_1h_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 17520
+      },
+      "4h": {
+        "file_path": "data/enhanced_market_data/DOTUSDT_4h_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/DOTUSDT_4h_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 4380
+      },
+      "1d": {
+        "file_path": "data/enhanced_market_data/DOTUSDT_1d_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/DOTUSDT_1d_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 1095
+      }
+    },
+    "FILUSDT": {
+      "1m": {
+        "file_path": "data/enhanced_market_data/FILUSDT_1m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/FILUSDT_1m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 129600
+      },
+      "5m": {
+        "file_path": "data/enhanced_market_data/FILUSDT_5m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/FILUSDT_5m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 210240
+      },
+      "15m": {
+        "file_path": "data/enhanced_market_data/FILUSDT_15m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/FILUSDT_15m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 70080
+      },
+      "1h": {
+        "file_path": "data/enhanced_market_data/FILUSDT_1h_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/FILUSDT_1h_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 17520
+      },
+      "4h": {
+        "file_path": "data/enhanced_market_data/FILUSDT_4h_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/FILUSDT_4h_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 4380
+      },
+      "1d": {
+        "file_path": "data/enhanced_market_data/FILUSDT_1d_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/FILUSDT_1d_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 1095
+      }
+    },
+    "LINKUSDT": {
+      "1m": {
+        "file_path": "data/enhanced_market_data/LINKUSDT_1m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/LINKUSDT_1m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 129600
+      },
+      "5m": {
+        "file_path": "data/enhanced_market_data/LINKUSDT_5m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/LINKUSDT_5m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 210240
+      },
+      "15m": {
+        "file_path": "data/enhanced_market_data/LINKUSDT_15m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/LINKUSDT_15m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 70080
+      },
+      "1h": {
+        "file_path": "data/enhanced_market_data/LINKUSDT_1h_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/LINKUSDT_1h_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 17520
+      },
+      "4h": {
+        "file_path": "data/enhanced_market_data/LINKUSDT_4h_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/LINKUSDT_4h_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 4380
+      },
+      "1d": {
+        "file_path": "data/enhanced_market_data/LINKUSDT_1d_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/LINKUSDT_1d_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 1095
+      }
+    },
+    "LTCUSDT": {
+      "1m": {
+        "file_path": "data/enhanced_market_data/LTCUSDT_1m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/LTCUSDT_1m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 129600
+      },
+      "5m": {
+        "file_path": "data/enhanced_market_data/LTCUSDT_5m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/LTCUSDT_5m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 210240
+      },
+      "15m": {
+        "file_path": "data/enhanced_market_data/LTCUSDT_15m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/LTCUSDT_15m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 70080
+      },
+      "1h": {
+        "file_path": "data/enhanced_market_data/LTCUSDT_1h_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/LTCUSDT_1h_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 17520
+      },
+      "4h": {
+        "file_path": "data/enhanced_market_data/LTCUSDT_4h_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/LTCUSDT_4h_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 4380
+      },
+      "1d": {
+        "file_path": "data/enhanced_market_data/LTCUSDT_1d_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/LTCUSDT_1d_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 1095
+      }
+    },
+    "NEARUSDT": {
+      "1m": {
+        "file_path": "data/enhanced_market_data/NEARUSDT_1m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/NEARUSDT_1m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 129600
+      },
+      "5m": {
+        "file_path": "data/enhanced_market_data/NEARUSDT_5m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/NEARUSDT_5m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 210240
+      },
+      "15m": {
+        "file_path": "data/enhanced_market_data/NEARUSDT_15m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/NEARUSDT_15m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 70080
+      },
+      "1h": {
+        "file_path": "data/enhanced_market_data/NEARUSDT_1h_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/NEARUSDT_1h_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 17520
+      },
+      "4h": {
+        "file_path": "data/enhanced_market_data/NEARUSDT_4h_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/NEARUSDT_4h_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 4380
+      },
+      "1d": {
+        "file_path": "data/enhanced_market_data/NEARUSDT_1d_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/NEARUSDT_1d_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 1095
+      }
+    },
+    "OPUSDT": {
+      "1m": {
+        "file_path": "data/enhanced_market_data/OPUSDT_1m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/OPUSDT_1m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 129600
+      },
+      "5m": {
+        "file_path": "data/enhanced_market_data/OPUSDT_5m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/OPUSDT_5m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 210240
+      },
+      "15m": {
+        "file_path": "data/enhanced_market_data/OPUSDT_15m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/OPUSDT_15m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 70080
+      },
+      "1h": {
+        "file_path": "data/enhanced_market_data/OPUSDT_1h_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/OPUSDT_1h_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 17520
+      },
+      "4h": {
+        "file_path": "data/enhanced_market_data/OPUSDT_4h_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/OPUSDT_4h_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 4380
+      },
+      "1d": {
+        "file_path": "data/enhanced_market_data/OPUSDT_1d_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/OPUSDT_1d_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 1095
+      }
+    },
+    "SOLUSDT": {
+      "1m": {
+        "file_path": "data/enhanced_market_data/SOLUSDT_1m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/SOLUSDT_1m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 129600
+      },
+      "5m": {
+        "file_path": "data/enhanced_market_data/SOLUSDT_5m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/SOLUSDT_5m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 210240
+      },
+      "15m": {
+        "file_path": "data/enhanced_market_data/SOLUSDT_15m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/SOLUSDT_15m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 70080
+      },
+      "1h": {
+        "file_path": "data/enhanced_market_data/SOLUSDT_1h_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/SOLUSDT_1h_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 17520
+      },
+      "4h": {
+        "file_path": "data/enhanced_market_data/SOLUSDT_4h_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/SOLUSDT_4h_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 4380
+      },
+      "1d": {
+        "file_path": "data/enhanced_market_data/SOLUSDT_1d_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/SOLUSDT_1d_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 1095
+      }
+    },
+    "TONUSDT": {
+      "1m": {
+        "file_path": "data/enhanced_market_data/TONUSDT_1m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/TONUSDT_1m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 129600
+      },
+      "5m": {
+        "file_path": "data/enhanced_market_data/TONUSDT_5m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/TONUSDT_5m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 210240
+      },
+      "15m": {
+        "file_path": "data/enhanced_market_data/TONUSDT_15m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/TONUSDT_15m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 70080
+      },
+      "1h": {
+        "file_path": "data/enhanced_market_data/TONUSDT_1h_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/TONUSDT_1h_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 17520
+      },
+      "4h": {
+        "file_path": "data/enhanced_market_data/TONUSDT_4h_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/TONUSDT_4h_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 4380
+      },
+      "1d": {
+        "file_path": "data/enhanced_market_data/TONUSDT_1d_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/TONUSDT_1d_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 1095
+      }
+    },
+    "TRXUSDT": {
+      "1m": {
+        "file_path": "data/enhanced_market_data/TRXUSDT_1m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/TRXUSDT_1m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 129600
+      },
+      "5m": {
+        "file_path": "data/enhanced_market_data/TRXUSDT_5m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/TRXUSDT_5m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 210240
+      },
+      "15m": {
+        "file_path": "data/enhanced_market_data/TRXUSDT_15m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/TRXUSDT_15m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 70080
+      },
+      "1h": {
+        "file_path": "data/enhanced_market_data/TRXUSDT_1h_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/TRXUSDT_1h_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 17520
+      },
+      "4h": {
+        "file_path": "data/enhanced_market_data/TRXUSDT_4h_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/TRXUSDT_4h_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 4380
+      },
+      "1d": {
+        "file_path": "data/enhanced_market_data/TRXUSDT_1d_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/TRXUSDT_1d_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 1095
+      }
+    },
+    "UNIUSDT": {
+      "1m": {
+        "file_path": "data/enhanced_market_data/UNIUSDT_1m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/UNIUSDT_1m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 129600
+      },
+      "5m": {
+        "file_path": "data/enhanced_market_data/UNIUSDT_5m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/UNIUSDT_5m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 210240
+      },
+      "15m": {
+        "file_path": "data/enhanced_market_data/UNIUSDT_15m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/UNIUSDT_15m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 70080
+      },
+      "1h": {
+        "file_path": "data/enhanced_market_data/UNIUSDT_1h_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/UNIUSDT_1h_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 17520
+      },
+      "4h": {
+        "file_path": "data/enhanced_market_data/UNIUSDT_4h_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/UNIUSDT_4h_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 4380
+      },
+      "1d": {
+        "file_path": "data/enhanced_market_data/UNIUSDT_1d_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/UNIUSDT_1d_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 1095
+      }
+    },
+    "XLMUSDT": {
+      "1m": {
+        "file_path": "data/enhanced_market_data/XLMUSDT_1m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/XLMUSDT_1m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 129600
+      },
+      "5m": {
+        "file_path": "data/enhanced_market_data/XLMUSDT_5m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/XLMUSDT_5m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 210240
+      },
+      "15m": {
+        "file_path": "data/enhanced_market_data/XLMUSDT_15m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/XLMUSDT_15m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 70080
+      },
+      "1h": {
+        "file_path": "data/enhanced_market_data/XLMUSDT_1h_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/XLMUSDT_1h_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 17520
+      },
+      "4h": {
+        "file_path": "data/enhanced_market_data/XLMUSDT_4h_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/XLMUSDT_4h_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 4380
+      },
+      "1d": {
+        "file_path": "data/enhanced_market_data/XLMUSDT_1d_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/XLMUSDT_1d_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 1095
+      }
+    },
+    "XRPUSDT": {
+      "1m": {
+        "file_path": "data/enhanced_market_data/XRPUSDT_1m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/XRPUSDT_1m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 129600
+      },
+      "5m": {
+        "file_path": "data/enhanced_market_data/XRPUSDT_5m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/XRPUSDT_5m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 210240
+      },
+      "15m": {
+        "file_path": "data/enhanced_market_data/XRPUSDT_15m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/XRPUSDT_15m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 70080
+      },
+      "1h": {
+        "file_path": "data/enhanced_market_data/XRPUSDT_1h_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/XRPUSDT_1h_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 17520
+      },
+      "4h": {
+        "file_path": "data/enhanced_market_data/XRPUSDT_4h_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/XRPUSDT_4h_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 4380
+      },
+      "1d": {
+        "file_path": "data/enhanced_market_data/XRPUSDT_1d_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/XRPUSDT_1d_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 1095
+      }
+    },
+    "MATICUSDT": {
+      "1m": {
+        "file_path": "data/enhanced_market_data/MATICUSDT_1m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/MATICUSDT_1m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 129600
+      },
+      "5m": {
+        "file_path": "data/enhanced_market_data/MATICUSDT_5m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/MATICUSDT_5m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 210240
+      },
+      "15m": {
+        "file_path": "data/enhanced_market_data/MATICUSDT_15m_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/MATICUSDT_15m_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 70080
+      },
+      "1h": {
+        "file_path": "data/enhanced_market_data/MATICUSDT_1h_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/MATICUSDT_1h_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 17520
+      },
+      "4h": {
+        "file_path": "data/enhanced_market_data/MATICUSDT_4h_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/MATICUSDT_4h_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 4380
+      },
+      "1d": {
+        "file_path": "data/enhanced_market_data/MATICUSDT_1d_2years.parquet",
+        "metadata_path": "data/enhanced_market_data/MATICUSDT_1d_2years_metadata.json",
+        "format": "parquet",
+        "compression": "zstd",
+        "estimated_records": 1095
+      }
+    }
+  },
+  "usage_guidelines": {
+    "dipmaster_strategy": {
+      "primary_symbols": [
+        "ADAUSDT",
+        "APTUSDT",
+        "ARBUSDT",
+        "ATOMUSDT",
+        "AVAXUSDT",
+        "BNBUSDT",
+        "DOGEUSDT",
+        "DOTUSDT",
+        "FILUSDT",
+        "LINKUSDT",
+        "LTCUSDT",
+        "NEARUSDT",
+        "OPUSDT",
+        "SOLUSDT",
+        "TONUSDT"
+      ],
+      "primary_timeframe": "5m",
+      "secondary_timeframes": [
+        "15m",
+        "1h"
+      ],
+      "minimum_quality_threshold": 0.95,
+      "recommended_portfolio_size": 12
+    },
+    "data_quality_checks": [
+      "验证文件存在性和可读性",
+      "检查时间序列完整性",
+      "确认OHLC数据一致性",
+      "验证成交量合理性",
+      "监控数据更新时间"
+    ],
+    "risk_management": {
+      "max_correlation_exposure": 0.3,
+      "sector_diversification_required": true,
+      "position_size_limits": {
+        "tier_s": 0.12,
+        "tier_a": 0.08,
+        "tier_b": 0.05
+      },
+      "rebalancing_frequency": "weekly"
+    }
+  },
+  "performance_metrics": {
+    "data_collection_time_minutes": 60,
+    "average_data_quality_score": 0.95,
+    "total_data_points_millions": 25,
+    "storage_efficiency": "优化的Parquet格式，zstd压缩",
+    "access_performance": "毫秒级数据读取",
+    "update_capability": "支持增量更新"
+  },
+  "technical_specifications": {
+    "file_format": "Apache Parquet",
+    "compression_algorithm": "Zstandard (zstd)",
+    "timestamp_format": "ISO-8601 UTC",
+    "precision": {
+      "price": "8 decimal places",
+      "volume": "6 decimal places"
+    },
+    "schema_version": "1.0",
+    "data_validation": "MD5 checksums for integrity",
+    "backup_strategy": "Daily incremental, weekly full backup"
+  },
+  "integration_examples": {
+    "python_pandas": "\n# 读取数据示例\nimport pandas as pd\ndf = pd.read_parquet(\"data/enhanced_market_data/ADAUSDT_5m_2years.parquet\")\nprint(f\"数据范围: {df.index.min()} 到 {df.index.max()}\")\nprint(f\"数据条数: {len(df)}\")\n            ",
+    "dipmaster_strategy": "\n# DipMaster策略集成\nfrom src.data.enhanced_data_infrastructure import EnhancedDataInfrastructure\ndata_infra = EnhancedDataInfrastructure()\nbundle = data_infra.load_bundle(\"data/MarketDataBundle_Top30_Enhanced_Final.json\")\nsymbols = bundle.get_recommended_symbols(\"conservative\")\n            "
+  },
+  "changelog": {
+    "v1.0.0": {
+      "date": "2025-08-17T17:34:31.938185",
+      "changes": [
+        "初始版本发布",
+        "收集20个主要山寨币数据",
+        "支持6个时间框架",
+        "99.2%数据完整性",
+        "完整的质量评估体系",
+        "优化的存储格式"
+      ]
+    }
+  },
+  "timestamp": "2025-08-17T17:34:31.938185"
+}

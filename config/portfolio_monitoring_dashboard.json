@@ -1,0 +1,305 @@
+{
+  "dashboard_config": {
+    "name": "DipMaster Portfolio Risk Monitor V5",
+    "version": "5.0.0",
+    "refresh_interval_seconds": 30,
+    "alert_sound_enabled": true,
+    "theme": "dark"
+  },
+  
+  "real_time_metrics": {
+    "portfolio_pnl": {
+      "display_name": "Portfolio PnL",
+      "unit": "USD",
+      "precision": 2,
+      "chart_type": "line",
+      "timeframe": "1d",
+      "alert_thresholds": {
+        "warning": -200,
+        "critical": -500
+      }
+    },
+    "portfolio_volatility": {
+      "display_name": "Realized Volatility (30min)",
+      "unit": "%",
+      "precision": 1,
+      "chart_type": "gauge",
+      "target_value": 8.0,
+      "alert_thresholds": {
+        "warning": 12.0,
+        "critical": 15.0
+      }
+    },
+    "beta_exposure": {
+      "display_name": "Market Beta",
+      "unit": "",
+      "precision": 3,
+      "chart_type": "gauge",
+      "target_value": 0.0,
+      "alert_thresholds": {
+        "warning": 0.05,
+        "critical": 0.08
+      }
+    },
+    "current_leverage": {
+      "display_name": "Gross Leverage",
+      "unit": "x",
+      "precision": 2,
+      "chart_type": "bar",
+      "max_value": 3.0,
+      "alert_thresholds": {
+        "warning": 2.5,
+        "critical": 2.8
+      }
+    },
+    "var_95": {
+      "display_name": "Daily VaR (95%)",
+      "unit": "%",
+      "precision": 1,
+      "chart_type": "line",
+      "alert_thresholds": {
+        "warning": 2.0,
+        "critical": 2.5
+      }
+    },
+    "expected_shortfall": {
+      "display_name": "Expected Shortfall (95%)",
+      "unit": "%",
+      "precision": 1,
+      "chart_type": "line",
+      "alert_thresholds": {
+        "warning": 2.5,
+        "critical": 3.0
+      }
+    }
+  },
+  
+  "position_monitoring": {
+    "individual_positions": {
+      "display_columns": [
+        "symbol",
+        "weight_pct",
+        "usd_size",
+        "pnl_realtime",
+        "kelly_fraction",
+        "tier",
+        "status"
+      ],
+      "sort_by": "weight_pct",
+      "sort_order": "desc"
+    },
+    "position_alerts": {
+      "max_weight_breach": 0.27,
+      "kelly_deviation_threshold": 0.1,
+      "position_pnl_warning": -0.05,
+      "position_pnl_critical": -0.08
+    }
+  },
+  
+  "correlation_monitoring": {
+    "correlation_matrix": {
+      "update_frequency": "5min",
+      "display_type": "heatmap",
+      "color_scheme": "red_blue",
+      "alert_threshold": 0.8
+    },
+    "rolling_correlation": {
+      "window_size": 60,
+      "chart_type": "line",
+      "symbols_to_track": ["BTCUSDT", "ETHUSDT", "SOLUSDT"]
+    }
+  },
+  
+  "stress_test_monitoring": {
+    "real_time_scenarios": [
+      {
+        "name": "BTC Flash Crash (-20%)",
+        "market_shock": -0.20,
+        "correlation_spike": 0.85,
+        "alert_if_loss_exceeds": -0.12
+      },
+      {
+        "name": "Market Correlation Spike (0.9+)",
+        "correlation_threshold": 0.9,
+        "alert_if_triggered": true
+      },
+      {
+        "name": "Volatility Regime Change (3x)",
+        "volatility_multiplier": 3.0,
+        "alert_if_vol_exceeds": 0.25
+      }
+    ],
+    "scenario_update_frequency": "1min"
+  },
+  
+  "kelly_fraction_monitoring": {
+    "real_time_kelly": {
+      "lookback_window": 50,
+      "update_frequency": "15min",
+      "chart_type": "line_per_symbol",
+      "alert_thresholds": {
+        "kelly_too_high": 0.3,
+        "kelly_negative": 0.0
+      }
+    },
+    "kelly_vs_actual": {
+      "display_type": "scatter_plot",
+      "ideal_line": true,
+      "deviation_threshold": 0.1
+    }
+  },
+  
+  "venue_allocation_monitoring": {
+    "exchange_exposure": {
+      "binance": {
+        "target_allocation": 0.50,
+        "max_allocation": 0.60,
+        "current_exposure": 0.0
+      },
+      "okx": {
+        "target_allocation": 0.30,
+        "max_allocation": 0.40,
+        "current_exposure": 0.0
+      },
+      "bybit": {
+        "target_allocation": 0.20,
+        "max_allocation": 0.30,
+        "current_exposure": 0.0
+      }
+    },
+    "rebalancing_triggers": {
+      "allocation_deviation_threshold": 0.1,
+      "auto_rebalance_enabled": false
+    }
+  },
+  
+  "performance_tracking": {
+    "sharpe_ratio_rolling": {
+      "window_size": "30d",
+      "target_value": 2.0,
+      "chart_type": "line",
+      "alert_if_below": 1.5
+    },
+    "win_rate_tracking": {
+      "window_size": 50,
+      "target_value": 0.85,
+      "chart_type": "line",
+      "alert_if_below": 0.75
+    },
+    "drawdown_monitoring": {
+      "current_drawdown": 0.0,
+      "max_drawdown_30d": 0.0,
+      "chart_type": "area",
+      "alert_thresholds": {
+        "warning": 0.02,
+        "critical": 0.025
+      }
+    }
+  },
+  
+  "alerts_configuration": {
+    "alert_channels": [
+      {
+        "type": "dashboard_popup",
+        "enabled": true,
+        "priority_filter": ["critical", "warning"]
+      },
+      {
+        "type": "email",
+        "enabled": false,
+        "recipients": ["trader@dipmaster.com"],
+        "priority_filter": ["critical"]
+      },
+      {
+        "type": "webhook",
+        "enabled": false,
+        "url": "https://hooks.slack.com/services/...",
+        "priority_filter": ["critical", "warning"]
+      }
+    ],
+    "alert_cooldown_minutes": 5,
+    "auto_resolve_alerts": true
+  },
+  
+  "data_sources": {
+    "market_data": {
+      "websocket_endpoints": [
+        "wss://stream.binance.com:9443/ws/!ticker@arr",
+        "wss://ws.okx.com:8443/ws/v5/public"
+      ],
+      "http_fallback": true
+    },
+    "portfolio_data": {
+      "source": "local_database",
+      "update_frequency": "real_time"
+    },
+    "risk_calculations": {
+      "calculation_frequency": "1min",
+      "historical_data_required": "90d"
+    }
+  },
+  
+  "dashboard_layout": {
+    "sections": [
+      {
+        "name": "Portfolio Overview",
+        "widgets": [
+          "portfolio_pnl",
+          "current_leverage", 
+          "portfolio_volatility",
+          "beta_exposure"
+        ],
+        "grid_size": "2x2"
+      },
+      {
+        "name": "Risk Metrics",
+        "widgets": [
+          "var_95",
+          "expected_shortfall",
+          "drawdown_monitoring",
+          "sharpe_ratio_rolling"
+        ],
+        "grid_size": "2x2"
+      },
+      {
+        "name": "Position Details",
+        "widgets": [
+          "individual_positions",
+          "kelly_vs_actual"
+        ],
+        "grid_size": "2x1"
+      },
+      {
+        "name": "Market Analysis",
+        "widgets": [
+          "correlation_matrix",
+          "rolling_correlation"
+        ],
+        "grid_size": "1x2"
+      },
+      {
+        "name": "Stress Testing",
+        "widgets": [
+          "real_time_scenarios"
+        ],
+        "grid_size": "1x1"
+      }
+    ]
+  },
+  
+  "export_settings": {
+    "daily_reports": {
+      "enabled": true,
+      "time": "18:00",
+      "format": "pdf",
+      "recipients": ["risk@dipmaster.com"]
+    },
+    "weekly_analysis": {
+      "enabled": true,
+      "day": "sunday",
+      "time": "20:00",
+      "format": "excel",
+      "include_charts": true
+    }
+  }
+}

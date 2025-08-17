@@ -1,0 +1,47 @@
+{
+  "symbol": "ICPUSDT",
+  "timeframe": "15m",
+  "records_count": 70080,
+  "data_quality": {
+    "quality_score": 0.9511354816690822,
+    "records_count": 70080,
+    "date_range": {
+      "start": "2023-08-18T09:45:00",
+      "end": "2025-08-17T09:30:00"
+    },
+    "download_time_seconds": 20.987038373947144,
+    "retry_count": 0
+  },
+  "date_range": {
+    "start": "2023-08-18T09:45:00",
+    "end": "2025-08-17T09:30:00",
+    "span_days": 729
+  },
+  "file_info": {
+    "file_size_mb": 1.7911434173583984,
+    "compression": "zstd",
+    "format": "parquet"
+  },
+  "statistics": {
+    "price_range": {
+      "min": 2.827,
+      "max": 20.985,
+      "avg": 8.25119457762557
+    },
+    "volume_stats": {
+      "total": 2051035491.2399998,
+      "avg": 29267.058950342464,
+      "max": 1595429.79
+    }
+  },
+  "created_at": "2025-08-17T17:35:02.352592",
+  "collection_config": {
+    "lookback_days": 730,
+    "batch_size": 1000,
+    "rate_limit_delay": 0.05,
+    "retry_attempts": 5,
+    "timeout_seconds": 45,
+    "parallel_symbols": 5,
+    "max_workers": 10
+  }
+}

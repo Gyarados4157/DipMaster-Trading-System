@@ -1,0 +1,47 @@
+{
+  "symbol": "OPUSDT",
+  "timeframe": "1d",
+  "records_count": 1095,
+  "data_quality": {
+    "quality_score": 0.9992694063926942,
+    "records_count": 1095,
+    "date_range": {
+      "start": "2022-08-19T00:00:00",
+      "end": "2025-08-17T00:00:00"
+    },
+    "download_time_seconds": 1.3794615268707275,
+    "retry_count": 0
+  },
+  "date_range": {
+    "start": "2022-08-19T00:00:00",
+    "end": "2025-08-17T00:00:00",
+    "span_days": 1094
+  },
+  "file_info": {
+    "file_size_mb": 0.03700065612792969,
+    "compression": "zstd",
+    "format": "parquet"
+  },
+  "statistics": {
+    "price_range": {
+      "min": 0.457,
+      "max": 4.865,
+      "avg": 1.7156566210045663
+    },
+    "volume_stats": {
+      "total": 27397521933.39,
+      "avg": 25020567.97569863,
+      "max": 214352400.49
+    }
+  },
+  "created_at": "2025-08-17T17:33:00.800592",
+  "collection_config": {
+    "lookback_days": 730,
+    "batch_size": 1000,
+    "rate_limit_delay": 0.05,
+    "retry_attempts": 5,
+    "timeout_seconds": 45,
+    "parallel_symbols": 5,
+    "max_workers": 10
+  }
+}

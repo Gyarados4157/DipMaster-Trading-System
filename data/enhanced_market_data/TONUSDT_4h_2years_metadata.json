@@ -1,0 +1,47 @@
+{
+  "symbol": "TONUSDT",
+  "timeframe": "4h",
+  "records_count": 2245,
+  "data_quality": {
+    "quality_score": 0.9015760034983881,
+    "records_count": 2245,
+    "date_range": {
+      "start": "2024-08-08T08:00:00",
+      "end": "2025-08-17T08:00:00"
+    },
+    "download_time_seconds": 2.3684120178222656,
+    "retry_count": 0
+  },
+  "date_range": {
+    "start": "2024-08-08T08:00:00",
+    "end": "2025-08-17T08:00:00",
+    "span_days": 374
+  },
+  "file_info": {
+    "file_size_mb": 0.06883525848388672,
+    "compression": "zstd",
+    "format": "parquet"
+  },
+  "statistics": {
+    "price_range": {
+      "min": 2.354,
+      "max": 7.269,
+      "avg": 4.361945211581292
+    },
+    "volume_stats": {
+      "total": 3093816748.5,
+      "avg": 1378092.0928730513,
+      "max": 33451389.06
+    }
+  },
+  "created_at": "2025-08-17T17:31:08.691624",
+  "collection_config": {
+    "lookback_days": 730,
+    "batch_size": 1000,
+    "rate_limit_delay": 0.05,
+    "retry_attempts": 5,
+    "timeout_seconds": 45,
+    "parallel_symbols": 5,
+    "max_workers": 10
+  }
+}

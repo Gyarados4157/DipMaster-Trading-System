@@ -1,0 +1,484 @@
+{
+  "optimization_spec_name": "DipMaster_Top30_Strategy_Optimization",
+  "version": "1.0.0",
+  "description": "大规模30币种DipMaster策略测试和优化框架",
+  "created_date": "2025-08-17",
+  "optimization_objective": "构建高胜率多币种DipMaster策略组合，目标Sharpe>2.0",
+
+  "universe_expansion": {
+    "current_symbols": 25,
+    "target_symbols": 30,
+    "expansion_candidates": [
+      "SHIBUSDT", "DOGEUSDT", "TONUSDT", "PEPEUSDT", "INJUSDT"
+    ],
+    "data_requirements": {
+      "timeframes": ["5m", "15m", "1h"],
+      "historical_period": "90_days",
+      "data_quality_threshold": 0.98
+    }
+  },
+
+  "performance_evaluation_framework": {
+    "primary_metrics": {
+      "win_rate": {
+        "target": ">75%",
+        "excellent": ">80%",
+        "weight": 0.25
+      },
+      "sharpe_ratio": {
+        "target": ">1.5", 
+        "excellent": ">2.0",
+        "weight": 0.20
+      },
+      "max_drawdown": {
+        "target": "<10%",
+        "excellent": "<5%", 
+        "weight": 0.20
+      },
+      "profit_factor": {
+        "target": ">1.2",
+        "excellent": ">1.8",
+        "weight": 0.15
+      }
+    },
+    "secondary_metrics": {
+      "annual_return": {
+        "target": ">30%",
+        "excellent": ">50%",
+        "weight": 0.10
+      },
+      "calmar_ratio": {
+        "target": ">1.0",
+        "excellent": ">2.0", 
+        "weight": 0.10
+      }
+    },
+    "dipmaster_specific_metrics": {
+      "dip_buying_rate": {
+        "target": ">80%",
+        "description": "逢跌买入执行率",
+        "weight": 0.15
+      },
+      "boundary_compliance": {
+        "target": "100%",
+        "description": "15分钟边界合规率",
+        "weight": 0.10
+      },
+      "avg_holding_minutes": {
+        "optimal_range": [45, 120],
+        "description": "平均持仓时间",
+        "weight": 0.05
+      }
+    },
+    "utility_metrics": {
+      "daily_trade_frequency": {
+        "optimal_range": [3, 8],
+        "description": "日均交易次数"
+      },
+      "slippage_estimate": {
+        "target": "<0.05%",
+        "description": "预估滑点成本"
+      }
+    }
+  },
+
+  "symbol_tier_classification": {
+    "tier_s_criteria": {
+      "description": "核心持仓币种，最高权重配置",
+      "requirements": {
+        "composite_score": ">0.80",
+        "win_rate": ">80%",
+        "sharpe_ratio": ">2.0", 
+        "max_drawdown": "<5%",
+        "liquidity_tier": "high"
+      },
+      "target_count": 3,
+      "max_weight_per_symbol": 0.20,
+      "total_allocation": 0.50
+    },
+    "tier_a_criteria": {
+      "description": "主要配置币种，标准权重",
+      "requirements": {
+        "composite_score": ">0.65",
+        "win_rate": ">75%",
+        "sharpe_ratio": ">1.5",
+        "max_drawdown": "<8%"
+      },
+      "target_count": 7,
+      "max_weight_per_symbol": 0.10,
+      "total_allocation": 0.35
+    },
+    "tier_b_criteria": {
+      "description": "备用币种，小权重或轮换策略",
+      "requirements": {
+        "composite_score": ">0.50",
+        "win_rate": ">70%",
+        "max_drawdown": "<12%"
+      },
+      "target_count": 10,
+      "max_weight_per_symbol": 0.05,
+      "total_allocation": 0.15
+    },
+    "tier_c_criteria": {
+      "description": "监控池，暂不配置",
+      "requirements": {
+        "composite_score": "<0.50"
+      },
+      "allocation": 0.0
+    }
+  },
+
+  "parameter_optimization_grid": {
+    "rsi_parameters": {
+      "entry_range_combinations": [
+        [25, 45], [30, 50], [35, 55], [20, 40], [28, 48]
+      ],
+      "optimization_method": "grid_search",
+      "validation_method": "purged_cv"
+    },
+    "time_parameters": {
+      "max_holding_minutes": [120, 150, 180, 210, 240],
+      "boundary_windows": [
+        [15, 30, 45, 60],
+        [20, 35, 50, 65], 
+        [25, 40, 55, 70]
+      ],
+      "min_holding_minutes": [10, 15, 20]
+    },
+    "volume_parameters": {
+      "volume_spike_threshold": [1.5, 1.8, 2.0, 2.5, 3.0],
+      "volume_ma_period": [10, 15, 20, 25, 30]
+    },
+    "profit_loss_parameters": {
+      "profit_targets": [
+        [0.6, 1.2, 2.0, 3.5],
+        [0.8, 1.5, 2.5, 4.0],
+        [1.0, 1.8, 3.0, 4.5]
+      ],
+      "stop_loss_levels": [0.003, 0.004, 0.005, 0.006],
+      "trailing_activation": [0.006, 0.008, 0.010, 0.012]
+    },
+    "symbol_specific_optimization": {
+      "btc_eth_sol": {
+        "description": "主流币种专用参数",
+        "volatility_adjustment": 0.8
+      },
+      "altcoins": {
+        "description": "山寨币种专用参数", 
+        "volatility_adjustment": 1.2
+      },
+      "meme_tokens": {
+        "description": "Meme币种专用参数",
+        "volatility_adjustment": 1.5
+      }
+    }
+  },
+
+  "portfolio_optimization_framework": {
+    "allocation_methods": {
+      "equal_weight": {
+        "description": "等权重配置基准",
+        "weight": 0.25
+      },
+      "kelly_criterion": {
+        "description": "凯利准则最优化",
+        "lookback_trades": 100,
+        "max_kelly_fraction": 0.25,
+        "weight": 0.30
+      },
+      "risk_parity": {
+        "description": "风险平价配置",
+        "target_volatility": 0.08,
+        "weight": 0.25
+      },
+      "momentum_weighted": {
+        "description": "动量加权配置",
+        "lookback_days": 30,
+        "weight": 0.20
+      }
+    },
+    "correlation_management": {
+      "max_correlation_threshold": 0.7,
+      "correlation_penalty_factor": 0.5,
+      "diversification_target": 0.8
+    },
+    "rebalancing_strategy": {
+      "frequency": "weekly",
+      "threshold_based": {
+        "min_deviation": 0.05,
+        "max_deviation": 0.15
+      },
+      "performance_based": {
+        "underperformance_threshold": 7,
+        "rotation_cooldown_days": 14
+      }
+    },
+    "ensemble_construction": {
+      "method": "weighted_average",
+      "weights": {
+        "performance_score": 0.40,
+        "risk_adjusted_return": 0.30,
+        "recent_performance": 0.30
+      }
+    }
+  },
+
+  "implementation_roadmap": {
+    "phase_1_data_expansion": {
+      "duration": "3_days",
+      "description": "扩展币种数据到Top30",
+      "deliverables": [
+        "下载5个新币种90天数据",
+        "数据质量验证和清洗",
+        "更新MarketDataBundle配置"
+      ],
+      "acceptance_criteria": [
+        "30个币种数据完整性>98%",
+        "新增币种通过质量检测",
+        "数据管道无错误运行"
+      ]
+    },
+    "phase_2_single_symbol_optimization": {
+      "duration": "7_days", 
+      "description": "30币种单独回测和参数优化",
+      "deliverables": [
+        "每个币种独立参数优化",
+        "性能指标计算和排名",
+        "最优参数组合确定"
+      ],
+      "acceptance_criteria": [
+        "完成30个币种回测",
+        "确定每币种最优参数",
+        "生成综合性能报告"
+      ],
+      "parallel_execution": {
+        "batch_size": 6,
+        "estimated_time_per_symbol": "2_hours"
+      }
+    },
+    "phase_3_tier_classification": {
+      "duration": "2_days",
+      "description": "币种分级和权重分配",
+      "deliverables": [
+        "基于综合评分的分级结果",
+        "各层级权重分配方案",
+        "动态调整机制设计"
+      ],
+      "acceptance_criteria": [
+        "Tier S/A/B分级明确",
+        "权重分配符合风险约束",
+        "分级合理性验证通过"
+      ]
+    },
+    "phase_4_portfolio_construction": {
+      "duration": "5_days",
+      "description": "多币种组合构建和验证",
+      "deliverables": [
+        "4种权重分配方法实现",
+        "相关性管理机制",
+        "组合回测和验证"
+      ],
+      "acceptance_criteria": [
+        "组合Sharpe比率>1.8",
+        "最大回撤<8%",
+        "相关性风险可控"
+      ]
+    },
+    "phase_5_stress_testing": {
+      "duration": "4_days",
+      "description": "压力测试和鲁棒性验证",
+      "deliverables": [
+        "多种市场环境压力测试",
+        "蒙特卡洛模拟验证",
+        "过拟合风险评估"
+      ],
+      "acceptance_criteria": [
+        "压力测试表现稳定",
+        "过拟合检测通过",
+        "鲁棒性指标达标"
+      ]
+    },
+    "phase_6_production_deployment": {
+      "duration": "3_days",
+      "description": "生产环境部署和监控",
+      "deliverables": [
+        "最终策略配置确定",
+        "实时监控系统部署", 
+        "纸面交易验证"
+      ],
+      "acceptance_criteria": [
+        "策略配置无错误",
+        "监控系统功能完整",
+        "纸面交易正常运行"
+      ]
+    }
+  },
+
+  "validation_framework": {
+    "statistical_validation": {
+      "sample_size_requirement": {
+        "min_trades_per_symbol": 50,
+        "total_trades_requirement": 1500,
+        "significance_level": 0.05
+      },
+      "cross_validation": {
+        "method": "purged_time_series_cv",
+        "n_splits": 5,
+        "gap_days": 7,
+        "test_size": 0.2
+      }
+    },
+    "robustness_testing": {
+      "walk_forward_analysis": {
+        "window_length": "60_days",
+        "step_size": "14_days", 
+        "total_periods": 12
+      },
+      "monte_carlo_simulation": {
+        "iterations": 1000,
+        "bootstrap_samples": true,
+        "confidence_intervals": [0.05, 0.95]
+      },
+      "stress_scenarios": [
+        "crypto_winter_2022",
+        "luna_collapse_volatility",
+        "ftx_crash_liquidity",
+        "macro_recession_correlation",
+        "extreme_volatility_regime"
+      ]
+    },
+    "overfitting_detection": {
+      "methods": [
+        "information_coefficient_stability",
+        "parameter_sensitivity_analysis", 
+        "out_of_sample_degradation",
+        "complexity_penalty_scoring"
+      ],
+      "thresholds": {
+        "max_parameter_sensitivity": 0.20,
+        "min_oos_performance_ratio": 0.75,
+        "max_complexity_score": 0.60
+      }
+    }
+  },
+
+  "risk_management_integration": {
+    "position_level_controls": {
+      "max_risk_per_trade": 0.005,
+      "volatility_based_sizing": true,
+      "correlation_adjusted_sizing": true
+    },
+    "portfolio_level_controls": {
+      "max_portfolio_volatility": 0.12,
+      "max_correlation_exposure": 0.6,
+      "concentration_limits": {
+        "single_position": 0.20,
+        "sector_concentration": 0.40
+      }
+    },
+    "dynamic_risk_adjustment": {
+      "volatility_regime_detection": true,
+      "correlation_spike_protection": true,
+      "drawdown_based_scaling": true
+    }
+  },
+
+  "monitoring_and_alerting": {
+    "performance_monitoring": {
+      "real_time_metrics": [
+        "rolling_sharpe_30d",
+        "current_drawdown",
+        "win_rate_rolling_50", 
+        "portfolio_correlation_max",
+        "volatility_regime_indicator"
+      ],
+      "alert_thresholds": {
+        "sharpe_degradation": "<1.0_for_7_days",
+        "drawdown_warning": ">5%",
+        "win_rate_decline": "<70%_for_50_trades",
+        "correlation_spike": ">0.8_any_pair"
+      }
+    },
+    "adaptation_triggers": {
+      "parameter_reoptimization": [
+        "performance_degradation_7_days",
+        "market_regime_change_detected",
+        "correlation_structure_breakdown"
+      ],
+      "portfolio_rebalancing": [
+        "tier_performance_divergence",
+        "weight_deviation_threshold",
+        "new_symbol_inclusion_signal"
+      ]
+    }
+  },
+
+  "technology_infrastructure": {
+    "execution_requirements": {
+      "parallel_processing": {
+        "max_concurrent_optimizations": 6,
+        "memory_requirement": "16GB",
+        "cpu_cores": 8
+      },
+      "data_pipeline": {
+        "real_time_capability": true,
+        "historical_data_depth": "2_years",
+        "update_frequency": "5_minutes"
+      }
+    },
+    "scalability_design": {
+      "modular_architecture": true,
+      "cloud_deployment_ready": true,
+      "horizontal_scaling_support": true
+    }
+  },
+
+  "success_criteria": {
+    "phase_gates": {
+      "data_expansion_gate": {
+        "criteria": "30_symbols_data_quality_>98%",
+        "blocker_threshold": "data_completeness_<95%"
+      },
+      "optimization_gate": {
+        "criteria": "avg_sharpe_ratio_>1.5_across_symbols",
+        "blocker_threshold": "sharpe_ratio_<1.0_for_>50%_symbols"
+      },
+      "portfolio_gate": {
+        "criteria": "portfolio_sharpe_>1.8_and_dd_<8%",
+        "blocker_threshold": "portfolio_sharpe_<1.2_or_dd_>12%"
+      },
+      "validation_gate": {
+        "criteria": "overfitting_score_<0.6_and_oos_ratio_>0.75",
+        "blocker_threshold": "overfitting_detected_or_oos_ratio_<0.60"
+      },
+      "deployment_gate": {
+        "criteria": "paper_trading_success_7_days",
+        "blocker_threshold": "paper_trading_failure_>3_days"
+      }
+    },
+    "overall_targets": {
+      "portfolio_sharpe_ratio": ">2.0",
+      "portfolio_max_drawdown": "<6%",
+      "avg_symbol_win_rate": ">78%",
+      "diversification_ratio": ">0.8",
+      "implementation_timeline": "<24_days"
+    }
+  },
+
+  "contingency_plans": {
+    "data_quality_issues": {
+      "fallback_symbols": ["ICPUSDT", "ALGOUSDT", "SUIUSDT"],
+      "minimum_viable_universe": 25
+    },
+    "performance_underachievement": {
+      "parameter_expansion_strategy": true,
+      "ensemble_method_backup": true,
+      "tier_criteria_relaxation": "conditional"
+    },
+    "technical_bottlenecks": {
+      "cloud_computing_escalation": true,
+      "simplified_optimization_path": true,
+      "staged_rollout_option": true
+    }
+  }
+}

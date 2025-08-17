@@ -107,13 +107,17 @@ export function useApiClient() {
 // ============ Data Fetching Hooks ============
 
 // 获取PnL数据
-export function usePnLData(timeRange: string = '1D') {
+export function usePnLData(timeRange: string = '1D', symbols?: string[]) {
   const api = useApiClient();
   
   return useQuery({
-    queryKey: ['pnl', timeRange],
+    queryKey: ['pnl', timeRange, symbols],
     queryFn: async () => {
-      const response = await api.get<PnLData[]>(`/api/pnl?range=${timeRange}`);
+      let endpoint = `/api/pnl?range=${timeRange}`;
+      if (symbols && symbols.length > 0) {
+        endpoint += `&symbols=${symbols.join(',')}`;
+      }
+      const response = await api.get<PnLData[]>(endpoint);
       return response.data || [];
     },
     refetchInterval: 30000, // 30秒刷新一次
@@ -348,4 +352,164 @@ export function useMockData() {
     pnlData: mockPnLData,
     positions: mockPositions,
   };
+}
+
+// ============ Additional Hooks for New Features ============
+
+// 获取交易对列表
+export function useSymbolList() {
+  const api = useApiClient();
+  
+  return useQuery({
+    queryKey: ['symbol-list'],
+    queryFn: async () => {
+      const response = await api.get<{symbol: string, baseAsset: string, quoteAsset: string}[]>('/api/symbols');
+      return response.data || [
+        { symbol: 'BTCUSDT', baseAsset: 'BTC', quoteAsset: 'USDT' },
+        { symbol: 'ETHUSDT', baseAsset: 'ETH', quoteAsset: 'USDT' },
+        { symbol: 'SOLUSDT', baseAsset: 'SOL', quoteAsset: 'USDT' },
+        { symbol: 'ADAUSDT', baseAsset: 'ADA', quoteAsset: 'USDT' },
+        { symbol: 'DOTUSDT', baseAsset: 'DOT', quoteAsset: 'USDT' },
+        { symbol: 'LINKUSDT', baseAsset: 'LINK', quoteAsset: 'USDT' },
+      ];
+    },
+    staleTime: 5 * 60 * 1000, // 5分钟缓存
+  });
+}
+
+// 获取风险数据
+export function useRiskData() {
+  const api = useApiClient();
+  
+  return useQuery({
+    queryKey: ['risk-data'],
+    queryFn: async () => {
+      const response = await api.get('/api/risk/data');
+      return response.data || {
+        beta: 0.85,
+        volatility: 0.125,
+        expectedShortfall: 0.023,
+        maxDrawdown: 0.041,
+        leverage: 1.2,
+        exchangeExposure: 0.65,
+        positionConcentration: 0.35,
+      };
+    },
+    refetchInterval: 60000, // 1分钟刷新
+  });
+}
+
+// 获取风险时间线数据
+export function useRiskTimelineData(timeRange: string) {
+  const api = useApiClient();
+  
+  return useQuery({
+    queryKey: ['risk-timeline', timeRange],
+    queryFn: async () => {
+      const response = await api.get(`/api/risk/timeline?range=${timeRange}`);
+      return response.data || null;
+    },
+    refetchInterval: 60000,
+  });
+}
+
+// 获取VaR数据
+export function useVaRData(confidence: number) {
+  const api = useApiClient();
+  
+  return useQuery({
+    queryKey: ['var-data', confidence],
+    queryFn: async () => {
+      const response = await api.get(`/api/risk/var?confidence=${confidence}`);
+      return response.data || null;
+    },
+    refetchInterval: 60000,
+  });
+}
+
+// 获取相关性数据
+export function useCorrelationData(timeWindow: string) {
+  const api = useApiClient();
+  
+  return useQuery({
+    queryKey: ['correlation-data', timeWindow],
+    queryFn: async () => {
+      const response = await api.get(`/api/risk/correlation?window=${timeWindow}`);
+      return response.data || null;
+    },
+    refetchInterval: 300000, // 5分钟刷新
+  });
+}
+
+// 获取告警概览数据
+export function useAlertOverviewData() {
+  const api = useApiClient();
+  
+  return useQuery({
+    queryKey: ['alert-overview'],
+    queryFn: async () => {
+      const response = await api.get('/api/alerts/overview');
+      return response.data || {
+        critical: 1,
+        warning: 2,
+        info: 5,
+        resolved: 47,
+        criticalChange: 0,
+        warningChange: 1,
+        infoChange: 3,
+        resolvedChange: 12,
+        recentCritical: [],
+      };
+    },
+    refetchInterval: 30000,
+  });
+}
+
+// 获取告警历史数据
+export function useAlertHistoryData(page: number, showAcknowledged: boolean) {
+  const api = useApiClient();
+  
+  return useQuery({
+    queryKey: ['alert-history', page, showAcknowledged],
+    queryFn: async () => {
+      const response = await api.get(`/api/alerts/history?page=${page}&acknowledged=${showAcknowledged}`);
+      return response.data || { alerts: [], total: 0 };
+    },
+    refetchInterval: 15000,
+  });
+}
+
+// 获取策略数据
+export function useStrategyData() {
+  const api = useApiClient();
+  
+  return useQuery({
+    queryKey: ['strategy-data'],
+    queryFn: async () => {
+      const response = await api.get('/api/strategy/data');
+      return response.data || {
+        winRate: 82.1,
+        dipBuyingRate: 87.9,
+        avgHoldTime: 96,
+        boundaryCompliance: 100,
+        totalTrades: 1847,
+        avgDailyTrades: 12.3,
+      };
+    },
+    refetchInterval: 60000,
+  });
+}
+
+// 获取策略配置
+export function useStrategyConfig() {
+  const api = useApiClient();
+  
+  return useQuery({
+    queryKey: ['strategy-config'],
+    queryFn: async () => {
+      const response = await api.get('/api/strategy/config');
+      return response.data || {};
+    },
+    staleTime: 5 * 60 * 1000, // 5分钟缓存
+  });
 }

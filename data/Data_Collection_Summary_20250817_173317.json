@@ -1,0 +1,344 @@
+{
+  "timestamp": "2025-08-17T17:33:17.332352",
+  "summary": {
+    "total_symbols": 20,
+    "total_files": 119,
+    "total_size_mb": 184.72006797790527,
+    "symbols_list": [
+      "ADAUSDT",
+      "APTUSDT",
+      "ARBUSDT",
+      "ATOMUSDT",
+      "AVAXUSDT",
+      "BNBUSDT",
+      "DOGEUSDT",
+      "DOTUSDT",
+      "FILUSDT",
+      "LINKUSDT",
+      "LTCUSDT",
+      "MATICUSDT",
+      "NEARUSDT",
+      "OPUSDT",
+      "SOLUSDT",
+      "TONUSDT",
+      "TRXUSDT",
+      "UNIUSDT",
+      "XLMUSDT",
+      "XRPUSDT"
+    ],
+    "complete_symbols": 19,
+    "partial_symbols": 1,
+    "incomplete_symbols": 0,
+    "complete_symbols_list": [
+      "ADAUSDT",
+      "APTUSDT",
+      "ARBUSDT",
+      "ATOMUSDT",
+      "AVAXUSDT",
+      "BNBUSDT",
+      "DOGEUSDT",
+      "DOTUSDT",
+      "FILUSDT",
+      "LINKUSDT",
+      "LTCUSDT",
+      "NEARUSDT",
+      "OPUSDT",
+      "SOLUSDT",
+      "TONUSDT",
+      "TRXUSDT",
+      "UNIUSDT",
+      "XLMUSDT",
+      "XRPUSDT"
+    ],
+    "partial_symbols_list": [
+      "MATICUSDT"
+    ],
+    "incomplete_symbols_list": [],
+    "overall_success_rate": 0.9916666666666667,
+    "total_expected_files": 120,
+    "total_actual_files": 119
+  },
+  "completion_status": {
+    "ADAUSDT": {
+      "completed_timeframes": [
+        "15m",
+        "1d",
+        "1h",
+        "1m",
+        "4h",
+        "5m"
+      ],
+      "missing_timeframes": [],
+      "completion_rate": 1.0,
+      "total_size_mb": 9.674246788024902,
+      "status": "COMPLETE"
+    },
+    "APTUSDT": {
+      "completed_timeframes": [
+        "15m",
+        "1d",
+        "1h",
+        "1m",
+        "4h",
+        "5m"
+      ],
+      "missing_timeframes": [],
+      "completion_rate": 1.0,
+      "total_size_mb": 10.666526794433594,
+      "status": "COMPLETE"
+    },
+    "ARBUSDT": {
+      "completed_timeframes": [
+        "15m",
+        "1d",
+        "1h",
+        "1m",
+        "4h",
+        "5m"
+      ],
+      "missing_timeframes": [],
+      "completion_rate": 1.0,
+      "total_size_mb": 9.873379707336426,
+      "status": "COMPLETE"
+    },
+    "ATOMUSDT": {
+      "completed_timeframes": [
+        "15m",
+        "1d",
+        "1h",
+        "1m",
+        "4h",
+        "5m"
+      ],
+      "missing_timeframes": [],
+      "completion_rate": 1.0,
+      "total_size_mb": 9.317283630371094,
+      "status": "COMPLETE"
+    },
+    "AVAXUSDT": {
+      "completed_timeframes": [
+        "15m",
+        "1d",
+        "1h",
+        "1m",
+        "4h",
+        "5m"
+      ],
+      "missing_timeframes": [],
+      "completion_rate": 1.0,
+      "total_size_mb": 9.068774223327637,
+      "status": "COMPLETE"
+    },
+    "BNBUSDT": {
+      "completed_timeframes": [
+        "15m",
+        "1d",
+        "1h",
+        "1m",
+        "4h",
+        "5m"
+      ],
+      "missing_timeframes": [],
+      "completion_rate": 1.0,
+      "total_size_mb": 10.344717025756836,
+      "status": "COMPLETE"
+    },
+    "DOGEUSDT": {
+      "completed_timeframes": [
+        "15m",
+        "1d",
+        "1h",
+        "1m",
+        "4h",
+        "5m"
+      ],
+      "missing_timeframes": [],
+      "completion_rate": 1.0,
+      "total_size_mb": 10.837848663330078,
+      "status": "COMPLETE"
+    },
+    "DOTUSDT": {
+      "completed_timeframes": [
+        "15m",
+        "1d",
+        "1h",
+        "1m",
+        "4h",
+        "5m"
+      ],
+      "missing_timeframes": [],
+      "completion_rate": 1.0,
+      "total_size_mb": 9.528729438781738,
+      "status": "COMPLETE"
+    },
+    "FILUSDT": {
+      "completed_timeframes": [
+        "15m",
+        "1d",
+        "1h",
+        "1m",
+        "4h",
+        "5m"
+      ],
+      "missing_timeframes": [],
+      "completion_rate": 1.0,
+      "total_size_mb": 9.516989707946777,
+      "status": "COMPLETE"
+    },
+    "LINKUSDT": {
+      "completed_timeframes": [
+        "15m",
+        "1d",
+        "1h",
+        "1m",
+        "4h",
+        "5m"
+      ],
+      "missing_timeframes": [],
+      "completion_rate": 1.0,
+      "total_size_mb": 9.575343132019043,
+      "status": "COMPLETE"
+    },
+    "LTCUSDT": {
+      "completed_timeframes": [
+        "15m",
+        "1d",
+        "1h",
+        "1m",
+        "4h",
+        "5m"
+      ],
+      "missing_timeframes": [],
+      "completion_rate": 1.0,
+      "total_size_mb": 9.948650360107422,
+      "status": "COMPLETE"
+    },
+    "MATICUSDT": {
+      "completed_timeframes": [
+        "15m",
+        "1d",
+        "1h",
+        "4h",
+        "5m"
+      ],
+      "missing_timeframes": [
+        "1m"
+      ],
+      "completion_rate": 0.8333333333333334,
+      "total_size_mb": 3.895984649658203,
+      "status": "PARTIAL"
+    },
+    "NEARUSDT": {
+      "completed_timeframes": [
+        "15m",
+        "1d",
+        "1h",
+        "1m",
+        "4h",
+        "5m"
+      ],
+      "missing_timeframes": [],
+      "completion_rate": 1.0,
+      "total_size_mb": 8.734185218811035,
+      "status": "COMPLETE"
+    },
+    "OPUSDT": {
+      "completed_timeframes": [
+        "15m",
+        "1d",
+        "1h",
+        "1m",
+        "4h",
+        "5m"
+      ],
+      "missing_timeframes": [],
+      "completion_rate": 1.0,
+      "total_size_mb": 9.282368659973145,
+      "status": "COMPLETE"
+    },
+    "SOLUSDT": {
+      "completed_timeframes": [
+        "15m",
+        "1d",
+        "1h",
+        "1m",
+        "4h",
+        "5m"
+      ],
+      "missing_timeframes": [],
+      "completion_rate": 1.0,
+      "total_size_mb": 10.675293922424316,
+      "status": "COMPLETE"
+    },
+    "TONUSDT": {
+      "completed_timeframes": [
+        "15m",
+        "1d",
+        "1h",
+        "1m",
+        "4h",
+        "5m"
+      ],
+      "missing_timeframes": [],
+      "completion_rate": 1.0,
+      "total_size_mb": 6.280348777770996,
+      "status": "COMPLETE"
+    },
+    "TRXUSDT": {
+      "completed_timeframes": [
+        "15m",
+        "1d",
+        "1h",
+        "1m",
+        "4h",
+        "5m"
+      ],
+      "missing_timeframes": [],
+      "completion_rate": 1.0,
+      "total_size_mb": 9.659258842468262,
+      "status": "COMPLETE"
+    },
+    "UNIUSDT": {
+      "completed_timeframes": [
+        "15m",
+        "1d",
+        "1h",
+        "1m",
+        "4h",
+        "5m"
+      ],
+      "missing_timeframes": [],
+      "completion_rate": 1.0,
+      "total_size_mb": 9.92737865447998,
+      "status": "COMPLETE"
+    },
+    "XLMUSDT": {
+      "completed_timeframes": [
+        "15m",
+        "1d",
+        "1h",
+        "1m",
+        "4h",
+        "5m"
+      ],
+      "missing_timeframes": [],
+      "completion_rate": 1.0,
+      "total_size_mb": 8.093565940856934,
+      "status": "COMPLETE"
+    },
+    "XRPUSDT": {
+      "completed_timeframes": [
+        "15m",
+        "1d",
+        "1h",
+        "1m",
+        "4h",
+        "5m"
+      ],
+      "missing_timeframes": [],
+      "completion_rate": 1.0,
+      "total_size_mb": 9.819193840026855,
+      "status": "COMPLETE"
+    }
+  }
+}

@@ -11,7 +11,8 @@ import {
   ExternalLink,
   AlertTriangle
 } from 'lucide-react';
-import { usePositions, useClosePosition } from '@/hooks/use-api';
+import { usePositions } from '@/hooks/use-demo-data';
+import { useClosePosition } from '@/hooks/use-api';
 import { formatCurrency, formatPercentage, getPnLColorClass, formatTime } from '@/lib/utils';
 import { LoadingSkeleton } from '@/components/ui/loading-skeleton';
 import { toast } from 'react-hot-toast';

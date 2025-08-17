@@ -1,0 +1,48 @@
+{
+  "report_timestamp": "2025-08-17T14:53:41.702952",
+  "report_version": "DipMaster_Risk_Report_V5",
+  "portfolio_summary": {
+    "total_positions": 3,
+    "gross_leverage": 0.6,
+    "net_leverage": 0.6,
+    "largest_position": 0.25,
+    "market_regime": "normal_vol"
+  },
+  "risk_metrics_detailed": {
+    "volatility_analysis": {
+      "annualized_volatility": 0.085,
+      "target_volatility": 0.08,
+      "volatility_deviation": 0.005,
+      "regime_adjusted_vol": 0.102
+    },
+    "downside_risk": {
+      "value_at_risk_95": 0.015,
+      "value_at_risk_99": 0.022,
+      "expected_shortfall_95": 0.018,
+      "maximum_drawdown": 0.03
+    },
+    "performance_ratios": {
+      "sharpe_ratio": 2.15,
+      "calmar_ratio": 5.0,
+      "information_ratio": 2.8
+    }
+  },
+  "stress_test_summary": {
+    "scenarios_tested": 3,
+    "worst_case_loss": -0.3,
+    "var_breaches": 2,
+    "stress_test_passed": false
+  },
+  "compliance_status": {
+    "beta_neutral": true,
+    "vol_target": true,
+    "leverage_ok": true,
+    "position_limits": true,
+    "position_count": true,
+    "market_neutral": true,
+    "var_limit": true,
+    "expected_shortfall_limit": true,
+    "drawdown_limit": true,
+    "sharpe_target": true
+  }
+}

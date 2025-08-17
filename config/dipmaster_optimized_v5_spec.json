@@ -1,0 +1,465 @@
+{
+  "strategy_name": "DipMaster_Optimized_V5",
+  "version": "5.0.0", 
+  "description": "Ultimate DipMaster策略 - 目标85%+胜率，Sharpe>2.0，最大回撤<3%",
+  "created_date": "2025-08-17",
+  "optimization_objective": "Systematic approach to 85%+ win rate with robust risk management",
+  
+  "performance_targets": {
+    "win_rate": "85%+",
+    "max_drawdown": "<3%", 
+    "profit_factor": "1.8+",
+    "sharpe_ratio": ">2.0",
+    "monthly_return": "15-25%",
+    "avg_holding_minutes": "45-120",
+    "validation_score": ">85/100"
+  },
+
+  "universe": [
+    "BTCUSDT", "ETHUSDT", "SOLUSDT", "ADAUSDT", "XRPUSDT",
+    "BNBUSDT", "DOGEUSDT", "AVAXUSDT", "MATICUSDT", "LINKUSDT", "DOTUSDT"
+  ],
+
+  "tier_classification": {
+    "tier_1_majors": {
+      "symbols": ["BTCUSDT", "ETHUSDT"],
+      "liquidity_threshold": 50000000,
+      "volume_multiplier": 1.8,
+      "confidence_boost": 1.1
+    },
+    "tier_2_alts": {
+      "symbols": ["SOLUSDT", "ADAUSDT", "XRPUSDT", "BNBUSDT"],
+      "liquidity_threshold": 20000000,
+      "volume_multiplier": 2.0,
+      "confidence_boost": 1.0
+    },
+    "tier_3_emerging": {
+      "symbols": ["DOGEUSDT", "AVAXUSDT", "MATICUSDT", "LINKUSDT", "DOTUSDT"],
+      "liquidity_threshold": 10000000,
+      "volume_multiplier": 2.5,
+      "confidence_boost": 0.9
+    }
+  },
+
+  "horizon": "intraday",
+  "trading_timeframe": "5m",
+  "analysis_timeframes": ["5m", "15m", "1h"],
+
+  "constraints": {
+    "beta": "market_neutral",
+    "max_dd": 0.03,
+    "max_correlation": 0.7,
+    "max_concurrent_positions": 3,
+    "max_position_pct": 0.25,
+    "daily_loss_limit": 0.02
+  },
+
+  "venues": ["binance"],
+
+  "risk_limits": {
+    "gross_leverage": 15,
+    "max_position_pct": 0.25,
+    "max_daily_loss": 0.02,
+    "position_concentration_limit": 0.25,
+    "correlation_threshold": 0.7,
+    "volatility_limit": 0.15
+  },
+
+  "enhanced_signal_architecture": {
+    "philosophy": "Ultra-High Signal Quality - 置信度驱动交易",
+    "signal_confidence_thresholds": {
+      "minimum": 0.8,
+      "high_quality": 0.9,
+      "ultra_quality": 0.95
+    },
+    "layers": [
+      {
+        "name": "Primary_Dip_Detection",
+        "description": "核心逢跌买入信号 - 优化参数",
+        "components": {
+          "rsi_filter": {
+            "range": [25, 45],
+            "optimal_zone": [30, 40],
+            "dynamic_adjustment": true,
+            "weight": 0.30
+          },
+          "price_dip_confirmation": {
+            "min_dip_pct": 0.003,
+            "max_dip_pct": 0.015,
+            "vs_timeframe": "15m",
+            "momentum_confirmation": true,
+            "weight": 0.25
+          },
+          "volume_confirmation": {
+            "tier_specific_multipliers": true,
+            "volume_ma_period": 20,
+            "volume_profile_analysis": true,
+            "weight": 0.20
+          }
+        }
+      },
+      {
+        "name": "Market_Regime_Filter",
+        "description": "市场环境适应性过滤 - 强化版",
+        "components": {
+          "volatility_regime": {
+            "optimal_range": [0.02, 0.12],
+            "regime_detection_period": 48,
+            "garch_modeling": true,
+            "weight": 0.15
+          },
+          "liquidity_environment": {
+            "spread_analysis": true,
+            "order_book_depth": true,
+            "institutional_flow": true,
+            "weight": 0.10
+          }
+        }
+      }
+    ],
+    "multi_timeframe_confirmation": {
+      "primary": "5m",
+      "confirmation_timeframes": ["15m", "1h"],
+      "alignment_required": 0.8,
+      "divergence_penalty": 0.3
+    },
+    "minimum_confidence": 0.8,
+    "signal_cooldown_minutes": 30
+  },
+
+  "adaptive_exit_system": {
+    "philosophy": "智能出场 - 让利润奔跑，快速止损",
+    "profit_taking_strategy": {
+      "laddered_exits": [
+        {"target_pct": 0.6, "exit_ratio": 0.15, "time_limit": 25},
+        {"target_pct": 1.0, "exit_ratio": 0.25, "time_limit": 45},
+        {"target_pct": 1.5, "exit_ratio": 0.30, "time_limit": 90},
+        {"target_pct": 2.5, "exit_ratio": 0.20, "time_limit": 150},
+        {"target_pct": 4.0, "exit_ratio": 0.10, "time_limit": 180}
+      ],
+      "dynamic_targeting": {
+        "confidence_multiplier": true,
+        "volatility_adjustment": true,
+        "market_momentum_extension": true
+      }
+    },
+    "dynamic_stop_loss": {
+      "initial_stop": 0.004,
+      "trailing_activation": 0.008,
+      "trailing_distance": 0.003,
+      "volatility_based_adjustment": true,
+      "time_based_tightening": true
+    },
+    "time_management": {
+      "adaptive_windows": true,
+      "base_window": 15,
+      "extension_triggers": ["strong_momentum", "low_volatility"],
+      "early_exit_triggers": ["volatility_spike", "correlation_breakdown"],
+      "optimal_exit_minutes": [25, 35, 55, 65, 85, 95],
+      "max_holding_minutes": 180
+    }
+  },
+
+  "intelligent_position_sizing": {
+    "base_framework": "Enhanced Kelly Criterion + Multi-Factor Adjustment",
+    "components": {
+      "kelly_sizing": {
+        "lookback_trades": 150,
+        "max_kelly_fraction": 0.25,
+        "confidence_scaling": true,
+        "performance_decay": 0.95
+      },
+      "volatility_scaling": {
+        "target_volatility": 0.08,
+        "scaling_method": "inverse_volatility",
+        "regime_multipliers": {
+          "low_vol": 1.4,
+          "normal_vol": 1.0,
+          "high_vol": 0.5
+        },
+        "garch_forecasting": true
+      },
+      "correlation_adjustment": {
+        "max_correlated_exposure": 0.4,
+        "correlation_penalty": 0.5,
+        "dynamic_correlation_matrix": true,
+        "pca_based_exposure": true
+      },
+      "signal_strength_multiplier": {
+        "confidence_0.8": 0.8,
+        "confidence_0.9": 1.0,
+        "confidence_0.95": 1.3
+      }
+    },
+    "size_limits": {
+      "min_position_usd": 150,
+      "max_position_usd": 2500,
+      "max_portfolio_heat": 0.12,
+      "tier_based_limits": true
+    }
+  },
+
+  "multi_asset_orchestration": {
+    "selection_methodology": "Dynamic Score-Based Rotation with Performance Feedback",
+    "scoring_framework": {
+      "recent_performance": {
+        "win_rate_weight": 0.30,
+        "profit_factor_weight": 0.25,
+        "sharpe_ratio_weight": 0.15,
+        "lookback_days": 30
+      },
+      "market_efficiency": {
+        "volatility_score": 0.15,
+        "liquidity_score": 0.10,
+        "spread_score": 0.05
+      }
+    },
+    "rotation_rules": {
+      "min_score_threshold": 75,
+      "rebalance_frequency": "weekly",
+      "max_underperformer_tolerance": 5,
+      "performance_momentum": true
+    },
+    "correlation_management": {
+      "max_correlation_pairs": 0.7,
+      "correlation_lookback": "14d",
+      "diversification_bonus": 0.1
+    }
+  },
+
+  "risk_management_framework": {
+    "multi_layer_architecture": {
+      "signal_level": {
+        "confidence_gates": 0.8,
+        "market_condition_filters": true,
+        "liquidity_requirements": true
+      },
+      "position_level": {
+        "max_risk_per_trade": 0.004,
+        "volatility_adjusted_stops": true,
+        "time_based_risk_escalation": true
+      },
+      "portfolio_level": {
+        "max_correlation_exposure": 0.7,
+        "sector_concentration_limits": true,
+        "dynamic_heat_management": true
+      },
+      "system_level": {
+        "daily_loss_circuit_breaker": 0.02,
+        "consecutive_loss_limit": 6,
+        "drawdown_based_scaling": true,
+        "volatility_spike_protection": true
+      }
+    },
+    "adaptive_risk_controls": {
+      "performance_based_adjustment": true,
+      "market_regime_scaling": true,
+      "correlation_stress_testing": true
+    }
+  },
+
+  "optimal_trading_schedule": {
+    "session_analysis": {
+      "asian_session": {
+        "utc_hours": [0, 6],
+        "activity_multiplier": 1.1,
+        "optimal_pairs": ["BTCUSDT", "ETHUSDT"]
+      },
+      "european_session": {
+        "utc_hours": [6, 14],
+        "activity_multiplier": 1.4,
+        "optimal_pairs": ["all"]
+      },
+      "us_session": {
+        "utc_hours": [14, 22],
+        "activity_multiplier": 1.3,
+        "optimal_pairs": ["SOLUSDT", "AVAXUSDT"]
+      },
+      "overnight_session": {
+        "utc_hours": [22, 24],
+        "activity_multiplier": 0.8,
+        "reduced_exposure": true
+      }
+    },
+    "micro_timing_optimization": {
+      "high_probability_minutes": [5, 15, 25, 35, 45, 55],
+      "liquidity_check_required": true,
+      "spread_optimization": true
+    }
+  },
+
+  "technology_infrastructure": {
+    "execution_engine": {
+      "architecture": "async_event_driven",
+      "latency_target": "sub_100ms",
+      "redundancy": "multi_datacenter"
+    },
+    "data_pipeline": {
+      "primary": "websocket_streams",
+      "backup": "rest_api_polling",
+      "validation": "multi_source_consensus"
+    },
+    "risk_engine": {
+      "real_time_monitoring": true,
+      "predictive_risk_modeling": true,
+      "automatic_position_adjustment": true
+    }
+  },
+
+  "validation_requirements": {
+    "statistical_validation": {
+      "min_sample_size": 300,
+      "significance_level": 0.01,
+      "monte_carlo_iterations": 2000,
+      "bootstrap_confidence_intervals": true
+    },
+    "robustness_testing": {
+      "walk_forward_periods": 15,
+      "out_of_sample_ratio": 0.35,
+      "stress_test_scenarios": 10,
+      "regime_change_testing": true
+    },
+    "performance_criteria": {
+      "min_sharpe_ratio": 2.0,
+      "max_drawdown": 0.03,
+      "min_win_rate": 0.85,
+      "min_profit_factor": 1.8,
+      "consistency_score": 0.8
+    }
+  },
+
+  "monitoring_and_adaptation": {
+    "real_time_metrics": [
+      "win_rate_rolling_100",
+      "drawdown_current_intraday",
+      "sharpe_ratio_estimate_30d",
+      "correlation_matrix_live",
+      "volatility_regime_current",
+      "signal_quality_distribution",
+      "execution_slippage",
+      "risk_budget_utilization"
+    ],
+    "adaptation_triggers": {
+      "performance_degradation": {
+        "win_rate_threshold": 0.78,
+        "duration_days": 5,
+        "action": "reduce_exposure"
+      },
+      "market_regime_change": {
+        "volatility_spike": 2.0,
+        "correlation_breakdown": 0.9,
+        "action": "emergency_risk_reduction"
+      },
+      "model_drift_detection": {
+        "accuracy_decline": 0.05,
+        "signal_quality_decline": 0.1,
+        "action": "model_retraining"
+      }
+    },
+    "continuous_optimization": {
+      "parameter_optimization_frequency": "weekly",
+      "feature_importance_analysis": "daily",
+      "performance_attribution": "real_time"
+    }
+  },
+
+  "development_milestones": {
+    "phase_1_signal_enhancement": {
+      "duration_weeks": 2,
+      "deliverables": [
+        "Enhanced confidence scoring",
+        "Multi-timeframe validation", 
+        "Tier-specific parameters",
+        "Dynamic threshold adjustment"
+      ],
+      "acceptance_criteria": {
+        "win_rate_improvement": "5%+",
+        "signal_precision": "85%+",
+        "false_positive_reduction": "40%+"
+      }
+    },
+    "phase_2_exit_optimization": {
+      "duration_weeks": 2,
+      "deliverables": [
+        "Adaptive exit timing",
+        "Profit ladder optimization",
+        "Dynamic stop management",
+        "Time-based adjustments"
+      ],
+      "acceptance_criteria": {
+        "profit_factor_improvement": "80%+",
+        "average_profit_increase": "30%+",
+        "exit_timing_efficiency": "90%+"
+      }
+    },
+    "phase_3_risk_integration": {
+      "duration_weeks": 1,
+      "deliverables": [
+        "Kelly Criterion sizing",
+        "Correlation management",
+        "Volatility targeting",
+        "Multi-layer controls"
+      ],
+      "acceptance_criteria": {
+        "sharpe_ratio_target": "1.8+",
+        "max_drawdown": "<3%",
+        "risk_adjusted_return_optimization": "200%+"
+      }
+    },
+    "phase_4_deployment": {
+      "duration_weeks": 1,
+      "deliverables": [
+        "Production deployment",
+        "Monitoring dashboard",
+        "Performance validation",
+        "Risk framework activation"
+      ],
+      "acceptance_criteria": {
+        "system_stability": "99.9%+",
+        "performance_target_achievement": "85%+ win rate",
+        "risk_compliance": "100%"
+      }
+    }
+  },
+
+  "competitive_advantages": {
+    "technical_moats": [
+      "Advanced multi-timeframe signal fusion",
+      "Adaptive confidence-based filtering", 
+      "Dynamic correlation management",
+      "Regime-aware parameter optimization"
+    ],
+    "operational_moats": [
+      "Sub-100ms execution latency",
+      "Multi-layer risk protection",
+      "Continuous model adaptation",
+      "Performance-driven optimization"
+    ],
+    "sustainability_framework": {
+      "research_investment": "20%_of_profits",
+      "model_refresh_cycle": "monthly",
+      "feature_innovation": "continuous",
+      "competitive_monitoring": "weekly"
+    }
+  },
+
+  "success_metrics": {
+    "primary_kpis": {
+      "win_rate": {"target": "85%+", "current": "77.3%"},
+      "sharpe_ratio": {"target": "2.0+", "current": "0.367"},
+      "profit_factor": {"target": "1.8+", "current": "0.77"},
+      "max_drawdown": {"target": "<3%", "current": "monitor"}
+    },
+    "operational_kpis": {
+      "signal_latency": {"target": "<100ms"},
+      "system_uptime": {"target": ">99.9%"},
+      "model_accuracy": {"target": ">90%"},
+      "risk_compliance": {"target": "100%"}
+    },
+    "innovation_kpis": {
+      "feature_development": {"target": "3_per_month"},
+      "model_improvement": {"target": "3%_quarterly"},
+      "research_publications": {"target": "1_per_quarter"}
+    }
+  }
+}

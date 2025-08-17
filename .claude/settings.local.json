@@ -15,7 +15,18 @@
       "Bash(git add:*)",
       "Bash(rm:*)",
       "Bash(git push:*)",
-      "Bash(chmod:*)"
+      "Bash(chmod:*)",
+      "WebFetch(domain:docs.anthropic.com)",
+      "Bash(claude config list)",
+      "Bash(node:*)",
+      "Bash(\"G:\\Github\\Quant\\DipMaster-Trading-System\\quick_start_frontend.bat\")",
+      "Bash(grep:*)",
+      "Bash(del use-websocket.ts)",
+      "Bash(taskkill:*)",
+      "WebSearch",
+      "WebFetch(domain:coinmarketcap.com)",
+      "WebFetch(domain:www.coingecko.com)",
+      "Bash(sed:*)"
     ],
     "deny": [],
     "ask": []

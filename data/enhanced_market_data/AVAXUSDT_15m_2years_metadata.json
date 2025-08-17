@@ -1,0 +1,47 @@
+{
+  "symbol": "AVAXUSDT",
+  "timeframe": "15m",
+  "records_count": 70080,
+  "data_quality": {
+    "quality_score": 0.9496460413158688,
+    "records_count": 70080,
+    "date_range": {
+      "start": "2023-08-18T09:45:00",
+      "end": "2025-08-17T09:30:00"
+    },
+    "download_time_seconds": 31.682762145996094,
+    "retry_count": 0
+  },
+  "date_range": {
+    "start": "2023-08-18T09:45:00",
+    "end": "2025-08-17T09:30:00",
+    "span_days": 729
+  },
+  "file_info": {
+    "file_size_mb": 1.649674415588379,
+    "compression": "zstd",
+    "format": "parquet"
+  },
+  "statistics": {
+    "price_range": {
+      "min": 8.61,
+      "max": 65.39,
+      "avg": 27.888214897260276
+    },
+    "volume_stats": {
+      "total": 2149773975.67,
+      "avg": 30675.998511272832,
+      "max": 1283385.83
+    }
+  },
+  "created_at": "2025-08-17T17:31:08.874156",
+  "collection_config": {
+    "lookback_days": 730,
+    "batch_size": 1000,
+    "rate_limit_delay": 0.05,
+    "retry_attempts": 5,
+    "timeout_seconds": 45,
+    "parallel_symbols": 5,
+    "max_workers": 10
+  }
+}

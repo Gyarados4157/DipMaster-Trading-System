@@ -1,0 +1,275 @@
+# DipMaster数据API服务Docker Compose配置
+
+version: '3.8'
+
+services:
+  # DipMaster API服务
+  dipmaster-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dipmaster-api
+    ports:
+      - "8000:8000"
+    environment:
+      # 数据库配置
+      - CLICKHOUSE_HOST=clickhouse
+      - CLICKHOUSE_PORT=9000
+      - CLICKHOUSE_DATABASE=dipmaster
+      - CLICKHOUSE_USERNAME=default
+      - CLICKHOUSE_PASSWORD=
+      
+      # Kafka配置
+      - KAFKA_BOOTSTRAP_SERVERS=kafka:9092
+      - KAFKA_GROUP_ID=dipmaster-api
+      
+      # API配置
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+      - API_DEBUG=false
+      - API_LOG_LEVEL=INFO
+      
+      # 缓存配置
+      - API_ENABLE_CACHING=true
+      - API_CACHE_TTL=300
+      
+      # 限流配置
+      - API_ENABLE_RATE_LIMITING=true
+      - API_RATE_LIMIT_CALLS=100
+      - API_RATE_LIMIT_PERIOD=60
+      
+      # WebSocket配置
+      - WS_ENABLE=true
+      - WS_MAX_CONNECTIONS=1000
+      - WS_HEARTBEAT_INTERVAL=30
+      
+      # 服务信息
+      - SERVICE_NAME=dipmaster-data-api
+      - SERVICE_VERSION=1.0.0
+      - ENVIRONMENT=production
+    
+    volumes:
+      - ./logs:/app/logs
+      - ./config:/app/config
+    
+    depends_on:
+      - clickhouse
+      - kafka
+      - zookeeper
+    
+    restart: unless-stopped
+    
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    
+    networks:
+      - dipmaster-network
+
+  # ClickHouse数据库
+  clickhouse:
+    image: clickhouse/clickhouse-server:23.8
+    container_name: dipmaster-clickhouse
+    ports:
+      - "9000:9000"
+      - "8123:8123"
+    
+    environment:
+      - CLICKHOUSE_DB=dipmaster
+      - CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT=1
+    
+    volumes:
+      - clickhouse_data:/var/lib/clickhouse
+      - ./clickhouse/config.xml:/etc/clickhouse-server/config.xml:ro
+      - ./clickhouse/users.xml:/etc/clickhouse-server/users.xml:ro
+    
+    ulimits:
+      nofile:
+        soft: 262144
+        hard: 262144
+    
+    restart: unless-stopped
+    
+    healthcheck:
+      test: ["CMD", "clickhouse-client", "--query", "SELECT 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    
+    networks:
+      - dipmaster-network
+
+  # Zookeeper (Kafka依赖)
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.4.0
+    container_name: dipmaster-zookeeper
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    
+    volumes:
+      - zookeeper_data:/var/lib/zookeeper/data
+      - zookeeper_logs:/var/lib/zookeeper/log
+    
+    restart: unless-stopped
+    
+    networks:
+      - dipmaster-network
+
+  # Kafka消息队列
+  kafka:
+    image: confluentinc/cp-kafka:7.4.0
+    container_name: dipmaster-kafka
+    ports:
+      - "9092:9092"
+    
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: true
+      KAFKA_NUM_PARTITIONS: 3
+      KAFKA_DEFAULT_REPLICATION_FACTOR: 1
+    
+    volumes:
+      - kafka_data:/var/lib/kafka/data
+    
+    depends_on:
+      - zookeeper
+    
+    restart: unless-stopped
+    
+    healthcheck:
+      test: ["CMD", "kafka-broker-api-versions", "--bootstrap-server", "localhost:9092"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    
+    networks:
+      - dipmaster-network
+
+  # Redis缓存 (可选)
+  redis:
+    image: redis:7.2-alpine
+    container_name: dipmaster-redis
+    ports:
+      - "6379:6379"
+    
+    command: redis-server --appendonly yes --maxmemory 512mb --maxmemory-policy allkeys-lru
+    
+    volumes:
+      - redis_data:/data
+    
+    restart: unless-stopped
+    
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    
+    networks:
+      - dipmaster-network
+
+  # Nginx反向代理 (可选)
+  nginx:
+    image: nginx:1.25-alpine
+    container_name: dipmaster-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/ssl:/etc/nginx/ssl:ro
+      - ./logs/nginx:/var/log/nginx
+    
+    depends_on:
+      - dipmaster-api
+    
+    restart: unless-stopped
+    
+    networks:
+      - dipmaster-network
+
+  # Prometheus监控 (可选)
+  prometheus:
+    image: prom/prometheus:v2.47.0
+    container_name: dipmaster-prometheus
+    ports:
+      - "9090:9090"
+    
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--storage.tsdb.retention.time=200h'
+      - '--web.enable-lifecycle'
+    
+    restart: unless-stopped
+    
+    networks:
+      - dipmaster-network
+
+  # Grafana可视化 (可选)
+  grafana:
+    image: grafana/grafana:10.1.0
+    container_name: dipmaster-grafana
+    ports:
+      - "3000:3000"
+    
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_USERS_ALLOW_SIGN_UP=false
+    
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./grafana/dashboards:/etc/grafana/provisioning/dashboards:ro
+      - ./grafana/datasources:/etc/grafana/provisioning/datasources:ro
+    
+    depends_on:
+      - prometheus
+    
+    restart: unless-stopped
+    
+    networks:
+      - dipmaster-network
+
+# 数据卷
+volumes:
+  clickhouse_data:
+    driver: local
+  kafka_data:
+    driver: local
+  zookeeper_data:
+    driver: local
+  zookeeper_logs:
+    driver: local
+  redis_data:
+    driver: local
+  prometheus_data:
+    driver: local
+  grafana_data:
+    driver: local
+
+# 网络
+networks:
+  dipmaster-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16

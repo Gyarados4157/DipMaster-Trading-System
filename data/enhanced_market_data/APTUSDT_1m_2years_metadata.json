@@ -1,0 +1,47 @@
+{
+  "symbol": "APTUSDT",
+  "timeframe": "1m",
+  "records_count": 129490,
+  "data_quality": {
+    "quality_score": 0.9491136090367323,
+    "records_count": 129490,
+    "date_range": {
+      "start": "2025-05-19T09:32:00",
+      "end": "2025-08-17T09:31:00"
+    },
+    "download_time_seconds": 31.629114866256714,
+    "retry_count": 0
+  },
+  "date_range": {
+    "start": "2025-05-19T09:32:00",
+    "end": "2025-08-17T09:31:00",
+    "span_days": 89
+  },
+  "file_info": {
+    "file_size_mb": 2.6474008560180664,
+    "compression": "zstd",
+    "format": "parquet"
+  },
+  "statistics": {
+    "price_range": {
+      "min": 3.747,
+      "max": 5.993,
+      "avg": 4.783754027338017
+    },
+    "volume_stats": {
+      "total": 569491781.1099999,
+      "avg": 4397.959542126804,
+      "max": 630390.79
+    }
+  },
+  "created_at": "2025-08-17T17:32:01.516256",
+  "collection_config": {
+    "lookback_days": 730,
+    "batch_size": 1000,
+    "rate_limit_delay": 0.05,
+    "retry_attempts": 5,
+    "timeout_seconds": 45,
+    "parallel_symbols": 5,
+    "max_workers": 10
+  }
+}

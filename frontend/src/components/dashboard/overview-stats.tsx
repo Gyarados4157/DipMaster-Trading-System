@@ -12,7 +12,7 @@ import {
   Percent,
   Shield
 } from 'lucide-react';
-import { usePnLData, useStrategyStats, usePositions } from '@/hooks/use-api';
+import { usePnLData, useStrategyStats, usePositions } from '@/hooks/use-demo-data';
 import { formatCurrency, formatPercentage, getPnLColorClass } from '@/lib/utils';
 import { LoadingSkeleton } from '@/components/ui/loading-skeleton';
 

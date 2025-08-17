@@ -1,0 +1,45 @@
+{
+  "permissions": {
+    "tools": {
+      "Bash": "allow",
+      "Read": "allow", 
+      "Write": "allow",
+      "Edit": "allow",
+      "MultiEdit": "allow",
+      "Glob": "allow",
+      "Grep": "allow",
+      "LS": "allow",
+      "WebFetch": "allow",
+      "WebSearch": "allow",
+      "TodoWrite": "allow",
+      "Task": "allow",
+      "NotebookEdit": "allow",
+      "BashOutput": "allow",
+      "KillBash": "allow"
+    },
+    "bash_commands": {
+      "pip": "allow",
+      "npm": "allow",
+      "python": "allow",
+      "git": "allow",
+      "mkdir": "allow",
+      "rm": "allow",
+      "chmod": "allow",
+      "find": "allow",
+      "where": "allow",
+      "pytest": "allow",
+      "docker": "allow",
+      "node": "allow"
+    }
+  },
+  "project_name": "DipMaster Trading System",
+  "description": "Quantitative trading system with Claude agents and YOLO mode enabled",
+  "yolo_mode": true,
+  "auto_confirm": true,
+  "ai_assistant_config": {
+    "mode": "yolo",
+    "permissions": "unrestricted",
+    "auto_execute": true,
+    "safety_checks": "minimal"
+  }
+}

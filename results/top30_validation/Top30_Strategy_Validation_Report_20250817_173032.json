@@ -1,0 +1,251 @@
+{
+  "validation_metadata": {
+    "timestamp": "20250817_173032",
+    "validator_version": "2.0",
+    "strategy_name": "DipMaster_V4_Enhanced",
+    "validation_period": "Latest_18_months",
+    "total_symbols_analyzed": 25,
+    "validation_framework": "Purged_Time_Series_CV"
+  },
+  "ranking_summary": {
+    "total_symbols_tested": 25,
+    "valid_symbols": 24,
+    "qualified_symbols": 0,
+    "top10_selected": 0,
+    "selection_criteria": {
+      "min_win_rate": 0.65,
+      "min_sharpe_ratio": 1.0,
+      "max_drawdown_limit": -0.15,
+      "min_trades": 10
+    },
+    "ranking_summary": [
+      {
+        "rank": 1,
+        "symbol": "BTCUSDT",
+        "composite_score": 0.5927778034858509,
+        "win_rate": 0.4774774774774775,
+        "annual_return": 0.0192097312800367,
+        "sharpe_ratio": 3.6520720114814216,
+        "max_drawdown": -0.012073638770440705
+      },
+      {
+        "rank": 2,
+        "symbol": "ARBUSDT",
+        "composite_score": 0.34931835238835984,
+        "win_rate": 0.46153846153846156,
+        "annual_return": -0.08662773979158013,
+        "sharpe_ratio": -6.687417027485418,
+        "max_drawdown": -0.020825250950698065
+      },
+      {
+        "rank": 3,
+        "symbol": "DOTUSDT",
+        "composite_score": 0.345418816521984,
+        "win_rate": 0.45454545454545453,
+        "annual_return": -0.12663031973806763,
+        "sharpe_ratio": -3.3329527038030493,
+        "max_drawdown": -0.02647496127389476
+      },
+      {
+        "rank": 4,
+        "symbol": "UNIUSDT",
+        "composite_score": 0.32415317213233585,
+        "win_rate": 0.29411764705882354,
+        "annual_return": -0.07124533251805822,
+        "sharpe_ratio": -5.2324221053743925,
+        "max_drawdown": -0.017225216884768867
+      },
+      {
+        "rank": 5,
+        "symbol": "APTUSDT",
+        "composite_score": 0.3125687629866537,
+        "win_rate": 0.45714285714285713,
+        "annual_return": -0.30859642102967216,
+        "sharpe_ratio": -6.128449157280673,
+        "max_drawdown": -0.07378392830040775
+      },
+      {
+        "rank": 6,
+        "symbol": "OPUSDT",
+        "composite_score": 0.30728725671028745,
+        "win_rate": 0.3333333333333333,
+        "annual_return": -0.22305417265315838,
+        "sharpe_ratio": -7.166383585900694,
+        "max_drawdown": -0.04089758170854864
+      },
+      {
+        "rank": 7,
+        "symbol": "NEARUSDT",
+        "composite_score": 0.30489226649355294,
+        "win_rate": 0.35714285714285715,
+        "annual_return": -0.18822345466329662,
+        "sharpe_ratio": -6.743548473808214,
+        "max_drawdown": -0.048021121253820014
+      },
+      {
+        "rank": 8,
+        "symbol": "QNTUSDT",
+        "composite_score": 0.3026524884769682,
+        "win_rate": 0.4074074074074074,
+        "annual_return": -0.30769308970115644,
+        "sharpe_ratio": -8.176654278409258,
+        "max_drawdown": -0.06858162981108434
+      },
+      {
+        "rank": 9,
+        "symbol": "MKRUSDT",
+        "composite_score": 0.29465578652678476,
+        "win_rate": 0.44,
+        "annual_return": -0.33475506004289185,
+        "sharpe_ratio": -4.278700204530194,
+        "max_drawdown": -0.096077836907456
+      },
+      {
+        "rank": 10,
+        "symbol": "AAVEUSDT",
+        "composite_score": 0.2867110759817281,
+        "win_rate": 0.25,
+        "annual_return": -0.15742608214783502,
+        "sharpe_ratio": -9.138432345226555,
+        "max_drawdown": -0.041332140549784555
+      },
+      {
+        "rank": 11,
+        "symbol": "AVAXUSDT",
+        "composite_score": 0.27267489259385047,
+        "win_rate": 0.4444444444444444,
+        "annual_return": -0.4755541371559706,
+        "sharpe_ratio": -7.154019763233478,
+        "max_drawdown": -0.11993825285045782
+      },
+      {
+        "rank": 12,
+        "symbol": "LTCUSDT",
+        "composite_score": 0.2685754442529667,
+        "win_rate": 0.34285714285714286,
+        "annual_return": -0.34512470141171747,
+        "sharpe_ratio": -6.517831295468734,
+        "max_drawdown": -0.0931789952731325
+      },
+      {
+        "rank": 13,
+        "symbol": "ATOMUSDT",
+        "composite_score": 0.2656381518958237,
+        "win_rate": 0.23684210526315788,
+        "annual_return": -0.2898460814067847,
+        "sharpe_ratio": -7.71912212969167,
+        "max_drawdown": -0.07167770521340389
+      },
+      {
+        "rank": 14,
+        "symbol": "XLMUSDT",
+        "composite_score": 0.2639198968396909,
+        "win_rate": 0.21875,
+        "annual_return": -0.30162099637641804,
+        "sharpe_ratio": -8.767243355292498,
+        "max_drawdown": -0.0740171376149871
+      },
+      {
+        "rank": 15,
+        "symbol": "COMPUSDT",
+        "composite_score": 0.2544328876810605,
+        "win_rate": 0.3902439024390244,
+        "annual_return": -0.5049832653907733,
+        "sharpe_ratio": -7.365175154441586,
+        "max_drawdown": -0.1268253983632706
+      },
+      {
+        "rank": 16,
+        "symbol": "ADAUSDT",
+        "composite_score": 0.24301900685595962,
+        "win_rate": 0.43843843843843844,
+        "annual_return": -0.14175455427544043,
+        "sharpe_ratio": -4.124931554010071,
+        "max_drawdown": -0.429153287204016
+      },
+      {
+        "rank": 17,
+        "symbol": "SOLUSDT",
+        "composite_score": 0.24254030015840894,
+        "win_rate": 0.40649149922720246,
+        "annual_return": -0.6055366011320134,
+        "sharpe_ratio": -6.0487592429243575,
+        "max_drawdown": -1.8265081967967465
+      },
+      {
+        "rank": 18,
+        "symbol": "VETUSDT",
+        "composite_score": 0.24012920595534487,
+        "win_rate": 0.41509433962264153,
+        "annual_return": -0.6531176391636168,
+        "sharpe_ratio": -6.8904463476489735,
+        "max_drawdown": -0.1574118554469866
+      },
+      {
+        "rank": 19,
+        "symbol": "BNBUSDT",
+        "composite_score": 0.23932470915209603,
+        "win_rate": 0.3837812352663838,
+        "annual_return": -2.6614293769600295,
+        "sharpe_ratio": -5.159782709900765,
+        "max_drawdown": -5.329550964005002
+      },
+      {
+        "rank": 20,
+        "symbol": "FILUSDT",
+        "composite_score": 0.23395665393633275,
+        "win_rate": 0.3157894736842105,
+        "annual_return": -0.5062465763832054,
+        "sharpe_ratio": -7.31477893183216,
+        "max_drawdown": -0.12406955852384229
+      }
+    ]
+  },
+  "top10_details": [],
+  "overall_performance": {
+    "avg_win_rate": 0,
+    "avg_annual_return": 0,
+    "avg_sharpe_ratio": 0,
+    "avg_max_drawdown": 0,
+    "avg_dipmaster_score": 0,
+    "total_trades": 0
+  },
+  "portfolio_allocation": {
+    "recommended_weights": {},
+    "allocation_logic": "Composite_Score_Weighted",
+    "rebalancing_frequency": "Monthly",
+    "max_single_position": 0.15
+  },
+  "risk_assessment": {
+    "diversification_score": 0,
+    "correlation_risk": "MEDIUM",
+    "capacity_estimation": "10M-50M USD",
+    "implementation_complexity": "LOW"
+  },
+  "strategy_parameters": {
+    "rsi_low": 30,
+    "rsi_high": 50,
+    "dip_threshold": 0.002,
+    "volume_threshold": 1.5,
+    "max_holding_minutes": 180,
+    "target_profit": 0.008,
+    "stop_loss": -0.02,
+    "transaction_cost": 0.001,
+    "slippage_factor": 0.0005,
+    "daily_loss_limit": -0.05
+  },
+  "optimization_suggestions": [
+    "考虑动态调整RSI阈值，在不同市场环境下适应性更强",
+    "增加市场体制识别，在趋势市场中降低交易频率",
+    "实施更精细的仓位管理，根据波动率调整仓位大小",
+    "考虑增加跨时间框架确认，提高信号质量",
+    "实施智能止损，基于ATR动态调整止损点"
+  ],
+  "next_steps": [
+    "实施TOP10组合的前向测试",
+    "开发实时信号生成系统",
+    "构建风险监控和预警机制",
+    "准备小资金实盘验证",
+    "定期重新验证和组合调整"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "symbol": "ATOMUSDT",
+  "timeframe": "1m",
+  "records_count": 128664,
+  "data_quality": {
+    "quality_score": 0.9465835329103555,
+    "records_count": 128664,
+    "date_range": {
+      "start": "2025-05-19T09:33:00",
+      "end": "2025-08-17T09:32:00"
+    },
+    "download_time_seconds": 35.3061797618866,
+    "retry_count": 0
+  },
+  "date_range": {
+    "start": "2025-05-19T09:33:00",
+    "end": "2025-08-17T09:32:00",
+    "span_days": 89
+  },
+  "file_info": {
+    "file_size_mb": 2.4070634841918945,
+    "compression": "zstd",
+    "format": "parquet"
+  },
+  "statistics": {
+    "price_range": {
+      "min": 3.55,
+      "max": 5.344,
+      "avg": 4.431434208481004
+    },
+    "volume_stats": {
+      "total": 153885963.65,
+      "avg": 1196.0296870142388,
+      "max": 284562.8
+    }
+  },
+  "created_at": "2025-08-17T17:32:59.423791",
+  "collection_config": {
+    "lookback_days": 730,
+    "batch_size": 1000,
+    "rate_limit_delay": 0.05,
+    "retry_attempts": 5,
+    "timeout_seconds": 45,
+    "parallel_symbols": 5,
+    "max_workers": 10
+  }
+}

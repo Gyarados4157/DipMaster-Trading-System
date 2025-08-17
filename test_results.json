@@ -1,0 +1,29 @@
+{
+  "test_timestamp": "2025-08-17T17:57:50.461754",
+  "tests": {
+    "adaptive_parameters": {
+      "test_passed": true,
+      "regimes_configured": 6,
+      "configuration_version": "1.0.0",
+      "target_improvement": "Increase BTCUSDT win rate from 47.7% to 65%+",
+      "message": "Adaptive parameters test completed successfully"
+    },
+    "regime_detector": {
+      "test_passed": false,
+      "error": "Failed in nopython mode pipeline (step: nopython frontend)\n\u001b[1m\u001b[1m\u001b[1mnon-precise type pyobject\u001b[0m\n\u001b[0m\u001b[1mDuring: typing of argument at G:\\Github\\Quant\\DipMaster-Trading-System\\src\\core\\market_regime_detector.py (147)\u001b[0m\n\u001b[1m\nFile \"src\\core\\market_regime_detector.py\", line 147:\u001b[0m\n\u001b[1m    def _initialize_adaptive_parameters(self) -> Dict[MarketRegime, RegimeParams]:\n        <source elided>\n    \n\u001b[1m    @jit(nopython=True)\n\u001b[0m    \u001b[1m^\u001b[0m\u001b[0m\n\n\u001b[0m\u001b[1mDuring: Pass nopython_type_inference\u001b[0m \n\nThis error may have been caused by the following argument(s):\n- argument 0: \u001b[1mCannot determine Numba type of <class 'src.core.market_regime_detector.MarketRegimeDetector'>\u001b[0m\n",
+      "message": "MarketRegimeDetector test failed"
+    },
+    "feature_engineering": {
+      "test_passed": false,
+      "error": "No module named 'psutil'",
+      "message": "Feature engineering test failed"
+    }
+  },
+  "summary": {
+    "total_tests": 3,
+    "passed_tests": 1,
+    "failed_tests": 2,
+    "success_rate": 0.3333333333333333,
+    "overall_status": "FAILED"
+  }
+}

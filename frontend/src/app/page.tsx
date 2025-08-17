@@ -7,19 +7,29 @@ import { Loader2 } from 'lucide-react';
 
 export default function HomePage() {
   const router = useRouter();
-  const { user, isLoading } = useAuth();
+  const { setUser, setToken } = useAuth();
 
   useEffect(() => {
-    if (!isLoading) {
-      if (user) {
-        // 用户已登录，重定向到仪表板
-        router.replace('/dashboard');
-      } else {
-        // 用户未登录，重定向到登录页
-        router.replace('/auth/login');
-      }
-    }
-  }, [user, isLoading, router]);
+    // 演示模式：自动登录并跳转到仪表板
+    const demoUser = {
+      id: 'demo-user-1',
+      username: 'demo',
+      email: 'demo@dipmaster.com',
+      role: 'admin' as const,
+      permissions: ['read', 'write', 'admin'],
+      lastLoginAt: new Date().toISOString(),
+      isActive: true,
+    };
+    
+    // 设置演示用户和token
+    setUser(demoUser);
+    setToken('demo-token-' + Date.now());
+    
+    // 2秒后跳转到仪表板
+    setTimeout(() => {
+      router.replace('/dashboard');
+    }, 2000);
+  }, [router, setUser, setToken]);
 
   // 显示加载界面
   return (

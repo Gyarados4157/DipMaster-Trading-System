@@ -1,0 +1,47 @@
+{
+  "symbol": "XLMUSDT",
+  "timeframe": "1m",
+  "records_count": 129303,
+  "data_quality": {
+    "quality_score": 0.9576695282545019,
+    "records_count": 129303,
+    "date_range": {
+      "start": "2025-05-19T09:33:00",
+      "end": "2025-08-17T09:32:00"
+    },
+    "download_time_seconds": 35.134201765060425,
+    "retry_count": 0
+  },
+  "date_range": {
+    "start": "2025-05-19T09:33:00",
+    "end": "2025-08-17T09:32:00",
+    "span_days": 89
+  },
+  "file_info": {
+    "file_size_mb": 2.2511978149414062,
+    "compression": "zstd",
+    "format": "parquet"
+  },
+  "statistics": {
+    "price_range": {
+      "min": 0.2168,
+      "max": 0.5206,
+      "avg": 0.3326446099471783
+    },
+    "volume_stats": {
+      "total": 10364644359.0,
+      "avg": 80157.80267279182,
+      "max": 8647269.0
+    }
+  },
+  "created_at": "2025-08-17T17:32:59.667279",
+  "collection_config": {
+    "lookback_days": 730,
+    "batch_size": 1000,
+    "rate_limit_delay": 0.05,
+    "retry_attempts": 5,
+    "timeout_seconds": 45,
+    "parallel_symbols": 5,
+    "max_workers": 10
+  }
+}

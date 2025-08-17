@@ -1,4 +1,31 @@
 {
+  "complete_monitoring_system": {
+    "enabled": true,
+    "kafka_servers": ["localhost:9092"],
+    "kafka_client_id": "dipmaster-monitoring",
+    "log_dir": "logs/monitoring",
+    "log_level": "INFO",
+    "log_rotation_size": 104857600,
+    "log_retention_days": 30,
+    "metrics_collection_interval": 10,
+    "dashboard_update_interval": 1,
+    "health_check_interval": 60,
+    "critical_drawdown_threshold": 15.0,
+    "error_rate_threshold": 10.0,
+    "latency_threshold_ms": 1000.0,
+    "dipmaster_params": {
+      "rsi_min": 30.0,
+      "rsi_max": 50.0,
+      "dip_threshold_pct": 0.2,
+      "volume_multiplier": 1.5,
+      "max_holding_minutes": 180,
+      "target_profit_pct": 0.8,
+      "boundary_minutes": [15, 30, 45, 60],
+      "min_confidence": 0.6,
+      "ma20_deviation_max": -0.001
+    }
+  },
+  
   "monitoring": {
     "enabled": true,
     "update_interval_seconds": 30,

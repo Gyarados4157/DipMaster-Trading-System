@@ -1,0 +1,47 @@
+{
+  "symbol": "COMPUSDT",
+  "timeframe": "5m",
+  "records_count": 210155,
+  "data_quality": {
+    "quality_score": 0.949300282852222,
+    "records_count": 210155,
+    "date_range": {
+      "start": "2023-08-18T09:35:00",
+      "end": "2025-08-17T09:30:00"
+    },
+    "download_time_seconds": 60.28700494766235,
+    "retry_count": 0
+  },
+  "date_range": {
+    "start": "2023-08-18T09:35:00",
+    "end": "2025-08-17T09:30:00",
+    "span_days": 729
+  },
+  "file_info": {
+    "file_size_mb": 4.440532684326172,
+    "compression": "zstd",
+    "format": "parquet"
+  },
+  "statistics": {
+    "price_range": {
+      "min": 33.84,
+      "max": 144.0,
+      "avg": 53.92258599605052
+    },
+    "volume_stats": {
+      "total": 87459372.58799998,
+      "avg": 416.1660326330565,
+      "max": 100298.678
+    }
+  },
+  "created_at": "2025-08-17T17:34:06.537874",
+  "collection_config": {
+    "lookback_days": 730,
+    "batch_size": 1000,
+    "rate_limit_delay": 0.05,
+    "retry_attempts": 5,
+    "timeout_seconds": 45,
+    "parallel_symbols": 5,
+    "max_workers": 10
+  }
+}

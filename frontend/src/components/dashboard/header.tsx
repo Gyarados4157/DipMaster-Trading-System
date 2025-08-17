@@ -17,12 +17,12 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { useAuth } from '@/hooks/use-auth';
-import { useWebSocket } from '@/hooks/use-websocket';
+import { useWebSocketContext } from '@/hooks/use-demo-websocket';
 
 export function DashboardHeader() {
   const { theme, setTheme } = useTheme();
   const { user } = useAuth();
-  const { isConnected, connectionStatus } = useWebSocket();
+  const { isConnected, connectionStatus } = useWebSocketContext();
   const [currentTime, setCurrentTime] = useState(new Date());
   const [alertCount, setAlertCount] = useState(3); // Mock alert count
 

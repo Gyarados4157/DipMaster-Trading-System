@@ -1,0 +1,47 @@
+{
+  "symbol": "ADAUSDT",
+  "timeframe": "5m",
+  "records_count": 210240,
+  "data_quality": {
+    "quality_score": 0.9595695451430547,
+    "records_count": 210240,
+    "date_range": {
+      "start": "2023-08-18T09:30:00",
+      "end": "2025-08-17T09:25:00"
+    },
+    "download_time_seconds": 91.60615396499634,
+    "retry_count": 1
+  },
+  "date_range": {
+    "start": "2023-08-18T09:30:00",
+    "end": "2025-08-17T09:25:00",
+    "span_days": 729
+  },
+  "file_info": {
+    "file_size_mb": 4.50362491607666,
+    "compression": "zstd",
+    "format": "parquet"
+  },
+  "statistics": {
+    "price_range": {
+      "min": 0.2367,
+      "max": 1.3264,
+      "avg": 0.5665943378995434
+    },
+    "volume_stats": {
+      "total": 121244509493.1,
+      "avg": 576695.7262799658,
+      "max": 59189208.1
+    }
+  },
+  "created_at": "2025-08-17T17:30:03.246943",
+  "collection_config": {
+    "lookback_days": 730,
+    "batch_size": 1000,
+    "rate_limit_delay": 0.05,
+    "retry_attempts": 5,
+    "timeout_seconds": 45,
+    "parallel_symbols": 5,
+    "max_workers": 10
+  }
+}

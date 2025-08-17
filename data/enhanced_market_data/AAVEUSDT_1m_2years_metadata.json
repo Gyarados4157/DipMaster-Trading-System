@@ -1,0 +1,47 @@
+{
+  "symbol": "AAVEUSDT",
+  "timeframe": "1m",
+  "records_count": 129588,
+  "data_quality": {
+    "quality_score": 0.949073244870771,
+    "records_count": 129588,
+    "date_range": {
+      "start": "2025-05-19T09:34:00",
+      "end": "2025-08-17T09:33:00"
+    },
+    "download_time_seconds": 43.158796548843384,
+    "retry_count": 0
+  },
+  "date_range": {
+    "start": "2025-05-19T09:34:00",
+    "end": "2025-08-17T09:33:00",
+    "span_days": 89
+  },
+  "file_info": {
+    "file_size_mb": 2.809051513671875,
+    "compression": "zstd",
+    "format": "parquet"
+  },
+  "statistics": {
+    "price_range": {
+      "min": 213.0,
+      "max": 340.49,
+      "avg": 278.6303027286478
+    },
+    "volume_stats": {
+      "total": 16714619.605999999,
+      "avg": 128.98277314257493,
+      "max": 15702.59
+    }
+  },
+  "created_at": "2025-08-17T17:34:06.045234",
+  "collection_config": {
+    "lookback_days": 730,
+    "batch_size": 1000,
+    "rate_limit_delay": 0.05,
+    "retry_attempts": 5,
+    "timeout_seconds": 45,
+    "parallel_symbols": 5,
+    "max_workers": 10
+  }
+}

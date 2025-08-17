@@ -1,0 +1,1863 @@
+{
+  "analysis_summary": {
+    "timestamp": "2025-08-17T17:30:53.878504",
+    "total_symbols_analyzed": 5,
+    "total_files_analyzed": 30,
+    "average_quality_score": 0.7145688422223899,
+    "excellent_tier_count": 0,
+    "recommended_count": 0
+  },
+  "available_data": {
+    "ADAUSDT": {
+      "15m": {
+        "file_path": "data\\enhanced_market_data\\ADAUSDT_15m_2years.parquet",
+        "metadata_path": "data\\enhanced_market_data\\ADAUSDT_15m_2years_metadata.json",
+        "file_size_mb": 1.7076454162597656,
+        "modified_time": "2025-08-17 17:30:03.291553",
+        "metadata": {
+          "symbol": "ADAUSDT",
+          "timeframe": "15m",
+          "records_count": 70080,
+          "data_quality": {
+            "quality_score": 0.9802968140391212,
+            "records_count": 70080,
+            "date_range": {
+              "start": "2023-08-18T09:30:00",
+              "end": "2025-08-17T09:15:00"
+            },
+            "download_time_seconds": 55.004780530929565,
+            "retry_count": 1
+          },
+          "date_range": {
+            "start": "2023-08-18T09:30:00",
+            "end": "2025-08-17T09:15:00",
+            "span_days": 729
+          },
+          "file_info": {
+            "file_size_mb": 1.7076454162597656,
+            "compression": "zstd",
+            "format": "parquet"
+          },
+          "statistics": {
+            "price_range": {
+              "min": 0.2367,
+              "max": 1.3264,
+              "avg": 0.5666044477739726
+            },
+            "volume_stats": {
+              "total": 121244484881.20001,
+              "avg": 1730086.8276426943,
+              "max": 139984926.7
+            }
+          },
+          "created_at": "2025-08-17T17:30:03.294502",
+          "collection_config": {
+            "lookback_days": 730,
+            "batch_size": 1000,
+            "rate_limit_delay": 0.05,
+            "retry_attempts": 5,
+            "timeout_seconds": 45,
+            "parallel_symbols": 5,
+            "max_workers": 10
+          }
+        }
+      },
+      "1d": {
+        "file_path": "data\\enhanced_market_data\\ADAUSDT_1d_2years.parquet",
+        "metadata_path": "data\\enhanced_market_data\\ADAUSDT_1d_2years_metadata.json",
+        "file_size_mb": 0.04286670684814453,
+        "modified_time": "2025-08-17 17:30:03.338518",
+        "metadata": {
+          "symbol": "ADAUSDT",
+          "timeframe": "1d",
+          "records_count": 1095,
+          "data_quality": {
+            "quality_score": 0.9985844748858448,
+            "records_count": 1095,
+            "date_range": {
+              "start": "2022-08-19T00:00:00",
+              "end": "2025-08-17T00:00:00"
+            },
+            "download_time_seconds": 29.176668167114258,
+            "retry_count": 1
+          },
+          "date_range": {
+            "start": "2022-08-19T00:00:00",
+            "end": "2025-08-17T00:00:00",
+            "span_days": 1094
+          },
+          "file_info": {
+            "file_size_mb": 0.04286670684814453,
+            "compression": "zstd",
+            "format": "parquet"
+          },
+          "statistics": {
+            "price_range": {
+              "min": 0.22,
+              "max": 1.3264,
+              "avg": 0.49731214611872154
+            },
+            "volume_stats": {
+              "total": 166275479854.94,
+              "avg": 151849753.29218265,
+              "max": 1462027409.9
+            }
+          },
+          "created_at": "2025-08-17T17:30:03.340310",
+          "collection_config": {
+            "lookback_days": 730,
+            "batch_size": 1000,
+            "rate_limit_delay": 0.05,
+            "retry_attempts": 5,
+            "timeout_seconds": 45,
+            "parallel_symbols": 5,
+            "max_workers": 10
+          }
+        }
+      },
+      "1h": {
+        "file_path": "data\\enhanced_market_data\\ADAUSDT_1h_2years.parquet",
+        "metadata_path": "data\\enhanced_market_data\\ADAUSDT_1h_2years_metadata.json",
+        "file_size_mb": 0.46893978118896484,
+        "modified_time": "2025-08-17 17:30:03.314531",
+        "metadata": {
+          "symbol": "ADAUSDT",
+          "timeframe": "1h",
+          "records_count": 17520,
+          "data_quality": {
+            "quality_score": 0.999152397260274,
+            "records_count": 17520,
+            "date_range": {
+              "start": "2023-08-18T10:00:00",
+              "end": "2025-08-17T09:00:00"
+            },
+            "download_time_seconds": 36.80821466445923,
+            "retry_count": 0
+          },
+          "date_range": {
+            "start": "2023-08-18T10:00:00",
+            "end": "2025-08-17T09:00:00",
+            "span_days": 729
+          },
+          "file_info": {
+            "file_size_mb": 0.46893978118896484,
+            "compression": "zstd",
+            "format": "parquet"
+          },
+          "statistics": {
+            "price_range": {
+              "min": 0.2367,
+              "max": 1.3264,
+              "avg": 0.5666000342465753
+            },
+            "volume_stats": {
+              "total": 121242946885.1,
+              "avg": 6920259.525405251,
+              "max": 442645160.0
+            }
+          },
+          "created_at": "2025-08-17T17:30:03.316450",
+          "collection_config": {
+            "lookback_days": 730,
+            "batch_size": 1000,
+            "rate_limit_delay": 0.05,
+            "retry_attempts": 5,
+            "timeout_seconds": 45,
+            "parallel_symbols": 5,
+            "max_workers": 10
+          }
+        }
+      },
+      "1m": {
+        "file_path": "data\\enhanced_market_data\\ADAUSDT_1m_2years.parquet",
+        "metadata_path": "data\\enhanced_market_data\\ADAUSDT_1m_2years_metadata.json",
+        "file_size_mb": 2.807196617126465,
+        "modified_time": "2025-08-17 17:30:03.097932",
+        "metadata": {
+          "symbol": "ADAUSDT",
+          "timeframe": "1m",
+          "records_count": 129601,
+          "data_quality": {
+            "quality_score": 0.9511218929634124,
+            "records_count": 129601,
+            "date_range": {
+              "start": "2025-05-19T09:29:00",
+              "end": "2025-08-17T09:29:00"
+            },
+            "download_time_seconds": 69.5705771446228,
+            "retry_count": 0
+          },
+          "date_range": {
+            "start": "2025-05-19T09:29:00",
+            "end": "2025-08-17T09:29:00",
+            "span_days": 90
+          },
+          "file_info": {
+            "file_size_mb": 2.807196617126465,
+            "compression": "zstd",
+            "format": "parquet"
+          },
+          "statistics": {
+            "price_range": {
+              "min": 0.51,
+              "max": 1.0193,
+              "avg": 0.7105589717671932
+            },
+            "volume_stats": {
+              "total": 14322136108.400002,
+              "avg": 110509.45678196929,
+              "max": 10383400.1
+            }
+          },
+          "created_at": "2025-08-17T17:30:03.101761",
+          "collection_config": {
+            "lookback_days": 730,
+            "batch_size": 1000,
+            "rate_limit_delay": 0.05,
+            "retry_attempts": 5,
+            "timeout_seconds": 45,
+            "parallel_symbols": 5,
+            "max_workers": 10
+          }
+        }
+      },
+      "4h": {
+        "file_path": "data\\enhanced_market_data\\ADAUSDT_4h_2years.parquet",
+        "metadata_path": "data\\enhanced_market_data\\ADAUSDT_4h_2years_metadata.json",
+        "file_size_mb": 0.14397335052490234,
+        "modified_time": "2025-08-17 17:30:03.328075",
+        "metadata": {
+          "symbol": "ADAUSDT",
+          "timeframe": "4h",
+          "records_count": 4380,
+          "data_quality": {
+            "quality_score": 0.9988698630136988,
+            "records_count": 4380,
+            "date_range": {
+              "start": "2023-08-18T12:00:00",
+              "end": "2025-08-17T08:00:00"
+            },
+            "download_time_seconds": 30.167624711990356,
+            "retry_count": 0
+          },
+          "date_range": {
+            "start": "2023-08-18T12:00:00",
+            "end": "2025-08-17T08:00:00",
+            "span_days": 729
+          },
+          "file_info": {
+            "file_size_mb": 0.14397335052490234,
+            "compression": "zstd",
+            "format": "parquet"
+          },
+          "statistics": {
+            "price_range": {
+              "min": 0.2367,
+              "max": 1.3264,
+              "avg": 0.5667868264840181
+            },
+            "volume_stats": {
+              "total": 121237297220.5,
+              "avg": 27679748.223858446,
+              "max": 825867071.6
+            }
+          },
+          "created_at": "2025-08-17T17:30:03.329852",
+          "collection_config": {
+            "lookback_days": 730,
+            "batch_size": 1000,
+            "rate_limit_delay": 0.05,
+            "retry_attempts": 5,
+            "timeout_seconds": 45,
+            "parallel_symbols": 5,
+            "max_workers": 10
+          }
+        }
+      },
+      "5m": {
+        "file_path": "data\\enhanced_market_data\\ADAUSDT_5m_2years.parquet",
+        "metadata_path": "data\\enhanced_market_data\\ADAUSDT_5m_2years_metadata.json",
+        "file_size_mb": 4.50362491607666,
+        "modified_time": "2025-08-17 17:30:03.238831",
+        "metadata": {
+          "symbol": "ADAUSDT",
+          "timeframe": "5m",
+          "records_count": 210240,
+          "data_quality": {
+            "quality_score": 0.9595695451430547,
+            "records_count": 210240,
+            "date_range": {
+              "start": "2023-08-18T09:30:00",
+              "end": "2025-08-17T09:25:00"
+            },
+            "download_time_seconds": 91.60615396499634,
+            "retry_count": 1
+          },
+          "date_range": {
+            "start": "2023-08-18T09:30:00",
+            "end": "2025-08-17T09:25:00",
+            "span_days": 729
+          },
+          "file_info": {
+            "file_size_mb": 4.50362491607666,
+            "compression": "zstd",
+            "format": "parquet"
+          },
+          "statistics": {
+            "price_range": {
+              "min": 0.2367,
+              "max": 1.3264,
+              "avg": 0.5665943378995434
+            },
+            "volume_stats": {
+              "total": 121244509493.1,
+              "avg": 576695.7262799658,
+              "max": 59189208.1
+            }
+          },
+          "created_at": "2025-08-17T17:30:03.246943",
+          "collection_config": {
+            "lookback_days": 730,
+            "batch_size": 1000,
+            "rate_limit_delay": 0.05,
+            "retry_attempts": 5,
+            "timeout_seconds": 45,
+            "parallel_symbols": 5,
+            "max_workers": 10
+          }
+        }
+      }
+    },
+    "BNBUSDT": {
+      "15m": {
+        "file_path": "data\\enhanced_market_data\\BNBUSDT_15m_2years.parquet",
+        "metadata_path": "data\\enhanced_market_data\\BNBUSDT_15m_2years_metadata.json",
+        "file_size_mb": 1.865011215209961,
+        "modified_time": "2025-08-17 17:30:02.118853",
+        "metadata": {
+          "symbol": "BNBUSDT",
+          "timeframe": "15m",
+          "records_count": 70080,
+          "data_quality": {
+            "quality_score": 0.9491065746429697,
+            "records_count": 70080,
+            "date_range": {
+              "start": "2023-08-18T09:30:00",
+              "end": "2025-08-17T09:15:00"
+            },
+            "download_time_seconds": 55.5082848072052,
+            "retry_count": 0
+          },
+          "date_range": {
+            "start": "2023-08-18T09:30:00",
+            "end": "2025-08-17T09:15:00",
+            "span_days": 729
+          },
+          "file_info": {
+            "file_size_mb": 1.865011215209961,
+            "compression": "zstd",
+            "format": "parquet"
+          },
+          "statistics": {
+            "price_range": {
+              "min": 202.0,
+              "max": 869.4,
+              "avg": 521.2236088755709
+            },
+            "volume_stats": {
+              "total": 348593872.41330004,
+              "avg": 4974.227631468322,
+              "max": 361757.115
+            }
+          },
+          "created_at": "2025-08-17T17:30:02.121161",
+          "collection_config": {
+            "lookback_days": 730,
+            "batch_size": 1000,
+            "rate_limit_delay": 0.05,
+            "retry_attempts": 5,
+            "timeout_seconds": 45,
+            "parallel_symbols": 5,
+            "max_workers": 10
+          }
+        }
+      },
+      "1d": {
+        "file_path": "data\\enhanced_market_data\\BNBUSDT_1d_2years.parquet",
+        "metadata_path": "data\\enhanced_market_data\\BNBUSDT_1d_2years_metadata.json",
+        "file_size_mb": 0.035248756408691406,
+        "modified_time": "2025-08-17 17:30:02.166331",
+        "metadata": {
+          "symbol": "BNBUSDT",
+          "timeframe": "1d",
+          "records_count": 1095,
+          "data_quality": {
+            "quality_score": 0.9524204882596917,
+            "records_count": 1095,
+            "date_range": {
+              "start": "2022-08-19T00:00:00",
+              "end": "2025-08-17T00:00:00"
+            },
+            "download_time_seconds": 29.349451541900635,
+            "retry_count": 0
+          },
+          "date_range": {
+            "start": "2022-08-19T00:00:00",
+            "end": "2025-08-17T00:00:00",
+            "span_days": 1094
+          },
+          "file_info": {
+            "file_size_mb": 0.035248756408691406,
+            "compression": "zstd",
+            "format": "parquet"
+          },
+          "statistics": {
+            "price_range": {
+              "min": 202.0,
+              "max": 869.4,
+              "avg": 443.14183561643836
+            },
+            "volume_stats": {
+              "total": 506304330.5453,
+              "avg": 462378.3840596347,
+              "max": 4050392.778
+            }
+          },
+          "created_at": "2025-08-17T17:30:02.168006",
+          "collection_config": {
+            "lookback_days": 730,
+            "batch_size": 1000,
+            "rate_limit_delay": 0.05,
+            "retry_attempts": 5,
+            "timeout_seconds": 45,
+            "parallel_symbols": 5,
+            "max_workers": 10
+          }
+        }
+      },
+      "1h": {
+        "file_path": "data\\enhanced_market_data\\BNBUSDT_1h_2years.parquet",
+        "metadata_path": "data\\enhanced_market_data\\BNBUSDT_1h_2years_metadata.json",
+        "file_size_mb": 0.46359920501708984,
+        "modified_time": "2025-08-17 17:30:02.140231",
+        "metadata": {
+          "symbol": "BNBUSDT",
+          "timeframe": "1h",
+          "records_count": 17520,
+          "data_quality": {
+            "quality_score": 0.9491317730713683,
+            "records_count": 17520,
+            "date_range": {
+              "start": "2023-08-18T10:00:00",
+              "end": "2025-08-17T09:00:00"
+            },
+            "download_time_seconds": 38.37647747993469,
+            "retry_count": 0
+          },
+          "date_range": {
+            "start": "2023-08-18T10:00:00",
+            "end": "2025-08-17T09:00:00",
+            "span_days": 729
+          },
+          "file_info": {
+            "file_size_mb": 0.46359920501708984,
+            "compression": "zstd",
+            "format": "parquet"
+          },
+          "statistics": {
+            "price_range": {
+              "min": 202.0,
+              "max": 869.4,
+              "avg": 521.2561061643836
+            },
+            "volume_stats": {
+              "total": 348583026.29629993,
+              "avg": 19896.29145526826,
+              "max": 720211.448
+            }
+          },
+          "created_at": "2025-08-17T17:30:02.142001",
+          "collection_config": {
+            "lookback_days": 730,
+            "batch_size": 1000,
+            "rate_limit_delay": 0.05,
+            "retry_attempts": 5,
+            "timeout_seconds": 45,
+            "parallel_symbols": 5,
+            "max_workers": 10
+          }
+        }
+      },
+      "1m": {
+        "file_path": "data\\enhanced_market_data\\BNBUSDT_1m_2years.parquet",
+        "metadata_path": "data\\enhanced_market_data\\BNBUSDT_1m_2years_metadata.json",
+        "file_size_mb": 2.95517635345459,
+        "modified_time": "2025-08-17 17:30:01.810396",
+        "metadata": {
+          "symbol": "BNBUSDT",
+          "timeframe": "1m",
+          "records_count": 129601,
+          "data_quality": {
+            "quality_score": 0.9492095274445279,
+            "records_count": 129601,
+            "date_range": {
+              "start": "2025-05-19T09:29:00",
+              "end": "2025-08-17T09:29:00"
+            },
+            "download_time_seconds": 70.66728091239929,
+            "retry_count": 0
+          },
+          "date_range": {
+            "start": "2025-05-19T09:29:00",
+            "end": "2025-08-17T09:29:00",
+            "span_days": 90
+          },
+          "file_info": {
+            "file_size_mb": 2.95517635345459,
+            "compression": "zstd",
+            "format": "parquet"
+          },
+          "statistics": {
+            "price_range": {
+              "min": 601.25,
+              "max": 869.4,
+              "avg": 703.9992936011298
+            },
+            "volume_stats": {
+              "total": 19245792.281600002,
+              "avg": 148.50033781838104,
+              "max": 26276.267
+            }
+          },
+          "created_at": "2025-08-17T17:30:01.814801",
+          "collection_config": {
+            "lookback_days": 730,
+            "batch_size": 1000,
+            "rate_limit_delay": 0.05,
+            "retry_attempts": 5,
+            "timeout_seconds": 45,
+            "parallel_symbols": 5,
+            "max_workers": 10
+          }
+        }
+      },
+      "4h": {
+        "file_path": "data\\enhanced_market_data\\BNBUSDT_4h_2years.parquet",
+        "metadata_path": "data\\enhanced_market_data\\BNBUSDT_4h_2years_metadata.json",
+        "file_size_mb": 0.1293163299560547,
+        "modified_time": "2025-08-17 17:30:02.154324",
+        "metadata": {
+          "symbol": "BNBUSDT",
+          "timeframe": "4h",
+          "records_count": 4380,
+          "data_quality": {
+            "quality_score": 0.9494265724395421,
+            "records_count": 4380,
+            "date_range": {
+              "start": "2023-08-18T12:00:00",
+              "end": "2025-08-17T08:00:00"
+            },
+            "download_time_seconds": 30.608900547027588,
+            "retry_count": 0
+          },
+          "date_range": {
+            "start": "2023-08-18T12:00:00",
+            "end": "2025-08-17T08:00:00",
+            "span_days": 729
+          },
+          "file_info": {
+            "file_size_mb": 0.1293163299560547,
+            "compression": "zstd",
+            "format": "parquet"
+          },
+          "statistics": {
+            "price_range": {
+              "min": 202.0,
+              "max": 869.4,
+              "avg": 521.3669109589042
+            },
+            "volume_stats": {
+              "total": 348548410.6493,
+              "avg": 79577.26270531963,
+              "max": 1676416.686
+            }
+          },
+          "created_at": "2025-08-17T17:30:02.156356",
+          "collection_config": {
+            "lookback_days": 730,
+            "batch_size": 1000,
+            "rate_limit_delay": 0.05,
+            "retry_attempts": 5,
+            "timeout_seconds": 45,
+            "parallel_symbols": 5,
+            "max_workers": 10
+          }
+        }
+      },
+      "5m": {
+        "file_path": "data\\enhanced_market_data\\BNBUSDT_5m_2years.parquet",
+        "metadata_path": "data\\enhanced_market_data\\BNBUSDT_5m_2years_metadata.json",
+        "file_size_mb": 4.896365165710449,
+        "modified_time": "2025-08-17 17:30:02.062469",
+        "metadata": {
+          "symbol": "BNBUSDT",
+          "timeframe": "5m",
+          "records_count": 210240,
+          "data_quality": {
+            "quality_score": 0.9491128650656913,
+            "records_count": 210240,
+            "date_range": {
+              "start": "2023-08-18T09:30:00",
+              "end": "2025-08-17T09:25:00"
+            },
+            "download_time_seconds": 90.58682417869568,
+            "retry_count": 0
+          },
+          "date_range": {
+            "start": "2023-08-18T09:30:00",
+            "end": "2025-08-17T09:25:00",
+            "span_days": 729
+          },
+          "file_info": {
+            "file_size_mb": 4.896365165710449,
+            "compression": "zstd",
+            "format": "parquet"
+          },
+          "statistics": {
+            "price_range": {
+              "min": 202.0,
+              "max": 869.4,
+              "avg": 521.2185425228311
+            },
+            "volume_stats": {
+              "total": 348593926.36230004,
+              "avg": 1658.0761337628426,
+              "max": 177241.34
+            }
+          },
+          "created_at": "2025-08-17T17:30:02.067706",
+          "collection_config": {
+            "lookback_days": 730,
+            "batch_size": 1000,
+            "rate_limit_delay": 0.05,
+            "retry_attempts": 5,
+            "timeout_seconds": 45,
+            "parallel_symbols": 5,
+            "max_workers": 10
+          }
+        }
+      }
+    },
+    "DOGEUSDT": {
+      "15m": {
+        "file_path": "data\\enhanced_market_data\\DOGEUSDT_15m_2years.parquet",
+        "metadata_path": "data\\enhanced_market_data\\DOGEUSDT_15m_2years_metadata.json",
+        "file_size_mb": 2.018037796020508,
+        "modified_time": "2025-08-17 17:30:02.923624",
+        "metadata": {
+          "symbol": "DOGEUSDT",
+          "timeframe": "15m",
+          "records_count": 70080,
+          "data_quality": {
+            "quality_score": 0.9989840182648403,
+            "records_count": 70080,
+            "date_range": {
+              "start": "2023-08-18T09:30:00",
+              "end": "2025-08-17T09:15:00"
+            },
+            "download_time_seconds": 56.03779077529907,
+            "retry_count": 2
+          },
+          "date_range": {
+            "start": "2023-08-18T09:30:00",
+            "end": "2025-08-17T09:15:00",
+            "span_days": 729
+          },
+          "file_info": {
+            "file_size_mb": 2.018037796020508,
+            "compression": "zstd",
+            "format": "parquet"
+          },
+          "statistics": {
+            "price_range": {
+              "min": 0.05678,
+              "max": 0.48434,
+              "avg": 0.16426833918378994
+            },
+            "volume_stats": {
+              "total": 1165695882674.6,
+              "avg": 16633788.280174088,
+              "max": 800647711.0
+            }
+          },
+          "created_at": "2025-08-17T17:30:02.927046",
+          "collection_config": {
+            "lookback_days": 730,
+            "batch_size": 1000,
+            "rate_limit_delay": 0.05,
+            "retry_attempts": 5,
+            "timeout_seconds": 45,
+            "parallel_symbols": 5,
+            "max_workers": 10
+          }
+        }
+      },
+      "1d": {
+        "file_path": "data\\enhanced_market_data\\DOGEUSDT_1d_2years.parquet",
+        "metadata_path": "data\\enhanced_market_data\\DOGEUSDT_1d_2years_metadata.json",
+        "file_size_mb": 0.05253314971923828,
+        "modified_time": "2025-08-17 17:30:02.989894",
+        "metadata": {
+          "symbol": "DOGEUSDT",
+          "timeframe": "1d",
+          "records_count": 1095,
+          "data_quality": {
+            "quality_score": 0.9985844748858448,
+            "records_count": 1095,
+            "date_range": {
+              "start": "2022-08-19T00:00:00",
+              "end": "2025-08-17T00:00:00"
+            },
+            "download_time_seconds": 28.003052473068237,
+            "retry_count": 1
+          },
+          "date_range": {
+            "start": "2022-08-19T00:00:00",
+            "end": "2025-08-17T00:00:00",
+            "span_days": 1094
+          },
+          "file_info": {
+            "file_size_mb": 0.05253314971923828,
+            "compression": "zstd",
+            "format": "parquet"
+          },
+          "statistics": {
+            "price_range": {
+              "min": 0.053,
+              "max": 0.48434,
+              "avg": 0.13507726940639267
+            },
+            "volume_stats": {
+              "total": 1638603349990.6,
+              "avg": 1496441415.5165298,
+              "max": 17192779834.8
+            }
+          },
+          "created_at": "2025-08-17T17:30:02.991741",
+          "collection_config": {
+            "lookback_days": 730,
+            "batch_size": 1000,
+            "rate_limit_delay": 0.05,
+            "retry_attempts": 5,
+            "timeout_seconds": 45,
+            "parallel_symbols": 5,
+            "max_workers": 10
+          }
+        }
+      },
+      "1h": {
+        "file_path": "data\\enhanced_market_data\\DOGEUSDT_1h_2years.parquet",
+        "metadata_path": "data\\enhanced_market_data\\DOGEUSDT_1h_2years_metadata.json",
+        "file_size_mb": 0.6428966522216797,
+        "modified_time": "2025-08-17 17:30:02.949701",
+        "metadata": {
+          "symbol": "DOGEUSDT",
+          "timeframe": "1h",
+          "records_count": 17520,
+          "data_quality": {
+            "quality_score": 0.9989269406392696,
+            "records_count": 17520,
+            "date_range": {
+              "start": "2023-08-18T10:00:00",
+              "end": "2025-08-17T09:00:00"
+            },
+            "download_time_seconds": 37.39111375808716,
+            "retry_count": 1
+          },
+          "date_range": {
+            "start": "2023-08-18T10:00:00",
+            "end": "2025-08-17T09:00:00",
+            "span_days": 729
+          },
+          "file_info": {
+            "file_size_mb": 0.6428966522216797,
+            "compression": "zstd",
+            "format": "parquet"
+          },
+          "statistics": {
+            "price_range": {
+              "min": 0.05678,
+              "max": 0.48434,
+              "avg": 0.16426818778538813
+            },
+            "volume_stats": {
+              "total": 1165681199397.6,
+              "avg": 66534315.03410959,
+              "max": 2042336703.0
+            }
+          },
+          "created_at": "2025-08-17T17:30:02.951669",
+          "collection_config": {
+            "lookback_days": 730,
+            "batch_size": 1000,
+            "rate_limit_delay": 0.05,
+            "retry_attempts": 5,
+            "timeout_seconds": 45,
+            "parallel_symbols": 5,
+            "max_workers": 10
+          }
+        }
+      },
+      "1m": {
+        "file_path": "data\\enhanced_market_data\\DOGEUSDT_1m_2years.parquet",
+        "metadata_path": "data\\enhanced_market_data\\DOGEUSDT_1m_2years_metadata.json",
+        "file_size_mb": 2.9505319595336914,
+        "modified_time": "2025-08-17 17:30:02.626119",
+        "metadata": {
+          "symbol": "DOGEUSDT",
+          "timeframe": "1m",
+          "records_count": 129601,
+          "data_quality": {
+            "quality_score": 0.9577198812189501,
+            "records_count": 129601,
+            "date_range": {
+              "start": "2025-05-19T09:29:00",
+              "end": "2025-08-17T09:29:00"
+            },
+            "download_time_seconds": 71.66585445404053,
+            "retry_count": 0
+          },
+          "date_range": {
+            "start": "2025-05-19T09:29:00",
+            "end": "2025-08-17T09:29:00",
+            "span_days": 90
+          },
+          "file_info": {
+            "file_size_mb": 2.9505319595336914,
+            "compression": "zstd",
+            "format": "parquet"
+          },
+          "statistics": {
+            "price_range": {
+              "min": 0.1427,
+              "max": 0.2875,
+              "avg": 0.2017230547603799
+            },
+            "volume_stats": {
+              "total": 109180976125.0,
+              "avg": 842439.3031303771,
+              "max": 73085106.0
+            }
+          },
+          "created_at": "2025-08-17T17:30:02.630710",
+          "collection_config": {
+            "lookback_days": 730,
+            "batch_size": 1000,
+            "rate_limit_delay": 0.05,
+            "retry_attempts": 5,
+            "timeout_seconds": 45,
+            "parallel_symbols": 5,
+            "max_workers": 10
+          }
+        }
+      },
+      "4h": {
+        "file_path": "data\\enhanced_market_data\\DOGEUSDT_4h_2years.parquet",
+        "metadata_path": "data\\enhanced_market_data\\DOGEUSDT_4h_2years_metadata.json",
+        "file_size_mb": 0.18669605255126953,
+        "modified_time": "2025-08-17 17:30:02.963271",
+        "metadata": {
+          "symbol": "DOGEUSDT",
+          "timeframe": "4h",
+          "records_count": 4380,
+          "data_quality": {
+            "quality_score": 0.9989497716894978,
+            "records_count": 4380,
+            "date_range": {
+              "start": "2023-08-18T12:00:00",
+              "end": "2025-08-17T08:00:00"
+            },
+            "download_time_seconds": 30.77570939064026,
+            "retry_count": 1
+          },
+          "date_range": {
+            "start": "2023-08-18T12:00:00",
+            "end": "2025-08-17T08:00:00",
+            "span_days": 729
+          },
+          "file_info": {
+            "file_size_mb": 0.18669605255126953,
+            "compression": "zstd",
+            "format": "parquet"
+          },
+          "statistics": {
+            "price_range": {
+              "min": 0.05678,
+              "max": 0.48434,
+              "avg": 0.1643031598173516
+            },
+            "volume_stats": {
+              "total": 1165584007597.6,
+              "avg": 266115070.22776258,
+              "max": 4515667570.0
+            }
+          },
+          "created_at": "2025-08-17T17:30:02.965155",
+          "collection_config": {
+            "lookback_days": 730,
+            "batch_size": 1000,
+            "rate_limit_delay": 0.05,
+            "retry_attempts": 5,
+            "timeout_seconds": 45,
+            "parallel_symbols": 5,
+            "max_workers": 10
+          }
+        }
+      },
+      "5m": {
+        "file_path": "data\\enhanced_market_data\\DOGEUSDT_5m_2years.parquet",
+        "metadata_path": "data\\enhanced_market_data\\DOGEUSDT_5m_2years_metadata.json",
+        "file_size_mb": 4.987153053283691,
+        "modified_time": "2025-08-17 17:30:02.836443",
+        "metadata": {
+          "symbol": "DOGEUSDT",
+          "timeframe": "5m",
+          "records_count": 210240,
+          "data_quality": {
+            "quality_score": 0.9989873477929986,
+            "records_count": 210240,
+            "date_range": {
+              "start": "2023-08-18T09:30:00",
+              "end": "2025-08-17T09:25:00"
+            },
+            "download_time_seconds": 89.34611225128174,
+            "retry_count": 0
+          },
+          "date_range": {
+            "start": "2023-08-18T09:30:00",
+            "end": "2025-08-17T09:25:00",
+            "span_days": 729
+          },
+          "file_info": {
+            "file_size_mb": 4.987153053283691,
+            "compression": "zstd",
+            "format": "parquet"
+          },
+          "statistics": {
+            "price_range": {
+              "min": 0.05678,
+              "max": 0.48434,
+              "avg": 0.16426453890791476
+            },
+            "volume_stats": {
+              "total": 1165696132504.6,
+              "avg": 5544597.281699962,
+              "max": 329876987.0
+            }
+          },
+          "created_at": "2025-08-17T17:30:02.843953",
+          "collection_config": {
+            "lookback_days": 730,
+            "batch_size": 1000,
+            "rate_limit_delay": 0.05,
+            "retry_attempts": 5,
+            "timeout_seconds": 45,
+            "parallel_symbols": 5,
+            "max_workers": 10
+          }
+        }
+      }
+    },
+    "SOLUSDT": {
+      "15m": {
+        "file_path": "data\\enhanced_market_data\\SOLUSDT_15m_2years.parquet",
+        "metadata_path": "data\\enhanced_market_data\\SOLUSDT_15m_2years_metadata.json",
+        "file_size_mb": 1.9069404602050781,
+        "modified_time": "2025-08-17 17:30:02.475821",
+        "metadata": {
+          "symbol": "SOLUSDT",
+          "timeframe": "15m",
+          "records_count": 70080,
+          "data_quality": {
+            "quality_score": 0.9492429662211714,
+            "records_count": 70080,
+            "date_range": {
+              "start": "2023-08-18T09:30:00",
+              "end": "2025-08-17T09:15:00"
+            },
+            "download_time_seconds": 56.156715393066406,
+            "retry_count": 0
+          },
+          "date_range": {
+            "start": "2023-08-18T09:30:00",
+            "end": "2025-08-17T09:15:00",
+            "span_days": 729
+          },
+          "file_info": {
+            "file_size_mb": 1.9069404602050781,
+            "compression": "zstd",
+            "format": "parquet"
+          },
+          "statistics": {
+            "price_range": {
+              "min": 17.33,
+              "max": 295.83,
+              "avg": 137.74752625570778
+            },
+            "volume_stats": {
+              "total": 3432682839.9300003,
+              "avg": 48982.34646018836,
+              "max": 1342145.479
+            }
+          },
+          "created_at": "2025-08-17T17:30:02.479426",
+          "collection_config": {
+            "lookback_days": 730,
+            "batch_size": 1000,
+            "rate_limit_delay": 0.05,
+            "retry_attempts": 5,
+            "timeout_seconds": 45,
+            "parallel_symbols": 5,
+            "max_workers": 10
+          }
+        }
+      },
+      "1d": {
+        "file_path": "data\\enhanced_market_data\\SOLUSDT_1d_2years.parquet",
+        "metadata_path": "data\\enhanced_market_data\\SOLUSDT_1d_2years_metadata.json",
+        "file_size_mb": 0.038224220275878906,
+        "modified_time": "2025-08-17 17:30:02.528526",
+        "metadata": {
+          "symbol": "SOLUSDT",
+          "timeframe": "1d",
+          "records_count": 1095,
+          "data_quality": {
+            "quality_score": 0.9698339569223006,
+            "records_count": 1095,
+            "date_range": {
+              "start": "2022-08-19T00:00:00",
+              "end": "2025-08-17T00:00:00"
+            },
+            "download_time_seconds": 27.98572874069214,
+            "retry_count": 0
+          },
+          "date_range": {
+            "start": "2022-08-19T00:00:00",
+            "end": "2025-08-17T00:00:00",
+            "span_days": 1094
+          },
+          "file_info": {
+            "file_size_mb": 0.038224220275878906,
+            "compression": "zstd",
+            "format": "parquet"
+          },
+          "statistics": {
+            "price_range": {
+              "min": 8.0,
+              "max": 295.83,
+              "avg": 99.44536073059359
+            },
+            "volume_stats": {
+              "total": 5115151739.982,
+              "avg": 4671371.452038356,
+              "max": 34965021.076
+            }
+          },
+          "created_at": "2025-08-17T17:30:02.530015",
+          "collection_config": {
+            "lookback_days": 730,
+            "batch_size": 1000,
+            "rate_limit_delay": 0.05,
+            "retry_attempts": 5,
+            "timeout_seconds": 45,
+            "parallel_symbols": 5,
+            "max_workers": 10
+          }
+        }
+      },
+      "1h": {
+        "file_path": "data\\enhanced_market_data\\SOLUSDT_1h_2years.parquet",
+        "metadata_path": "data\\enhanced_market_data\\SOLUSDT_1h_2years_metadata.json",
+        "file_size_mb": 0.5124778747558594,
+        "modified_time": "2025-08-17 17:30:02.501922",
+        "metadata": {
+          "symbol": "SOLUSDT",
+          "timeframe": "1h",
+          "records_count": 17520,
+          "data_quality": {
+            "quality_score": 0.9499227702254884,
+            "records_count": 17520,
+            "date_range": {
+              "start": "2023-08-18T10:00:00",
+              "end": "2025-08-17T09:00:00"
+            },
+            "download_time_seconds": 37.434287548065186,
+            "retry_count": 0
+          },
+          "date_range": {
+            "start": "2023-08-18T10:00:00",
+            "end": "2025-08-17T09:00:00",
+            "span_days": 729
+          },
+          "file_info": {
+            "file_size_mb": 0.5124778747558594,
+            "compression": "zstd",
+            "format": "parquet"
+          },
+          "statistics": {
+            "price_range": {
+              "min": 17.33,
+              "max": 295.83,
+              "avg": 137.75113242009132
+            },
+            "volume_stats": {
+              "total": 3432652077.9009995,
+              "avg": 195927.63001718035,
+              "max": 4005168.677
+            }
+          },
+          "created_at": "2025-08-17T17:30:02.504618",
+          "collection_config": {
+            "lookback_days": 730,
+            "batch_size": 1000,
+            "rate_limit_delay": 0.05,
+            "retry_attempts": 5,
+            "timeout_seconds": 45,
+            "parallel_symbols": 5,
+            "max_workers": 10
+          }
+        }
+      },
+      "1m": {
+        "file_path": "data\\enhanced_market_data\\SOLUSDT_1m_2years.parquet",
+        "metadata_path": "data\\enhanced_market_data\\SOLUSDT_1m_2years_metadata.json",
+        "file_size_mb": 3.05181884765625,
+        "modified_time": "2025-08-17 17:30:02.260794",
+        "metadata": {
+          "symbol": "SOLUSDT",
+          "timeframe": "1m",
+          "records_count": 129601,
+          "data_quality": {
+            "quality_score": 0.9491415723613819,
+            "records_count": 129601,
+            "date_range": {
+              "start": "2025-05-19T09:29:00",
+              "end": "2025-08-17T09:29:00"
+            },
+            "download_time_seconds": 70.854740858078,
+            "retry_count": 0
+          },
+          "date_range": {
+            "start": "2025-05-19T09:29:00",
+            "end": "2025-08-17T09:29:00",
+            "span_days": 90
+          },
+          "file_info": {
+            "file_size_mb": 3.05181884765625,
+            "compression": "zstd",
+            "format": "parquet"
+          },
+          "statistics": {
+            "price_range": {
+              "min": 126.0,
+              "max": 209.86,
+              "avg": 164.51877007121857
+            },
+            "volume_stats": {
+              "total": 299315468.319,
+              "avg": 2309.5151142275135,
+              "max": 195416.652
+            }
+          },
+          "created_at": "2025-08-17T17:30:02.265069",
+          "collection_config": {
+            "lookback_days": 730,
+            "batch_size": 1000,
+            "rate_limit_delay": 0.05,
+            "retry_attempts": 5,
+            "timeout_seconds": 45,
+            "parallel_symbols": 5,
+            "max_workers": 10
+          }
+        }
+      },
+      "4h": {
+        "file_path": "data\\enhanced_market_data\\SOLUSDT_4h_2years.parquet",
+        "metadata_path": "data\\enhanced_market_data\\SOLUSDT_4h_2years_metadata.json",
+        "file_size_mb": 0.141937255859375,
+        "modified_time": "2025-08-17 17:30:02.517588",
+        "metadata": {
+          "symbol": "SOLUSDT",
+          "timeframe": "4h",
+          "records_count": 4380,
+          "data_quality": {
+            "quality_score": 0.9527502644550434,
+            "records_count": 4380,
+            "date_range": {
+              "start": "2023-08-18T12:00:00",
+              "end": "2025-08-17T08:00:00"
+            },
+            "download_time_seconds": 31.430095911026,
+            "retry_count": 0
+          },
+          "date_range": {
+            "start": "2023-08-18T12:00:00",
+            "end": "2025-08-17T08:00:00",
+            "span_days": 729
+          },
+          "file_info": {
+            "file_size_mb": 0.141937255859375,
+            "compression": "zstd",
+            "format": "parquet"
+          },
+          "statistics": {
+            "price_range": {
+              "min": 17.33,
+              "max": 295.83,
+              "avg": 137.7891849315068
+            },
+            "volume_stats": {
+              "total": 3432479625.131,
+              "avg": 783671.1472901826,
+              "max": 7364427.947
+            }
+          },
+          "created_at": "2025-08-17T17:30:02.519628",
+          "collection_config": {
+            "lookback_days": 730,
+            "batch_size": 1000,
+            "rate_limit_delay": 0.05,
+            "retry_attempts": 5,
+            "timeout_seconds": 45,
+            "parallel_symbols": 5,
+            "max_workers": 10
+          }
+        }
+      },
+      "5m": {
+        "file_path": "data\\enhanced_market_data\\SOLUSDT_5m_2years.parquet",
+        "metadata_path": "data\\enhanced_market_data\\SOLUSDT_5m_2years_metadata.json",
+        "file_size_mb": 5.023895263671875,
+        "modified_time": "2025-08-17 17:30:02.414252",
+        "metadata": {
+          "symbol": "SOLUSDT",
+          "timeframe": "5m",
+          "records_count": 210240,
+          "data_quality": {
+            "quality_score": 0.9491650773068283,
+            "records_count": 210240,
+            "date_range": {
+              "start": "2023-08-18T09:30:00",
+              "end": "2025-08-17T09:25:00"
+            },
+            "download_time_seconds": 91.19948554039001,
+            "retry_count": 0
+          },
+          "date_range": {
+            "start": "2023-08-18T09:30:00",
+            "end": "2025-08-17T09:25:00",
+            "span_days": 729
+          },
+          "file_info": {
+            "file_size_mb": 5.023895263671875,
+            "compression": "zstd",
+            "format": "parquet"
+          },
+          "statistics": {
+            "price_range": {
+              "min": 17.33,
+              "max": 295.83,
+              "avg": 137.74443098839419
+            },
+            "volume_stats": {
+              "total": 3503522886.128,
+              "avg": 16664.397289421613,
+              "max": 2127008.0
+            }
+          },
+          "created_at": "2025-08-17T17:30:02.419956",
+          "collection_config": {
+            "lookback_days": 730,
+            "batch_size": 1000,
+            "rate_limit_delay": 0.05,
+            "retry_attempts": 5,
+            "timeout_seconds": 45,
+            "parallel_symbols": 5,
+            "max_workers": 10
+          }
+        }
+      }
+    },
+    "XRPUSDT": {
+      "15m": {
+        "file_path": "data\\enhanced_market_data\\XRPUSDT_15m_2years.parquet",
+        "metadata_path": "data\\enhanced_market_data\\XRPUSDT_15m_2years_metadata.json",
+        "file_size_mb": 1.7238702774047852,
+        "modified_time": "2025-08-17 17:30:01.563519",
+        "metadata": {
+          "symbol": "XRPUSDT",
+          "timeframe": "15m",
+          "records_count": 70080,
+          "data_quality": {
+            "quality_score": 0.9702896873264404,
+            "records_count": 70080,
+            "date_range": {
+              "start": "2023-08-18T09:30:00",
+              "end": "2025-08-17T09:15:00"
+            },
+            "download_time_seconds": 55.11734414100647,
+            "retry_count": 0
+          },
+          "date_range": {
+            "start": "2023-08-18T09:30:00",
+            "end": "2025-08-17T09:15:00",
+            "span_days": 729
+          },
+          "file_info": {
+            "file_size_mb": 1.7238702774047852,
+            "compression": "zstd",
+            "format": "parquet"
+          },
+          "statistics": {
+            "price_range": {
+              "min": 0.3823,
+              "max": 3.6607,
+              "avg": 1.2540556164383563
+            },
+            "volume_stats": {
+              "total": 257639112471.69,
+              "avg": 3676357.198511558,
+              "max": 188256516.0
+            }
+          },
+          "created_at": "2025-08-17T17:30:01.566217",
+          "collection_config": {
+            "lookback_days": 730,
+            "batch_size": 1000,
+            "rate_limit_delay": 0.05,
+            "retry_attempts": 5,
+            "timeout_seconds": 45,
+            "parallel_symbols": 5,
+            "max_workers": 10
+          }
+        }
+      },
+      "1d": {
+        "file_path": "data\\enhanced_market_data\\XRPUSDT_1d_2years.parquet",
+        "metadata_path": "data\\enhanced_market_data\\XRPUSDT_1d_2years_metadata.json",
+        "file_size_mb": 0.043313026428222656,
+        "modified_time": "2025-08-17 17:30:01.621469",
+        "metadata": {
+          "symbol": "XRPUSDT",
+          "timeframe": "1d",
+          "records_count": 1095,
+          "data_quality": {
+            "quality_score": 0.9986301369863014,
+            "records_count": 1095,
+            "date_range": {
+              "start": "2022-08-19T00:00:00",
+              "end": "2025-08-17T00:00:00"
+            },
+            "download_time_seconds": 28.11090326309204,
+            "retry_count": 0
+          },
+          "date_range": {
+            "start": "2022-08-19T00:00:00",
+            "end": "2025-08-17T00:00:00",
+            "span_days": 1094
+          },
+          "file_info": {
+            "file_size_mb": 0.043313026428222656,
+            "compression": "zstd",
+            "format": "parquet"
+          },
+          "statistics": {
+            "price_range": {
+              "min": 0.3,
+              "max": 3.6607,
+              "avg": 0.9894928767123288
+            },
+            "volume_stats": {
+              "total": 398141464778.69,
+              "avg": 363599511.2134155,
+              "max": 2543716698.49
+            }
+          },
+          "created_at": "2025-08-17T17:30:01.623830",
+          "collection_config": {
+            "lookback_days": 730,
+            "batch_size": 1000,
+            "rate_limit_delay": 0.05,
+            "retry_attempts": 5,
+            "timeout_seconds": 45,
+            "parallel_symbols": 5,
+            "max_workers": 10
+          }
+        }
+      },
+      "1h": {
+        "file_path": "data\\enhanced_market_data\\XRPUSDT_1h_2years.parquet",
+        "metadata_path": "data\\enhanced_market_data\\XRPUSDT_1h_2years_metadata.json",
+        "file_size_mb": 0.4809761047363281,
+        "modified_time": "2025-08-17 17:30:01.579705",
+        "metadata": {
+          "symbol": "XRPUSDT",
+          "timeframe": "1h",
+          "records_count": 17520,
+          "data_quality": {
+            "quality_score": 0.9990125570776257,
+            "records_count": 17520,
+            "date_range": {
+              "start": "2023-08-18T10:00:00",
+              "end": "2025-08-17T09:00:00"
+            },
+            "download_time_seconds": 37.46811294555664,
+            "retry_count": 0
+          },
+          "date_range": {
+            "start": "2023-08-18T10:00:00",
+            "end": "2025-08-17T09:00:00",
+            "span_days": 729
+          },
+          "file_info": {
+            "file_size_mb": 0.4809761047363281,
+            "compression": "zstd",
+            "format": "parquet"
+          },
+          "statistics": {
+            "price_range": {
+              "min": 0.3823,
+              "max": 3.6607,
+              "avg": 1.2541449543378997
+            },
+            "volume_stats": {
+              "total": 257622512584.99,
+              "avg": 14704481.311928652,
+              "max": 514047742.0
+            }
+          },
+          "created_at": "2025-08-17T17:30:01.581332",
+          "collection_config": {
+            "lookback_days": 730,
+            "batch_size": 1000,
+            "rate_limit_delay": 0.05,
+            "retry_attempts": 5,
+            "timeout_seconds": 45,
+            "parallel_symbols": 5,
+            "max_workers": 10
+          }
+        }
+      },
+      "1m": {
+        "file_path": "data\\enhanced_market_data\\XRPUSDT_1m_2years.parquet",
+        "metadata_path": "data\\enhanced_market_data\\XRPUSDT_1m_2years_metadata.json",
+        "file_size_mb": 3.019394874572754,
+        "modified_time": "2025-08-17 17:30:01.328139",
+        "metadata": {
+          "symbol": "XRPUSDT",
+          "timeframe": "1m",
+          "records_count": 129601,
+          "data_quality": {
+            "quality_score": 0.9498071700082932,
+            "records_count": 129601,
+            "date_range": {
+              "start": "2025-05-19T09:29:00",
+              "end": "2025-08-17T09:29:00"
+            },
+            "download_time_seconds": 70.39517092704773,
+            "retry_count": 2
+          },
+          "date_range": {
+            "start": "2025-05-19T09:29:00",
+            "end": "2025-08-17T09:29:00",
+            "span_days": 90
+          },
+          "file_info": {
+            "file_size_mb": 3.019394874572754,
+            "compression": "zstd",
+            "format": "parquet"
+          },
+          "statistics": {
+            "price_range": {
+              "min": 1.9083,
+              "max": 3.6607,
+              "avg": 2.6051891297135055
+            },
+            "volume_stats": {
+              "total": 15400875042.500004,
+              "avg": 118832.99544370803,
+              "max": 8216299.9
+            }
+          },
+          "created_at": "2025-08-17T17:30:01.332491",
+          "collection_config": {
+            "lookback_days": 730,
+            "batch_size": 1000,
+            "rate_limit_delay": 0.05,
+            "retry_attempts": 5,
+            "timeout_seconds": 45,
+            "parallel_symbols": 5,
+            "max_workers": 10
+          }
+        }
+      },
+      "4h": {
+        "file_path": "data\\enhanced_market_data\\XRPUSDT_4h_2years.parquet",
+        "metadata_path": "data\\enhanced_market_data\\XRPUSDT_4h_2years_metadata.json",
+        "file_size_mb": 0.14622783660888672,
+        "modified_time": "2025-08-17 17:30:01.591185",
+        "metadata": {
+          "symbol": "XRPUSDT",
+          "timeframe": "4h",
+          "records_count": 4380,
+          "data_quality": {
+            "quality_score": 0.9989726027397262,
+            "records_count": 4380,
+            "date_range": {
+              "start": "2023-08-18T12:00:00",
+              "end": "2025-08-17T08:00:00"
+            },
+            "download_time_seconds": 31.461055994033813,
+            "retry_count": 0
+          },
+          "date_range": {
+            "start": "2023-08-18T12:00:00",
+            "end": "2025-08-17T08:00:00",
+            "span_days": 729
+          },
+          "file_info": {
+            "file_size_mb": 0.14622783660888672,
+            "compression": "zstd",
+            "format": "parquet"
+          },
+          "statistics": {
+            "price_range": {
+              "min": 0.3823,
+              "max": 3.6607,
+              "avg": 1.2547007762557076
+            },
+            "volume_stats": {
+              "total": 257579166350.09,
+              "avg": 58808028.84705251,
+              "max": 966720151.0
+            }
+          },
+          "created_at": "2025-08-17T17:30:01.593291",
+          "collection_config": {
+            "lookback_days": 730,
+            "batch_size": 1000,
+            "rate_limit_delay": 0.05,
+            "retry_attempts": 5,
+            "timeout_seconds": 45,
+            "parallel_symbols": 5,
+            "max_workers": 10
+          }
+        }
+      },
+      "5m": {
+        "file_path": "data\\enhanced_market_data\\XRPUSDT_5m_2years.parquet",
+        "metadata_path": "data\\enhanced_market_data\\XRPUSDT_5m_2years_metadata.json",
+        "file_size_mb": 4.405411720275879,
+        "modified_time": "2025-08-17 17:30:01.500901",
+        "metadata": {
+          "symbol": "XRPUSDT",
+          "timeframe": "5m",
+          "records_count": 210240,
+          "data_quality": {
+            "quality_score": 0.9561886481741937,
+            "records_count": 210240,
+            "date_range": {
+              "start": "2023-08-18T09:30:00",
+              "end": "2025-08-17T09:25:00"
+            },
+            "download_time_seconds": 88.79463839530945,
+            "retry_count": 0
+          },
+          "date_range": {
+            "start": "2023-08-18T09:30:00",
+            "end": "2025-08-17T09:25:00",
+            "span_days": 729
+          },
+          "file_info": {
+            "file_size_mb": 4.405411720275879,
+            "compression": "zstd",
+            "format": "parquet"
+          },
+          "statistics": {
+            "price_range": {
+              "min": 0.3823,
+              "max": 3.6607,
+              "avg": 1.2540321646689498
+            },
+            "volume_stats": {
+              "total": 257639130580.28998,
+              "avg": 1225452.4856368436,
+              "max": 80845719.0
+            }
+          },
+          "created_at": "2025-08-17T17:30:01.506636",
+          "collection_config": {
+            "lookback_days": 730,
+            "batch_size": 1000,
+            "rate_limit_delay": 0.05,
+            "retry_attempts": 5,
+            "timeout_seconds": 45,
+            "parallel_symbols": 5,
+            "max_workers": 10
+          }
+        }
+      }
+    }
+  },
+  "symbol_rankings": [
+    {
+      "symbol": "ADAUSDT",
+      "overall_score": 0.7222758766130155,
+      "quality_score": 0.9403008654765109,
+      "liquidity_score": 0.09674246788024903,
+      "volatility_score": 0.8,
+      "market_cap_score": 0.93,
+      "volume_score": 1.0,
+      "tier": "B",
+      "recommendation": "RECOMMENDED",
+      "risk_level": "LOW"
+    },
+    {
+      "symbol": "XRPUSDT",
+      "overall_score": 0.7200729284982497,
+      "quality_score": 0.9384164796606086,
+      "liquidity_score": 0.09819193840026856,
+      "volatility_score": 0.7,
+      "market_cap_score": 0.97,
+      "volume_score": 1.0,
+      "tier": "B",
+      "recommendation": "RECOMMENDED",
+      "risk_level": "MEDIUM"
+    },
+    {
+      "symbol": "SOLUSDT",
+      "overall_score": 0.7174723560454787,
+      "quality_score": 0.8692804041313931,
+      "liquidity_score": 0.10675293922424317,
+      "volatility_score": 0.9,
+      "market_cap_score": 0.95,
+      "volume_score": 1.0,
+      "tier": "B",
+      "recommendation": "RECOMMENDED",
+      "risk_level": "LOW"
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "overall_score": 0.7121623437832612,
+      "quality_score": 0.9568924070831198,
+      "liquidity_score": 0.10837848663330078,
+      "volatility_score": 0.6,
+      "market_cap_score": 0.94,
+      "volume_score": 1.0,
+      "tier": "B",
+      "recommendation": "RECOMMENDED",
+      "risk_level": "HIGH"
+    },
+    {
+      "symbol": "BNBUSDT",
+      "overall_score": 0.7008607061719445,
+      "quality_score": 0.8599963786918416,
+      "liquidity_score": 0.10344717025756836,
+      "volatility_score": 0.75,
+      "market_cap_score": 0.96,
+      "volume_score": 1.0,
+      "tier": "B",
+      "recommendation": "RECOMMENDED",
+      "risk_level": "MEDIUM"
+    }
+  ],
+  "correlation_analysis": {
+    "groups": {
+      "Layer1_Smart_Contracts": [
+        "SOLUSDT",
+        "ADAUSDT",
+        "AVAXUSDT",
+        "NEARUSDT",
+        "APTUSDT",
+        "TRXUSDT",
+        "TONUSDT"
+      ],
+      "DeFi_Ecosystem": [
+        "UNIUSDT",
+        "AAVEUSDT",
+        "MKRUSDT",
+        "COMPUSDT"
+      ],
+      "Payment_Tokens": [
+        "XRPUSDT",
+        "LTCUSDT",
+        "XLMUSDT"
+      ],
+      "Layer2_Solutions": [
+        "MATICUSDT",
+        "ARBUSDT",
+        "OPUSDT"
+      ],
+      "Infrastructure": [
+        "LINKUSDT",
+        "ATOMUSDT",
+        "DOTUSDT",
+        "GRTUSDT"
+      ],
+      "Meme_Tokens": [
+        "DOGEUSDT",
+        "SHIBUSDT",
+        "PEPEUSDT",
+        "WIFUSDT"
+      ],
+      "Exchange_Tokens": [
+        "BNBUSDT"
+      ],
+      "Specialized": [
+        "FILUSDT",
+        "VETUSDT",
+        "ICPUSDT",
+        "ALGOUSDT"
+      ]
+    },
+    "high_correlation_pairs": [
+      [
+        "SOLUSDT",
+        "AVAXUSDT"
+      ],
+      [
+        "UNIUSDT",
+        "AAVEUSDT"
+      ],
+      [
+        "ARBUSDT",
+        "OPUSDT"
+      ],
+      [
+        "DOGEUSDT",
+        "SHIBUSDT"
+      ],
+      [
+        "LINKUSDT",
+        "GRTUSDT"
+      ]
+    ],
+    "low_correlation_pairs": [
+      [
+        "BNBUSDT",
+        "DOGEUSDT"
+      ],
+      [
+        "FILUSDT",
+        "UNIUSDT"
+      ],
+      [
+        "VETUSDT",
+        "APTUSDT"
+      ],
+      [
+        "XLMUSDT",
+        "SOLUSDT"
+      ]
+    ],
+    "diversification_recommendations": {
+      "conservative": [
+        "XRPUSDT",
+        "BNBUSDT",
+        "ADAUSDT",
+        "LINKUSDT"
+      ],
+      "balanced": [
+        "SOLUSDT",
+        "AVAXUSDT",
+        "UNIUSDT",
+        "MATICUSDT",
+        "LTCUSDT"
+      ],
+      "aggressive": [
+        "NEARUSDT",
+        "APTUSDT",
+        "ARBUSDT",
+        "AAVEUSDT",
+        "DOGEUSDT"
+      ]
+    }
+  },
+  "quality_metrics": {
+    "by_symbol": {
+      "ADAUSDT": {
+        "symbol": "ADAUSDT",
+        "overall_score": 0.7222758766130155,
+        "quality_score": 0.9403008654765109,
+        "liquidity_score": 0.09674246788024903,
+        "volatility_score": 0.8,
+        "market_cap_score": 0.93,
+        "volume_score": 1.0,
+        "tier": "B",
+        "recommendation": "RECOMMENDED",
+        "risk_level": "LOW"
+      },
+      "XRPUSDT": {
+        "symbol": "XRPUSDT",
+        "overall_score": 0.7200729284982497,
+        "quality_score": 0.9384164796606086,
+        "liquidity_score": 0.09819193840026856,
+        "volatility_score": 0.7,
+        "market_cap_score": 0.97,
+        "volume_score": 1.0,
+        "tier": "B",
+        "recommendation": "RECOMMENDED",
+        "risk_level": "MEDIUM"
+      },
+      "SOLUSDT": {
+        "symbol": "SOLUSDT",
+        "overall_score": 0.7174723560454787,
+        "quality_score": 0.8692804041313931,
+        "liquidity_score": 0.10675293922424317,
+        "volatility_score": 0.9,
+        "market_cap_score": 0.95,
+        "volume_score": 1.0,
+        "tier": "B",
+        "recommendation": "RECOMMENDED",
+        "risk_level": "LOW"
+      },
+      "DOGEUSDT": {
+        "symbol": "DOGEUSDT",
+        "overall_score": 0.7121623437832612,
+        "quality_score": 0.9568924070831198,
+        "liquidity_score": 0.10837848663330078,
+        "volatility_score": 0.6,
+        "market_cap_score": 0.94,
+        "volume_score": 1.0,
+        "tier": "B",
+        "recommendation": "RECOMMENDED",
+        "risk_level": "HIGH"
+      },
+      "BNBUSDT": {
+        "symbol": "BNBUSDT",
+        "overall_score": 0.7008607061719445,
+        "quality_score": 0.8599963786918416,
+        "liquidity_score": 0.10344717025756836,
+        "volatility_score": 0.75,
+        "market_cap_score": 0.96,
+        "volume_score": 1.0,
+        "tier": "B",
+        "recommendation": "RECOMMENDED",
+        "risk_level": "MEDIUM"
+      }
+    },
+    "by_tier": {
+      "S": [],
+      "A": [],
+      "B": [
+        "ADAUSDT",
+        "XRPUSDT",
+        "SOLUSDT",
+        "DOGEUSDT",
+        "BNBUSDT"
+      ],
+      "C": [],
+      "D": []
+    }
+  }
+}

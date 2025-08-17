@@ -1,0 +1,47 @@
+{
+  "symbol": "XRPUSDT",
+  "timeframe": "5m",
+  "records_count": 210240,
+  "data_quality": {
+    "quality_score": 0.9561886481741937,
+    "records_count": 210240,
+    "date_range": {
+      "start": "2023-08-18T09:30:00",
+      "end": "2025-08-17T09:25:00"
+    },
+    "download_time_seconds": 88.79463839530945,
+    "retry_count": 0
+  },
+  "date_range": {
+    "start": "2023-08-18T09:30:00",
+    "end": "2025-08-17T09:25:00",
+    "span_days": 729
+  },
+  "file_info": {
+    "file_size_mb": 4.405411720275879,
+    "compression": "zstd",
+    "format": "parquet"
+  },
+  "statistics": {
+    "price_range": {
+      "min": 0.3823,
+      "max": 3.6607,
+      "avg": 1.2540321646689498
+    },
+    "volume_stats": {
+      "total": 257639130580.28998,
+      "avg": 1225452.4856368436,
+      "max": 80845719.0
+    }
+  },
+  "created_at": "2025-08-17T17:30:01.506636",
+  "collection_config": {
+    "lookback_days": 730,
+    "batch_size": 1000,
+    "rate_limit_delay": 0.05,
+    "retry_attempts": 5,
+    "timeout_seconds": 45,
+    "parallel_symbols": 5,
+    "max_workers": 10
+  }
+}

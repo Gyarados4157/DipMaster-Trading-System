@@ -1,0 +1,47 @@
+{
+  "symbol": "DOGEUSDT",
+  "timeframe": "1m",
+  "records_count": 129601,
+  "data_quality": {
+    "quality_score": 0.9577198812189501,
+    "records_count": 129601,
+    "date_range": {
+      "start": "2025-05-19T09:29:00",
+      "end": "2025-08-17T09:29:00"
+    },
+    "download_time_seconds": 71.66585445404053,
+    "retry_count": 0
+  },
+  "date_range": {
+    "start": "2025-05-19T09:29:00",
+    "end": "2025-08-17T09:29:00",
+    "span_days": 90
+  },
+  "file_info": {
+    "file_size_mb": 2.9505319595336914,
+    "compression": "zstd",
+    "format": "parquet"
+  },
+  "statistics": {
+    "price_range": {
+      "min": 0.1427,
+      "max": 0.2875,
+      "avg": 0.2017230547603799
+    },
+    "volume_stats": {
+      "total": 109180976125.0,
+      "avg": 842439.3031303771,
+      "max": 73085106.0
+    }
+  },
+  "created_at": "2025-08-17T17:30:02.630710",
+  "collection_config": {
+    "lookback_days": 730,
+    "batch_size": 1000,
+    "rate_limit_delay": 0.05,
+    "retry_attempts": 5,
+    "timeout_seconds": 45,
+    "parallel_symbols": 5,
+    "max_workers": 10
+  }
+}

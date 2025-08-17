@@ -1,0 +1,100 @@
+{
+  "version": "1.0.0",
+  "deployment_profile": "production_500usdt",
+  "description": "DipMaster Production Configuration for 500 USDT Capital",
+  
+  "trading": {
+    "mode": "live",
+    "initial_capital": 500,
+    "base_currency": "USDT",
+    "symbols": ["BTCUSDT", "ETHUSDT", "SOLUSDT"],
+    "max_positions": 3,
+    "max_position_size_usd": 100,
+    "min_position_size_usd": 20
+  },
+  
+  "risk_management": {
+    "daily_loss_limit_usd": 25,
+    "daily_loss_limit_pct": 0.05,
+    "max_drawdown_limit": 0.08,
+    "position_correlation_limit": 0.7,
+    "var_confidence": 0.95,
+    "emergency_stop_loss_pct": 0.15
+  },
+  
+  "strategy": {
+    "name": "DipMaster_Enhanced_v1",
+    "regime_detection": true,
+    "adaptive_parameters": true,
+    "multi_timeframe": true,
+    "timeframes": ["1h", "15m", "5m", "1m"],
+    
+    "entry_params": {
+      "rsi_range": [30, 50],
+      "dip_threshold": 0.002,
+      "volume_threshold": 1.5,
+      "confluence_threshold": 0.6
+    },
+    
+    "exit_params": {
+      "target_profit": 0.008,
+      "stop_loss": 0.015,
+      "max_holding_minutes": 180,
+      "boundary_exit": true,
+      "boundary_minutes": [15, 30, 45, 0]
+    }
+  },
+  
+  "exchange": {
+    "name": "binance",
+    "api_key": "${BINANCE_API_KEY}",
+    "api_secret": "${BINANCE_API_SECRET}",
+    "testnet": false,
+    "permissions": ["spot", "futures"],
+    "rate_limits": {
+      "orders_per_second": 10,
+      "weight_per_minute": 1200
+    }
+  },
+  
+  "monitoring": {
+    "enabled": true,
+    "dashboard_port": 3000,
+    "api_port": 8000,
+    "websocket_enabled": true,
+    "alert_channels": ["console", "dashboard"],
+    "log_level": "INFO",
+    "performance_tracking": true
+  },
+  
+  "database": {
+    "type": "sqlite",
+    "path": "data/dipmaster_production.db",
+    "backup_enabled": true,
+    "backup_interval_hours": 24
+  },
+  
+  "safety_features": {
+    "paper_trading_mode": false,
+    "pre_trade_validation": true,
+    "position_size_validation": true,
+    "balance_check": true,
+    "api_permissions_check": true,
+    "emergency_contacts": []
+  },
+  
+  "performance_targets": {
+    "target_win_rate": 0.65,
+    "target_annual_return": 0.25,
+    "target_sharpe_ratio": 2.0,
+    "max_acceptable_drawdown": 0.05
+  },
+  
+  "deployment": {
+    "environment": "production",
+    "start_time": "auto",
+    "auto_restart": true,
+    "health_check_interval": 300,
+    "backup_strategy": true
+  }
+}

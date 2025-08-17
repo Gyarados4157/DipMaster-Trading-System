@@ -1,0 +1,203 @@
+{
+  "metadata": {
+    "timestamp": "20250817_150517",
+    "version": "clean_v1.0",
+    "data_leakage_removed": true,
+    "description": "Clean DipMaster model without data leakage"
+  },
+  "model_performance": {
+    "lgbm": {
+      "test_auc": 0.987656245147443,
+      "test_accuracy": 0.9487268518518519,
+      "predicted_win_rate": 0.13919753086419753,
+      "cv_auc_mean": 0.9879817312105226,
+      "cv_auc_std": 0.0003395244854260376
+    },
+    "xgb": {
+      "test_auc": 0.9876796971761584,
+      "test_accuracy": 0.9489583333333333,
+      "predicted_win_rate": 0.13796296296296295,
+      "cv_auc_mean": 0.0,
+      "cv_auc_std": 0.0
+    }
+  },
+  "performance_analysis": {
+    "best_model": "xgb",
+    "threshold_analysis": {
+      "0.3": {
+        "signal_count": 6441,
+        "signal_rate": 0.24849537037037037,
+        "precision": 0.7310976556435336,
+        "total_samples": 25920
+      },
+      "0.4": {
+        "signal_count": 5395,
+        "signal_rate": 0.20814043209876543,
+        "precision": 0.7927710843373494,
+        "total_samples": 25920
+      },
+      "0.5": {
+        "signal_count": 3576,
+        "signal_rate": 0.13796296296296295,
+        "precision": 0.9890939597315436,
+        "total_samples": 25920
+      },
+      "0.6": {
+        "signal_count": 3507,
+        "signal_rate": 0.13530092592592594,
+        "precision": 0.9991445680068435,
+        "total_samples": 25920
+      },
+      "0.7": {
+        "signal_count": 3503,
+        "signal_rate": 0.1351466049382716,
+        "precision": 1.0,
+        "total_samples": 25920
+      },
+      "0.8": {
+        "signal_count": 3503,
+        "signal_rate": 0.1351466049382716,
+        "precision": 1.0,
+        "total_samples": 25920
+      }
+    },
+    "cost_analysis": {
+      "0.3": {
+        "gross_return_per_trade": 0.001,
+        "net_return_per_trade": -0.0006999999999999999,
+        "expected_return": -0.0009689023443564663,
+        "breakeven_precision": 0.6296296296296295
+      },
+      "0.4": {
+        "gross_return_per_trade": 0.001,
+        "net_return_per_trade": -0.0006999999999999999,
+        "expected_return": -0.0009072289156626505,
+        "breakeven_precision": 0.6296296296296295
+      },
+      "0.5": {
+        "gross_return_per_trade": 0.001,
+        "net_return_per_trade": -0.0006999999999999999,
+        "expected_return": -0.0007109060402684563,
+        "breakeven_precision": 0.6296296296296295
+      },
+      "0.6": {
+        "gross_return_per_trade": 0.001,
+        "net_return_per_trade": -0.0006999999999999999,
+        "expected_return": -0.0007008554319931563,
+        "breakeven_precision": 0.6296296296296295
+      },
+      "0.7": {
+        "gross_return_per_trade": 0.001,
+        "net_return_per_trade": -0.0006999999999999999,
+        "expected_return": -0.0006999999999999999,
+        "breakeven_precision": 0.6296296296296295
+      },
+      "0.8": {
+        "gross_return_per_trade": 0.001,
+        "net_return_per_trade": -0.0006999999999999999,
+        "expected_return": -0.0006999999999999999,
+        "breakeven_precision": 0.6296296296296295
+      }
+    },
+    "base_performance": {
+      "test_auc": 0.9876796971761584,
+      "test_accuracy": 0.9489583333333333,
+      "baseline_win_rate": 0.18599537037037037
+    }
+  },
+  "recommendations": [
+    "GOOD: AUC indicates reasonable predictive power",
+    "CRITICAL: Very low base win rate",
+    "   - Fundamental strategy review needed",
+    "   - Consider different market conditions",
+    "UNPROFITABLE: No threshold yields positive expected returns",
+    "   - Reduce trading costs or improve precision",
+    "",
+    "SPECIFIC IMPROVEMENTS:",
+    "1. Feature Engineering:",
+    "   - Add volatility regime indicators",
+    "   - Include market microstructure features",
+    "   - Implement cross-asset momentum",
+    "",
+    "2. Model Enhancement:",
+    "   - Try ensemble methods",
+    "   - Implement feature interactions",
+    "   - Add temporal embeddings",
+    "",
+    "3. Execution Optimization:",
+    "   - Use limit orders to reduce slippage",
+    "   - Implement TWAP execution",
+    "   - Add liquidity detection",
+    "",
+    "4. Risk Management:",
+    "   - Add position sizing rules",
+    "   - Implement stop-loss logic",
+    "   - Monitor correlation risk"
+  ],
+  "feature_importance": {
+    "lgbm": {
+      "return_class": 294.0,
+      "ema_100": 157.0,
+      "bb_lower": 97.0,
+      "bb_upper": 135.0,
+      "sma_100": 216.0,
+      "ema_50": 106.0,
+      "sma_50": 141.0,
+      "minute_boundary": 164.0,
+      "ema_20": 41.0,
+      "minute": 156.0,
+      "sma_20": 53.0,
+      "vwap_20": 44.0,
+      "bb_middle": 9.0,
+      "sma_10": 62.0,
+      "below_ma20": 15.0,
+      "ema_10": 60.0,
+      "price_dip": 32.0,
+      "sma_5": 36.0,
+      "low": 57.0,
+      "vwap_5": 30.0,
+      "rsi_dip_zone": 15.0,
+      "ema_5": 23.0,
+      "close": 64.0,
+      "high": 73.0,
+      "open": 60.0,
+      "volume_confirmation": 26.0,
+      "bb_lower_zone": 6.0,
+      "obv": 455.0,
+      "medium_signal": 22.0,
+      "dipmaster_signal": 191.0
+    },
+    "xgb": {
+      "return_class": 0.7638228535652161,
+      "ema_100": 0.001845545251853764,
+      "bb_lower": 0.0015533561818301678,
+      "bb_upper": 0.001542977406643331,
+      "sma_100": 0.00177420349791646,
+      "ema_50": 0.0018837549723684788,
+      "sma_50": 0.0014169912319630384,
+      "minute_boundary": 0.17501336336135864,
+      "ema_20": 0.002359234495088458,
+      "minute": 0.021327318623661995,
+      "sma_20": 0.0015204055234789848,
+      "vwap_20": 0.001284767990000546,
+      "bb_middle": 0.0014423131942749023,
+      "sma_10": 0.0012664843816310167,
+      "below_ma20": 0.0008270060643553734,
+      "ema_10": 0.001143246772699058,
+      "price_dip": 0.0011011234018951654,
+      "sma_5": 0.0018886784091591835,
+      "low": 0.001379697467200458,
+      "vwap_5": 0.0018902779556810856,
+      "rsi_dip_zone": 0.0011723877396434546,
+      "ema_5": 0.0013836011057719588,
+      "close": 0.0015804847935214639,
+      "high": 0.0012625230010598898,
+      "open": 0.0014366407413035631,
+      "volume_confirmation": 0.0010573043255135417,
+      "bb_lower_zone": 0.00071541010402143,
+      "obv": 0.0019742860458791256,
+      "medium_signal": 0.0018244653474539518,
+      "dipmaster_signal": 0.0013094417518004775
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "symbol": "PEPEUSDT",
+  "timeframe": "5m",
+  "days_back": 90,
+  "total_rows": 25920,
+  "start_date": "2025-05-19T09:30:00",
+  "end_date": "2025-08-17T09:25:00",
+  "download_date": "2025-08-17T17:26:14.752654",
+  "file_size_mb": 0.5934333801269531
+}
