@@ -1,0 +1,57 @@
+version: '3.8'
+
+# ============================================================================
+# DipMaster Trading System - 简化Docker部署
+# Version: 1.0.0
+# Date: 2025-08-18
+# 适合快速部署和测试
+# ============================================================================
+
+services:
+  # DipMaster主服务
+  dipmaster:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: dipmaster-trading:latest
+    container_name: dipmaster-trading
+    restart: unless-stopped
+    
+    # 环境变量
+    environment:
+      - TZ=Asia/Hong_Kong
+      - LOG_LEVEL=INFO
+      - PAPER_TRADING=true
+    
+    # 端口映射
+    ports:
+      - "8080:8080"    # 监控面板
+    
+    # 数据卷
+    volumes:
+      - ./config:/app/config:rw       # 配置文件
+      - ./logs:/app/logs:rw           # 日志
+      - ./data:/app/data:rw           # 数据
+      - ./results:/app/results:rw     # 结果
+    
+    # 健康检查
+    healthcheck:
+      test: ["CMD", "python", "-c", "print('OK')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    
+    # 资源限制
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: '0.8'
+    
+    # 日志配置
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"

@@ -38,11 +38,11 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # 复制依赖文件
-COPY requirements.txt .
+COPY requirements_linux.txt .
 
 # 升级pip并安装Python依赖
 RUN pip install --no-cache-dir --upgrade pip setuptools wheel
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements_linux.txt
 
 # ============================================================================
 # 阶段2: 生产运行阶段
@@ -84,8 +84,7 @@ RUN mkdir -p /app/logs /app/data /app/tmp /app/backup && \
     chown -R dipmaster:dipmaster /app
 
 # 创建启动脚本
-RUN cat > /app/docker-entrypoint.sh << 'EOF' && \
-cat > /app/docker-entrypoint.sh << 'EOF'
+RUN cat > /app/docker-entrypoint.sh << 'EOF'
 #!/bin/bash
 set -e
 
