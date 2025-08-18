@@ -84,56 +84,49 @@ RUN mkdir -p /app/logs /app/data /app/tmp /app/backup && \
     chown -R dipmaster:dipmaster /app
 
 # 创建启动脚本
-RUN cat > /app/docker-entrypoint.sh << 'EOF'
-#!/bin/bash
-set -e
-
-# 初始化目录权限
-mkdir -p /app/logs /app/data /app/tmp
-chown -R dipmaster:dipmaster /app/logs /app/data /app/tmp
-
-# 检查配置文件
-if [ ! -f "/app/config/paper_trading_config.json" ]; then
-    echo "⚠️  配置文件不存在，创建默认配置..."
-    mkdir -p /app/config
-    cat > /app/config/paper_trading_config.json << 'CONFIGEOF'
-{
-  "strategy_name": "DipMaster_Docker_Paper",
-  "trading": {
-    "paper_trading": true,
-    "initial_capital": 10000,
-    "symbols": ["BTCUSDT", "ETHUSDT", "ADAUSDT"]
-  },
-  "api": {
-    "exchange": "binance",
-    "api_key": "YOUR_API_KEY_HERE", 
-    "api_secret": "YOUR_API_SECRET_HERE",
-    "testnet": true,
-    "paper_mode": true
-  },
-  "logging_and_monitoring": {
-    "log_level": "INFO",
-    "dashboard_enabled": true
-  }
-}
-CONFIGEOF
-    chown dipmaster:dipmaster /app/config/paper_trading_config.json
-fi
-
-# 打印启动信息
-echo "🚀 DipMaster Trading System Docker Container"
-echo "时间: $(date)"
-echo "用户: $(whoami)"
-echo "工作目录: $(pwd)"
-echo "Python版本: $(python --version)"
-echo "配置文件: $1"
-echo "运行模式: 纸面交易"
-
-# 执行命令
-exec "$@"
-EOF
-
-RUN chmod +x /app/docker-entrypoint.sh
+RUN echo '#!/bin/bash' > /app/docker-entrypoint.sh && \
+    echo 'set -e' >> /app/docker-entrypoint.sh && \
+    echo '' >> /app/docker-entrypoint.sh && \
+    echo '# 初始化目录权限' >> /app/docker-entrypoint.sh && \
+    echo 'mkdir -p /app/logs /app/data /app/tmp' >> /app/docker-entrypoint.sh && \
+    echo '' >> /app/docker-entrypoint.sh && \
+    echo '# 检查配置文件' >> /app/docker-entrypoint.sh && \
+    echo 'if [ ! -f "/app/config/paper_trading_config.json" ]; then' >> /app/docker-entrypoint.sh && \
+    echo '    echo "⚠️  配置文件不存在，创建默认配置..."' >> /app/docker-entrypoint.sh && \
+    echo '    mkdir -p /app/config' >> /app/docker-entrypoint.sh && \
+    echo '    cat > /app/config/paper_trading_config.json << '\''CONFIGEOF'\''' >> /app/docker-entrypoint.sh && \
+    echo '{' >> /app/docker-entrypoint.sh && \
+    echo '  "trading": {' >> /app/docker-entrypoint.sh && \
+    echo '    "paper_trading": true,' >> /app/docker-entrypoint.sh && \
+    echo '    "symbols": ["BTCUSDT", "ETHUSDT", "ADAUSDT"],' >> /app/docker-entrypoint.sh && \
+    echo '    "max_positions": 3,' >> /app/docker-entrypoint.sh && \
+    echo '    "position_size_usd": 500' >> /app/docker-entrypoint.sh && \
+    echo '  },' >> /app/docker-entrypoint.sh && \
+    echo '  "exchange": {' >> /app/docker-entrypoint.sh && \
+    echo '    "name": "binance",' >> /app/docker-entrypoint.sh && \
+    echo '    "api_key": "YOUR_API_KEY_HERE",' >> /app/docker-entrypoint.sh && \
+    echo '    "api_secret": "YOUR_API_SECRET_HERE",' >> /app/docker-entrypoint.sh && \
+    echo '    "testnet": true' >> /app/docker-entrypoint.sh && \
+    echo '  },' >> /app/docker-entrypoint.sh && \
+    echo '  "strategy": {' >> /app/docker-entrypoint.sh && \
+    echo '    "name": "DipMaster"' >> /app/docker-entrypoint.sh && \
+    echo '  },' >> /app/docker-entrypoint.sh && \
+    echo '  "logging": {' >> /app/docker-entrypoint.sh && \
+    echo '    "level": "INFO"' >> /app/docker-entrypoint.sh && \
+    echo '  }' >> /app/docker-entrypoint.sh && \
+    echo '}' >> /app/docker-entrypoint.sh && \
+    echo 'CONFIGEOF' >> /app/docker-entrypoint.sh && \
+    echo 'fi' >> /app/docker-entrypoint.sh && \
+    echo '' >> /app/docker-entrypoint.sh && \
+    echo '# 打印启动信息' >> /app/docker-entrypoint.sh && \
+    echo 'echo "🚀 DipMaster Trading System Docker Container"' >> /app/docker-entrypoint.sh && \
+    echo 'echo "时间: $(date)"' >> /app/docker-entrypoint.sh && \
+    echo 'echo "Python版本: $(python --version)"' >> /app/docker-entrypoint.sh && \
+    echo 'echo "运行模式: 纸面交易"' >> /app/docker-entrypoint.sh && \
+    echo '' >> /app/docker-entrypoint.sh && \
+    echo '# 执行命令' >> /app/docker-entrypoint.sh && \
+    echo 'exec "$@"' >> /app/docker-entrypoint.sh && \
+    chmod +x /app/docker-entrypoint.sh
 
 # 切换到应用用户
 USER dipmaster
