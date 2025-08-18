@@ -1,0 +1,80 @@
+# ============================================================================
+# DipMaster持续组合优化和风险控制系统 - 专用依赖
+# Continuous Portfolio Risk Management System - Specialized Dependencies
+# Version: 1.0.0
+# Date: 2025-08-18
+# ============================================================================
+
+# 基础科学计算
+numpy>=1.24.0
+pandas>=2.0.0
+scipy>=1.10.0
+
+# 机器学习和统计
+scikit-learn>=1.3.0
+
+# 优化库 (组合优化核心)
+cvxpy>=1.4.0
+# cvxopt>=1.3.0  # cvxpy的后端求解器
+
+# 金融数据和风险计算
+# yfinance>=0.2.12  # 如果需要实际市场数据
+# quantlib-python>=1.31  # 高级金融计算（可选）
+
+# 可视化 (风险监控仪表板)
+plotly>=5.15.0
+# matplotlib>=3.7.0  # 备用可视化
+# seaborn>=0.12.0    # 统计可视化（可选）
+
+# 异步编程和调度
+asyncio-compat>=0.3.0  # Python 3.11+兼容性（可选）
+schedule>=1.2.0
+aiofiles>=23.1.0
+
+# 日志和监控
+structlog>=23.1.0  # 结构化日志（可选）
+
+# 数据验证和配置
+pydantic>=2.0.0    # 数据验证（如果需要）
+# pyyaml>=6.0        # YAML配置文件（可选）
+
+# 数据存储和序列化  
+pyarrow>=12.0.0    # Parquet文件支持
+
+# 时间序列处理
+python-dateutil>=2.8.0
+
+# 数值稳定性和精度
+mpmath>=1.3.0      # 高精度数学计算（可选）
+
+# ============================================================================
+# 安装说明 Installation Instructions
+# ============================================================================
+#
+# 1. 创建虚拟环境:
+#    python -m venv venv
+#    source venv/bin/activate  # Linux/Mac
+#    # or venv\Scripts\activate  # Windows
+#
+# 2. 安装依赖:
+#    pip install -r dependencies/requirements-continuous-risk.txt
+#
+# 3. 验证安装:
+#    python -c "import cvxpy; import numpy; import plotly; print('All dependencies installed successfully!')"
+#
+# 4. 运行系统:
+#    python run_continuous_portfolio_risk_system.py
+#
+# ============================================================================
+# 依赖说明 Dependencies Explanation
+# ============================================================================
+#
+# cvxpy: 凸优化求解器，用于组合优化和约束优化
+# numpy/pandas: 基础数值计算和数据处理
+# scipy: 统计分布、优化算法、线性代数
+# scikit-learn: 协方差估计、降维、机器学习工具
+# plotly: 交互式风险监控仪表板
+# schedule: 定时任务调度
+# pyarrow: 高效数据存储和读取
+#
+# ============================================================================

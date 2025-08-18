@@ -1,0 +1,77 @@
+{
+  "timestamp": "2025-08-18T22:08:42.675590",
+  "processing_time_seconds": 4.2543768882751465,
+  "symbols_processed": 5,
+  "results": {
+    "BTCUSDT": {
+      "original_features": 14,
+      "final_features": 50,
+      "important_features": 41,
+      "leakage_features_removed": 0,
+      "feature_importance_top5": {
+        "open": 1.0,
+        "close": 0.9984134902301931,
+        "low": 0.9555715195437705,
+        "high": 0.7935368064775233,
+        "BTCUSDT_rsi_htf_60m": 0.48194202649847895
+      },
+      "data_file": "/Users/zhangxuanyang/Desktop/Quant/DipMaster-Trading-System/data/continuous_optimization/features_BTCUSDT_optimized_20250818_220840.parquet"
+    },
+    "ETHUSDT": {
+      "original_features": 14,
+      "final_features": 50,
+      "important_features": 41,
+      "leakage_features_removed": 0,
+      "feature_importance_top5": {
+        "open": 1.0,
+        "close": 0.9984134902301931,
+        "low": 0.9555715195437705,
+        "high": 0.7935368064775233,
+        "ETHUSDT_rsi_htf_60m": 0.48194202649847895
+      },
+      "data_file": "/Users/zhangxuanyang/Desktop/Quant/DipMaster-Trading-System/data/continuous_optimization/features_ETHUSDT_optimized_20250818_220840.parquet"
+    },
+    "SOLUSDT": {
+      "original_features": 14,
+      "final_features": 50,
+      "important_features": 41,
+      "leakage_features_removed": 0,
+      "feature_importance_top5": {
+        "open": 1.0,
+        "close": 0.9984134902301931,
+        "low": 0.9555715195437705,
+        "high": 0.7935368064775233,
+        "SOLUSDT_rsi_htf_60m": 0.48194202649847895
+      },
+      "data_file": "/Users/zhangxuanyang/Desktop/Quant/DipMaster-Trading-System/data/continuous_optimization/features_SOLUSDT_optimized_20250818_220841.parquet"
+    },
+    "ADAUSDT": {
+      "original_features": 14,
+      "final_features": 50,
+      "important_features": 41,
+      "leakage_features_removed": 0,
+      "feature_importance_top5": {
+        "open": 1.0,
+        "close": 0.9984134902301931,
+        "low": 0.9555715195437705,
+        "high": 0.7935368064775233,
+        "ADAUSDT_rsi_htf_60m": 0.48194202649847895
+      },
+      "data_file": "/Users/zhangxuanyang/Desktop/Quant/DipMaster-Trading-System/data/continuous_optimization/features_ADAUSDT_optimized_20250818_220842.parquet"
+    },
+    "BNBUSDT": {
+      "original_features": 14,
+      "final_features": 50,
+      "important_features": 41,
+      "leakage_features_removed": 0,
+      "feature_importance_top5": {
+        "open": 1.0,
+        "close": 0.9984134902301931,
+        "low": 0.9555715195437705,
+        "high": 0.7935368064775233,
+        "BNBUSDT_rsi_htf_60m": 0.48194202649847895
+      },
+      "data_file": "/Users/zhangxuanyang/Desktop/Quant/DipMaster-Trading-System/data/continuous_optimization/features_BNBUSDT_optimized_20250818_220842.parquet"
+    }
+  }
+}

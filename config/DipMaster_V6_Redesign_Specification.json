@@ -1,0 +1,250 @@
+{
+  "strategy_name": "DipMaster_V6_Redesigned",
+  "version": "6.0.0",
+  "created_date": "2025-08-18",
+  "design_philosophy": "基于V5优化失败的深度反思，重新设计高胜率、低回撤的逢跌策略",
+  
+  "v5_failure_analysis": {
+    "primary_issues": [
+      "信号质量不足：RSI(30-50)区间信号过于频繁且噪声大",
+      "持有期过短：5-15分钟无法捕捉有意义的价格修复",
+      "缺乏趋势过滤：在不利市场环境下仍产生大量错误信号",
+      "风险控制失效：固定止损比例无法适应市场动态"
+    ],
+    "statistical_evidence": {
+      "achieved_win_rate": "51.4% (vs 85% target)",
+      "max_drawdown": ">2000% (vs 3% target)",
+      "qualified_symbols": "0/5 symbols",
+      "optimization_score": "<30/100"
+    }
+  },
+
+  "v6_redesign_framework": {
+    "core_hypothesis": "极端超卖 + 技术支撑 + 趋势修复 = 高概率反弹机会",
+    
+    "signal_architecture": {
+      "tier_1_extreme_oversold": {
+        "rsi_threshold": "<20 (极端超卖，不是30-50)",
+        "consecutive_decline": "连续2+根K线下跌", 
+        "decline_magnitude": "单日跌幅>2% 或 连续跌幅>4%",
+        "volume_confirmation": "成交量>3倍平均(不是1.5倍)"
+      },
+      
+      "tier_2_support_level": {
+        "technical_support": "接近20日/50日MA支撑线±1%",
+        "bollinger_position": "触及或突破布林下轨",
+        "previous_support": "接近历史重要支撑位",
+        "fibonacci_level": "斐波那契回调61.8%或78.6%位置"
+      },
+      
+      "tier_3_market_regime": {
+        "trend_filter": "仅在上升趋势或震荡市交易，熊市暂停",
+        "volatility_regime": "中低波动率环境(VIX<30等价物)",
+        "market_sentiment": "恐慌指数达到超卖区域",
+        "correlation_filter": "BTC相关性<0.8时才交易山寨币"
+      }
+    },
+
+    "enhanced_exit_system": {
+      "multi_layer_profit_taking": {
+        "layer_1": "20%仓位在+1%止盈(快速锁定利润)",
+        "layer_2": "30%仓位在+2%止盈(主要收益)",  
+        "layer_3": "30%仓位在+3%止盈(超额收益)",
+        "layer_4": "20%仓位追踪止损(趋势跟随)"
+      },
+      
+      "dynamic_stop_loss": {
+        "initial_stop": "入场价-1%(不是固定0.3%)",
+        "atr_based_stop": "2倍ATR止损(适应波动率)",
+        "time_decay_stop": "持有24小时后逐步收紧止损",
+        "trend_break_stop": "支撑位有效跌破立即止损"
+      },
+      
+      "optimal_holding_period": {
+        "min_holding": "30分钟(让修复展开)",
+        "optimal_window": "2-6小时(捕捉日内修复)",
+        "max_holding": "24小时(避免隔夜风险)",
+        "forced_exit": "美股收盘前强制平仓(降低隔夜缺口)"
+      }
+    },
+
+    "risk_management_2.0": {
+      "position_sizing": {
+        "base_size": "账户净值的2%(不是固定金额)",
+        "kelly_optimization": "根据历史胜率和盈亏比动态调整",
+        "volatility_scaling": "高波动币种减少仓位，低波动币种增加",
+        "correlation_penalty": "相关性>0.6的币种总仓位<5%"
+      },
+      
+      "portfolio_limits": {
+        "max_total_exposure": "20%(极其保守)",
+        "max_single_position": "5%(单币种限制)",
+        "max_concurrent_trades": "2个(专注质量)",
+        "daily_loss_limit": "1%(严格控制)"
+      },
+      
+      "market_regime_controls": {
+        "bull_market": "正常交易",
+        "bear_market": "暂停交易或仅做BTC/ETH",
+        "high_volatility": "减半仓位",
+        "low_liquidity": "避免小币种"
+      }
+    }
+  },
+
+  "implementation_roadmap": {
+    "phase_1_foundation": {
+      "duration": "2周",
+      "deliverables": [
+        "市场制度识别模块(牛熊震荡分类)",
+        "增强版技术指标计算(RSI, ATR, 支撑阻力)",
+        "新信号生成逻辑实现"
+      ],
+      "acceptance_criteria": [
+        "市场制度识别准确率>80%",
+        "新信号数量比V5减少70%以上",
+        "信号质量评分>70"
+      ]
+    },
+    
+    "phase_2_backtesting": {
+      "duration": "2周", 
+      "deliverables": [
+        "V6策略完整回测引擎",
+        "多市场环境下的表现验证",
+        "与V5策略的对比分析"
+      ],
+      "acceptance_criteria": [
+        "胜率>75%(目标85%的安全边际)",
+        "最大回撤<5%(目标3%的安全边际)", 
+        "夏普比率>1.8",
+        "至少3个币种通过验证"
+      ]
+    },
+    
+    "phase_3_paper_trading": {
+      "duration": "4周",
+      "deliverables": [
+        "实时信号生成系统",
+        "风险管理模块集成",
+        "30天纸面交易验证"
+      ],
+      "acceptance_criteria": [
+        "纸面交易胜率>70%",
+        "实际执行与回测偏差<10%",
+        "风险控制有效性验证"
+      ]
+    },
+    
+    "phase_4_small_scale_live": {
+      "duration": "4周",
+      "deliverables": [
+        "小资金实盘验证($100-500)",
+        "性能监控和优化",
+        "策略稳定性评估"
+      ],
+      "acceptance_criteria": [
+        "实盘胜率>65%",
+        "系统稳定运行30天",
+        "风险指标在预期范围内"
+      ]
+    }
+  },
+
+  "technology_upgrades": {
+    "data_infrastructure": {
+      "enhanced_features": [
+        "多时间框架技术指标(1m-1h)",
+        "实时支撑阻力识别",
+        "市场情绪指标集成",
+        "相关性动态监控"
+      ]
+    },
+    
+    "execution_engine": {
+      "improvements": [
+        "智能订单分割(减少滑点)",
+        "最优执行时机选择",
+        "动态止损追踪",
+        "多层止盈管理"
+      ]
+    },
+    
+    "risk_monitoring": {
+      "real_time_metrics": [
+        "实时VAR计算",
+        "组合相关性监控", 
+        "市场制度变化警报",
+        "异常交易行为检测"
+      ]
+    }
+  },
+
+  "success_criteria_v6": {
+    "minimum_viable_performance": {
+      "win_rate": ">75%",
+      "profit_factor": ">2.0", 
+      "max_drawdown": "<5%",
+      "sharpe_ratio": ">1.5",
+      "monthly_return": ">8%"
+    },
+    
+    "target_performance": {
+      "win_rate": ">85%",
+      "profit_factor": ">2.5",
+      "max_drawdown": "<3%", 
+      "sharpe_ratio": ">2.0",
+      "monthly_return": ">15%"
+    },
+    
+    "deployment_gates": {
+      "gate_1": "回测验证通过所有最低标准",
+      "gate_2": "30天纸面交易达到目标标准",
+      "gate_3": "小资金实盘验证稳定性",
+      "gate_4": "风险管理系统全面测试通过"
+    }
+  },
+
+  "lessons_from_v5": {
+    "what_to_avoid": [
+      "过于频繁的信号生成",
+      "固定的风险参数",
+      "忽略市场制度变化",
+      "过短的持有期",
+      "缺乏有效的趋势过滤"
+    ],
+    
+    "what_to_emphasize": [
+      "信号质量over数量",
+      "严格的风险控制",
+      "市场环境适应性",
+      "统计显著性验证",
+      "实盘与回测的一致性"
+    ]
+  },
+
+  "project_timeline": {
+    "total_duration": "12周",
+    "milestones": {
+      "week_2": "Phase 1完成",
+      "week_4": "Phase 2完成", 
+      "week_8": "Phase 3完成",
+      "week_12": "Phase 4完成并决定是否全面部署"
+    }
+  },
+
+  "resource_requirements": {
+    "development_time": "120小时",
+    "testing_capital": "$1000-5000",
+    "infrastructure_cost": "<$100/月",
+    "risk_budget": "最大损失$500"
+  },
+
+  "next_immediate_actions": [
+    "深入分析V5失败的具体交易案例",
+    "开发市场制度识别算法", 
+    "设计新的信号筛选逻辑",
+    "准备V6开发环境和数据",
+    "制定详细的开发计划时间表"
+  ]
+}

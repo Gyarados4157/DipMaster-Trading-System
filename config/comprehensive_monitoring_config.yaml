@@ -1,0 +1,274 @@
+# DipMaster Comprehensive Monitoring System Configuration
+# 全面监控系统配置文件 - 生产环境配置
+
+# 运行模式: development, paper_trading, live_trading, research_only
+mode: "development"
+
+# Kafka事件流配置
+kafka:
+  enabled: true
+  servers:
+    - "localhost:9092"
+  client_id: "dipmaster-monitoring"
+  buffer_max_size: 1000
+  producer_config:
+    retries: 3
+    batch_size: 16384
+    linger_ms: 10
+    compression_type: "gzip"
+    acks: "all"
+    max_in_flight_requests_per_connection: 1
+    enable_idempotence: true
+
+# 数据库配置
+database:
+  path: "data/monitoring_production.db"
+  backup_enabled: true
+  retention_days: 90
+  connection_timeout: 30
+  journal_mode: "WAL"
+  synchronous: "NORMAL"
+
+# 日志配置
+logging:
+  level: "INFO"
+  directory: "logs/monitoring"
+  max_file_size_mb: 100
+  retention_days: 30
+  structured_logging: true
+  correlation_tracking: true
+  performance_logging: true
+  format: "%(asctime)s - %(name)s - %(levelname)s - [%(correlation_id)s] - %(message)s"
+
+# 监控核心配置
+monitoring:
+  # 检查间隔（秒）
+  consistency_check_interval_seconds: 30
+  drift_detection_interval_seconds: 300
+  risk_monitoring_interval_seconds: 60
+  health_check_interval_seconds: 60
+  performance_snapshot_interval_seconds: 900
+  alert_management_interval_seconds: 30
+  
+  # 报告生成
+  report_generation_enabled: true
+  daily_report_time: "01:00"  # UTC
+  weekly_report_day: "monday"
+  weekly_report_time: "02:00"
+  monthly_report_day: 1
+  monthly_report_time: "03:00"
+  
+  # 数据保留
+  event_log_retention_days: 30
+  performance_data_retention_days: 90
+  consistency_data_retention_days: 30
+  alert_history_retention_days: 90
+
+# 仪表板服务配置
+dashboard:
+  enabled: true
+  host: "0.0.0.0"
+  port: 8080
+  websocket_port: 8081
+  cache_duration_seconds: 30
+  cors_enabled: true
+  allowed_origins:
+    - "http://localhost:3000"
+    - "http://localhost:3001"
+    - "https://dipmaster-dashboard.example.com"
+  start_server: true
+  max_websocket_connections: 100
+  websocket_ping_interval: 30
+  websocket_timeout: 300
+
+# 监控阈值配置
+thresholds:
+  # 一致性阈值
+  consistency:
+    signal_position_match_min: 95.0          # 信号-持仓匹配率最小值 (%)
+    position_execution_match_min: 98.0       # 持仓-执行匹配率最小值 (%)
+    price_deviation_max_bps: 20.0            # 价格偏差最大值 (基点)
+    timing_deviation_max_minutes: 2.0        # 时间偏差最大值 (分钟)
+    boundary_compliance_min: 100.0           # 边界合规率最小值 (%)
+    
+  # 漂移检测阈值
+  drift:
+    warning_threshold_pct: 5.0               # 漂移警告阈值 (%)
+    critical_threshold_pct: 10.0             # 漂移严重阈值 (%)
+    statistical_significance: 0.05           # 统计显著性水平
+    min_data_points: 30                      # 最少数据点数量
+    lookback_periods: 100                    # 回看周期数量
+    
+  # 风险监控阈值
+  risk:
+    var_95_limit: 200000.0                   # VaR 95% 限制 (USD)
+    var_99_limit: 300000.0                   # VaR 99% 限制 (USD)
+    expected_shortfall_limit: 250000.0       # 期望亏空限制 (USD)
+    max_drawdown_limit: 0.15                 # 最大回撤限制 (15%)
+    daily_loss_limit: 1000.0                 # 日损失限制 (USD)
+    position_limit_count: 10                 # 持仓数量限制
+    leverage_limit: 3.0                      # 杠杆限制
+    concentration_limit: 0.3                 # 集中度限制 (30%)
+    
+  # 系统健康阈值
+  system_health:
+    cpu_warning: 80.0                        # CPU使用率警告 (%)
+    cpu_critical: 90.0                       # CPU使用率严重 (%)
+    memory_warning: 80.0                     # 内存使用率警告 (%)
+    memory_critical: 90.0                    # 内存使用率严重 (%)
+    disk_warning: 85.0                       # 磁盘使用率警告 (%)
+    disk_critical: 95.0                      # 磁盘使用率严重 (%)
+    response_time_warning_ms: 1000.0         # 响应时间警告 (毫秒)
+    response_time_critical_ms: 5000.0        # 响应时间严重 (毫秒)
+    error_rate_warning: 5.0                  # 错误率警告 (%)
+    error_rate_critical: 10.0               # 错误率严重 (%)
+    uptime_requirement: 0.999                # 可用性要求 (99.9%)
+
+# DipMaster策略参数
+dipmaster_params:
+  # 信号生成参数
+  rsi_range: [30, 50]                        # RSI范围
+  max_holding_minutes: 180                   # 最大持仓时间 (分钟)
+  boundary_minutes: [15, 30, 45, 0]          # 边界分钟 (0代表60)
+  target_profit_pct: 0.8                     # 目标利润 (%)
+  dip_threshold_pct: 0.2                     # 逢跌阈值 (%)
+  volume_multiplier: 1.5                     # 成交量倍数
+  
+  # 策略验证参数
+  expected_win_rate: 0.821                   # 期望胜率
+  expected_profit_factor: 1.8                # 期望盈亏比
+  expected_sharpe_ratio: 1.5                 # 期望夏普比率
+  expected_max_drawdown: 0.08                # 期望最大回撤
+  expected_avg_holding_minutes: 96           # 期望平均持仓时间
+  expected_dip_buying_rate: 0.879            # 期望逢跌买入率
+
+# 告警配置
+alerts:
+  # 通知设置
+  email_notifications: false
+  email_smtp_server: "smtp.gmail.com"
+  email_smtp_port: 587
+  email_username: ""
+  email_password: ""
+  email_recipients: []
+  
+  # Webhook通知
+  webhook_enabled: false
+  webhook_url: ""
+  webhook_timeout: 10
+  webhook_retry_count: 3
+  
+  # 告警管理
+  suppression_enabled: true
+  suppression_default_duration: 15          # 默认抑制时间 (分钟)
+  escalation_enabled: true
+  escalation_timeout: 30                    # 升级超时 (分钟)
+  auto_resolution_enabled: true
+  auto_resolution_timeout: 60               # 自动解决超时 (分钟)
+  
+  # 告警分类
+  categories:
+    CONSISTENCY_VIOLATION:
+      severity_mapping: "WARNING"
+      suppression_duration: 15
+      escalation_enabled: true
+    PERFORMANCE_DRIFT:
+      severity_mapping: "WARNING"
+      suppression_duration: 30
+      escalation_enabled: true
+    RISK_LIMIT_BREACH:
+      severity_mapping: "CRITICAL"
+      suppression_duration: 5
+      escalation_enabled: true
+    SYSTEM_HEALTH:
+      severity_mapping: "WARNING"
+      suppression_duration: 10
+      escalation_enabled: false
+    SIGNAL_PROCESSING_ERROR:
+      severity_mapping: "WARNING"
+      suppression_duration: 5
+      escalation_enabled: true
+
+# 备份配置
+backup:
+  enabled: true
+  interval_hours: 6                          # 备份间隔 (小时)
+  retention_days: 30                         # 备份保留天数
+  compress: true                             # 是否压缩
+  backup_directory: "backups/monitoring"     # 备份目录
+  include_logs: false                        # 是否包含日志文件
+  encryption_enabled: false                  # 是否加密
+  
+# 性能优化配置
+performance:
+  # 内存管理
+  max_memory_usage_gb: 4.0                   # 最大内存使用 (GB)
+  gc_threshold: 0.8                          # GC触发阈值
+  
+  # 并发配置
+  max_concurrent_tasks: 50                   # 最大并发任务数
+  task_timeout_seconds: 300                  # 任务超时 (秒)
+  
+  # 缓存配置
+  cache_enabled: true
+  cache_size_mb: 512                         # 缓存大小 (MB)
+  cache_ttl_seconds: 300                     # 缓存TTL (秒)
+  
+  # 数据库优化
+  db_connection_pool_size: 10                # 连接池大小
+  db_query_timeout: 30                       # 查询超时 (秒)
+  db_batch_size: 1000                        # 批处理大小
+
+# 安全配置
+security:
+  # API安全
+  api_key_required: false
+  api_key_header: "X-API-Key"
+  rate_limiting_enabled: true
+  rate_limit_requests_per_minute: 1000
+  
+  # WebSocket安全
+  websocket_origin_check: true
+  websocket_max_message_size: 1048576        # 1MB
+  
+  # 数据保护
+  data_encryption_at_rest: false
+  log_sanitization_enabled: true
+  sensitive_data_masking: true
+
+# 集成配置
+integrations:
+  # 外部系统集成
+  trading_system_api_url: "http://localhost:8000"
+  trading_system_api_key: ""
+  trading_system_timeout: 30
+  
+  # 第三方服务
+  prometheus_enabled: false
+  prometheus_port: 9090
+  grafana_enabled: false
+  grafana_url: ""
+  
+  # 云服务
+  aws_cloudwatch_enabled: false
+  aws_region: "us-east-1"
+  datadog_enabled: false
+  datadog_api_key: ""
+
+# 开发和测试配置
+development:
+  debug_mode: true
+  mock_kafka: true
+  mock_external_apis: true
+  test_data_generation: true
+  performance_profiling: true
+  
+# 生产环境特定配置
+production:
+  debug_mode: false
+  mock_kafka: false
+  mock_external_apis: false
+  test_data_generation: false
+  performance_profiling: false
+  strict_validation: true
+  fail_fast: true

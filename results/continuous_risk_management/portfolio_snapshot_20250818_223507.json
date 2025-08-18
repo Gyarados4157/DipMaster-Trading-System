@@ -1,0 +1,67 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-18T22:35:07.120769",
+    "positions_count": 1,
+    "base_capital": 100000
+  },
+  "positions": [
+    {
+      "symbol": "BTCUSDT",
+      "weight": 0.01,
+      "dollar_amount": 1000.0,
+      "entry_time": "2025-08-18 22:35:07.119919",
+      "signal_strength": 0.6851981546431425,
+      "confidence": 0.6851981546431425,
+      "expected_return": 0.0082223778557177,
+      "kelly_weight": 0.01,
+      "risk_contribution": 0
+    }
+  ],
+  "risk_metrics": {
+    "portfolio_volatility": 0.00070245989181115,
+    "portfolio_beta": 0.01,
+    "var_95": 7.279258870607758e-05,
+    "var_99": 0.00010310439616119197,
+    "expected_shortfall_95": 9.31745135437793e-05,
+    "diversification_ratio": 1.0000000000000002,
+    "max_position_weight": 0.01,
+    "calculation_timestamp": "2025-08-18T22:35:07.120732"
+  },
+  "alerts": [],
+  "rebalancing_info": {
+    "timestamp": "2025-08-18T22:35:07.120740",
+    "old_positions": 0,
+    "new_positions": 1,
+    "position_changes": [
+      {
+        "symbol": "BTCUSDT",
+        "old_weight": 0,
+        "new_weight": 0.01,
+        "change": 0.01
+      }
+    ],
+    "turnover": 0.01
+  },
+  "configuration": {
+    "base_capital": 100000,
+    "rebalance_frequency": "hourly",
+    "min_signal_confidence": 0.6,
+    "min_expected_return": 0.005,
+    "max_portfolio_beta": 0.1,
+    "max_portfolio_volatility": 0.18,
+    "max_single_position": 0.2,
+    "max_total_leverage": 3.0,
+    "max_var_95": 0.03,
+    "max_es_95": 0.04,
+    "max_drawdown": 0.03,
+    "kelly_fraction": 0.25,
+    "min_kelly_weight": 0.01,
+    "max_kelly_weight": 0.25,
+    "max_correlation_threshold": 0.7,
+    "min_diversification_ratio": 1.2,
+    "position_hold_time_limit": 180,
+    "force_rebalance_time": 240,
+    "signal_data_path": "results/basic_ml_pipeline/",
+    "output_path": "results/continuous_risk_management/"
+  }
+}

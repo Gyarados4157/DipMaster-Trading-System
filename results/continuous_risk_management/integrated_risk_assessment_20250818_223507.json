@@ -1,0 +1,125 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-18T22:35:07.132719",
+    "report_type": "COMPREHENSIVE_RISK_ASSESSMENT",
+    "positions_analyzed": 1,
+    "risk_calculation_method": "MULTI_METHOD_ENSEMBLE"
+  },
+  "portfolio_statistics": {
+    "total_positions": 1,
+    "gross_exposure": 0.01,
+    "net_exposure": 0.01,
+    "max_position_size": 0.01,
+    "leverage": 0.01
+  },
+  "risk_metrics": {
+    "var_95_parametric": 0.0007298405413572449,
+    "var_99_parametric": 0.001013054298153327,
+    "var_95_historical": 0.0006989692618782342,
+    "es_95_parametric": 0.0009034934648300755,
+    "es_99_parametric": 0.001153879567623585,
+    "es_95_historical": 0.0009457068446076146,
+    "portfolio_volatility": 0.0004155776193352698,
+    "diversification_ratio": 1.0,
+    "avg_correlation": 0,
+    "max_correlation": 0
+  },
+  "risk_levels": {
+    "var_95_level": "LOW",
+    "volatility_level": "LOW",
+    "concentration_level": "LOW",
+    "correlation_level": "LOW",
+    "liquidity_level": "LOW"
+  },
+  "limit_violations": [],
+  "stress_test_results": {
+    "market_crash": {
+      "description": "Market Crash (-20%)",
+      "market_shock": -0.2,
+      "volatility_multiplier": 2.0,
+      "estimated_loss": 0.0024000000000000002,
+      "loss_percentage": 0.24000000000000002,
+      "stressed_var_95": 0.0014596810827144898,
+      "risk_level": "CRITICAL"
+    },
+    "flash_crash": {
+      "description": "Flash Crash (-10%)",
+      "market_shock": -0.1,
+      "volatility_multiplier": 3.0,
+      "estimated_loss": 0.0016,
+      "loss_percentage": 0.16,
+      "stressed_var_95": 0.0021895216240717347,
+      "risk_level": "CRITICAL"
+    },
+    "volatility_spike": {
+      "description": "Volatility Spike",
+      "market_shock": 0.0,
+      "volatility_multiplier": 2.5,
+      "estimated_loss": 0.0005,
+      "loss_percentage": 0.05,
+      "stressed_var_95": 0.0018246013533931122,
+      "risk_level": "HIGH"
+    },
+    "correlation_crisis": {
+      "description": "Correlation Crisis",
+      "market_shock": -0.05,
+      "volatility_multiplier": 1.5,
+      "estimated_loss": 0.00075,
+      "loss_percentage": 0.075,
+      "stressed_var_95": 0.0010947608120358673,
+      "risk_level": "HIGH"
+    },
+    "liquidity_crunch": {
+      "description": "Liquidity Crunch",
+      "market_shock": -0.08,
+      "volatility_multiplier": 2.0,
+      "estimated_loss": 0.0012000000000000001,
+      "loss_percentage": 0.12000000000000001,
+      "stressed_var_95": 0.0014596810827144898,
+      "risk_level": "CRITICAL"
+    }
+  },
+  "risk_attribution": {
+    "marginal_contribution": {
+      "BTCUSDT": 0.04155776193352698
+    },
+    "component_contribution": {
+      "BTCUSDT": 0.0004155776193352698
+    },
+    "risk_percentage": {
+      "BTCUSDT": 1.0
+    },
+    "portfolio_volatility": 0.0004155776193352698,
+    "diversification_ratio": 1.0
+  },
+  "liquidity_assessment": {
+    "average_liquidity_score": 0.9405,
+    "max_liquidation_days": 0.525,
+    "portfolio_liquidity_risk": "LOW",
+    "positions_detail": {
+      "BTCUSDT": {
+        "base_liquidity_score": 0.95,
+        "adjusted_liquidity_score": 0.9405,
+        "days_to_liquidate": 0.525,
+        "position_size_impact": 0.049999999999999996,
+        "liquidity_risk_level": "LOW"
+      }
+    }
+  },
+  "correlation_analysis": {
+    "correlation_matrix": [
+      [
+        1.0
+      ]
+    ],
+    "symbol_pairs": [],
+    "high_correlation_pairs": []
+  },
+  "recommendations": [
+    {
+      "type": "STRESS_TEST_HEDGE",
+      "priority": "HIGH",
+      "description": "Portfolio vulnerable to scenarios: market_crash, flash_crash, volatility_spike, correlation_crisis, liquidity_crunch. Consider hedging strategies."
+    }
+  ]
+}

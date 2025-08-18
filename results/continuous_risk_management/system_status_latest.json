@@ -1,0 +1,50 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-18T22:35:07.213676",
+    "report_type": "SYSTEM_STATUS",
+    "system_version": "IntegratedRiskManagement_V1.0.0"
+  },
+  "system_statistics": {
+    "start_time": null,
+    "uptime_seconds": null,
+    "total_optimizations": 1,
+    "total_alerts": 0,
+    "last_optimization": "2025-08-18T22:35:07.121062",
+    "last_risk_check": "2025-08-18T22:35:07.132730",
+    "system_health": "HEALTHY"
+  },
+  "current_portfolio": {
+    "timestamp": "2025-08-18T22:35:07.213666",
+    "positions_count": 1,
+    "total_dollar_value": 1000.0,
+    "total_weight": 0.01,
+    "average_confidence": 0.6851981546431425,
+    "positions_details": [
+      {
+        "symbol": "BTCUSDT",
+        "weight": 0.01,
+        "dollar_amount": 1000.0,
+        "confidence": 0.6851981546431425,
+        "expected_return": 0.0082223778557177,
+        "hold_time_minutes": 0.0015625333333333334
+      }
+    ],
+    "recent_alerts_count": 0
+  },
+  "configuration": {
+    "continuous_config": {
+      "base_capital": 100000,
+      "rebalance_frequency": "hourly",
+      "max_portfolio_beta": 0.1,
+      "max_portfolio_volatility": 0.18,
+      "max_total_leverage": 3.0,
+      "kelly_fraction": 0.25
+    },
+    "risk_thresholds": {
+      "var_95_daily": 0.03,
+      "portfolio_vol_annual": 0.18,
+      "max_correlation": 0.7,
+      "max_position_size": 0.2
+    }
+  }
+}

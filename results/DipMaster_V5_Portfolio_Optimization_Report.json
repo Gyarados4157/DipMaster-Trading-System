@@ -1,0 +1,161 @@
+{
+  "optimization_timestamp": "2025-08-18T21:48:29.709511",
+  "analysis_summary": {
+    "total_symbols_analyzed": 5,
+    "qualified_symbols": 0,
+    "qualification_rate": 0.0
+  },
+  "symbol_analysis": {
+    "SOLUSDT": {
+      "strict_strategy": {
+        "trades": 430,
+        "win_rate": 0.5093023255813953,
+        "avg_return": 0.00020848176494922318,
+        "total_return": 0.08964715892816597,
+        "max_loss": -0.003,
+        "max_gain": 0.006,
+        "profitable_days_pct": 0.5093023255813953
+      },
+      "standard_strategy": {
+        "trades": 801,
+        "win_rate": 0.5218476903870163,
+        "avg_return": 0.000197129332807427,
+        "total_return": 0.15790059557874903
+      },
+      "data_points": 30000,
+      "recommendation": "EXCLUDE"
+    },
+    "ADAUSDT": {
+      "strict_strategy": {
+        "trades": 496,
+        "win_rate": 0.5060483870967742,
+        "avg_return": 0.0002823185772813278,
+        "total_return": 0.1400300143315386,
+        "max_loss": -0.003,
+        "max_gain": 0.006,
+        "profitable_days_pct": 0.5060483870967742
+      },
+      "standard_strategy": {
+        "trades": 947,
+        "win_rate": 0.498416050686378,
+        "avg_return": 0.00024313868958623577,
+        "total_return": 0.23025233903816528
+      },
+      "data_points": 30000,
+      "recommendation": "EXCLUDE"
+    },
+    "XRPUSDT": {
+      "strict_strategy": {
+        "trades": 461,
+        "win_rate": 0.5422993492407809,
+        "avg_return": 0.0003676913135781377,
+        "total_return": 0.16950569555952147,
+        "max_loss": -0.003,
+        "max_gain": 0.006,
+        "profitable_days_pct": 0.5422993492407809
+      },
+      "standard_strategy": {
+        "trades": 911,
+        "win_rate": 0.5301866081229418,
+        "avg_return": 0.0001891145568558567,
+        "total_return": 0.17228336129568544
+      },
+      "data_points": 30000,
+      "recommendation": "EXCLUDE"
+    },
+    "BNBUSDT": {
+      "strict_strategy": {
+        "trades": 417,
+        "win_rate": 0.5083932853717026,
+        "avg_return": 6.443747643689834e-05,
+        "total_return": 0.026870427674186608,
+        "max_loss": -0.003,
+        "max_gain": 0.006,
+        "profitable_days_pct": 0.5083932853717026
+      },
+      "standard_strategy": {
+        "trades": 835,
+        "win_rate": 0.5101796407185629,
+        "avg_return": 2.9587493375965655e-05,
+        "total_return": 0.02470555696893132
+      },
+      "data_points": 30000,
+      "recommendation": "EXCLUDE"
+    },
+    "DOGEUSDT": {
+      "strict_strategy": {
+        "trades": 498,
+        "win_rate": 0.5301204819277109,
+        "avg_return": 0.0002529064893928935,
+        "total_return": 0.12594743171766096,
+        "max_loss": -0.003,
+        "max_gain": 0.006,
+        "profitable_days_pct": 0.5301204819277109
+      },
+      "standard_strategy": {
+        "trades": 931,
+        "win_rate": 0.523093447905478,
+        "avg_return": 0.0002513488180022259,
+        "total_return": 0.2340057495600723
+      },
+      "data_points": 30000,
+      "recommendation": "EXCLUDE"
+    }
+  },
+  "risk_management_framework": {
+    "position_sizing": {
+      "max_position_per_symbol": 0.15,
+      "max_total_exposure": 0.45,
+      "min_qualified_symbols": 3
+    },
+    "entry_conditions": {
+      "strict_mode_symbols": [],
+      "standard_mode_symbols": [],
+      "excluded_symbols": [
+        "SOLUSDT",
+        "ADAUSDT",
+        "XRPUSDT",
+        "BNBUSDT",
+        "DOGEUSDT"
+      ]
+    },
+    "exit_rules": {
+      "profit_targets": {
+        "strict_mode": 0.006,
+        "standard_mode": 0.008
+      },
+      "stop_losses": {
+        "strict_mode": 0.003,
+        "standard_mode": 0.004
+      },
+      "max_holding_time": "30_minutes",
+      "forced_exit_conditions": [
+        "market_stress",
+        "high_correlation"
+      ]
+    },
+    "portfolio_level_controls": {
+      "daily_loss_limit": 0.02,
+      "correlation_threshold": 0.7,
+      "max_simultaneous_positions": 3,
+      "cool_down_after_loss": "15_minutes"
+    }
+  },
+  "portfolio_metrics": {
+    "expected_win_rate": 0,
+    "risk_adjusted_score": 0
+  },
+  "recommendations": {
+    "deploy_portfolio": false,
+    "primary_symbols": [],
+    "backup_symbols": [],
+    "strategy_adjustments_needed": true
+  },
+  "phase_5_status": "COMPLETED",
+  "next_steps": [
+    "Implement stricter entry conditions",
+    "Use conservative position sizing",
+    "Focus on high-probability setups only",
+    "Consider market regime filtering"
+  ]
+}

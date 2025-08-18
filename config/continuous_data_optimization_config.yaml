@@ -1,0 +1,238 @@
+# Continuous Data Infrastructure Optimization Configuration
+# DipMaster Trading System - 持续数据基础设施优化配置
+
+# 基础路径配置
+base_path: "data/enhanced_market_data"
+
+# 更新间隔配置
+update_interval_minutes: 30      # 数据更新间隔 (分钟)
+quality_check_interval_minutes: 60  # 质量检查间隔 (分钟)
+comprehensive_check_interval_hours: 24  # 全面检查间隔 (小时)
+
+# 并发控制
+max_concurrent_downloads: 8      # 最大并发下载数
+max_retry_attempts: 3           # 最大重试次数
+rate_limit_ms: 1200            # API调用间隔 (毫秒)
+
+# 数据保留策略
+data_retention_days: 1095       # 数据保留天数 (3年)
+backup_retention_days: 30       # 备份保留天数
+temp_file_cleanup_hours: 1      # 临时文件清理间隔 (小时)
+
+# 数据质量标准
+quality_standards:
+  tier_s_threshold: 0.999       # S级质量阈值 (99.9%+)
+  tier_a_threshold: 0.995       # A级质量阈值 (99.5%+)
+  tier_b_threshold: 0.990       # B级质量阈值 (99.0%+)
+  tier_c_threshold: 0.950       # C级质量阈值 (95.0%+)
+  minimum_acceptable: 0.950     # 最低可接受质量
+  auto_repair: true            # 自动修复开关
+  gap_tolerance_multiplier: 2.0 # Gap容忍度倍数
+
+# TOP30 交易对配置
+symbols:
+  tier_s:  # 顶级质量要求
+    - BTCUSDT
+    - ETHUSDT
+    - BNBUSDT
+    - XRPUSDT
+    - SOLUSDT
+    - ADAUSDT
+    - DOGEUSDT
+    - AVAXUSDT
+    - TRXUSDT
+    - LINKUSDT
+  
+  tier_a:  # 高质量要求
+    - LTCUSDT
+    - DOTUSDT
+    - MATICUSDT
+    - UNIUSDT
+    - ICPUSDT
+    - NEARUSDT
+    - XLMUSDT
+    - ATOMUSDT
+    - VETUSDT
+    - FILUSDT
+  
+  tier_b:  # 标准质量要求
+    - APTUSDT
+    - ARBUSDT
+    - OPUSDT
+    - GRTUSDT
+    - MKRUSDT
+    - AAVEUSDT
+    - COMPUSDT
+    - ALGOUSDT
+    - TONUSDT
+    - INJUSDT
+
+# 时间框架配置
+timeframes:
+  - "1m"
+  - "5m"
+  - "15m"
+  - "1h"
+  - "4h"
+  - "1d"
+
+# 时间框架优先级 (DipMaster策略相关)
+timeframe_priorities:
+  "5m": 1    # 主要时间框架
+  "15m": 2   # 出场时间框架
+  "1h": 3    # 趋势确认
+  "1m": 4    # 精确入场
+  "4h": 5    # 中期趋势
+  "1d": 6    # 长期趋势
+
+# 交易所配置
+exchanges:
+  binance:
+    rateLimit: 1200
+    enableRateLimit: true
+    timeout: 30000
+    options:
+      defaultType: "spot"
+      adjustForTimeDifference: true
+    sandbox: false
+    
+  # 备用交易所 (可选)
+  okx:
+    rateLimit: 1500
+    enableRateLimit: true
+    timeout: 30000
+    options:
+      defaultType: "spot"
+    sandbox: false
+
+# 存储配置
+storage:
+  format: "parquet"             # 存储格式
+  compression: "zstd"           # 压缩算法
+  compression_level: 3          # 压缩级别
+  use_dictionary: true          # 字典编码
+  row_group_size: 50000        # 行组大小
+  enable_checksum: true        # 校验和验证
+  partition_by_date: true      # 按日期分区
+  partition_by_symbol: true    # 按交易对分区
+
+# 缓存配置
+cache:
+  enable_redis: true           # 启用Redis缓存
+  redis_host: "localhost"      # Redis主机
+  redis_port: 6379            # Redis端口
+  redis_db: 0                 # Redis数据库
+  redis_expire_seconds: 3600  # Redis过期时间
+  memory_cache_size_mb: 512   # 内存缓存大小
+
+# 监控配置
+monitoring:
+  enable_performance_logging: true    # 性能日志
+  log_level: "INFO"                  # 日志级别
+  log_rotation_mb: 100               # 日志轮转大小
+  log_retention_days: 30             # 日志保留天数
+  
+  # 告警配置
+  alerts:
+    enable_email: false              # 邮件告警
+    enable_webhook: false            # Webhook告警
+    quality_threshold: 0.95          # 质量告警阈值
+    disk_space_threshold_gb: 10      # 磁盘空间告警阈值
+    
+  # 性能指标
+  metrics:
+    track_download_speed: true       # 跟踪下载速度
+    track_quality_trends: true       # 跟踪质量趋势
+    track_gap_detection: true        # 跟踪Gap检测
+    export_prometheus: false         # 导出Prometheus指标
+
+# 自动修复配置
+auto_repair:
+  enable: true                       # 启用自动修复
+  methods:
+    forward_fill: true               # 前向填充
+    backward_fill: true              # 后向填充
+    interpolation: true              # 插值法
+    rolling_median: true             # 滚动中位数
+    outlier_detection: true          # 异常值检测
+  
+  # 修复阈值
+  thresholds:
+    max_gap_minutes: 60              # 最大Gap时长 (分钟)
+    outlier_std_multiplier: 3.0      # 异常值标准差倍数
+    min_data_points_for_repair: 100  # 修复所需最少数据点
+
+# 增量更新配置
+incremental_updates:
+  enable: true                       # 启用增量更新
+  check_interval_minutes: 15         # 检查间隔
+  lookback_hours: 24                # 回溯时间 (小时)
+  overlap_minutes: 60               # 重叠时间 (分钟)
+  max_batch_size: 1000              # 最大批次大小
+
+# 数据验证配置
+validation:
+  enable_ohlc_checks: true          # OHLC关系检查
+  enable_volume_checks: true        # 成交量检查
+  enable_price_range_checks: true   # 价格范围检查
+  enable_timestamp_checks: true     # 时间戳检查
+  
+  # 验证阈值
+  thresholds:
+    max_price_change_percent: 50     # 最大价格变动百分比
+    min_volume: 0                    # 最小成交量
+    max_zero_volume_ratio: 0.01      # 最大零成交量比例
+
+# 备份配置
+backup:
+  enable: true                       # 启用备份
+  schedule: "02:00"                 # 备份时间
+  compression: true                 # 压缩备份
+  remote_backup: false              # 远程备份
+  backup_location: "data/backups"   # 备份位置
+
+# 扩展配置
+extensions:
+  enable_machine_learning_quality: false    # ML质量评估
+  enable_anomaly_detection: false          # 异常检测
+  enable_predictive_gaps: false            # 预测性Gap检测
+  enable_cross_exchange_validation: false   # 跨交易所验证
+
+# 开发模式配置
+development:
+  enable_debug_logging: false       # 调试日志
+  enable_profiling: false          # 性能分析
+  test_mode: false                 # 测试模式
+  mock_exchange_data: false        # 模拟交易所数据
+  
+# 生产模式配置
+production:
+  enable_high_availability: true    # 高可用性
+  enable_load_balancing: false     # 负载均衡
+  enable_clustering: false         # 集群模式
+  health_check_interval: 300       # 健康检查间隔 (秒)
+
+# 资源限制
+resource_limits:
+  max_memory_mb: 4096              # 最大内存使用
+  max_cpu_percent: 80              # 最大CPU使用率
+  max_disk_io_mb_per_sec: 100     # 最大磁盘IO
+  max_network_mb_per_sec: 50      # 最大网络带宽
+
+# 特定策略配置 (DipMaster)
+strategy_specific:
+  dipmaster:
+    primary_timeframe: "5m"         # 主要时间框架
+    exit_timeframe: "15m"           # 出场时间框架
+    required_history_days: 90       # 所需历史数据天数
+    quality_weight_by_timeframe:
+      "5m": 1.0                    # 5分钟数据权重
+      "15m": 0.8                   # 15分钟数据权重
+      "1h": 0.6                    # 1小时数据权重
+    
+    # DipMaster特定质量检查
+    dipmaster_quality_checks:
+      check_dip_detection_data: true      # 检查逢跌买入数据
+      check_boundary_alignment: true      # 检查15分钟边界对齐
+      check_volume_consistency: true      # 检查成交量一致性
+      validate_signal_generation: true    # 验证信号生成数据
