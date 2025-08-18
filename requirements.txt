@@ -1,24 +1,16 @@
 # ============================================================================
-# DipMaster Trading System - Unified Dependencies
-# Version: 4.0.0
-# Date: 2025-08-16
+# DipMaster Trading System - Simplified Dependencies (Python 3.11+)
+# Version: 5.0.0
+# Date: 2025-08-18
 # 
-# This file now uses the unified dependency management system.
-# For environment-specific installations, use the dependencies/ directory:
-#   - Core system: pip install -r dependencies/requirements.txt
-#   - ML pipeline: pip install -r dependencies/requirements-ml.txt  
-#   - Development: pip install -r dependencies/requirements-dev.txt
-#   - Production:  pip install -r dependencies/requirements-prod.txt
+# For Linux servers, use: pip install -r requirements_linux.txt
+# For development with all features: pip install -r dependencies/requirements.txt
 # ============================================================================
 
-# Include unified core dependencies
--r dependencies/requirements.txt
+# Python 3.11+ Required
 
-# Include ML dependencies (most common use case)
--r dependencies/requirements-ml.txt
-
-# Version constraints for conflict resolution
--c dependencies/constraints.txt
+# Core dependencies (conflict-free version)
+-r requirements_linux.txt
 
 # ============================================================================
 # LEGACY COMPATIBILITY NOTICE
