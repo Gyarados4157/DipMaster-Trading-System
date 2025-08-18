@@ -1,0 +1,74 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-18T15:41:33.264562",
+    "optimizer_version": "PortfolioRiskOptimizer_V4.0.0",
+    "base_capital": 100000,
+    "optimization_status": "ERROR"
+  },
+  "positions": [],
+  "portfolio_metrics": {
+    "total_positions": 0,
+    "gross_exposure": 0,
+    "net_exposure": 0,
+    "leverage": 0,
+    "long_exposure": 0,
+    "short_exposure": 0
+  },
+  "risk_metrics": {
+    "annualized_volatility": 0.0,
+    "portfolio_beta": 0.0,
+    "var_95": 0.0,
+    "var_99": 0.0,
+    "expected_shortfall_95": 0.0,
+    "sharpe_ratio": 0.0,
+    "tracking_error": 0.0
+  },
+  "stress_test_results": {
+    "market_crash": {
+      "description": "\u5e02\u573a\u4e0b\u8dcc20%",
+      "portfolio_pnl": -0.0,
+      "portfolio_return": -0.0
+    },
+    "market_rally": {
+      "description": "\u5e02\u573a\u4e0a\u6da815%",
+      "portfolio_pnl": 0.0,
+      "portfolio_return": 0.0
+    },
+    "volatility_spike": {
+      "description": "\u6ce2\u52a8\u7387\u7ffb\u500d",
+      "stressed_volatility": 0.0,
+      "vol_change": NaN
+    },
+    "correlation_shock": {
+      "description": "\u76f8\u5173\u6027\u5347\u81f30.9",
+      "stressed_volatility": 0.0,
+      "vol_change": NaN
+    }
+  },
+  "risk_attribution": {
+    "marginal_contribution": [
+      {
+        "symbol": "BTCUSDT",
+        "mcr": 0.0
+      }
+    ],
+    "component_contribution": [
+      {
+        "symbol": "BTCUSDT",
+        "ccr": 0.0,
+        "risk_pct": 0.0
+      }
+    ],
+    "diversification_ratio": 1.0
+  },
+  "constraints_compliance": {
+    "beta_neutral": true,
+    "vol_target": true,
+    "leverage_ok": true,
+    "var_limit": true
+  },
+  "optimization_details": {
+    "status": "ERROR",
+    "fallback": "KELLY_WEIGHTS"
+  }
+}

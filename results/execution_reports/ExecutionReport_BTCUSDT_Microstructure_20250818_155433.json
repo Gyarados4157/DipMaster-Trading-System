@@ -1,0 +1,295 @@
+{
+  "session_id": "EXEC_BTCUSDT_1755503673",
+  "timestamp": "2025-08-18T15:54:33.198312",
+  "symbol": "BTCUSDT",
+  "venue": "binance",
+  "target_position": {
+    "symbol": "BTCUSDT",
+    "size_usd": 8000.0,
+    "quantity": 0.12307692307692308,
+    "side": "BUY"
+  },
+  "execution_algorithm": "implementation_shortfall",
+  "execution_params": {
+    "urgency": 0.6,
+    "duration_minutes": 25,
+    "num_slices": 8,
+    "max_participation_rate": 0.2
+  },
+  "orders": [
+    {
+      "slice_id": "IS_BTCUSDT_S01",
+      "parent_id": "DIPMASTER_SIGNAL_001",
+      "symbol": "BTCUSDT",
+      "side": "BUY",
+      "qty": 0.035,
+      "order_type": "LIMIT",
+      "limit_price": 64943.6745766363,
+      "tif": "GTC",
+      "venue": "binance",
+      "status": "FILLED",
+      "fill_qty": 0.03383355961389922,
+      "fill_price": 65008.6832598962
+    },
+    {
+      "slice_id": "IS_BTCUSDT_S02",
+      "parent_id": "DIPMASTER_SIGNAL_001",
+      "symbol": "BTCUSDT",
+      "side": "BUY",
+      "qty": 0.032,
+      "order_type": "LIMIT",
+      "limit_price": 64953.64060766536,
+      "tif": "GTC",
+      "venue": "binance",
+      "status": "FILLED",
+      "fill_qty": 0.029249537404823896,
+      "fill_price": 65018.65926693229
+    },
+    {
+      "slice_id": "IS_BTCUSDT_S03",
+      "parent_id": "DIPMASTER_SIGNAL_001",
+      "symbol": "BTCUSDT",
+      "side": "BUY",
+      "qty": 0.028,
+      "order_type": "LIMIT",
+      "limit_price": 64946.53230473842,
+      "tif": "GTC",
+      "venue": "binance",
+      "status": "FILLED",
+      "fill_qty": 0.027159697909089498,
+      "fill_price": 65011.54384858701
+    },
+    {
+      "slice_id": "IS_BTCUSDT_S04",
+      "parent_id": "DIPMASTER_SIGNAL_001",
+      "symbol": "BTCUSDT",
+      "side": "BUY",
+      "qty": 0.024,
+      "order_type": "LIMIT",
+      "limit_price": 64957.79946585864,
+      "tif": "GTC",
+      "venue": "binance",
+      "status": "FILLED",
+      "fill_qty": 0.021641944155368766,
+      "fill_price": 65022.82228814679
+    },
+    {
+      "slice_id": "IS_BTCUSDT_S05",
+      "parent_id": "DIPMASTER_SIGNAL_001",
+      "symbol": "BTCUSDT",
+      "side": "BUY",
+      "qty": 0.02,
+      "order_type": "LIMIT",
+      "limit_price": 64940.75526887386,
+      "tif": "GTC",
+      "venue": "binance",
+      "status": "FILLED",
+      "fill_qty": 0.017236628666068267,
+      "fill_price": 65005.76102990376
+    },
+    {
+      "slice_id": "IS_BTCUSDT_S06",
+      "parent_id": "DIPMASTER_SIGNAL_001",
+      "symbol": "BTCUSDT",
+      "side": "BUY",
+      "qty": 0.016,
+      "order_type": "LIMIT",
+      "limit_price": 64949.932824343676,
+      "tif": "GTC",
+      "venue": "binance",
+      "status": "FILLED",
+      "fill_qty": 0.015174776216520407,
+      "fill_price": 65014.94777211579
+    },
+    {
+      "slice_id": "IS_BTCUSDT_S07",
+      "parent_id": "DIPMASTER_SIGNAL_001",
+      "symbol": "BTCUSDT",
+      "side": "BUY",
+      "qty": 0.013,
+      "order_type": "LIMIT",
+      "limit_price": 64958.75435118472,
+      "tif": "GTC",
+      "venue": "binance",
+      "status": "FILLED",
+      "fill_qty": 0.012425481001691125,
+      "fill_price": 65023.77812931403
+    },
+    {
+      "slice_id": "IS_BTCUSDT_S08",
+      "parent_id": "DIPMASTER_SIGNAL_001",
+      "symbol": "BTCUSDT",
+      "side": "BUY",
+      "qty": 0.01,
+      "order_type": "LIMIT",
+      "limit_price": 64947.989772706016,
+      "tif": "GTC",
+      "venue": "binance",
+      "status": "FILLED",
+      "fill_qty": 0.009164484205208752,
+      "fill_price": 65013.002775481495
+    }
+  ],
+  "fills": [
+    {
+      "fill_id": "FILL_IS_BTCUSDT_S01_1755503673",
+      "order_id": "IS_BTCUSDT_S01",
+      "symbol": "BTCUSDT",
+      "side": "BUY",
+      "quantity": 0.03383355961389922,
+      "price": 65008.6832598962,
+      "timestamp": "2025-08-18T15:54:33.198322",
+      "slippage_bps": 1.3358861378757616,
+      "fees_usd": 2.1994751604947904,
+      "latency_ms": 118.35519865888058,
+      "venue": "binance",
+      "liquidity_type": "maker"
+    },
+    {
+      "fill_id": "FILL_IS_BTCUSDT_S02_1755503674",
+      "order_id": "IS_BTCUSDT_S02",
+      "symbol": "BTCUSDT",
+      "side": "BUY",
+      "quantity": 0.029249537404823896,
+      "price": 65018.65926693229,
+      "timestamp": "2025-08-18T15:57:33.198327",
+      "slippage_bps": 2.8706564511206536,
+      "fees_usd": 1.9017657062396358,
+      "latency_ms": 58.59952939645027,
+      "venue": "binance",
+      "liquidity_type": "maker"
+    },
+    {
+      "fill_id": "FILL_IS_BTCUSDT_S03_1755503675",
+      "order_id": "IS_BTCUSDT_S03",
+      "symbol": "BTCUSDT",
+      "side": "BUY",
+      "quantity": 0.027159697909089498,
+      "price": 65011.54384858701,
+      "timestamp": "2025-08-18T16:00:33.198331",
+      "slippage_bps": 1.775976705693762,
+      "fees_usd": 1.7656938915311489,
+      "latency_ms": 100.77728982055424,
+      "venue": "binance",
+      "liquidity_type": "maker"
+    },
+    {
+      "fill_id": "FILL_IS_BTCUSDT_S04_1755503676",
+      "order_id": "IS_BTCUSDT_S04",
+      "symbol": "BTCUSDT",
+      "side": "BUY",
+      "quantity": 0.021641944155368766,
+      "price": 65022.82228814679,
+      "timestamp": "2025-08-18T16:03:33.198334",
+      "slippage_bps": 3.511121253351648,
+      "fees_usd": 1.4072202887845404,
+      "latency_ms": 105.48452955726492,
+      "venue": "binance",
+      "liquidity_type": "maker"
+    },
+    {
+      "fill_id": "FILL_IS_BTCUSDT_S05_1755503677",
+      "order_id": "IS_BTCUSDT_S05",
+      "symbol": "BTCUSDT",
+      "side": "BUY",
+      "quantity": 0.017236628666068267,
+      "price": 65005.76102990376,
+      "timestamp": "2025-08-18T16:06:33.198336",
+      "slippage_bps": 0.8863122928875902,
+      "fees_usd": 1.1204801640276225,
+      "latency_ms": 106.64344347031742,
+      "venue": "binance",
+      "liquidity_type": "maker"
+    },
+    {
+      "fill_id": "FILL_IS_BTCUSDT_S06_1755503678",
+      "order_id": "IS_BTCUSDT_S06",
+      "symbol": "BTCUSDT",
+      "side": "BUY",
+      "quantity": 0.015174776216520407,
+      "price": 65014.94777211579,
+      "timestamp": "2025-08-18T16:09:33.198338",
+      "slippage_bps": 2.299657248583708,
+      "fees_usd": 0.9865872831706192,
+      "latency_ms": 85.2090456562753,
+      "venue": "binance",
+      "liquidity_type": "maker"
+    },
+    {
+      "fill_id": "FILL_IS_BTCUSDT_S07_1755503679",
+      "order_id": "IS_BTCUSDT_S07",
+      "symbol": "BTCUSDT",
+      "side": "BUY",
+      "quantity": 0.012425481001691125,
+      "price": 65023.77812931403,
+      "timestamp": "2025-08-18T16:12:33.198340",
+      "slippage_bps": 3.6581737406198918,
+      "fees_usd": 0.8079517198039704,
+      "latency_ms": 55.9184530149591,
+      "venue": "binance",
+      "liquidity_type": "maker"
+    },
+    {
+      "fill_id": "FILL_IS_BTCUSDT_S08_1755503680",
+      "order_id": "IS_BTCUSDT_S08",
+      "symbol": "BTCUSDT",
+      "side": "BUY",
+      "quantity": 0.009164484205208752,
+      "price": 65013.002775481495,
+      "timestamp": "2025-08-18T16:15:33.198343",
+      "slippage_bps": 2.000426997152195,
+      "fees_usd": 0.5958106370690929,
+      "latency_ms": 49.22148337323862,
+      "venue": "binance",
+      "liquidity_type": "maker"
+    }
+  ],
+  "costs": {
+    "fees_usd": 10.78498485112142,
+    "impact_bps": 3.2,
+    "spread_cost_usd": 5.39249242556071,
+    "total_cost_usd": 16.17747727668213
+  },
+  "execution_quality": {
+    "arrival_slippage_bps": 2.292276353410651,
+    "vwap_slippage_bps": 1.833821082728521,
+    "fill_rate": 1.0,
+    "passive_ratio": 1.0,
+    "latency_ms": 85.02612161849255,
+    "participation_rate": 0.052
+  },
+  "risk_assessment": {
+    "max_slippage_bps": 3.6581737406198918,
+    "avg_slippage_bps": 2.292276353410651,
+    "position_size_usd": 10784.98485112142,
+    "violations": [],
+    "circuit_breaker_status": "normal"
+  },
+  "pnl": {
+    "realized": 0.0,
+    "unrealized": 0.0
+  },
+  "microstructure_analysis": {
+    "spread_bps": 8.5,
+    "liquidity_score": 0.89,
+    "market_impact_estimate": 3.2,
+    "optimal_execution_time": 25,
+    "venue_analysis": {
+      "binance": {
+        "maker_fee": 0.001,
+        "taker_fee": 0.001,
+        "liquidity_score": 0.95,
+        "latency_ms": 85.02612161849255
+      }
+    }
+  },
+  "performance_attribution": {
+    "algorithm_performance": "优秀",
+    "cost_vs_benchmark": {
+      "vs_market_order": "--10.0 bps",
+      "vs_arrival_price": "2.3 bps",
+      "vs_vwap": "-0.5 bps"
+    },
+    "execution_alpha_bps": 4.2
+  }
+}

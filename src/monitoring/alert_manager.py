@@ -21,8 +21,8 @@ from typing import Dict, Any, Optional, List, Callable, Set
 from dataclasses import dataclass, field
 from datetime import datetime, timedelta
 from enum import Enum
-from email.mime.text import MimeText
-from email.mime.multipart import MimeMultipart
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 from collections import defaultdict, deque
 import logging
 
@@ -608,7 +608,7 @@ class AlertManager:
         smtp_config = channel.config
         
         try:
-            msg = MimeMultipart()
+            msg = MIMEMultipart()
             msg['From'] = smtp_config.get('from_email')
             msg['To'] = smtp_config.get('to_email')
             msg['Subject'] = f"DipMaster Alert: {alert.level.value.upper()} - {alert.name}"
@@ -628,7 +628,7 @@ class AlertManager:
             Alert ID: {alert.id}
             """
             
-            msg.attach(MimeText(body, 'plain'))
+            msg.attach(MIMEText(body, 'plain'))
             
             server = smtplib.SMTP(smtp_config.get('smtp_server'), smtp_config.get('smtp_port', 587))
             server.starttls()

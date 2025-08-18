@@ -1,0 +1,465 @@
+{
+  "risk_framework_metadata": {
+    "name": "DipCatcher_Risk_Control_Framework",
+    "version": "1.0.0",
+    "effective_date": "2025-08-18",
+    "review_frequency": "monthly",
+    "owner": "Chief Risk Officer",
+    "approval_authority": "Risk Committee"
+  },
+  
+  "risk_taxonomy": {
+    "market_risk": {
+      "directional_risk": {
+        "description": "策略对市场方向性移动的敞口",
+        "measurement": "Beta, Dollar Delta",
+        "limits": {
+          "portfolio_beta": {"max": 0.15, "target": 0.0},
+          "net_exposure": {"max": 0.10, "target": 0.05},
+          "sector_beta": {"max": 0.20, "target": 0.10}
+        },
+        "monitoring_frequency": "real-time"
+      },
+      
+      "volatility_risk": {
+        "description": "市场波动率变化对策略的影响",
+        "measurement": "Vega, Volatility Beta",
+        "limits": {
+          "vol_beta": {"max": 0.25, "target": 0.15},
+          "gamma_exposure": {"max": 0.05, "target": 0.02}
+        },
+        "hedging_instruments": ["VIX futures", "options collars"]
+      },
+      
+      "correlation_risk": {
+        "description": "资产间相关性突然增加的风险",
+        "measurement": "Correlation matrix, Eigenvalue analysis",
+        "limits": {
+          "max_correlation": 0.8,
+          "concentration_ratio": 0.3,
+          "first_eigenvalue_ratio": 0.6
+        },
+        "stress_scenarios": ["correlation spike to 0.9", "factor model breakdown"]
+      }
+    },
+    
+    "liquidity_risk": {
+      "market_liquidity": {
+        "description": "市场流动性枯竭导致的平仓困难",
+        "measurement": "Bid-ask spread, Market depth",
+        "limits": {
+          "max_spread": 0.001,
+          "min_market_depth": 100000,
+          "liquidity_score_min": 0.7
+        },
+        "contingency_plans": [
+          "分批平仓策略",
+          "跨交易所执行",
+          "做市商关系激活"
+        ]
+      },
+      
+      "funding_liquidity": {
+        "description": "资金流动性不足导致的保证金风险",
+        "measurement": "Cash ratio, Margin utilization",
+        "limits": {
+          "cash_buffer_min": 0.15,
+          "margin_utilization_max": 0.7,
+          "funding_horizon": "24 hours"
+        },
+        "stress_test": "7天无法融资情况下的生存能力"
+      }
+    },
+    
+    "operational_risk": {
+      "technology_risk": {
+        "description": "系统故障导致的交易中断风险",
+        "measurement": "System uptime, Latency, Error rates",
+        "sla_targets": {
+          "system_uptime": 0.999,
+          "max_latency": "500ms",
+          "error_rate": 0.001
+        },
+        "backup_systems": [
+          "冗余交易服务器",
+          "备用数据源",
+          "手动交易流程"
+        ]
+      },
+      
+      "model_risk": {
+        "description": "模型失效或参数漂移风险",
+        "measurement": "Model performance metrics, Parameter stability",
+        "monitoring": {
+          "sharpe_ratio_floor": 2.0,
+          "max_consecutive_losses": 5,
+          "parameter_drift_threshold": 0.2
+        },
+        "model_validation": {
+          "backtesting_frequency": "monthly",
+          "out_of_sample_testing": "quarterly",
+          "champion_challenger": "continuous"
+        }
+      },
+      
+      "execution_risk": {
+        "description": "订单执行中的滑点和延迟风险",
+        "measurement": "Slippage, Fill rate, Execution time",
+        "limits": {
+          "max_slippage": 0.0005,
+          "min_fill_rate": 0.95,
+          "max_execution_time": "1000ms"
+        },
+        "optimization": [
+          "智能订单路由",
+          "时间加权平均价格",
+          "流动性预测模型"
+        ]
+      }
+    },
+    
+    "concentration_risk": {
+      "position_concentration": {
+        "description": "单一资产或策略的过度集中",
+        "limits": {
+          "single_asset_max": 0.08,
+          "top_5_assets_max": 0.30,
+          "sector_max": 0.25,
+          "strategy_max": 0.40
+        },
+        "diversification_metrics": [
+          "Herfindahl指数",
+          "有效资产数量",
+          "集中度比率"
+        ]
+      },
+      
+      "temporal_concentration": {
+        "description": "特定时间段的交易过度集中",
+        "limits": {
+          "hourly_trade_limit": 5,
+          "daily_volume_max": 0.1,
+          "intraday_exposure_max": 0.15
+        },
+        "time_diversification": "24小时均匀分布目标"
+      }
+    }
+  },
+  
+  "risk_limits_hierarchy": {
+    "level_1_hard_limits": {
+      "description": "不可突破的绝对限制",
+      "breach_action": "立即停止交易",
+      "limits": {
+        "max_portfolio_var_1day": 0.03,
+        "max_drawdown": 0.10,
+        "max_leverage": 2.5,
+        "max_single_loss": 0.02
+      },
+      "escalation": "immediate_ceo_notification"
+    },
+    
+    "level_2_soft_limits": {
+      "description": "触发风险审查的警告线",
+      "breach_action": "风险评估和仓位调整",
+      "limits": {
+        "portfolio_var_1day": 0.02,
+        "drawdown_warning": 0.06,
+        "leverage_warning": 2.0,
+        "correlation_warning": 0.7
+      },
+      "escalation": "risk_manager_review"
+    },
+    
+    "level_3_monitoring_thresholds": {
+      "description": "日常监控的关注阈值",
+      "breach_action": "增强监控频率",
+      "limits": {
+        "daily_var": 0.015,
+        "weekly_drawdown": 0.04,
+        "position_drift": 0.1,
+        "model_performance": 0.8
+      },
+      "escalation": "team_notification"
+    }
+  },
+  
+  "var_framework": {
+    "calculation_methodology": {
+      "confidence_level": 0.95,
+      "time_horizon": "1_day",
+      "estimation_method": "Monte_Carlo",
+      "sample_size": 10000,
+      "lookback_period": "252_days"
+    },
+    
+    "var_models": {
+      "parametric_var": {
+        "method": "Normal distribution assumption",
+        "weight": 0.3,
+        "advantages": "计算快速",
+        "limitations": "忽略尾部风险"
+      },
+      
+      "historical_var": {
+        "method": "Historical simulation",
+        "weight": 0.4,
+        "advantages": "捕捉实际分布",
+        "limitations": "依赖历史数据"
+      },
+      
+      "monte_carlo_var": {
+        "method": "Random scenario generation",
+        "weight": 0.3,
+        "advantages": "灵活建模",
+        "limitations": "计算复杂"
+      }
+    },
+    
+    "backtesting": {
+      "frequency": "daily",
+      "violation_threshold": 0.05,
+      "traffic_light_system": {
+        "green": "violations < 2.5%",
+        "yellow": "violations 2.5-5%",
+        "red": "violations > 5%"
+      }
+    }
+  },
+  
+  "stress_testing": {
+    "scenario_types": {
+      "historical_scenarios": {
+        "covid_crash_2020": {
+          "description": "2020年3月加密货币暴跌",
+          "market_shock": "-50% in 7 days",
+          "correlation_spike": "0.9 across all assets",
+          "liquidity_dry_up": "spread widens 10x"
+        },
+        
+        "china_ban_2021": {
+          "description": "2021年中国禁令导致的市场震荡",
+          "market_shock": "-30% in 3 days",
+          "regulatory_risk": "交易所限制",
+          "sentiment_shift": "恐慌性抛售"
+        },
+        
+        "ftx_collapse_2022": {
+          "description": "FTX破产引发的信任危机",
+          "counterparty_risk": "主要交易所风险",
+          "liquidity_crisis": "流动性枯竭",
+          "contagion_effect": "系统性风险传播"
+        }
+      },
+      
+      "hypothetical_scenarios": {
+        "black_swan_crash": {
+          "description": "极端尾部风险事件",
+          "market_shock": "-70% in 24 hours",
+          "correlation": "perfect correlation",
+          "recovery_time": "3+ months"
+        },
+        
+        "liquidity_crisis": {
+          "description": "全市场流动性枯竭",
+          "spread_widening": "10x normal levels",
+          "volume_decline": "90% reduction",
+          "market_maker_withdrawal": "做市商退出"
+        },
+        
+        "regulatory_shutdown": {
+          "description": "监管机构紧急停止交易",
+          "trading_halt": "24-48 hours",
+          "position_liquidation": "强制平仓",
+          "asset_freezing": "资产冻结风险"
+        }
+      }
+    },
+    
+    "stress_test_frequency": {
+      "daily_stress": "当日VaR 3倍冲击",
+      "weekly_stress": "历史最差周表现",
+      "monthly_stress": "完整压力测试套件",
+      "quarterly_stress": "监管压力测试"
+    },
+    
+    "stress_test_actions": {
+      "preventive_measures": [
+        "提高现金缓冲",
+        "减少杠杆倍数",
+        "增加对冲头寸",
+        "分散交易所风险"
+      ],
+      
+      "crisis_response": [
+        "激活应急预案",
+        "暂停新开仓",
+        "加速平仓进程",
+        "启动危机沟通"
+      ]
+    }
+  },
+  
+  "real_time_monitoring": {
+    "monitoring_dashboard": {
+      "risk_metrics": [
+        "实时PnL",
+        "VaR利用率",
+        "Beta漂移",
+        "相关性矩阵",
+        "流动性指标"
+      ],
+      
+      "alert_thresholds": {
+        "immediate_alert": "Level 1限制70%",
+        "warning_alert": "Level 2限制80%", 
+        "info_alert": "Level 3限制50%"
+      },
+      
+      "escalation_matrix": {
+        "trader_level": "实时风险指标",
+        "manager_level": "限制突破警告",
+        "executive_level": "重大风险事件",
+        "board_level": "系统性危机"
+      }
+    },
+    
+    "automated_responses": {
+      "position_scaling": {
+        "trigger": "VaR超过限制",
+        "action": "按比例减仓",
+        "target": "恢复到限制内"
+      },
+      
+      "correlation_hedge": {
+        "trigger": "相关性>0.8",
+        "action": "增加对冲头寸",
+        "instruments": "反向ETF, 期权"
+      },
+      
+      "liquidity_preservation": {
+        "trigger": "流动性<阈值",
+        "action": "暂停新开仓",
+        "duration": "直至恢复"
+      }
+    }
+  },
+  
+  "governance_structure": {
+    "risk_committee": {
+      "composition": [
+        "Chief Risk Officer (主席)",
+        "Head of Trading",
+        "Head of Quantitative Research", 
+        "Chief Technology Officer",
+        "Chief Compliance Officer"
+      ],
+      
+      "meeting_frequency": "weekly",
+      "emergency_meeting": "24小时内召集",
+      
+      "responsibilities": [
+        "风险限制审批",
+        "压力测试审查",
+        "风险事件调查",
+        "政策制定和更新"
+      ]
+    },
+    
+    "risk_reporting": {
+      "daily_report": {
+        "recipients": ["CRO", "Head of Trading"],
+        "content": ["当日PnL", "VaR利用率", "限制突破"],
+        "delivery_time": "每日17:00"
+      },
+      
+      "weekly_report": {
+        "recipients": ["Risk Committee", "CEO"],
+        "content": ["风险概况", "压力测试", "模型表现"],
+        "delivery_time": "周一10:00"
+      },
+      
+      "monthly_report": {
+        "recipients": ["Board of Directors"],
+        "content": ["风险审查", "政策更新", "前瞻展望"],
+        "delivery_time": "月初3个工作日内"
+      }
+    }
+  },
+  
+  "emergency_procedures": {
+    "risk_escalation_levels": {
+      "level_1_routine": {
+        "triggers": ["软限制突破", "模型性能下降"],
+        "response_time": "1小时内",
+        "actions": ["风险评估", "仓位调整", "增强监控"]
+      },
+      
+      "level_2_significant": {
+        "triggers": ["硬限制接近", "重大市场事件"],
+        "response_time": "30分钟内", 
+        "actions": ["紧急风险会议", "策略暂停", "对冲执行"]
+      },
+      
+      "level_3_critical": {
+        "triggers": ["硬限制突破", "系统性危机"],
+        "response_time": "15分钟内",
+        "actions": ["全面停止交易", "紧急平仓", "危机管理"]
+      }
+    },
+    
+    "crisis_management_team": {
+      "核心成员": ["CEO", "CRO", "CTO", "Head of Trading"],
+      "24x7联系方式": "多渠道通信确保",
+      "决策权限": "紧急情况下的全权决策",
+      "外部顾问": "法律、监管、公关专家"
+    },
+    
+    "business_continuity": {
+      "备用交易场所": "异地办公室",
+      "冗余系统": "云端备份系统",
+      "人员安排": "关键岗位双人覆盖",
+      "供应商关系": "多个服务商备选"
+    }
+  },
+  
+  "model_risk_management": {
+    "model_validation": {
+      "independent_validation": "与开发团队独立的验证团队",
+      "validation_frequency": {
+        "new_models": "上线前完整验证",
+        "existing_models": "季度验证",
+        "critical_models": "月度验证"
+      },
+      
+      "validation_criteria": [
+        "统计显著性测试",
+        "样本外表现验证",
+        "稳定性测试",
+        "敏感性分析"
+      ]
+    },
+    
+    "model_monitoring": {
+      "performance_tracking": {
+        "metrics": ["Sharpe ratio", "Information ratio", "Maximum drawdown"],
+        "benchmarks": ["预期表现", "历史表现", "同类策略"],
+        "alert_thresholds": "表现低于预期2个标准差"
+      },
+      
+      "parameter_monitoring": {
+        "drift_detection": "参数变化超过20%",
+        "stability_tests": "滚动窗口稳定性",
+        "regime_detection": "市场环境变化识别"
+      }
+    },
+    
+    "model_lifecycle": {
+      "development": "严格的开发流程和文档",
+      "testing": "多层次测试验证",
+      "deployment": "分阶段上线流程", 
+      "monitoring": "持续监控和维护",
+      "retirement": "模型退出机制"
+    }
+  }
+}

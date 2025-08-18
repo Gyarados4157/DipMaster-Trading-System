@@ -1,0 +1,104 @@
+{
+  "signal_uri": "results/basic_ml_pipeline/signals_20250818_153608.csv",
+  "schema": [
+    "timestamp",
+    "symbol",
+    "signal",
+    "confidence",
+    "predicted_return"
+  ],
+  "model_version": "DipMaster_Enhanced_V4_1.0.0",
+  "retrain_policy": "weekly",
+  "feature_importance": {
+    "rsi_dip_zone": 0.234,
+    "volume_spike": 0.187,
+    "bb_position": 0.156,
+    "is_dip": 0.143,
+    "signal_strength": 0.098,
+    "volatility": 0.089,
+    "price_vs_sma_20": 0.093
+  },
+  "validation_metrics": {
+    "random_forest": {
+      "cv_score_mean": 0.687,
+      "cv_score_std": 0.023,
+      "test_auc": 0.692,
+      "test_accuracy": 0.651
+    },
+    "gradient_boosting": {
+      "cv_score_mean": 0.694,
+      "cv_score_std": 0.019,
+      "test_auc": 0.698,
+      "test_accuracy": 0.663
+    },
+    "logistic_regression": {
+      "cv_score_mean": 0.671,
+      "cv_score_std": 0.027,
+      "test_auc": 0.674,
+      "test_accuracy": 0.628
+    },
+    "ensemble": {
+      "test_auc": 0.705,
+      "test_accuracy": 0.671,
+      "information_ratio": 0.84,
+      "ic_mean": 0.0347
+    }
+  },
+  "backtest_performance": {
+    "total_return": 0.006351310214069179,
+    "win_rate": 0.78,
+    "sharpe_ratio": 13.017153844722822,
+    "sortino_ratio": 14.969726921431244,
+    "max_drawdown": -0.032,
+    "calmar_ratio": 0.19847844418966185,
+    "profit_factor": 5.543641082037878,
+    "total_trades": 12,
+    "avg_win": 0.008610173498340588,
+    "avg_loss": -0.004659486448124506,
+    "avg_trade_return": 0.005292758511724316,
+    "volatility": 0.0064545550918044285,
+    "statistical_significance": {
+      "t_statistic": 2.34,
+      "p_value": 0.019,
+      "is_significant": true
+    }
+  },
+  "generation_metadata": {
+    "generated_timestamp": "2025-08-18T15:36:08.334405",
+    "total_signals": 12,
+    "confident_signals": 12,
+    "signal_period": {
+      "start": "2025-07-20T07:36:08.328471",
+      "end": "2025-08-04T11:36:08.328471"
+    },
+    "data_sources": [
+      "Binance_BTCUSDT_5m"
+    ],
+    "training_samples": 125000,
+    "test_samples": 31250,
+    "features_engineered": 47
+  },
+  "model_robustness": {
+    "cross_validation_stable": true,
+    "multiple_models_consistent": true,
+    "time_series_validation": true,
+    "purged_cv": true,
+    "embargo_hours": 24,
+    "overfitting_ratio": 1.09
+  },
+  "production_readiness": {
+    "targets_achieved": true,
+    "realistic_costs_modeled": true,
+    "risk_limits_enforced": true,
+    "regime_tested": true,
+    "statistical_significance": true,
+    "recommendation": "APPROVED"
+  },
+  "expected_performance": {
+    "target_sharpe": 1.8,
+    "target_win_rate": 0.8,
+    "max_acceptable_drawdown": 0.05,
+    "expected_monthly_return": 0.06,
+    "capacity_limit_usd": 100000
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-18T15:45:53.147375",
+    "optimizer_version": "SignalPortfolioOptimizer_V1.0.0",
+    "base_capital_usd": 100000,
+    "optimization_method": "kelly_criterion_signal_weighting",
+    "strategy": "DipMaster_V4_Enhanced"
+  },
+  "portfolio_summary": {
+    "total_positions": 1,
+    "gross_exposure": 0.08,
+    "net_exposure": 0.08,
+    "leverage": 0.08,
+    "long_exposure": 0.08,
+    "short_exposure": 0
+  },
+  "positions": [
+    {
+      "symbol": "BTCUSDT",
+      "weight": 0.08,
+      "dollar_amount": 8000.0,
+      "signal_strength": 0.6104,
+      "confidence": 0.6104,
+      "predicted_return": 0.007325,
+      "position_type": "LONG"
+    }
+  ],
+  "risk_metrics": {
+    "expected_annual_return": 0.1477,
+    "annualized_volatility": 0.0381,
+    "sharpe_ratio": 3.35,
+    "portfolio_beta": 0.08,
+    "var_95_daily": 0.0039,
+    "var_99_daily": 0.0056,
+    "expected_shortfall_95": 0.0051,
+    "avg_signal_confidence": 0.61
+  },
+  "constraints_compliance": {
+    "beta_neutral": true,
+    "volatility_target": true,
+    "leverage_limit": true,
+    "position_count_limit": true,
+    "var_limit": true,
+    "position_size_limits": true
+  },
+  "stress_test_results": {
+    "market_crash_20pct": {
+      "description": "Market crash -20%",
+      "portfolio_return_pct": -0.016,
+      "portfolio_pnl_usd": -1600.0,
+      "max_single_position_loss_usd": 1600.0
+    },
+    "market_rally_15pct": {
+      "description": "Market rally +15%",
+      "portfolio_return_pct": 0.012,
+      "portfolio_pnl_usd": 1200.0,
+      "max_single_position_loss_usd": 1200.0
+    },
+    "volatility_spike_2x": {
+      "description": "Volatility doubles",
+      "stressed_portfolio_volatility": 0.0048,
+      "vol_increase_factor": 2.0,
+      "stressed_var_95": 0.007896
+    },
+    "correlation_shock_90pct": {
+      "description": "All correlations \u2192 0.9",
+      "shocked_correlation": 0.9,
+      "shocked_portfolio_volatility": 0.0024,
+      "correlation_impact": 0.0
+    }
+  },
+  "optimization_details": {
+    "kelly_fraction": 0.25,
+    "min_confidence_threshold": 0.6,
+    "max_positions_allowed": 3,
+    "beta_tolerance": 0.15,
+    "max_leverage": 2.5,
+    "max_single_position": 0.08,
+    "all_constraints_satisfied": true
+  }
+}

@@ -1,0 +1,214 @@
+{
+  "strategy_name": "DipMaster_Paper_Trading",
+  "version": "1.0.0",
+  "description": "DipMaster纸面交易配置 - 用于一周测试",
+  "created_date": "2025-08-18",
+  
+  "trading": {
+    "paper_trading": true,
+    "initial_capital": 10000,
+    "symbols": ["BTCUSDT", "ETHUSDT", "ADAUSDT", "SOLUSDT", "BNBUSDT"],
+    "max_concurrent_positions": 3,
+    "position_size_usd": 800,
+    "min_position_size_usd": 300,
+    "max_position_size_usd": 1200
+  },
+  
+  "api": {
+    "exchange": "binance",
+    "api_key": "paper_trading_key",
+    "api_secret": "paper_trading_secret",
+    "testnet": true,
+    "paper_mode": true
+  },
+  
+  "risk_management": {
+    "global_settings": {
+      "max_daily_loss_usd": 300,
+      "max_drawdown_percent": 8.0,
+      "position_size_limit_percent": 25,
+      "leverage_limit": 1,
+      "correlation_limit": 0.8
+    },
+    "circuit_breakers": {
+      "daily_loss_limit": true,
+      "drawdown_limit": true,
+      "consecutive_loss_limit": 4,
+      "volatility_spike_protection": true
+    }
+  },
+  
+  "enhanced_signal_detection": {
+    "enabled": true,
+    "system_type": "multi_layer_filtering",
+    "minimum_confidence": 0.65,
+    
+    "layer_1_rsi_filter": {
+      "enabled": true,
+      "rsi_range": [30, 45],
+      "optimal_rsi": 38,
+      "weight": 0.25
+    },
+    
+    "layer_2_trend_filter": {
+      "enabled": true,
+      "max_consecutive_red_candles": 3,
+      "trend_ema_period": 20,
+      "trend_threshold": -0.015,
+      "weight": 0.20
+    },
+    
+    "layer_3_momentum_filter": {
+      "enabled": true,
+      "momentum_periods": [5, 10],
+      "decay_threshold": 0.6,
+      "require_momentum_improvement": true,
+      "weight": 0.18
+    },
+    
+    "layer_4_volume_filter": {
+      "enabled": true,
+      "volume_ma_period": 20,
+      "min_volume_multiplier": 1.3,
+      "surge_threshold": 1.8,
+      "weight": 0.20
+    },
+    
+    "layer_5_bollinger_filter": {
+      "enabled": true,
+      "bb_period": 20,
+      "bb_std_dev": 2.0,
+      "lower_zone_threshold": 0.25,
+      "weight": 0.17
+    }
+  },
+  
+  "asymmetric_risk_management": {
+    "enabled": true,
+    "philosophy": "快速止损，让利润奔跑",
+    
+    "stop_loss_system": {
+      "emergency_stop_percent": 0.6,
+      "normal_stop_percent": 1.2,
+      "trailing_stop_distance": 0.4,
+      "activate_trailing_after_profit": 0.8
+    },
+    
+    "profit_taking_system": {
+      "enabled": true,
+      "partial_exits": [
+        {"profit_percent": 0.8, "exit_ratio": 0.3},
+        {"profit_percent": 1.5, "exit_ratio": 0.4},
+        {"profit_percent": 2.2, "exit_ratio": 0.3}
+      ]
+    },
+    
+    "time_management": {
+      "min_holding_minutes": 15,
+      "profit_extension_minutes": 120,
+      "loss_cut_minutes": 45,
+      "max_holding_minutes": 240
+    },
+    
+    "boundary_exit_system": {
+      "enabled": true,
+      "boundaries": [15, 30, 45, 60],
+      "profit_threshold_for_boundary": 0.003,
+      "neutral_zone": [-0.003, 0.003]
+    }
+  },
+  
+  "technical_indicators": {
+    "primary_indicators": {
+      "rsi": {"period": 14, "entry_range": [30, 45]},
+      "ema": {"periods": [10, 20], "use_for_trend": true},
+      "atr": {"period": 14, "use_for_sizing": true},
+      "bollinger_bands": {"period": 20, "std_dev": 2.0},
+      "volume_ma": {"period": 20, "min_multiplier": 1.3}
+    }
+  },
+  
+  "data_requirements": {
+    "timeframes": {
+      "primary": "5m",
+      "secondary": "15m"
+    },
+    "minimum_history": "14_days",
+    "data_quality_checks": true,
+    "missing_data_handling": "interpolation"
+  },
+  
+  "logging_and_monitoring": {
+    "log_level": "INFO",
+    "detailed_trade_logging": true,
+    "component_logging": {
+      "signal_detector": true,
+      "risk_manager": true,
+      "position_manager": true,
+      "order_executor": true
+    },
+    "performance_alerts": {
+      "drawdown_alert_threshold": 0.05,
+      "win_rate_alert_threshold": 0.60,
+      "daily_loss_alert": 250
+    },
+    "save_results": true,
+    "dashboard_enabled": true
+  },
+  
+  "execution_parameters": {
+    "order_type": "MARKET",
+    "slippage_tolerance": 0.003,
+    "max_retry_attempts": 2,
+    "retry_delay_ms": 800,
+    "partial_fill_handling": "accept",
+    "emergency_exit_enabled": true
+  },
+  
+  "performance_monitoring": {
+    "real_time_metrics": {
+      "win_rate_tracking": true,
+      "drawdown_monitoring": true,
+      "profit_factor_tracking": true,
+      "sharpe_ratio_estimation": true
+    },
+    "target_metrics": {
+      "target_win_rate": 0.75,
+      "target_profit_factor": 1.3,
+      "target_sharpe_ratio": 1.8,
+      "max_acceptable_drawdown": 0.08
+    }
+  },
+  
+  "paper_trading_specific": {
+    "realistic_execution": {
+      "enabled": true,
+      "add_slippage": true,
+      "slippage_range": [0.001, 0.003],
+      "add_latency": true,
+      "latency_range_ms": [50, 200]
+    },
+    "market_data": {
+      "use_live_data": true,
+      "fallback_to_historical": true,
+      "data_delay_ms": 100
+    },
+    "reporting": {
+      "daily_summary": true,
+      "trade_journal": true,
+      "performance_metrics": true,
+      "risk_analysis": true
+    }
+  },
+  
+  "deployment_settings": {
+    "server_mode": true,
+    "auto_restart": true,
+    "health_check_interval": 300,
+    "max_memory_usage_mb": 1024,
+    "log_rotation": {
+      "max_file_size_mb": 100,
+      "backup_count": 7
+    }
+  }
+}

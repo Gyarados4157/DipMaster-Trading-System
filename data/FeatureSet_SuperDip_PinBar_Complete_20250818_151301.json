@@ -1,0 +1,667 @@
+{
+  "version": "2025-08-18T15:13:02.733823",
+  "feature_set_id": "superdip_pinbar_complete_20250818_151301",
+  "strategy_name": "SuperDip_PinBar_Complete_Strategy",
+  "description": "超跌接针反转策略完整特征集 - 包含核心技术指标、接针形态识别、多时间框架特征和前向标签，专门用于捕捉市场超跌反转机会",
+  "metadata": {
+    "creation_date": "2025-08-18T15:13:02.733831",
+    "feature_engineer": "SuperDipPinBarDemo",
+    "version": "1.0.0-complete",
+    "total_symbols": 5,
+    "symbols_processed": [
+      "ICPUSDT",
+      "SOLUSDT",
+      "DOGEUSDT",
+      "ADAUSDT",
+      "BNBUSDT"
+    ],
+    "total_features": 314,
+    "avg_records_per_symbol": 210236
+  },
+  "strategy_overview": {
+    "objective": "识别超跌市场中的接针反转形态，实现高胜率的短期交易机会",
+    "key_signals": [
+      "RSI(14,7,21) 超跌区域识别 (RSI < 30)",
+      "价格低于MA20的偏离度计算",
+      "布林带下轨突破确认超跌状态",
+      "接针形态识别：下影线长度 > 2倍实体",
+      "成交量放大确认有效突破",
+      "4小时前向收益目标：0.8%-2.5%"
+    ],
+    "timeframe": "5分钟主图，多时间框架确认",
+    "holding_period": "典型持仓4小时，最大240分钟"
+  },
+  "feature_engineering_details": {
+    "core_technical_indicators": {
+      "description": "核心技术指标用于超跌识别",
+      "features": {
+        "rsi_multi_period": "RSI(7,14,21) 多周期超跌识别",
+        "moving_averages": "MA(10,20,50) 价格位置和偏离度",
+        "bollinger_bands": "布林带位置和超跌区域判断",
+        "volume_analysis": "成交量相对强度和放大倍数检测"
+      },
+      "feature_count": 135
+    },
+    "pin_bar_pattern_detection": {
+      "description": "接针形态特征提取和识别",
+      "features": {
+        "candlestick_ratios": "下影线/实体比率、上影线比率、实体比率",
+        "body_position": "蜡烛实体在K线中的位置",
+        "price_recovery": "从最低点的价格恢复程度",
+        "pattern_strength": "接针形态强度评分(0-1)",
+        "enhanced_detection": "结合成交量确认的增强接针识别"
+      },
+      "detection_criteria": {
+        "lower_wick_ratio": "> 50%",
+        "body_ratio": "< 30%",
+        "upper_wick_ratio": "< 20%",
+        "volume_confirmation": "> 1.2x平均成交量"
+      },
+      "feature_count": 45
+    },
+    "volume_microstructure": {
+      "description": "成交量微观结构分析",
+      "features": {
+        "volume_relative_strength": "多周期成交量相对强度",
+        "volume_spikes": "成交量异常放大检测",
+        "volume_price_trend": "量价趋势指标(VPT)"
+      },
+      "feature_count": 39
+    },
+    "momentum_indicators": {
+      "description": "价格动量和趋势确认",
+      "features": {
+        "price_momentum": "多周期价格动量(3,5,10,15分钟)",
+        "rate_of_change": "变化率指标(ROC)",
+        "macd_analysis": "MACD及其信号线、柱状图"
+      },
+      "feature_count": 40
+    },
+    "volatility_measures": {
+      "description": "波动率和风险度量",
+      "features": {
+        "rolling_volatility": "滚动波动率(10,20,30周期)",
+        "average_true_range": "平均真实波幅(ATR)"
+      },
+      "feature_count": 20
+    }
+  },
+  "target_definitions": {
+    "forward_returns": {
+      "type": "regression",
+      "description": "4小时前向收益率",
+      "horizon": "240分钟(48个5分钟周期)",
+      "calculation": "(future_price / current_price) - 1"
+    },
+    "profit_achievement_labels": {
+      "type": "classification",
+      "targets": [
+        {
+          "target": 0.008,
+          "description": "0.8%利润目标"
+        },
+        {
+          "target": 0.015,
+          "description": "1.5%利润目标"
+        },
+        {
+          "target": 0.025,
+          "description": "2.5%利润目标"
+        }
+      ],
+      "stop_loss": 0.006,
+      "logic": "在指定时间内达到利润目标且未触发止损"
+    },
+    "risk_metrics": {
+      "mfe": "最大有利价格偏移",
+      "mae": "最大不利价格偏移",
+      "risk_adjusted_return": "波动率调整收益"
+    }
+  },
+  "feature_categories": {
+    "core_technical": [
+      "BNBUSDT_rsi_21_optimal",
+      "BNBUSDT_rsi_7_oversold",
+      "ICPUSDT_rsi_14_optimal",
+      "ADAUSDT_bb_lower",
+      "BNBUSDT_price_below_ma_20",
+      "ICPUSDT_volume_ma_50",
+      "ICPUSDT_price_ma_20_deviation",
+      "DOGEUSDT_bb_oversold",
+      "ADAUSDT_ma_50",
+      "ADAUSDT_rsi_14_oversold",
+      "ADAUSDT_price_below_ma_20",
+      "BNBUSDT_price_ma_20_deviation",
+      "ICPUSDT_bb_width",
+      "BNBUSDT_bb_position",
+      "ICPUSDT_bb_middle",
+      "DOGEUSDT_price_ma_10_deviation",
+      "BNBUSDT_rsi_14_oversold",
+      "ICPUSDT_price_below_ma_10",
+      "SOLUSDT_ma_20",
+      "SOLUSDT_price_ma_20_deviation",
+      "DOGEUSDT_bb_middle",
+      "BNBUSDT_price_ma_50_deviation",
+      "DOGEUSDT_price_below_ma_20",
+      "BNBUSDT_bb_lower",
+      "ADAUSDT_ma_10",
+      "ADAUSDT_volume_ma_50",
+      "SOLUSDT_bb_oversold",
+      "DOGEUSDT_bb_upper",
+      "BNBUSDT_rsi_7",
+      "SOLUSDT_price_ma_50_deviation",
+      "BNBUSDT_bb_upper",
+      "SOLUSDT_rsi_14_oversold",
+      "BNBUSDT_bb_width",
+      "SOLUSDT_bb_width",
+      "DOGEUSDT_price_below_ma_10",
+      "ADAUSDT_ma_20",
+      "ICPUSDT_price_below_ma_50",
+      "SOLUSDT_rsi_7_oversold",
+      "SOLUSDT_rsi_14",
+      "DOGEUSDT_volume_ma_10",
+      "BNBUSDT_price_below_ma_10",
+      "ADAUSDT_bb_width",
+      "SOLUSDT_bb_lower",
+      "DOGEUSDT_ma_20",
+      "ICPUSDT_rsi_7",
+      "DOGEUSDT_price_ma_50_deviation",
+      "DOGEUSDT_rsi_14",
+      "ADAUSDT_bb_position",
+      "SOLUSDT_rsi_14_optimal",
+      "SOLUSDT_ma_50",
+      "DOGEUSDT_rsi_14_oversold",
+      "SOLUSDT_price_below_ma_50",
+      "ICPUSDT_bb_lower",
+      "DOGEUSDT_bb_width",
+      "ICPUSDT_ma_50",
+      "BNBUSDT_volume_ma_20",
+      "ADAUSDT_rsi_21",
+      "BNBUSDT_rsi_21",
+      "BNBUSDT_price_below_ma_50",
+      "ICPUSDT_rsi_21_oversold",
+      "SOLUSDT_bb_upper",
+      "BNBUSDT_rsi_14",
+      "BNBUSDT_bb_oversold",
+      "ICPUSDT_price_below_ma_20",
+      "SOLUSDT_volume_ma_10",
+      "DOGEUSDT_rsi_21_oversold",
+      "ICPUSDT_volume_ma_10",
+      "ADAUSDT_volume_ma_20",
+      "ICPUSDT_rsi_7_optimal",
+      "ADAUSDT_volume_ma_10",
+      "DOGEUSDT_rsi_7_oversold",
+      "SOLUSDT_price_below_ma_10",
+      "ADAUSDT_price_ma_10_deviation",
+      "SOLUSDT_rsi_21_optimal",
+      "SOLUSDT_rsi_7",
+      "SOLUSDT_volume_ma_50",
+      "DOGEUSDT_volume_ma_20",
+      "ICPUSDT_rsi_21",
+      "DOGEUSDT_ma_10",
+      "ADAUSDT_rsi_7_optimal",
+      "BNBUSDT_volume_ma_50",
+      "ICPUSDT_rsi_21_optimal",
+      "ADAUSDT_rsi_21_oversold",
+      "SOLUSDT_rsi_21",
+      "SOLUSDT_bb_position",
+      "ADAUSDT_rsi_7",
+      "ADAUSDT_rsi_21_optimal",
+      "DOGEUSDT_rsi_21",
+      "DOGEUSDT_rsi_7_optimal",
+      "ICPUSDT_price_ma_50_deviation",
+      "DOGEUSDT_ma_50",
+      "DOGEUSDT_bb_lower",
+      "ICPUSDT_price_ma_10_deviation",
+      "ICPUSDT_rsi_14",
+      "DOGEUSDT_rsi_7",
+      "BNBUSDT_ma_20",
+      "SOLUSDT_bb_middle",
+      "ICPUSDT_rsi_7_oversold",
+      "ICPUSDT_bb_oversold",
+      "ADAUSDT_price_ma_50_deviation",
+      "ADAUSDT_price_below_ma_50",
+      "ADAUSDT_price_below_ma_10",
+      "ADAUSDT_price_ma_20_deviation",
+      "ICPUSDT_volume_ma_20",
+      "BNBUSDT_bb_middle",
+      "BNBUSDT_ma_10",
+      "BNBUSDT_price_ma_10_deviation",
+      "ADAUSDT_rsi_14",
+      "ICPUSDT_bb_position",
+      "SOLUSDT_rsi_7_optimal",
+      "ICPUSDT_ma_20",
+      "SOLUSDT_price_ma_10_deviation",
+      "ADAUSDT_bb_oversold",
+      "SOLUSDT_ma_10",
+      "SOLUSDT_rsi_21_oversold",
+      "BNBUSDT_ma_50",
+      "ADAUSDT_bb_middle",
+      "BNBUSDT_volume_ma_10",
+      "DOGEUSDT_rsi_14_optimal",
+      "ADAUSDT_rsi_14_optimal",
+      "ICPUSDT_bb_upper",
+      "DOGEUSDT_price_ma_20_deviation",
+      "DOGEUSDT_price_below_ma_50",
+      "BNBUSDT_rsi_21_oversold",
+      "DOGEUSDT_bb_position",
+      "DOGEUSDT_rsi_21_optimal",
+      "ADAUSDT_rsi_7_oversold",
+      "SOLUSDT_price_below_ma_20",
+      "SOLUSDT_volume_ma_20",
+      "ICPUSDT_rsi_14_oversold",
+      "ADAUSDT_bb_upper",
+      "DOGEUSDT_volume_ma_50",
+      "BNBUSDT_rsi_14_optimal",
+      "BNBUSDT_rsi_7_optimal",
+      "ICPUSDT_ma_10"
+    ],
+    "pin_bar_pattern": [
+      "DOGEUSDT_pin_bar_strength",
+      "ADAUSDT_price_recovery",
+      "ICPUSDT_upper_wick_ratio",
+      "DOGEUSDT_lower_to_body_ratio",
+      "ADAUSDT_pin_bar_strength",
+      "BNBUSDT_lower_to_body_ratio",
+      "SOLUSDT_body_position",
+      "ADAUSDT_lower_wick_ratio",
+      "ADAUSDT_upper_wick_ratio",
+      "ADAUSDT_is_pin_bar",
+      "ICPUSDT_pin_bar_strength",
+      "DOGEUSDT_is_enhanced_pin_bar",
+      "SOLUSDT_is_pin_bar",
+      "SOLUSDT_body_ratio",
+      "BNBUSDT_body_ratio",
+      "ICPUSDT_body_ratio",
+      "BNBUSDT_pin_bar_strength",
+      "ICPUSDT_is_pin_bar",
+      "DOGEUSDT_lower_wick_ratio",
+      "ADAUSDT_body_position",
+      "BNBUSDT_upper_wick_ratio",
+      "SOLUSDT_lower_wick_ratio",
+      "SOLUSDT_is_enhanced_pin_bar",
+      "DOGEUSDT_body_position",
+      "ADAUSDT_lower_to_body_ratio",
+      "BNBUSDT_body_position",
+      "ICPUSDT_body_position",
+      "BNBUSDT_is_enhanced_pin_bar",
+      "DOGEUSDT_body_ratio",
+      "BNBUSDT_price_recovery",
+      "SOLUSDT_pin_bar_strength",
+      "ADAUSDT_body_ratio",
+      "SOLUSDT_price_recovery",
+      "ICPUSDT_is_enhanced_pin_bar",
+      "SOLUSDT_upper_wick_ratio",
+      "ICPUSDT_lower_to_body_ratio",
+      "DOGEUSDT_upper_wick_ratio",
+      "BNBUSDT_is_pin_bar",
+      "ICPUSDT_price_recovery",
+      "DOGEUSDT_price_recovery",
+      "ICPUSDT_lower_wick_ratio",
+      "BNBUSDT_lower_wick_ratio",
+      "SOLUSDT_lower_to_body_ratio",
+      "ADAUSDT_is_enhanced_pin_bar",
+      "DOGEUSDT_is_pin_bar"
+    ],
+    "volume_profile": [
+      "SOLUSDT_volume_spike_10",
+      "DOGEUSDT_volume_ratio_10",
+      "volume",
+      "SOLUSDT_vpt",
+      "ADAUSDT_volume_ratio_20",
+      "BNBUSDT_volume_spike_50",
+      "DOGEUSDT_volume_spike_10",
+      "BNBUSDT_volume_ratio_20",
+      "ICPUSDT_volume_spike_10",
+      "ICPUSDT_volume_ratio_50",
+      "BNBUSDT_volume_spike_20",
+      "ICPUSDT_volume_ratio_10",
+      "BNBUSDT_volume_spike_10",
+      "ADAUSDT_volume_spike_20",
+      "SOLUSDT_volume_spike_20",
+      "ADAUSDT_volume_ratio_10",
+      "ADAUSDT_vpt",
+      "ICPUSDT_volume_ratio_20",
+      "ICPUSDT_vpt",
+      "BNBUSDT_volume_ratio_10",
+      "ICPUSDT_volume_spike_20",
+      "SOLUSDT_volume_ratio_50",
+      "ADAUSDT_volume_spike_10",
+      "SOLUSDT_volume_ratio_10",
+      "taker_buy_quote_asset_volume",
+      "quote_asset_volume",
+      "DOGEUSDT_volume_spike_50",
+      "ADAUSDT_volume_ratio_50",
+      "DOGEUSDT_volume_ratio_50",
+      "BNBUSDT_volume_ratio_50",
+      "taker_buy_base_asset_volume",
+      "ADAUSDT_volume_spike_50",
+      "BNBUSDT_vpt",
+      "ICPUSDT_volume_spike_50",
+      "DOGEUSDT_vpt",
+      "DOGEUSDT_volume_ratio_20",
+      "DOGEUSDT_volume_spike_20",
+      "SOLUSDT_volume_spike_50",
+      "SOLUSDT_volume_ratio_20"
+    ],
+    "momentum": [
+      "BNBUSDT_momentum_15",
+      "BNBUSDT_macd_signal",
+      "ADAUSDT_momentum_15",
+      "DOGEUSDT_momentum_10",
+      "SOLUSDT_momentum_15",
+      "ADAUSDT_macd_histogram",
+      "DOGEUSDT_momentum_3",
+      "SOLUSDT_momentum_10",
+      "ICPUSDT_macd",
+      "ICPUSDT_momentum_5",
+      "ICPUSDT_momentum_3",
+      "DOGEUSDT_macd",
+      "DOGEUSDT_macd_signal",
+      "DOGEUSDT_momentum_5",
+      "SOLUSDT_macd_signal",
+      "DOGEUSDT_momentum_15",
+      "ICPUSDT_roc_10",
+      "SOLUSDT_macd_histogram",
+      "DOGEUSDT_macd_histogram",
+      "ICPUSDT_macd_signal",
+      "ICPUSDT_macd_histogram",
+      "SOLUSDT_macd",
+      "SOLUSDT_momentum_3",
+      "BNBUSDT_momentum_5",
+      "ADAUSDT_macd",
+      "ADAUSDT_macd_signal",
+      "BNBUSDT_macd_histogram",
+      "ADAUSDT_roc_10",
+      "ICPUSDT_momentum_15",
+      "BNBUSDT_roc_10",
+      "BNBUSDT_momentum_3",
+      "BNBUSDT_momentum_10",
+      "DOGEUSDT_roc_10",
+      "ADAUSDT_momentum_3",
+      "BNBUSDT_macd",
+      "SOLUSDT_momentum_5",
+      "ADAUSDT_momentum_10",
+      "SOLUSDT_roc_10",
+      "ADAUSDT_momentum_5",
+      "ICPUSDT_momentum_10"
+    ],
+    "volatility": [
+      "SOLUSDT_atr_14",
+      "DOGEUSDT_volatility_20",
+      "ADAUSDT_volatility_10",
+      "SOLUSDT_volatility_30",
+      "ICPUSDT_volatility_10",
+      "BNBUSDT_volatility_30",
+      "DOGEUSDT_volatility_30",
+      "ICPUSDT_atr_14",
+      "DOGEUSDT_atr_14",
+      "BNBUSDT_volatility_10",
+      "SOLUSDT_volatility_20",
+      "SOLUSDT_volatility_10",
+      "BNBUSDT_atr_14",
+      "ADAUSDT_volatility_30",
+      "ICPUSDT_volatility_30",
+      "ADAUSDT_atr_14",
+      "DOGEUSDT_volatility_10",
+      "ADAUSDT_volatility_20",
+      "BNBUSDT_volatility_20",
+      "ICPUSDT_volatility_20"
+    ],
+    "labels": [
+      "SOLUSDT_win_8bp_4h",
+      "BNBUSDT_forward_return_4h",
+      "DOGEUSDT_risk_adj_return_4h",
+      "ICPUSDT_forward_return_4h",
+      "BNBUSDT_win_15bp_4h",
+      "DOGEUSDT_win_15bp_4h",
+      "ICPUSDT_win_15bp_4h",
+      "DOGEUSDT_mfe_4h",
+      "SOLUSDT_risk_adj_return_4h",
+      "ICPUSDT_win_25bp_4h",
+      "ADAUSDT_win_8bp_4h",
+      "ICPUSDT_mfe_4h",
+      "ADAUSDT_risk_adj_return_4h",
+      "SOLUSDT_win_25bp_4h",
+      "ADAUSDT_win_15bp_4h",
+      "BNBUSDT_win_8bp_4h",
+      "ICPUSDT_risk_adj_return_4h",
+      "BNBUSDT_mae_4h",
+      "SOLUSDT_win_15bp_4h",
+      "ICPUSDT_mae_4h",
+      "DOGEUSDT_forward_return_4h",
+      "BNBUSDT_win_25bp_4h",
+      "SOLUSDT_mfe_4h",
+      "BNBUSDT_mfe_4h",
+      "ICPUSDT_win_8bp_4h",
+      "BNBUSDT_risk_adj_return_4h",
+      "ADAUSDT_win_25bp_4h",
+      "ADAUSDT_forward_return_4h",
+      "SOLUSDT_forward_return_4h",
+      "DOGEUSDT_win_8bp_4h",
+      "SOLUSDT_mae_4h",
+      "DOGEUSDT_win_25bp_4h",
+      "ADAUSDT_mae_4h",
+      "DOGEUSDT_mae_4h",
+      "ADAUSDT_mfe_4h"
+    ]
+  },
+  "data_files": {
+    "ICPUSDT": "data/features_ICPUSDT_superdip_pinbar_20250818_150923.parquet",
+    "SOLUSDT": "data/features_SOLUSDT_superdip_pinbar_20250818_150923.parquet",
+    "DOGEUSDT": "data/features_DOGEUSDT_superdip_pinbar_20250818_150923.parquet",
+    "ADAUSDT": "data/features_ADAUSDT_superdip_pinbar_20250818_150923.parquet",
+    "BNBUSDT": "data/features_BNBUSDT_superdip_pinbar_20250818_150923.parquet"
+  },
+  "symbols_analysis": {
+    "ICPUSDT": {
+      "file_path": "data/features_ICPUSDT_superdip_pinbar_20250818_150923.parquet",
+      "record_count": 210240,
+      "feature_count": 67,
+      "data_range": {
+        "start_date": "2023-08-13T13:55:00",
+        "end_date": "2025-08-12T13:50:00"
+      },
+      "missing_data_percentage": 0.0,
+      "pin_bar_detection_rate": 0.056425989345509894,
+      "oversold_detection_rates": {
+        "ICPUSDT_rsi_7_oversold": 0.10730593607305935,
+        "ICPUSDT_rsi_14_oversold": 0.032167998477929984,
+        "ICPUSDT_rsi_21_oversold": 0.011520167427701674
+      }
+    },
+    "SOLUSDT": {
+      "file_path": "data/features_SOLUSDT_superdip_pinbar_20250818_150923.parquet",
+      "record_count": 210236,
+      "feature_count": 73,
+      "data_range": {
+        "start_date": "2023-08-14T08:30:00",
+        "end_date": "2025-08-13T08:05:00"
+      },
+      "missing_data_percentage": 0.0,
+      "pin_bar_detection_rate": 0.058025266842976465,
+      "oversold_detection_rates": {
+        "SOLUSDT_rsi_7_oversold": 0.10784071234232005,
+        "SOLUSDT_rsi_14_oversold": 0.03409977358777754,
+        "SOLUSDT_rsi_21_oversold": 0.013484845602085276
+      }
+    },
+    "DOGEUSDT": {
+      "file_path": "data/features_DOGEUSDT_superdip_pinbar_20250818_150923.parquet",
+      "record_count": 210236,
+      "feature_count": 73,
+      "data_range": {
+        "start_date": "2023-08-14T08:30:00",
+        "end_date": "2025-08-13T08:05:00"
+      },
+      "missing_data_percentage": 0.0,
+      "pin_bar_detection_rate": 0.06012290949218973,
+      "oversold_detection_rates": {
+        "DOGEUSDT_rsi_7_oversold": 0.10626153465629103,
+        "DOGEUSDT_rsi_14_oversold": 0.034527863924351684,
+        "DOGEUSDT_rsi_21_oversold": 0.013665594855305467
+      }
+    },
+    "ADAUSDT": {
+      "file_path": "data/features_ADAUSDT_superdip_pinbar_20250818_150923.parquet",
+      "record_count": 210236,
+      "feature_count": 73,
+      "data_range": {
+        "start_date": "2023-08-14T08:30:00",
+        "end_date": "2025-08-13T08:05:00"
+      },
+      "missing_data_percentage": 0.0,
+      "pin_bar_detection_rate": 0.052212751384158755,
+      "oversold_detection_rates": {
+        "ADAUSDT_rsi_7_oversold": 0.10939610723187275,
+        "ADAUSDT_rsi_14_oversold": 0.03476569188911509,
+        "ADAUSDT_rsi_21_oversold": 0.013803535074868244
+      }
+    },
+    "BNBUSDT": {
+      "file_path": "data/features_BNBUSDT_superdip_pinbar_20250818_150923.parquet",
+      "record_count": 210236,
+      "feature_count": 73,
+      "data_range": {
+        "start_date": "2023-08-14T08:30:00",
+        "end_date": "2025-08-13T08:05:00"
+      },
+      "missing_data_percentage": 0.0,
+      "pin_bar_detection_rate": 0.05185125287771837,
+      "oversold_detection_rates": {
+        "BNBUSDT_rsi_7_oversold": 0.10609981164025191,
+        "BNBUSDT_rsi_14_oversold": 0.03516999942921289,
+        "BNBUSDT_rsi_21_oversold": 0.014992674898685287
+      }
+    }
+  },
+  "model_development_guidelines": {
+    "recommended_algorithms": [
+      {
+        "algorithm": "LightGBM",
+        "reason": "处理表格数据效果优秀，特征重要性解释性强",
+        "hyperparameters": {
+          "objective": "binary/regression",
+          "metric": "auc/rmse",
+          "num_leaves": 31,
+          "learning_rate": 0.05,
+          "feature_fraction": 0.8
+        }
+      },
+      {
+        "algorithm": "XGBoost",
+        "reason": "强大的梯度提升，适合金融时间序列",
+        "hyperparameters": {
+          "max_depth": 6,
+          "learning_rate": 0.05,
+          "subsample": 0.8,
+          "colsample_bytree": 0.8
+        }
+      },
+      {
+        "algorithm": "Random Forest",
+        "reason": "稳定的基线模型，特征重要性分析",
+        "hyperparameters": {
+          "n_estimators": 200,
+          "max_depth": 10,
+          "min_samples_split": 20
+        }
+      }
+    ],
+    "feature_selection_strategy": {
+      "method": "多阶段特征选择",
+      "steps": [
+        "1. 移除高缺失值特征 (>5%)",
+        "2. 移除高相关性特征 (>0.95)",
+        "3. 基于mutual_info_regression筛选TOP50",
+        "4. 递归特征消除(RFE)优化到TOP30",
+        "5. 前向特征选择验证最终特征集"
+      ]
+    },
+    "cross_validation_strategy": {
+      "method": "时序交叉验证",
+      "splits": 5,
+      "train_ratio": 0.7,
+      "validation_ratio": 0.15,
+      "test_ratio": 0.15,
+      "gap": "24小时间隔避免数据泄漏",
+      "purging": "删除重叠时间窗口"
+    },
+    "preprocessing_pipeline": {
+      "missing_values": "前向填充 + 后向填充",
+      "outliers": "RobustScaler处理异常值",
+      "scaling": "StandardScaler标准化",
+      "feature_engineering": "多项式特征 + 交互特征"
+    }
+  },
+  "performance_benchmarks": {
+    "target_metrics": {
+      "classification": {
+        "accuracy": "> 65%",
+        "precision": "> 70%",
+        "recall": "> 60%",
+        "f1_score": "> 65%",
+        "auc_roc": "> 0.75"
+      },
+      "regression": {
+        "rmse": "< 0.02",
+        "mae": "< 0.015",
+        "r2_score": "> 0.3"
+      },
+      "trading_metrics": {
+        "win_rate": "> 60%",
+        "sharpe_ratio": "> 1.5",
+        "max_drawdown": "< 10%",
+        "profit_factor": "> 2.0"
+      }
+    },
+    "expected_signal_characteristics": {
+      "daily_signals": "5-15个交易信号",
+      "signal_quality": "高质量信号，低假阳性",
+      "market_conditions": "适合震荡和弱势市场",
+      "risk_profile": "中低风险，适合稳健交易"
+    }
+  },
+  "deployment_considerations": {
+    "data_requirements": {
+      "update_frequency": "5分钟实时更新",
+      "lookback_period": "至少200个数据点",
+      "data_quality": "OHLCV数据完整性>99%"
+    },
+    "computational_requirements": {
+      "feature_calculation_time": "< 1秒",
+      "model_inference_time": "< 100毫秒",
+      "memory_usage": "< 500MB",
+      "cpu_requirements": "2核以上"
+    },
+    "monitoring_alerts": [
+      "特征分布偏移检测",
+      "模型性能衰减监控",
+      "数据质量异常告警",
+      "交易信号频率监控"
+    ]
+  },
+  "risk_management": {
+    "position_sizing": {
+      "max_position_size": "账户资金的2%",
+      "correlation_limit": "相关品种总敞口<10%",
+      "single_symbol_limit": "单个品种<5%"
+    },
+    "stop_loss_strategy": {
+      "initial_stop_loss": "0.6%",
+      "trailing_stop": "价格有利移动后激活",
+      "time_stop": "最大持仓240分钟"
+    },
+    "risk_controls": [
+      "日内最大亏损限制",
+      "连续亏损次数控制",
+      "市场波动率调整",
+      "流动性风险管理"
+    ]
+  },
+  "usage_examples": {
+    "feature_loading": "\n# 加载特征数据\nimport pandas as pd\ndf = pd.read_parquet(\"features_BTCUSDT_superdip_pinbar.parquet\")\nprint(f\"特征数量: {len(df.columns)}, 数据条数: {len(df)}\")\n            ",
+    "signal_generation": "\n# 生成交易信号\ndef generate_signals(df):\n    signals = (\n        (df['BTCUSDT_rsi_14'] < 30) &  # RSI超跌\n        (df['BTCUSDT_price_below_ma_20'] == 1) &  # 价格低于MA20\n        (df['BTCUSDT_bb_oversold'] == 1) &  # 布林带超跌\n        (df['BTCUSDT_is_enhanced_pin_bar'] == 1) &  # 接针形态\n        (df['BTCUSDT_volume_ratio_20'] > 1.5)  # 成交量放大\n    )\n    return signals\n            ",
+    "model_training": "\n# 模型训练示例\nfrom lightgbm import LGBMClassifier\nfrom sklearn.model_selection import TimeSeriesSplit\n\n# 特征选择\nfeature_cols = [col for col in df.columns if not col.startswith('BTCUSDT_win_')]\ntarget_col = 'BTCUSDT_win_80bp_4h'\n\nX, y = df[feature_cols], df[target_col]\n\n# 时序交叉验证\ntscv = TimeSeriesSplit(n_splits=5)\nmodel = LGBMClassifier(objective='binary', metric='auc')\n\nfor train_idx, val_idx in tscv.split(X):\n    X_train, X_val = X.iloc[train_idx], X.iloc[val_idx]\n    y_train, y_val = y.iloc[train_idx], y.iloc[val_idx]\n    model.fit(X_train, y_train)\n    score = model.score(X_val, y_val)\n    print(f\"验证集AUC: {score:.3f}\")\n            "
+  }
+}

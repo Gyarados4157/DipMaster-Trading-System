@@ -1,0 +1,61 @@
+{
+  "report_metadata": {
+    "generation_timestamp": "2025-08-18T15:45:53.147411",
+    "report_type": "Signal_Based_Portfolio_Risk_Assessment",
+    "base_capital_usd": 100000
+  },
+  "executive_summary": {
+    "overall_risk_level": "LOW",
+    "total_positions": 1,
+    "portfolio_leverage": 0.08,
+    "expected_annual_return": 0.1477,
+    "sharpe_ratio": 3.35,
+    "var_95_daily": 0.0039,
+    "all_constraints_satisfied": true
+  },
+  "risk_breakdown": {
+    "market_risk": {
+      "beta_exposure": 0.08,
+      "volatility_risk": 0.0381,
+      "concentration_risk": 0.08,
+      "max_single_position_usd": 8000.0
+    },
+    "liquidity_risk": {
+      "assessment": "LOW",
+      "largest_position_usd": 8000.0,
+      "total_exposure_usd": 8000.0
+    }
+  },
+  "stress_test_summary": {
+    "market_crash_20pct": {
+      "description": "Market crash -20%",
+      "portfolio_return_pct": -0.016,
+      "portfolio_pnl_usd": -1600.0,
+      "max_single_position_loss_usd": 1600.0
+    },
+    "market_rally_15pct": {
+      "description": "Market rally +15%",
+      "portfolio_return_pct": 0.012,
+      "portfolio_pnl_usd": 1200.0,
+      "max_single_position_loss_usd": 1200.0
+    },
+    "volatility_spike_2x": {
+      "description": "Volatility doubles",
+      "stressed_portfolio_volatility": 0.0048,
+      "vol_increase_factor": 2.0,
+      "stressed_var_95": 0.007896
+    },
+    "correlation_shock_90pct": {
+      "description": "All correlations \u2192 0.9",
+      "shocked_correlation": 0.9,
+      "shocked_portfolio_volatility": 0.0024,
+      "correlation_impact": 0.0
+    }
+  },
+  "monitoring_recommendations": {
+    "daily_var_monitoring": false,
+    "position_rebalancing_needed": false,
+    "leverage_monitoring": false
+  },
+  "recommendations": []
+}

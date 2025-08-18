@@ -1,0 +1,216 @@
+# ============================================================================
+# DipMaster Trading System - Docker Compose 配置
+# Version: 1.0.0
+# Date: 2025-08-18
+# 
+# 完整的Docker Compose部署方案，包含交易系统和监控组件
+# ============================================================================
+
+version: '3.8'
+
+services:
+  # ========================================================================
+  # DipMaster Trading System 主服务
+  # ========================================================================
+  dipmaster-trading:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    image: dipmaster-trading:latest
+    container_name: dipmaster-trading-main
+    hostname: dipmaster-trading
+    restart: unless-stopped
+    
+    # 环境变量
+    environment:
+      - TZ=Asia/Hong_Kong
+      - PYTHONPATH=/app
+      - LOG_LEVEL=INFO
+      - PAPER_MODE=true
+    
+    # 端口映射
+    ports:
+      - "8080:8080"   # Web监控面板
+    
+    # 数据卷映射
+    volumes:
+      - ./logs:/app/logs                                    # 日志持久化
+      - ./data:/app/data                                    # 数据持久化
+      - ./config:/app/config                                # 配置文件
+      - ./backup:/app/backup                                # 备份目录
+      - /etc/localtime:/etc/localtime:ro                    # 时区同步
+    
+    # 健康检查
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    
+    # 资源限制 (适配2核4GB服务器)
+    deploy:
+      resources:
+        limits:
+          cpus: '1.5'
+          memory: 3G
+        reservations:
+          cpus: '0.5'  
+          memory: 1G
+    
+    # 网络
+    networks:
+      - dipmaster-network
+    
+    # 依赖服务
+    depends_on:
+      - redis-cache
+      - monitoring
+    
+    # 标签
+    labels:
+      - "com.dipmaster.service=trading"
+      - "com.dipmaster.version=1.0.0"
+
+  # ========================================================================
+  # Redis 缓存服务 (用于数据缓存和会话管理)
+  # ========================================================================
+  redis-cache:
+    image: redis:7-alpine
+    container_name: dipmaster-redis
+    hostname: redis-cache
+    restart: unless-stopped
+    
+    # 端口映射 (仅内部访问)
+    expose:
+      - "6379"
+    
+    # Redis配置
+    command: >
+      redis-server 
+      --maxmemory 256mb
+      --maxmemory-policy allkeys-lru
+      --save 900 1
+      --save 300 10
+      --save 60 10000
+    
+    # 数据持久化
+    volumes:
+      - redis-data:/data
+      - /etc/localtime:/etc/localtime:ro
+    
+    # 健康检查
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    
+    # 网络
+    networks:
+      - dipmaster-network
+
+  # ========================================================================
+  # 系统监控服务 (Prometheus + cAdvisor)
+  # ========================================================================
+  monitoring:
+    image: prom/prometheus:latest
+    container_name: dipmaster-monitoring
+    hostname: monitoring
+    restart: unless-stopped
+    
+    # 端口映射
+    ports:
+      - "9090:9090"   # Prometheus Web UI
+    
+    # Prometheus配置
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus-data:/prometheus
+      - /etc/localtime:/etc/localtime:ro
+    
+    # 启动参数
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--storage.tsdb.retention.time=15d'
+      - '--web.enable-lifecycle'
+    
+    # 网络
+    networks:
+      - dipmaster-network
+
+  # ========================================================================
+  # 容器资源监控
+  # ========================================================================
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:latest
+    container_name: dipmaster-cadvisor
+    hostname: cadvisor
+    restart: unless-stopped
+    privileged: true
+    
+    # 端口映射
+    ports:
+      - "8081:8080"   # cAdvisor Web UI
+    
+    # 系统资源监控
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+      - /dev/disk/:/dev/disk:ro
+    
+    # 网络
+    networks:
+      - dipmaster-network
+
+  # ========================================================================
+  # 日志收集服务 (可选)
+  # ========================================================================
+  log-collector:
+    image: fluent/fluentd:v1.16-1
+    container_name: dipmaster-logs
+    hostname: log-collector
+    restart: unless-stopped
+    
+    # 端口映射
+    ports:
+      - "24224:24224"
+      - "24224:24224/udp"
+    
+    # Fluentd配置和日志
+    volumes:
+      - ./monitoring/fluentd.conf:/fluentd/etc/fluent.conf:ro
+      - ./logs:/app/logs:ro
+      - log-data:/var/log/fluentd-buffers
+    
+    # 网络
+    networks:
+      - dipmaster-network
+
+# ========================================================================
+# 数据卷定义
+# ========================================================================
+volumes:
+  redis-data:
+    driver: local
+  prometheus-data:
+    driver: local
+  log-data:
+    driver: local
+
+# ========================================================================
+# 网络定义
+# ========================================================================
+networks:
+  dipmaster-network:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.20.0.0/16

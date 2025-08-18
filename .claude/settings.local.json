@@ -26,7 +26,9 @@
       "WebSearch",
       "WebFetch(domain:coinmarketcap.com)",
       "WebFetch(domain:www.coingecko.com)",
-      "Bash(sed:*)"
+      "Bash(sed:*)",
+      "Bash(pip3 install:*)",
+      "Bash(timeout:*)"
     ],
     "deny": [],
     "ask": []

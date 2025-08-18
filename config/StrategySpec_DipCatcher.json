@@ -1,0 +1,332 @@
+{
+  "strategy_metadata": {
+    "name": "DipCatcher_SuperOversold_PinBar",
+    "version": "1.0.0",
+    "description": "超跌接针策略 - 基于多时间框架的短期超跌反弹捕捉系统",
+    "author": "Strategy Orchestrator Agent",
+    "created_date": "2025-08-18",
+    "strategy_type": "mean_reversion",
+    "risk_profile": "market_neutral"
+  },
+  
+  "universe": {
+    "instruments": [
+      "BTCUSDT", "ETHUSDT", "BNBUSDT", "ADAUSDT", "XRPUSDT",
+      "SOLUSDT", "DOGEUSDT", "DOTUSDT", "AVAXUSDT", "MATICUSDT",
+      "LINKUSDT", "LTCUSDT", "UNIUSDT", "ATOMUSDT", "NEARUSDT"
+    ],
+    "asset_class": "cryptocurrency",
+    "market_cap_filter": "top_100",
+    "liquidity_threshold": 50000000,
+    "correlation_limit": 0.8
+  },
+  
+  "trading_parameters": {
+    "timeframes": {
+      "primary": "5m",
+      "secondary": ["1m", "3m", "15m"],
+      "confirmation": "15m"
+    },
+    "session_windows": {
+      "asian": "00:00-08:00 UTC",
+      "european": "08:00-16:00 UTC", 
+      "american": "16:00-24:00 UTC"
+    },
+    "volatility_regime": {
+      "low_vol": "<15% annualized",
+      "normal_vol": "15-35% annualized",
+      "high_vol": ">35% annualized"
+    }
+  },
+  
+  "venues": {
+    "primary": "binance_spot",
+    "secondary": ["binance_futures", "coinbase_pro"],
+    "execution_preference": "spot_first",
+    "api_requirements": ["market_data", "trading", "account_info"]
+  },
+  
+  "horizon": {
+    "data_period": "2023-01-01 to 2025-06-30",
+    "training_period": "2023-01-01 to 2024-12-31", 
+    "validation_period": "2025-01-01 to 2025-06-30",
+    "holding_period": "15min to 4hours",
+    "rebalance_frequency": "continuous"
+  },
+  
+  "strategy_logic": {
+    "core_concept": "捕捉多时间框架确认的超跌反弹机会，结合接针形态识别最佳入场时机",
+    
+    "entry_conditions": {
+      "oversold_criteria": {
+        "rsi_14": {"min": 25, "max": 35, "timeframe": "5m"},
+        "rsi_cross": "RSI突破30上穿确认",
+        "bb_position": "价格触及或跌破布林带下轨",
+        "price_deviation": "偏离20日均线超过-3%"
+      },
+      
+      "pin_bar_pattern": {
+        "lower_shadow": "下影线长度 >= 实体的2倍",
+        "upper_shadow": "上影线长度 <= 实体的0.5倍", 
+        "body_position": "实体位于K线上半部分",
+        "volume_confirmation": "成交量较前5根K线平均值放大50%+"
+      },
+      
+      "multi_timeframe_filter": {
+        "1m_momentum": "RSI开始上升，MACD金叉预兆",
+        "5m_structure": "关键支撑位附近反弹",
+        "15m_trend": "中期趋势未完全破坏",
+        "confluence_score": "至少3个时间框架信号一致"
+      },
+      
+      "market_environment": {
+        "volatility_filter": "波动率适中，避免极端行情",
+        "spread_check": "买卖价差 < 0.1%",
+        "liquidity_check": "订单簿深度充足"
+      }
+    },
+    
+    "exit_conditions": {
+      "profit_targets": {
+        "quick_profit": "0.8-1.2% (15-30分钟)",
+        "extended_profit": "1.5-2.5% (1-2小时)",
+        "max_profit": "3% (止盈离场)"
+      },
+      
+      "stop_loss": {
+        "technical_stop": "跌破接针K线最低点",
+        "percentage_stop": "2% 固定止损",
+        "time_stop": "4小时未盈利强制平仓",
+        "trail_stop": "盈利1%后启动0.5%移动止损"
+      },
+      
+      "signal_reversal": {
+        "momentum_divergence": "RSI背离警告",
+        "volume_decline": "成交量萎缩确认",
+        "resistance_rejection": "关键阻力位受阻"
+      }
+    },
+    
+    "position_sizing": {
+      "base_allocation": "2% per trade",
+      "volatility_adjustment": "根据ATR动态调整",
+      "correlation_penalty": "高相关资产减仓50%",
+      "confidence_scaling": "信号强度1-3倍加权"
+    }
+  },
+  
+  "constraints": {
+    "risk_limits": {
+      "max_gross_leverage": 2.5,
+      "max_net_exposure": 0.1,
+      "beta_target": 0.0,
+      "beta_tolerance": 0.15,
+      "tracking_error": "<8% annualized"
+    },
+    
+    "position_limits": {
+      "max_position_pct": 0.05,
+      "max_positions": 8,
+      "max_correlated_positions": 3,
+      "sector_concentration": 0.3,
+      "single_asset_limit": 0.08
+    },
+    
+    "drawdown_controls": {
+      "max_daily_dd": 0.03,
+      "max_weekly_dd": 0.05, 
+      "max_monthly_dd": 0.08,
+      "max_annual_dd": 0.10,
+      "var_95": 0.02
+    },
+    
+    "operational_limits": {
+      "max_trades_per_day": 20,
+      "min_time_between_trades": "5min",
+      "max_overnight_exposure": 0.02,
+      "emergency_stop_trigger": "5% daily loss"
+    }
+  },
+  
+  "performance_targets": {
+    "return_objectives": {
+      "annual_return": {"min": 0.15, "target": 0.20, "stretch": 0.25},
+      "monthly_return": {"consistency": ">60% positive months"},
+      "daily_return": {"avg": 0.08, "volatility": "<2%"}
+    },
+    
+    "risk_metrics": {
+      "sharpe_ratio": {"min": 4.0, "target": 5.0},
+      "sortino_ratio": {"min": 6.0, "target": 8.0},
+      "calmar_ratio": {"min": 2.0, "target": 3.0},
+      "max_drawdown": {"limit": 0.10, "target": 0.06}
+    },
+    
+    "execution_metrics": {
+      "win_rate": {"min": 0.60, "target": 0.65},
+      "profit_factor": {"min": 1.8, "target": 2.2},
+      "avg_win_loss_ratio": {"min": 1.5, "target": 2.0},
+      "trade_frequency": "15-25 trades/day"
+    },
+    
+    "stability_metrics": {
+      "monthly_volatility": "<6%",
+      "rolling_sharpe_12m": ">3.0",
+      "underwater_curve": "<30 days recovery",
+      "tail_risk_protection": "no >3% daily loss"
+    }
+  },
+  
+  "implementation_phases": {
+    "phase_1": {
+      "name": "数据基础设施建设",
+      "duration": "2 weeks",
+      "owner": "data-infrastructure-builder",
+      "deliverables": [
+        "历史数据收集和清洗 (2.5年 1分钟数据)",
+        "实时数据流架构搭建",
+        "多时间框架数据对齐",
+        "数据质量验证报告"
+      ],
+      "acceptance_criteria": [
+        "数据完整性 >99.5%",
+        "实时延迟 <100ms",
+        "历史数据无缺失",
+        "时间对齐精确到秒"
+      ]
+    },
+    
+    "phase_2": {
+      "name": "特征工程与标签生成", 
+      "duration": "3 weeks",
+      "owner": "feature-engineering-labeler",
+      "dependencies": ["phase_1"],
+      "deliverables": [
+        "超跌特征指标计算",
+        "接针形态识别算法",
+        "多时间框架特征融合",
+        "前瞻性收益标签构建"
+      ],
+      "acceptance_criteria": [
+        "技术指标计算准确性验证",
+        "形态识别准确率 >80%",
+        "特征无前视偏差",
+        "标签时间对齐正确"
+      ]
+    },
+    
+    "phase_3": {
+      "name": "模型训练与回测验证",
+      "duration": "4 weeks", 
+      "owner": "model-backtest-validator",
+      "dependencies": ["phase_2"],
+      "deliverables": [
+        "机器学习模型训练",
+        "时序交叉验证结果",
+        "完整回测报告",
+        "敏感性分析"
+      ],
+      "acceptance_criteria": [
+        "样本外夏普比 >3.5",
+        "回测胜率 >60%",
+        "最大回撤 <12%",
+        "模型稳定性验证通过"
+      ]
+    },
+    
+    "phase_4": {
+      "name": "组合优化与风险控制",
+      "duration": "2 weeks",
+      "owner": "portfolio-risk-optimizer", 
+      "dependencies": ["phase_3"],
+      "deliverables": [
+        "多资产组合权重优化",
+        "动态风险预算分配",
+        "相关性风险控制",
+        "压力测试报告"
+      ],
+      "acceptance_criteria": [
+        "组合beta <0.15",
+        "集中度风险控制达标",
+        "VaR模型验证通过",
+        "极端情况损失可控"
+      ]
+    },
+    
+    "phase_5": {
+      "name": "执行系统开发",
+      "duration": "3 weeks",
+      "owner": "execution-microstructure-oms",
+      "dependencies": ["phase_4"],
+      "deliverables": [
+        "订单管理系统",
+        "实时信号生成器",
+        "风险监控模块",
+        "执行成本分析"
+      ],
+      "acceptance_criteria": [
+        "订单执行延迟 <500ms",
+        "滑点控制 <0.05%",
+        "风险监控实时性",
+        "系统稳定性99.9%"
+      ]
+    }
+  },
+  
+  "gate_evaluation_framework": {
+    "discovery_gate": {
+      "criteria": [
+        "策略逻辑清晰定义",
+        "数据需求明确",
+        "技术可行性确认",
+        "资源需求评估完成"
+      ],
+      "pass_threshold": "100% criteria met",
+      "review_committee": ["strategy_head", "risk_manager", "tech_lead"]
+    },
+    
+    "design_gate": {
+      "criteria": [
+        "架构设计完整",
+        "接口规范确定",
+        "性能指标量化",
+        "风险控制机制设计"
+      ],
+      "pass_threshold": "90% criteria met",
+      "documentation": "技术设计文档完整"
+    },
+    
+    "implementation_gate": {
+      "criteria": [
+        "核心功能开发完成",
+        "单元测试覆盖率 >90%",
+        "集成测试通过",
+        "性能基准测试达标"
+      ],
+      "pass_threshold": "95% criteria met",
+      "validation": "独立测试团队验证"
+    },
+    
+    "integration_gate": {
+      "criteria": [
+        "端到端流程验证",
+        "数据流完整性测试",
+        "风险控制有效性验证",
+        "监控告警机制测试"
+      ],
+      "pass_threshold": "100% criteria met",
+      "stress_test": "压力测试通过"
+    },
+    
+    "production_gate": {
+      "criteria": [
+        "纸面交易3个月验证",
+        "风险指标持续达标",
+        "系统稳定性验证",
+        "监管合规检查通过"
+      ],
+      "pass_threshold": "100% criteria met",
+      "approval_required": ["cro", "cto", "ceo"]
+    }
+  }
+}
