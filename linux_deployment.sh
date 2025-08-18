@@ -75,8 +75,20 @@ install_python311() {
         # Install EPEL and development tools
         yum update -y
         yum groupinstall -y "Development Tools"
-        yum install -y epel-release
-        yum install -y wget curl git openssl-devel libffi-devel bzip2-devel sqlite-devel readline-devel zlib-devel xz-devel
+        
+        # Handle Alibaba Cloud EPEL conflict
+        if yum list installed | grep -q "epel-aliyuncs-release"; then
+            log "Detected Alibaba Cloud EPEL, removing conflicting package..."
+            yum remove -y epel-aliyuncs-release || true
+        fi
+        
+        # Install EPEL with conflict resolution
+        yum install -y epel-release --allowerasing || {
+            warning "EPEL installation failed, trying alternative method..."
+            yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm --allowerasing
+        }
+        
+        yum install -y wget curl git openssl-devel libffi-devel bzip2-devel sqlite-devel readline-devel zlib-devel xz-devel ncurses-devel
         
         # Install Python 3.11 from source
         cd /tmp
