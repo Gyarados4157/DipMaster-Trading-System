@@ -1,0 +1,71 @@
+{
+  "report_id": "monitor_report_20250819_163224",
+  "timestamp": "2025-08-19T16:32:24.869023",
+  "reporting_period": "24h",
+  "system_health_summary": {
+    "status": "no_data"
+  },
+  "signal_consistency_summary": {
+    "status": "no_data"
+  },
+  "component_status_summary": {
+    "data_infrastructure": {
+      "component": "data_infrastructure",
+      "status": "ACTIVE",
+      "last_update": 1755526122.6757033,
+      "file_count": 6,
+      "total_size": 8562426,
+      "health_score": 1.0
+    },
+    "feature_engineering": {
+      "component": "feature_engineering",
+      "status": "ACTIVE",
+      "last_update": 1755526122.6757033,
+      "file_count": 6,
+      "total_size": 8562426,
+      "health_score": 1.0
+    },
+    "model_training": {
+      "component": "model_training",
+      "status": "STALE",
+      "last_update": 1755482741.2586172,
+      "file_count": 5,
+      "total_size": 35940,
+      "health_score": 0.0
+    },
+    "portfolio_optimization": {
+      "component": "portfolio_optimization",
+      "status": "ACTIVE",
+      "last_update": 1755503200.6600637,
+      "file_count": 7,
+      "total_size": 15250,
+      "health_score": 1.0
+    },
+    "execution_reports": {
+      "component": "execution_reports",
+      "status": "ACTIVE",
+      "last_update": 1755503791.604272,
+      "file_count": 3,
+      "total_size": 22646,
+      "health_score": 1.0
+    },
+    "logs": {
+      "component": "logs",
+      "status": "ACTIVE",
+      "last_update": 1755587128.1847622,
+      "file_count": 3,
+      "total_size": 108719,
+      "health_score": 1.0
+    }
+  },
+  "alerts_summary": {
+    "total_alerts_24h": 0,
+    "critical_alerts": 0,
+    "high_alerts": 0,
+    "medium_alerts": 0,
+    "alerts_by_category": {}
+  },
+  "recommendations": [
+    "model_training组件数据陈旧，建议检查更新机制"
+  ]
+}

@@ -1,12 +1,20 @@
 {
-  "version": "1.0.0",
-  "release_date": "2025-08-17T19:04:33.520613",
-  "description": "DipMaster Trading System - Production Release",
+  "version": "1.0.1",
+  "release_date": "2025-08-19T00:00:00.000000",
+  "description": "DipMaster Trading System - Maintenance Release",
+  "changes": [
+    "Project cleanup and reorganization",
+    "Removed redundant documentation and test files",
+    "Streamlined core system components",
+    "Updated documentation structure"
+  ],
   "features": [
-    "Market Regime Detection System",
-    "Adaptive Parameter Optimization",
-    "Multi-Timeframe Signal Integration",
-    "Enhanced Risk Management",
-    "Real-time Dashboard Interface"
+    "Complete Offline Optimization System",
+    "Continuous Data Infrastructure",
+    "Advanced Feature Engineering",
+    "Portfolio Risk Management",
+    "Execution Microstructure Optimization",
+    "Real-time Monitoring System",
+    "Enterprise-grade Trading Infrastructure"
   ]
 }
